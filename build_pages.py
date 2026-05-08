@@ -18,7 +18,7 @@ OUT_DIR = os.path.dirname(os.path.abspath(__file__))
 # All hrefs point to local HTML files in the same directory.
 # ============================================================
 def build_header(active=""):
-    """active is a short key for the current tab: home, infrastructure, data, people, outreach, ew"""
+    """active is a short key for the current tab: home, science, infrastructure, data, people, outreach, ew"""
     def cls(key):
         return ' class="nav-link active"' if active == key else ' class="nav-link"'
     return f"""
@@ -43,42 +43,46 @@ def build_header(active=""):
       </div>
     </a>
     <nav class="main-nav" aria-label="Primary">
-      <div class="nav-item has-dropdown">
+      <div class="nav-item">
         <a href="index.html"{cls("home")}>Home</a>
+      </div>
+      <div class="nav-item has-dropdown">
+        <span{cls("science")} role="button" tabindex="0" aria-haspopup="true">Science</span>
         <div class="dropdown">
-          <a href="index.html">Home</a>
-          <a href="motivation.html">Motivation</a>
-          <a href="scientific-objectives.html">Scientific Objectives</a>
+          <a href="science.html#motivation">Motivation</a>
+          <a href="science.html#objectives">Objectives</a>
+          <a href="publications.html">Publications</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
         <a href="infrastructure.html"{cls("infrastructure")}>Infrastructure</a>
         <div class="dropdown">
           <a href="infrastructure.html">Infrastructure Overview</a>
+          <a href="sites.html">Sites</a>
           <a href="existing-instruments.html">Existing Instruments</a>
           <a href="coszo-instruments.html">COSZO Instruments</a>
           <a href="future-opportunities.html">Future Opportunities</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
-        <a href="data-products.html"{cls("data")}>Data Products</a>
+        <a href="data.html"{cls("data")}>Data</a>
         <div class="dropdown wide">
-          <a href="data-products.html">All Data Products</a>
+          <a href="data.html">All Data Products</a>
           <hr />
           <div class="dropdown-section-heading">Pressure</div>
           <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a>
-          <a href="data-products.html">Differential Seafloor Pressure</a>
-          <a href="data-products.html">GSSM Calibrated Pressure &amp; Ground Acceleration</a>
-          <a href="data-products.html">SCPR Calibrated Pressure</a>
-          <a href="data-products.html">Low-Frequency Acoustic Pressure</a>
+          <a href="data.html">Differential Seafloor Pressure</a>
+          <a href="data.html">GSSM Calibrated Pressure &amp; Ground Acceleration</a>
+          <a href="data.html">SCPR Calibrated Pressure</a>
+          <a href="data.html">Low-Frequency Acoustic Pressure</a>
           <hr />
           <div class="dropdown-section-heading">Motion</div>
-          <a href="data-products.html">Strong-Motion Ground Acceleration</a>
-          <a href="data-products.html">Broadband Ground Velocity</a>
-          <a href="data-products.html">Short-Period Ground Velocity</a>
+          <a href="data.html">Strong-Motion Ground Acceleration</a>
+          <a href="data.html">Broadband Ground Velocity</a>
+          <a href="data.html">Short-Period Ground Velocity</a>
           <hr />
           <div class="dropdown-section-heading">Water</div>
-          <a href="data-products.html">Sea Water Velocity</a>
+          <a href="data.html">Sea Water Velocity</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
@@ -242,7 +246,7 @@ INDEX_BODY = """
         <a href="scientific-objectives.html" class="hero-cta">Science objectives
           <svg class="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="data-products.html" class="hero-cta secondary">Explore data products</a>
+        <a href="data.html" class="hero-cta secondary">Explore data products</a>
       </div>
     </div>
   </div>
@@ -256,7 +260,7 @@ INDEX_BODY = """
         <h3 class="tile-title">Infrastructure</h3>
         <p class="tile-subtitle">Cabled network &amp; instruments</p>
       </a>
-      <a href="data-products.html" class="tile">
+      <a href="data.html" class="tile">
         <svg class="tile-icon" viewBox="0 0 80 80" fill="none"><rect x="10" y="16" width="60" height="48" rx="2" stroke="currentColor" stroke-width="2.5"/><path d="M10 28 H70" stroke="currentColor" stroke-width="2.5"/><circle cx="18" cy="22" r="1.5" fill="currentColor"/><circle cx="24" cy="22" r="1.5" fill="currentColor"/><path d="M18 40 L28 50 L38 36 L50 54 L62 42" stroke="#17a2ab" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3 class="tile-title">Data Products</h3>
         <p class="tile-subtitle">Pressure, motion, water velocity</p>
@@ -638,19 +642,217 @@ FUTURE_BODY = page_hero(
 """
 
 # ============================================================
+# SCIENCE (combined: Motivation + Objectives, anchored sections)
+# ============================================================
+SCIENCE_BODY = page_hero(
+    "Science", "Science",
+    "The scientific motivation and objectives for the Cascadia Offshore Subduction Zone Observatory.",
+    ['<a href="index.html">Home</a>', "Science"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid">
+      <aside class="article-sidebar">
+        <h4>On This Page</h4>
+        <ul>
+          <li><a href="#motivation">Motivation</a></li>
+          <li><a href="#objectives">Objectives</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </aside>
+      <article class="article-content">
+
+        <h2 id="motivation">Motivation</h2>
+        <p class="lede-para">The Cascadia subduction zone stretches roughly 1,000 kilometers from northern California to British Columbia, capable of generating magnitude 9+ megathrust earthquakes and far-field tsunamis. Our ability to understand and warn against these events has, until now, been constrained by the fact that the locked portion of the fault lies almost entirely offshore.</p>
+
+        <h3>The Cascadia Hazard</h3>
+        <p>The last great Cascadia earthquake occurred on January 26, 1700. Paleoseismic, geodetic, and historical records now place the recurrence interval in the 200 to 800 year range, and the plate is accumulating strain at a rate that implies a large event is a matter of when, not whether. Coastal communities from California to British Columbia would be directly affected, and a tsunami would reach shore in 15 to 30 minutes.</p>
+        <p>Decades of onshore GPS and seismometer networks have transformed our picture of the onshore deformation field. But the locked region of the megathrust, the part that stores and will eventually release most of the strain, sits beneath the continental shelf and abyssal plain. Observing it requires instruments on the seafloor.</p>
+
+        <div class="pull-stat">
+          <div class="stat-num">1700</div>
+          <div class="stat-desc">Year of the last known great Cascadia megathrust earthquake, inferred from tree ring records, coastal subsidence, and a tsunami deposit in Japan.</div>
+        </div>
+
+        <h3>An Observation Gap</h3>
+        <p>Offshore geophysical observations have historically been episodic. Ocean-bottom seismometer (OBS) deployments are valuable but typically operate for a year or two at a time, limiting their ability to capture long-term deformation transients or the full spectrum of pre-seismic behavior. Permanent, cabled, real-time seafloor instrumentation is what the community has needed, and what the Cascadia Offshore Subduction Zone Observatory provides.</p>
+
+        <h4>What we still do not know</h4>
+        <ul>
+          <li>The precise updip and downdip limits of the locked zone.</li>
+          <li>Whether slow slip events extend offshore and how often they occur.</li>
+          <li>The timing and magnitude of potential precursory signals.</li>
+          <li>How intraslab seismicity relates to megathrust loading.</li>
+        </ul>
+
+        <h3>Building on the RCA</h3>
+        <p>The OOI Regional Cabled Array, commissioned in 2015, provides something rare in ocean science: a permanent power and communications backbone on the seafloor, with real-time data telemetry. The RCA was not originally designed as a geophysical observatory. It was built for coastal oceanography. But the cable runs directly across the Cascadia margin, and the nodes it feeds are fortuitously positioned in the region of greatest geophysical interest.</p>
+        <p>COSZO augments the RCA with a geophysical sensor suite: strong-motion accelerometers, broadband and short-period seismometers, absolute and differential pressure gauges, acoustic hydrophones, and current meters. Each contributes a different piece of the puzzle.</p>
+
+        <h3>Why COSZO, Why Now</h3>
+        <p>With the RCA infrastructure in place, the engineering risk of adding geophysical instruments is greatly reduced. What remains is a science opportunity of unusual magnitude: decades of continuous, open-access, real-time observation across the locked region of a major subduction zone. Few facilities anywhere in the world will match it.</p>
+
+        <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #d8dde4;" />
+
+        <h2 id="objectives">Objectives</h2>
+        <p class="lede-para">The COSZO facility is designed around five interlocking scientific thrusts. Each leverages a different subset of the sensor suite and each addresses fundamental, unresolved questions about how subduction zone faults work.</p>
+
+        <h3>1. Constrain the updip and downdip limits of the locked zone</h3>
+        <p>Strong-motion and broadband seismometer coverage across the continental shelf will improve our ability to locate small earthquakes along the megathrust, refining where the fault is seismically active and where it is locked. Complementary seafloor pressure gauges track vertical deformation at the sensor sites with sub-centimeter sensitivity.</p>
+
+        <h3>2. Detect and characterize offshore slow slip</h3>
+        <p>Onshore geodesy has revealed a rich catalog of episodic tremor and slow slip in the Cascadia forearc. Whether analogous slow slip occurs offshore, and whether it migrates along strike, is a central open question. COSZO pressure sensors operating at tsunami-band frequencies, together with the seismic array, will provide the first sustained offshore geodetic look at this phenomenon.</p>
+
+        <h3>3. Characterize the full seismicity catalog beneath the shelf</h3>
+        <p>Intraslab and crustal seismicity beneath the Cascadia margin remain under-sampled. A dense seafloor seismic network closes the detection gap and enables magnitude-of-completeness improvements of roughly one unit compared to onshore-only networks.</p>
+
+        <h3>4. Quantify near-source ground motion</h3>
+        <p>Strong-motion accelerometers on the seafloor give the first direct measurements of ground shaking near the expected rupture surface of a future great earthquake. These records are essential for calibrating ground-motion prediction equations used by engineers and emergency planners.</p>
+
+        <h3>5. Develop and test offshore earthquake early warning</h3>
+        <p>Because COSZO instruments sit offshore of population centers, they can detect rupture initiation seconds to tens of seconds before onshore networks. Integrating COSZO data streams into the USGS ShakeAlert system is an explicit project goal and is the focus of our <a href="early-warning.html">Early Warning</a> work.</p>
+
+        <h3>Cross-cutting themes</h3>
+        <p>Across these five thrusts, several cross-cutting methodological themes recur: ambient-noise interferometry for continuous wavespeed monitoring, distributed acoustic sensing on the existing fiber, and machine-learning driven event detection and classification. Each is an active research direction within the COSZO team.</p>
+
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# PUBLICATIONS (stub)
+# ============================================================
+PUBLICATIONS_BODY = page_hero(
+    "Science", "Publications",
+    "Peer-reviewed publications, technical reports, and presentations from the COSZO team and collaborators.",
+    ['<a href="index.html">Home</a>', '<a href="science.html">Science</a>', "Publications"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <p class="lede-para">A curated list of publications associated with COSZO will appear here. This page is under construction ahead of the May 2026 Science Advisory Committee meeting.</p>
+        <p>If you have a publication that uses COSZO or RCA-derived geophysical data and should be listed here, please <a href="contact.html">get in touch</a>.</p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# SITES (overview with site cards)
+# ============================================================
+SITES_BODY = page_hero(
+    "Infrastructure", "Sites",
+    "COSZO instruments are installed at sites along the OOI Regional Cabled Array spanning the Cascadia margin. Each site has its own geological setting, instrument complement, and science role.",
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', "Sites"]
+) + """
+<section class="hub-section">
+  <div class="container">
+    <div class="hub-cards cols-3">
+      <a href="hydrate-ridge.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 36 L18 18 L26 28 L34 14 L42 36 Z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        <h3>Hydrate Ridge</h3>
+        <p>Accretionary wedge site near the deformation front. Methane hydrate system, shallow seismicity, and frontal thrust deformation.</p>
+        <span class="card-link">View site &rarr;</span>
+      </a>
+      <a href="slope-base.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 36 L20 20 L28 30 L42 12" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        <h3>Slope Base</h3>
+        <p>Deep-water site at the base of the continental slope, providing reference seismic and pressure observations seaward of the locked zone.</p>
+        <span class="card-link">View site &rarr;</span>
+      </a>
+      <a href="axial-seamount.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="28" r="14" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="24" cy="28" r="5" fill="#17a2ab"/></svg>
+        <h3>Axial Seamount</h3>
+        <p>Active submarine volcano on the Juan de Fuca Ridge. Long-running RCA instrumentation and a natural laboratory for inflation/deflation cycles.</p>
+        <span class="card-link">View site &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <p>Additional sites along the cable spur lines will be documented here as the COSZO build-out progresses. The current Sites listing reflects the primary installation locations for the 2026 cruise.</p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# PER-SITE STUBS
+# ============================================================
+HYDRATE_RIDGE_BODY = page_hero(
+    "Sites", "Hydrate Ridge",
+    "Accretionary wedge site near the Cascadia deformation front, roughly 80 km offshore Newport, Oregon.",
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Sites</a>', "Hydrate Ridge"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <p class="lede-para">Hydrate Ridge sits at the leading edge of the Cascadia accretionary prism. The site combines a shallow methane hydrate system, frontal thrust deformation, and seismicity near the updip limit of the locked zone.</p>
+        <p>Detailed instrument list, depth, location, and science role will be added here.</p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+SLOPE_BASE_BODY = page_hero(
+    "Sites", "Slope Base",
+    "Deep-water reference site seaward of the locked zone at the base of the continental slope.",
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Sites</a>', "Slope Base"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <p class="lede-para">Slope Base provides a deep-water reference for seismic and pressure observations beyond the toe of the deformation front.</p>
+        <p>Detailed instrument list, depth, location, and science role will be added here.</p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+AXIAL_SEAMOUNT_BODY = page_hero(
+    "Sites", "Axial Seamount",
+    "Active submarine volcano on the Juan de Fuca Ridge, host to the longest-running RCA geophysical observations.",
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Sites</a>', "Axial Seamount"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <p class="lede-para">Axial Seamount is an active submarine volcano with a well-documented inflation/deflation cycle and a dense RCA instrument suite. COSZO leverages and extends this existing infrastructure.</p>
+        <p>Detailed instrument list, depth, location, and science role will be added here.</p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
 # DATA PRODUCTS (hub)
 # ============================================================
 
 DATA_PRODUCT_CARDS = [
     ("absolute-seafloor-pressure.html", "Absolute Seafloor Pressure", "Total pressure at the seafloor for tsunami detection and seafloor deformation monitoring.", "Pressure &middot; High-precision"),
-    ("data-products.html", "Differential Seafloor Pressure", "Short-period pressure variations capturing tsunami signals and hydroacoustic waves.", "Pressure &middot; Broadband"),
-    ("data-products.html", "GSSM Calibrated Pressure &amp; Ground Acceleration", "Combined pressure and strong-motion records from geodetic seafloor stations.", "Composite &middot; Calibrated"),
-    ("data-products.html", "SCPR Calibrated Pressure", "Self-calibrating pressure recorder data corrected for instrument drift.", "Pressure &middot; Drift-corrected"),
-    ("data-products.html", "Low-Frequency Acoustic Pressure", "Hydrophone data in the infrasound band for T-phase and cetacean monitoring.", "Acoustic &middot; Infrasound"),
-    ("data-products.html", "Strong-Motion Ground Acceleration", "High-dynamic-range accelerometer data for near-source ground motion during large events.", "Motion &middot; Strong-motion"),
-    ("data-products.html", "Broadband Ground Velocity", "Wideband seismometer velocity records for global to regional earthquake characterization.", "Motion &middot; Broadband"),
-    ("data-products.html", "Short-Period Ground Velocity", "High-frequency seismometer data for local microseismicity and P-wave detection.", "Motion &middot; Short-period"),
-    ("data-products.html", "Sea Water Velocity", "Current meter and ADCP measurements of water velocity through the water column.", "Water &middot; ADCP"),
+    ("data.html", "Differential Seafloor Pressure", "Short-period pressure variations capturing tsunami signals and hydroacoustic waves.", "Pressure &middot; Broadband"),
+    ("data.html", "GSSM Calibrated Pressure &amp; Ground Acceleration", "Combined pressure and strong-motion records from geodetic seafloor stations.", "Composite &middot; Calibrated"),
+    ("data.html", "SCPR Calibrated Pressure", "Self-calibrating pressure recorder data corrected for instrument drift.", "Pressure &middot; Drift-corrected"),
+    ("data.html", "Low-Frequency Acoustic Pressure", "Hydrophone data in the infrasound band for T-phase and cetacean monitoring.", "Acoustic &middot; Infrasound"),
+    ("data.html", "Strong-Motion Ground Acceleration", "High-dynamic-range accelerometer data for near-source ground motion during large events.", "Motion &middot; Strong-motion"),
+    ("data.html", "Broadband Ground Velocity", "Wideband seismometer velocity records for global to regional earthquake characterization.", "Motion &middot; Broadband"),
+    ("data.html", "Short-Period Ground Velocity", "High-frequency seismometer data for local microseismicity and P-wave detection.", "Motion &middot; Short-period"),
+    ("data.html", "Sea Water Velocity", "Current meter and ADCP measurements of water velocity through the water column.", "Water &middot; ADCP"),
 ]
 
 def render_product_cards():
@@ -691,7 +893,7 @@ DATAPRODUCTS_BODY = page_hero(
 ASP_BODY = page_hero(
     "Data Products", "Absolute Seafloor Pressure",
     "High-precision total pressure measured at the seafloor. Used for tsunami detection, long-period seafloor deformation monitoring, and as a reference for relative pressure products.",
-    ['<a href="index.html">Home</a>', '<a href="data-products.html">Data Products</a>', "Absolute Seafloor Pressure"]
+    ['<a href="index.html">Home</a>', '<a href="data.html">Data Products</a>', "Absolute Seafloor Pressure"]
 ) + """
 <section class="article">
   <div class="container">
@@ -709,7 +911,7 @@ ASP_BODY = page_hero(
         <p class="lede-para">Absolute Seafloor Pressure (ASP) captures the total hydrostatic pressure at the sensor, combining the static pressure of the overlying water column with tidal, oceanographic, and tectonic signals. With appropriate detiding and ocean-loading correction, it reveals vertical deformation of the seafloor.</p>
 
         <h2 id="overview">Overview</h2>
-        <p>Each ASP sensor records absolute pressure at a sampling rate of 1 Hz with nominal resolution better than 1 mm of water equivalent. Raw records are distributed alongside detided and drift-corrected products. See <a href="data-products.html">SCPR Calibrated Pressure</a> for the self-calibrating variant of this stream.</p>
+        <p>Each ASP sensor records absolute pressure at a sampling rate of 1 Hz with nominal resolution better than 1 mm of water equivalent. Raw records are distributed alongside detided and drift-corrected products. See <a href="data.html">SCPR Calibrated Pressure</a> for the self-calibrating variant of this stream.</p>
 
         <h2 id="specs">Specifications</h2>
         <table class="specs-table">
@@ -1205,13 +1407,19 @@ CONTACT_BODY = page_hero(
 # ============================================================
 PAGES = [
     ("index.html",                              "COSZO — Cascadia Offshore Subduction Zone Observatory",  "home",          INDEX_BODY),
-    ("motivation.html",                         "Motivation · COSZO",                                      "home",          MOTIVATION_BODY),
-    ("scientific-objectives.html",              "Scientific Objectives · COSZO",                           "home",          SCIOBJ_BODY),
+    ("science.html",                            "Science · COSZO",                                         "science",       SCIENCE_BODY),
+    ("publications.html",                       "Publications · COSZO",                                    "science",       PUBLICATIONS_BODY),
+    ("motivation.html",                         "Motivation · COSZO",                                      "science",       MOTIVATION_BODY),
+    ("scientific-objectives.html",              "Scientific Objectives · COSZO",                           "science",       SCIOBJ_BODY),
     ("infrastructure.html",                     "Infrastructure · COSZO",                                  "infrastructure",INFRASTRUCTURE_BODY),
+    ("sites.html",                              "Sites · COSZO",                                           "infrastructure",SITES_BODY),
+    ("hydrate-ridge.html",                      "Hydrate Ridge · COSZO",                                   "infrastructure",HYDRATE_RIDGE_BODY),
+    ("slope-base.html",                         "Slope Base · COSZO",                                      "infrastructure",SLOPE_BASE_BODY),
+    ("axial-seamount.html",                     "Axial Seamount · COSZO",                                  "infrastructure",AXIAL_SEAMOUNT_BODY),
     ("existing-instruments.html",               "Existing Instruments · COSZO",                            "infrastructure",EXISTING_BODY),
     ("coszo-instruments.html",                  "COSZO Instruments · COSZO",                               "infrastructure",COSZO_INSTR_BODY),
     ("future-opportunities.html",               "Future Opportunities · COSZO",                            "infrastructure",FUTURE_BODY),
-    ("data-products.html",                      "Data Products · COSZO",                                   "data",          DATAPRODUCTS_BODY),
+    ("data.html",                               "Data · COSZO",                                            "data",          DATAPRODUCTS_BODY),
     ("absolute-seafloor-pressure.html",         "Absolute Seafloor Pressure · COSZO",                      "data",          ASP_BODY),
     ("people.html",                             "People · COSZO",                                          "people",        PEOPLE_BODY),
     ("outreach.html",                           "Outreach · COSZO",                                        "outreach",      OUTREACH_BODY),
