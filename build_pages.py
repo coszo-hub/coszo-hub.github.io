@@ -13,6 +13,17 @@ import os
 
 OUT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# Coastline path for the Get Involved globe, pre-projected (orthographic,
+# centered on Cascadia ~125W/45N) onto a 400x400 SVG with sphere center
+# (200,200) and radius 170. Generated offline from Natural Earth 110m via
+# d3-geo + topojson-client. See assets-cascadia-globe-coastlines.path.
+_COASTLINE_FILE = os.path.join(OUT_DIR, "assets-cascadia-globe-coastlines.path")
+try:
+    with open(_COASTLINE_FILE, "r", encoding="utf-8") as _f:
+        GLOBE_COASTLINES = _f.read().strip()
+except FileNotFoundError:
+    GLOBE_COASTLINES = ""
+
 # ============================================================
 # HEADER (utility bar + logo + nav with hover dropdowns)
 # All hrefs point to local HTML files in the same directory.
@@ -279,18 +290,45 @@ INDEX_BODY = """
   </div>
 </section>
 
-<section class="welcome welcome-stacked">
+<section class="welcome">
   <div class="container">
-    <div class="welcome-stack-text">
-      <div class="section-eyebrow">Welcome</div>
-      <h2 class="section-heading">A dedicated geophysical observatory for the Cascadia subduction zone.</h2>
-      <div class="welcome-body">
-        <p>The Cascadia Offshore Subduction Zone Observatory (COSZO) is a National Science Foundation funded Mid-scale Research Infrastructure (RI-1) implementation project. Scientists and engineers from the University of Washington School of Oceanography, Department of Earth and Space Sciences, and Applied Physics Laboratory, together with the Scripps Institution of Oceanography, are adding geophysical instrumentation to the <a href="https://oceanobservatories.org/">Ocean Observatories Initiative</a> <a href="https://interactiveoceans.washington.edu/about/regional-cabled-array/">Regional Cabled Array</a> off the coast of Oregon.</p>
-        <p>The RCA, established in 2015, was originally positioned on the continental margin to support coastal oceanography. It is also fortuitously located in a region of geophysical significance where the locked region of the Cascadia fault extends well offshore and clusters of earthquakes occur beneath the continental shelf.</p>
-        <p>The geophysical sensor suite will collect continuous, high-fidelity data to enable the scientific community to address fundamental questions on how subduction zone faults work and provide a facility to support the development of offshore early warning.</p>
+    <div class="welcome-grid">
+      <div>
+        <div class="section-eyebrow">Welcome</div>
+        <h2 class="section-heading">A dedicated geophysical observatory for the Cascadia subduction zone.</h2>
+        <div class="welcome-body">
+          <p>The Cascadia Offshore Subduction Zone Observatory (COSZO) is a National Science Foundation funded Mid-scale Research Infrastructure (RI-1) implementation project. Scientists and engineers from the University of Washington School of Oceanography, Department of Earth and Space Sciences, and Applied Physics Laboratory, together with the Scripps Institution of Oceanography, are adding geophysical instrumentation to the <a href="https://oceanobservatories.org/">Ocean Observatories Initiative</a> <a href="https://interactiveoceans.washington.edu/about/regional-cabled-array/">Regional Cabled Array</a> off the coast of Oregon.</p>
+          <p>The RCA, established in 2015, was originally positioned on the continental margin to support coastal oceanography. It is also fortuitously located in a region of geophysical significance where the locked region of the Cascadia fault extends well offshore and clusters of earthquakes occur beneath the continental shelf.</p>
+          <p>The geophysical sensor suite will collect continuous, high-fidelity data to enable the scientific community to address fundamental questions on how subduction zone faults work and provide a facility to support the development of offshore early warning.</p>
+        </div>
+      </div>
+      <div class="welcome-media">
+        <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e7cab"/><stop offset="0.5" stop-color="#0a2f4e"/><stop offset="1" stop-color="#04182a"/></linearGradient>
+          </defs>
+          <rect width="600" height="450" fill="url(#g1)"/>
+          <path d="M200 0 L230 200 L170 200 Z" fill="#fff" opacity="0.05"/>
+          <path d="M380 0 L410 240 L350 240 Z" fill="#fff" opacity="0.04"/>
+          <path d="M40 280 L560 380 L600 450 L0 450 Z" fill="#041628"/>
+          <path d="M240 290 L380 330" stroke="#f5a623" stroke-width="1.5" opacity="0.5" stroke-dasharray="3,3"/>
+          <circle cx="300" cy="285" r="4" fill="#f5a623"/>
+          <circle cx="300" cy="285" r="10" fill="none" stroke="#f5a623" opacity="0.6"/>
+          <circle cx="280" cy="295" r="3" fill="#f5a623"/>
+          <circle cx="320" cy="292" r="3" fill="#f5a623"/>
+          <line x1="140" y1="290" x2="420" y2="340" stroke="#17a2ab" stroke-width="1.5" opacity="0.8" stroke-dasharray="4,2"/>
+          <circle cx="170" cy="296" r="6" fill="#17a2ab"/>
+          <circle cx="220" cy="305" r="6" fill="#17a2ab"/>
+          <circle cx="280" cy="318" r="6" fill="#fff"/>
+          <circle cx="340" cy="328" r="6" fill="#17a2ab"/>
+          <circle cx="400" cy="338" r="6" fill="#fff"/>
+          <circle cx="420" cy="120" r="12" fill="#f5a623"/>
+          <circle cx="420" cy="120" r="5" fill="#fbfaf7"/>
+          <line x1="420" y1="132" x2="420" y2="338" stroke="#fff" stroke-width="1" opacity="0.3"/>
+        </svg>
       </div>
     </div>
-    <figure class="welcome-figure">
+    <figure class="welcome-figure welcome-figure-wide">
       <img src="coszo3d.jpg" alt="3D rendering of the COSZO offshore observatory layout along the Cascadia margin." />
       <figcaption>Conceptual rendering of the COSZO sensor suite along the OOI Regional Cabled Array on the Cascadia margin.</figcaption>
     </figure>
@@ -313,8 +351,18 @@ INDEX_BODY = """
       </div>
       <div class="cta-visual">
         <svg viewBox="0 0 400 400">
-          <defs><radialGradient id="gg"><stop offset="0" stop-color="#1e7cab"/><stop offset="1" stop-color="#04182a"/></radialGradient></defs>
+          <defs>
+            <radialGradient id="gg"><stop offset="0" stop-color="#1e7cab"/><stop offset="1" stop-color="#04182a"/></radialGradient>
+            <clipPath id="globeClip"><circle cx="200" cy="200" r="170"/></clipPath>
+          </defs>
           <circle cx="200" cy="200" r="170" fill="url(#gg)"/>
+          <g clip-path="url(#globeClip)">
+            <path d="__GLOBE_COASTLINES__"
+                  fill="#cfe6ec" fill-opacity="0.08"
+                  stroke="#cfe6ec" stroke-opacity="0.55" stroke-width="0.6"
+                  stroke-linejoin="round" stroke-linecap="round"
+                  vector-effect="non-scaling-stroke"/>
+          </g>
           <ellipse cx="200" cy="200" rx="170" ry="42" fill="none" stroke="#17a2ab" opacity="0.3"/>
           <ellipse cx="200" cy="200" rx="170" ry="85" fill="none" stroke="#17a2ab" opacity="0.3"/>
           <ellipse cx="200" cy="200" rx="170" ry="128" fill="none" stroke="#17a2ab" opacity="0.3"/>
@@ -332,6 +380,9 @@ INDEX_BODY = """
   </div>
 </section>
 """
+
+# Inject the pre-projected coastline path into the Get Involved globe.
+INDEX_BODY = INDEX_BODY.replace("__GLOBE_COASTLINES__", GLOBE_COASTLINES)
 
 # ============================================================
 # MOTIVATION
