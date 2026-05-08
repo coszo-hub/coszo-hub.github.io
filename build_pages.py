@@ -26,7 +26,7 @@ def build_header(active=""):
   <div class="container">
     <div class="funding-note">An <strong>NSF</strong> Mid-scale Research Infrastructure project</div>
     <div class="utility-bar-links">
-      <a href="https://coszo.org/story/list?category=Archived" target="_blank" rel="noopener">Archives</a>
+      <a href="archives.html">Archives</a>
       <a href="contact.html">Contact</a>
       <a href="#">Search</a>
     </div>
@@ -172,7 +172,7 @@ FOOTER = """
         <h4>Stay Connected</h4>
         <ul>
           <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="https://coszo.org/story/list?category=Archived" target="_blank" rel="noopener">Archives &#8599;</a></li>
+          <li><a href="archives.html">Archives</a></li>
           <li><a href="#">Search</a></li>
           <li><a href="https://oceanobservatories.org/" target="_blank" rel="noopener">OOI Website &#8599;</a></li>
         </ul>
@@ -292,29 +292,7 @@ INDEX_BODY = """
         </div>
       </div>
       <div class="welcome-media">
-        <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e7cab"/><stop offset="0.5" stop-color="#0a2f4e"/><stop offset="1" stop-color="#04182a"/></linearGradient>
-          </defs>
-          <rect width="600" height="450" fill="url(#g1)"/>
-          <path d="M200 0 L230 200 L170 200 Z" fill="#fff" opacity="0.05"/>
-          <path d="M380 0 L410 240 L350 240 Z" fill="#fff" opacity="0.04"/>
-          <path d="M40 280 L560 380 L600 450 L0 450 Z" fill="#041628"/>
-          <path d="M240 290 L380 330" stroke="#f5a623" stroke-width="1.5" opacity="0.5" stroke-dasharray="3,3"/>
-          <circle cx="300" cy="285" r="4" fill="#f5a623"/>
-          <circle cx="300" cy="285" r="10" fill="none" stroke="#f5a623" opacity="0.6"/>
-          <circle cx="280" cy="295" r="3" fill="#f5a623"/>
-          <circle cx="320" cy="292" r="3" fill="#f5a623"/>
-          <line x1="140" y1="290" x2="420" y2="340" stroke="#17a2ab" stroke-width="1.5" opacity="0.8" stroke-dasharray="4,2"/>
-          <circle cx="170" cy="296" r="6" fill="#17a2ab"/>
-          <circle cx="220" cy="305" r="6" fill="#17a2ab"/>
-          <circle cx="280" cy="318" r="6" fill="#fff"/>
-          <circle cx="340" cy="328" r="6" fill="#17a2ab"/>
-          <circle cx="400" cy="338" r="6" fill="#fff"/>
-          <circle cx="420" cy="120" r="12" fill="#f5a623"/>
-          <circle cx="420" cy="120" r="5" fill="#fbfaf7"/>
-          <line x1="420" y1="132" x2="420" y2="338" stroke="#fff" stroke-width="1" opacity="0.3"/>
-        </svg>
+        <img src="coszo3d.jpg" alt="3D rendering of the COSZO offshore observatory layout along the Cascadia margin." style="width:100%; height:100%; object-fit:cover; display:block; border-radius:inherit;" />
       </div>
     </div>
   </div>
@@ -944,6 +922,313 @@ AXIAL_SEAMOUNT_BODY = page_hero(
 """
 
 # ============================================================
+# ARCHIVES (mirror of coszo.org/story/list?category=Archived)
+# ============================================================
+ARCHIVES_BODY = page_hero(
+    "Archives", "Archives",
+    "Materials carried over from the legacy <a href=\"https://coszo.org/story/list?category=Archived\" target=\"_blank\" rel=\"noopener\">COSZO/Cascadia Offshore</a> project pages, including foundational reports, workshop documents, and the 2017 design workshop.",
+    ['<a href="index.html">Home</a>', "Archives"]
+) + """
+<section class="hub-section">
+  <div class="container">
+    <div class="hub-cards cols-2">
+      <a href="resources.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><rect x="8" y="6" width="32" height="36" rx="2" stroke="currentColor" stroke-width="2"/><path d="M14 16 H34 M14 22 H34 M14 28 H28" stroke="#17a2ab" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Resources</h3>
+        <p>Workshop reports, National Research Council reports, and peer-reviewed papers underpinning the COSZO design.</p>
+        <span class="card-link">Browse resources &rarr;</span>
+      </a>
+      <a href="white-paper.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M12 6 H30 L38 14 V42 H12 Z" stroke="currentColor" stroke-width="2" fill="none"/><path d="M30 6 V14 H38" stroke="#17a2ab" stroke-width="2" fill="none"/><path d="M18 22 H32 M18 28 H32 M18 34 H26" stroke="currentColor" stroke-width="1.5"/></svg>
+        <h3>White Paper</h3>
+        <p>The 2019 University of Washington feasibility study for an offshore geophysical monitoring network on the Cascadia subduction zone.</p>
+        <span class="card-link">View white paper &rarr;</span>
+      </a>
+      <a href="workshop-documents.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="28" height="32" rx="2" stroke="currentColor" stroke-width="2"/><rect x="14" y="6" width="28" height="32" rx="2" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
+        <h3>Workshop Documents</h3>
+        <p>Final report, abstracts, white papers, agenda, and reference materials from the 2017 Cascadia offshore monitoring workshop.</p>
+        <span class="card-link">Browse documents &rarr;</span>
+      </a>
+      <a href="workshop.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><circle cx="16" cy="18" r="5" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="18" r="5" stroke="currentColor" stroke-width="2"/><path d="M8 38 Q 16 28, 24 32 Q 32 28, 40 38" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
+        <h3>Workshop</h3>
+        <p>Offshore Geophysical Monitoring of Cascadia for Early Warning and Hazards Research &mdash; April 3–5, 2017, Seattle, WA.</p>
+        <span class="card-link">Workshop overview &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# RESOURCES (archive mirror)
+# ============================================================
+RESOURCES_BODY = page_hero(
+    "Archives", "Resources",
+    "Workshop reports, National Research Council reports, and peer-reviewed papers underpinning the COSZO design.",
+    ['<a href="index.html">Home</a>', '<a href="archives.html">Archives</a>', "Resources"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid">
+      <aside class="article-sidebar">
+        <h4>On This Page</h4>
+        <ul>
+          <li><a href="#workshops">Workshop Reports</a></li>
+          <li><a href="#nrc">Other Reports</a></li>
+          <li><a href="#papers">Relevant Papers</a></li>
+          <li><a href="#posters">Posters</a></li>
+        </ul>
+      </aside>
+      <article class="article-content">
+
+        <h2 id="workshops">Workshop Reports</h2>
+        <ul>
+          <li>
+            <strong>Seafloor Instrumentation Workshop</strong> &mdash; Gleneden Beach, OR, July 12–13, 2018.
+            [<a href="https://ir.library.oregonstate.edu/downloads/6m311v741?locale=en" target="_blank" rel="noopener">Workshop Report</a>]
+            [<a href="https://ctemps.org/announcement/seafloor-instrumentation-workshop-july-12-13-2018" target="_blank" rel="noopener">Workshop Website</a>]
+          </li>
+          <li>
+            <strong>Offshore Geophysical Monitoring of Cascadia for Early Warning and Hazards Research</strong> &mdash; Seattle, WA, April 3–5, 2017.
+            [<a href="http://cascadiaoffshore.org/files/workshop_report-20180710061005.pdf" target="_blank" rel="noopener">Workshop Report</a>]
+            [<a href="workshop.html">Workshop Homepage</a>]
+          </li>
+          <li>
+            <strong>Subduction Zone Observatory Workshop</strong> &mdash; Boise, ID, September 29 – October 1, 2016.
+            [<a href="https://www.iris.edu/hq/files/workshops/2016/09/szo_16/sz4d.pdf" target="_blank" rel="noopener">Workshop Report</a>]
+          </li>
+          <li>
+            <strong>Investigating Cascadia Subduction Zone Geodynamics Through Scientific Ocean Drilling</strong> &mdash; Seattle, WA, April 2015.
+            [<a href="http://usoceandiscovery.org/wp-content/uploads/2016/06/Cascadia-Report.pdf" target="_blank" rel="noopener">Workshop Report</a>]
+          </li>
+          <li>
+            <strong>Seafloor Geodesy in Cascadia</strong> &mdash; Seattle, WA, June 2012.
+            [<a href="http://faculty.washington.edu/wilcock/wordpress/wp-content/uploads/2014/10/SeafloorGeodesyCascadiaReport_ver130203_HighRes.pdf" target="_blank" rel="noopener">Workshop Report</a>]
+          </li>
+        </ul>
+
+        <h2 id="nrc">Other Reports</h2>
+        <ul>
+          <li>
+            National Research Council (2011). <em>Tsunami Warning and Preparedness: An Assessment of the U.S. Tsunami Program and the Nation's Preparedness Efforts.</em> Washington, DC: The National Academies Press. <a href="https://doi.org/10.17226/12628" target="_blank" rel="noopener">doi:10.17226/12628</a>
+            [<a href="https://www.nap.edu/catalog/12628/tsunami-warning-and-preparedness-an-assessment-of-the-us-tsunami" target="_blank" rel="noopener">Report</a>]
+          </li>
+          <li>
+            National Research Council (2011). <em>National Earthquake Resilience: Research, Implementation, and Outreach.</em> Washington, DC: The National Academies Press. <a href="https://doi.org/10.17226/13092" target="_blank" rel="noopener">doi:10.17226/13092</a>
+            [<a href="https://www.nap.edu/catalog/13092/national-earthquake-resilience-research-implementation-and-outreach" target="_blank" rel="noopener">Report</a>]
+          </li>
+          <li>
+            National Research Council (2006). <em>Improved Seismic Monitoring – Improved Decision-Making: Assessing the Value of Reduced Uncertainty.</em> Washington, DC: The National Academies Press. <a href="https://doi.org/10.17226/11327" target="_blank" rel="noopener">doi:10.17226/11327</a>
+            [<a href="https://www.nap.edu/catalog/11327/improved-seismic-monitoring-improved-decision-making-assessing-the-value-of" target="_blank" rel="noopener">Report</a>]
+          </li>
+        </ul>
+
+        <h2 id="papers">Relevant Papers</h2>
+        <ul>
+          <li>
+            Crowell, B. W., D. A. Schmidt, P. Bodin, J. E. Vidale, B. Baker, S. Barrientos, and J. Geng (2018).
+            G-FAST earthquake early warning potential for great earthquakes in Chile.
+            <em>Seismological Research Letters</em>, 89(2A), 542–556.
+            <a href="https://doi.org/10.1785/0220170180" target="_blank" rel="noopener">doi:10.1785/0220170180</a>
+            [<a href="https://pubs.geoscienceworld.org/ssa/srl/article/89/2A/542/527310/g-fast-earthquake-early-warning-potential-for" target="_blank" rel="noopener">Abstract</a>]
+          </li>
+          <li>
+            Gomberg, J. S., et al. (2017).
+            Reducing risk where tectonic plates collide—U.S. Geological Survey subduction zone science plan.
+            <em>U.S. Geological Survey Circular</em> 1428, 45 pp.
+            <a href="https://doi.org/10.3133/cir1428" target="_blank" rel="noopener">doi:10.3133/cir1428</a>
+            [<a href="https://pubs.er.usgs.gov/publication/cir1428" target="_blank" rel="noopener">Link</a>]
+          </li>
+          <li>
+            Hotovec-Ellis, A. J., et al. (2017).
+            Improving the Hawaiian Seismic Network for Earthquake Early Warning.
+            <em>Seismological Research Letters</em>, 88(2A).
+            <a href="https://doi.org/10.1785/0220160187" target="_blank" rel="noopener">doi:10.1785/0220160187</a>
+          </li>
+          <li>
+            Wilcock, W., D. A. Schmidt, J. E. Vidale, M. J. Harrington, P. Bodin, G. S. Cram, J. R. Delaney, F. I. Gonzalez, D. S. Kelley, R. J. LeVeque, D. A. Manalang, C. McGuire, E. C. Roland, M. W. Stoermer, J. W. Tilley, and C. J. Vogl (2016).
+            Designing an offshore geophysical network in the Pacific Northwest for earthquake and tsunami early warning.
+            <em>OCEANS 2016 MTS/IEEE Monterey</em>, 1–8.
+            <a href="https://doi.org/10.1109/OCEANS.2016.7761291" target="_blank" rel="noopener">doi:10.1109/OCEANS.2016.7761291</a>
+            [<a href="https://ieeexplore.ieee.org/document/7761291/" target="_blank" rel="noopener">Abstract</a>]
+          </li>
+          <li>
+            Hartog, J. R., et al. (2016).
+            Earthquake Early Warning: ShakeAlert in the Pacific Northwest.
+            <em>Bulletin of the Seismological Society of America</em>, 106(4).
+            <a href="https://doi.org/10.1785/0120150261" target="_blank" rel="noopener">doi:10.1785/0120150261</a>
+            [<a href="https://pubs.geoscienceworld.org/ssa/bssa/article/106/4/1875/350883/earthquake-early-warning-shakealert-in-the-pacific" target="_blank" rel="noopener">Abstract</a>]
+          </li>
+          <li>
+            Crowell, B. W., et al. (2016).
+            Demonstration of the Cascadia G-FAST Geodetic Earthquake Early Warning System for the Nisqually, Washington, Earthquake.
+            <em>Seismological Research Letters</em>, 87(4).
+            <a href="https://doi.org/10.1785/0220150255" target="_blank" rel="noopener">doi:10.1785/0220150255</a>
+            [<a href="https://pubs.geoscienceworld.org/ssa/srl/article/87/4/930/314131/" target="_blank" rel="noopener">Abstract</a>]
+          </li>
+        </ul>
+
+        <h2 id="posters">Posters</h2>
+        <p style="color:#5b6573;">No posters were attached to this resource list in the legacy archive.</p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# WHITE PAPER (archive mirror)
+# ============================================================
+WHITE_PAPER_BODY = page_hero(
+    "Archives", "White Paper",
+    "Earthquake and Tsunami Early Warning on the Cascadia Subduction Zone: A Feasibility Study for an Offshore Geophysical Monitoring Network (2019).",
+    ['<a href="index.html">Home</a>', '<a href="archives.html">Archives</a>', "White Paper"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <p class="lede-para">In 2019 a University of Washington team produced an 81-page white paper laying out the science case, engineering options, and implementation plan for a permanent offshore geophysical monitoring network on the Cascadia subduction zone. The COSZO project that followed is a direct outgrowth of that study.</p>
+
+        <h2>Citation</h2>
+        <p>
+          Schmidt, D., W. Wilcock, R. LeVeque, F. Gonzales, G. Cram, D. Manalang, M. Harrington, E. Roland, and P. Bodin (2019).
+          <em>Earthquake and Tsunami Early Warning on the Cascadia Subduction Zone: A Feasibility Study for an Offshore Geophysical Monitoring Network.</em>
+          University of Washington, Seattle, 81 pp.
+          [<a href="http://hdl.handle.net/1773/50968" target="_blank" rel="noopener">UW handle</a>]
+        </p>
+
+        <h2>Download</h2>
+        <ul>
+          <li><a href="http://cascadiaoffshore.org/files/whitepaper_lowres-20200505101921.pdf" target="_blank" rel="noopener">White Paper, low-resolution PDF (8 MB)</a></li>
+          <li><a href="http://cascadiaoffshore.org/files/whitepaper_highres-20200505101421.pdf" target="_blank" rel="noopener">White Paper, high-resolution PDF (45 MB)</a></li>
+        </ul>
+
+        <h2>Supplementary Documents</h2>
+        <ul>
+          <li><a href="http://cascadiaoffshore.org/files/tradestudy-20200508044416.pdf" target="_blank" rel="noopener">Engineering Trade Study, PDF (1.5 MB)</a></li>
+          <li><a href="http://cascadiaoffshore.org/files/desktop_survey-20200518121105.pdf" target="_blank" rel="noopener">Desktop Survey, PDF (28 MB)</a></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# WORKSHOP DOCUMENTS (archive mirror)
+# ============================================================
+WORKSHOP_DOCUMENTS_BODY = page_hero(
+    "Archives", "Workshop Documents",
+    "Final report, abstracts, white papers, and reference materials from the 2017 Cascadia offshore monitoring workshop.",
+    ['<a href="index.html">Home</a>', '<a href="archives.html">Archives</a>', "Workshop Documents"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid">
+      <aside class="article-sidebar">
+        <h4>On This Page</h4>
+        <ul>
+          <li><a href="#main">Main Documents</a></li>
+          <li><a href="#reference">Reference Materials</a></li>
+          <li><a href="#templates">Network Design Templates</a></li>
+        </ul>
+      </aside>
+      <article class="article-content">
+
+        <h2 id="main">Main Documents</h2>
+        <ul>
+          <li><strong>Final Workshop Report</strong> &mdash; July 10, 2018. [<a href="http://cascadiaoffshore.org/files/workshop_report-20180710061005.pdf" target="_blank" rel="noopener">PDF, 13 MB</a>]</li>
+          <li><strong>Abstracts</strong> &mdash; April 3, 2017. [<a href="http://cascadia.washington.edu/files/master_abstract-20170403075402.pdf" target="_blank" rel="noopener">PDF, 33 MB</a>]</li>
+          <li><strong>Whitepapers</strong> &mdash; Participant submissions, April 3, 2017. [<a href="http://cascadia.washington.edu/files/master_whitepaper-20170403075446.pdf" target="_blank" rel="noopener">PDF, 13 MB</a>]</li>
+          <li><strong>Workshop Agenda</strong> &mdash; [<a href="http://cascadia.washington.edu/story/Agenda" target="_blank" rel="noopener">Online</a>]</li>
+          <li><strong>Attendee List</strong> &mdash; [<a href="http://cascadia.washington.edu/story/Registrants" target="_blank" rel="noopener">Online</a>]</li>
+        </ul>
+
+        <h2 id="reference">Reference Materials</h2>
+        <ul>
+          <li><strong>Comparison Table of Technologies</strong> &mdash; April 3, 2017. [<a href="http://cascadia.washington.edu/files/technologyalternativescomparisonsheet-20170403081232.pdf" target="_blank" rel="noopener">PDF</a>]</li>
+          <li><strong>BW Basemap of Cascadia Margin</strong> &mdash; April 1, 2017. [<a href="http://cascadia.washington.edu/files/bwbasemap-11x17-20170401013432.pdf" target="_blank" rel="noopener">PDF, 13 MB</a>]</li>
+          <li><strong>UW Campus Map</strong> &mdash; [<a href="http://cascadia.washington.edu/files/uw-campus-map-5-16-20170401021713.pdf" target="_blank" rel="noopener">PDF</a>]</li>
+        </ul>
+
+        <h2 id="templates">Network Design Templates</h2>
+        <ul>
+          <li><a href="http://cascadia.washington.edu/files/ewocconfigurationtemplate-3-31-17-20170401010352.pptx" target="_blank" rel="noopener">PowerPoint Template (11 MB)</a></li>
+          <li><a href="http://cascadia.washington.edu/files/ewocnetworkconfigurationtoolhdformat-20170401010544.key" target="_blank" rel="noopener">Keynote Template (8 MB)</a></li>
+          <li><a href="http://cascadia.washington.edu/files/ewocconfigurationtemplate-20170401010220.doc" target="_blank" rel="noopener">Word Template (21 MB)</a></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# WORKSHOP (archive mirror)
+# ============================================================
+WORKSHOP_BODY = page_hero(
+    "Archives", "Workshop",
+    "Offshore Geophysical Monitoring of Cascadia for Early Warning and Hazards Research &mdash; April 3–5, 2017, Seattle, WA.",
+    ['<a href="index.html">Home</a>', '<a href="archives.html">Archives</a>', "Workshop"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid">
+      <aside class="article-sidebar">
+        <h4>On This Page</h4>
+        <ul>
+          <li><a href="#details">Workshop Details</a></li>
+          <li><a href="#goals">Goals &amp; Agenda</a></li>
+          <li><a href="#participation">Participation &amp; Support</a></li>
+          <li><a href="#docs">Documentation</a></li>
+        </ul>
+      </aside>
+      <article class="article-content">
+        <p class="lede-para">A 3-day community workshop in April 2017 that scoped the scientific motivation, geophysical requirements, and engineering options for an offshore geophysical monitoring network on the Cascadia subduction zone. The workshop laid the groundwork for the 2019 white paper and the COSZO project that followed.</p>
+
+        <h2 id="details">Workshop Details</h2>
+        <ul>
+          <li><strong>Title:</strong> Offshore Geophysical Monitoring of Cascadia for Early Warning and Hazards Research</li>
+          <li><strong>Dates:</strong> Monday, April 3 – Wednesday, April 5, 2017</li>
+          <li><strong>Location:</strong> NorthWest Horticultural Society Hall, Center for Urban Horticulture, University of Washington, Seattle</li>
+          <li><strong>Organizers:</strong> David Schmidt and William Wilcock <a href="mailto:ewoc@uw.edu">(ewoc@uw.edu)</a></li>
+          <li><strong>Funding:</strong> Gordon and Betty Moore Foundation</li>
+        </ul>
+
+        <h2 id="goals">Goals &amp; Agenda</h2>
+        <p>The meeting addressed scientific and societal motivation for an offshore geophysical network, evaluated geophysical requirements, examined alternative engineering approaches, and explored stakeholder engagement strategies. Plenary talks covered:</p>
+        <ul>
+          <li>Scientific motivation for offshore observations</li>
+          <li>Lessons from existing seafloor systems</li>
+          <li>Early warning logistical requirements</li>
+          <li>Engineering considerations for power and telemetry</li>
+          <li>Existing and emerging seafloor technologies</li>
+          <li>Design option tradeoffs</li>
+        </ul>
+        <p>Small-group breakouts and synthesis sessions ran into the afternoon of each day.</p>
+
+        <h2 id="participation">Participation &amp; Support</h2>
+        <ul>
+          <li>Capacity: up to 120 participants</li>
+          <li>No registration fee; select meals provided</li>
+          <li>Limited travel and lodging support, with preference to early-career scientists and invited speakers</li>
+          <li>Abstracts and white papers (one page, single-spaced) were due March 26, 2017</li>
+        </ul>
+
+        <h2 id="docs">Documentation</h2>
+        <p>The full set of meeting outputs is mirrored on the <a href="workshop-documents.html">Workshop Documents</a> page, including the final report, abstracts volume, participant whitepapers, agenda, attendee list, technology comparison table, basemaps, and network-design templates.</p>
+
+        <p style="margin-top:1.5rem; color:#5b6573; font-size:0.9rem;">Contact: <a href="mailto:ewoc@uw.edu">ewoc@uw.edu</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
 # DATA PRODUCTS (hub)
 # ============================================================
 
@@ -1534,6 +1819,11 @@ PAGES = [
     ("early-warning.html",                      "Early Warning · COSZO",                                   "ew",            EW_BODY),
     ("feasibility-study.html",                  "2019 Feasibility Study · COSZO",                          "ew",            FEAS_BODY),
     ("contact.html",                            "Contact · COSZO",                                         "",              CONTACT_BODY),
+    ("archives.html",                           "Archives · COSZO",                                        "",              ARCHIVES_BODY),
+    ("resources.html",                          "Resources · COSZO",                                       "",              RESOURCES_BODY),
+    ("white-paper.html",                        "White Paper · COSZO",                                     "",              WHITE_PAPER_BODY),
+    ("workshop-documents.html",                 "Workshop Documents · COSZO",                              "",              WORKSHOP_DOCUMENTS_BODY),
+    ("workshop.html",                           "Workshop · COSZO",                                        "",              WORKSHOP_BODY),
 ]
 
 def main():
