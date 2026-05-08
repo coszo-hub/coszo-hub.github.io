@@ -18,11 +18,17 @@ OUT_DIR = os.path.dirname(os.path.abspath(__file__))
 # (200,200) and radius 170. Generated offline from Natural Earth 110m via
 # d3-geo + topojson-client. See assets-cascadia-globe-coastlines.path.
 _COASTLINE_FILE = os.path.join(OUT_DIR, "assets-cascadia-globe-coastlines.path")
-try:
-    with open(_COASTLINE_FILE, "r", encoding="utf-8") as _f:
-        GLOBE_COASTLINES = _f.read().strip()
-except FileNotFoundError:
-    GLOBE_COASTLINES = ""
+_GRATICULE_FILE = os.path.join(OUT_DIR, "assets-cascadia-globe-graticule.path")
+
+def _read_path(p):
+    try:
+        with open(p, "r", encoding="utf-8") as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        return ""
+
+GLOBE_COASTLINES = _read_path(_COASTLINE_FILE)
+GLOBE_GRATICULE = _read_path(_GRATICULE_FILE)
 
 # ============================================================
 # HEADER (utility bar + logo + nav with hover dropdowns)
@@ -357,18 +363,18 @@ INDEX_BODY = """
           </defs>
           <circle cx="200" cy="200" r="170" fill="url(#gg)"/>
           <g clip-path="url(#globeClip)">
+            <!-- 15-degree graticule, pre-projected orthographic to match
+                 the coastlines (rotation [125,-45,0]). -->
+            <path d="__GLOBE_GRATICULE__"
+                  fill="none"
+                  stroke="#17a2ab" stroke-opacity="0.3" stroke-width="0.6"
+                  vector-effect="non-scaling-stroke"/>
             <path d="__GLOBE_COASTLINES__"
                   fill="#cfe6ec" fill-opacity="0.08"
                   stroke="#cfe6ec" stroke-opacity="0.55" stroke-width="0.6"
                   stroke-linejoin="round" stroke-linecap="round"
                   vector-effect="non-scaling-stroke"/>
           </g>
-          <ellipse cx="200" cy="200" rx="170" ry="42" fill="none" stroke="#17a2ab" opacity="0.3"/>
-          <ellipse cx="200" cy="200" rx="170" ry="85" fill="none" stroke="#17a2ab" opacity="0.3"/>
-          <ellipse cx="200" cy="200" rx="170" ry="128" fill="none" stroke="#17a2ab" opacity="0.3"/>
-          <ellipse cx="200" cy="200" rx="42" ry="170" fill="none" stroke="#17a2ab" opacity="0.3"/>
-          <ellipse cx="200" cy="200" rx="85" ry="170" fill="none" stroke="#17a2ab" opacity="0.3"/>
-          <ellipse cx="200" cy="200" rx="128" ry="170" fill="none" stroke="#17a2ab" opacity="0.3"/>
           <!-- COSZO marker: slightly offshore Oregon (lon ~-126.5, lat ~44.6),
                which lands very near the projection center at ~(197, 202). -->
           <circle cx="197" cy="202" r="14" fill="none" stroke="#f5a623" stroke-width="2"/>
@@ -383,8 +389,9 @@ INDEX_BODY = """
 </section>
 """
 
-# Inject the pre-projected coastline path into the Get Involved globe.
+# Inject the pre-projected coastline + graticule paths into the Get Involved globe.
 INDEX_BODY = INDEX_BODY.replace("__GLOBE_COASTLINES__", GLOBE_COASTLINES)
+INDEX_BODY = INDEX_BODY.replace("__GLOBE_GRATICULE__", GLOBE_GRATICULE)
 
 # ============================================================
 # MOTIVATION
