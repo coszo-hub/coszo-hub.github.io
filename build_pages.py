@@ -1375,23 +1375,6 @@ ASP_BODY = page_hero(
           </tbody>
         </table>
 
-        <p>Deployment history per station, with the channels active during each deployment and their nominal sample rate:</p>
-        <table class="specs-table">
-          <thead>
-            <tr><th>Station</th><th>Dep</th><th>Start</th><th>End</th><th>Channels</th><th>Sample rate</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>OO.HYSB1</code></td><td>1</td><td>2014-09-13</td><td>2018-06-26</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
-            <tr><td><code>OO.HYSB1</code></td><td>2</td><td>2018-06-26</td><td>ongoing</td><td><code>LDO_10</code>, <code>LK1_10</code></td><td>1 s (1 Hz)</td></tr>
-            <tr><td><code>OO.HYS14</code></td><td>1</td><td>2014-09-07</td><td>2017-08-11</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
-            <tr><td><code>OO.HYS14</code></td><td>2</td><td>2017-08-11</td><td>ongoing</td><td><code>LDO_10</code>, <code>LK1_10</code></td><td>1 s (1 Hz)</td></tr>
-            <tr><td><code>OO.AXBA1</code></td><td>1</td><td>2014-08-08</td><td>2016-07-12</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
-            <tr><td><code>OO.AXBA1</code></td><td>2</td><td>2016-07-13</td><td>2020-08-05</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
-            <tr><td><code>OO.AXBA1</code></td><td>3</td><td>2020-08-06</td><td>2022-08-29</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
-            <tr><td><code>OO.AXBA1</code></td><td>4</td><td>2022-08-30</td><td>ongoing</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
-          </tbody>
-        </table>
-
         <h2 id="specs">Specifications</h2>
         <table class="specs-table">
           <tbody>
@@ -1406,7 +1389,8 @@ ASP_BODY = page_hero(
         </table>
 
         <h2 id="access">Data Access</h2>
-        <p>All ASP data are freely available through the OOI data portal. Time-series are accessible via M2M requests, direct download, or the THREDDS data server. For specific sample notebooks and loader code, see the COSZO <a href="https://github.com/">GitHub organization</a>.</p>
+        <p>Data access for these instruments is available through <a href="https://www.earthscope.org/" target="_blank" rel="noopener">EarthScope</a>.</p>
+        <p>More station information, data quality status, and deployments are available through the GitHub webpage: <a href="https://github.com/coszo-hub/absolute-seafloor-pressure" target="_blank" rel="noopener">github.com/coszo-hub/absolute-seafloor-pressure</a>.</p>
 
         <blockquote>Raw pressure data are released within 24 hours of acquisition. Detided and drift-corrected products are typically available within 7 days.</blockquote>
 
