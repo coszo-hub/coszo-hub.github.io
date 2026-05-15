@@ -145,15 +145,32 @@
         <p>Each ASP sensor records absolute pressure at a sampling rate of 1 Hz with nominal resolution better than 1 mm of water equivalent. Raw records are distributed alongside detided and drift-corrected products. See <a href="data.html">SCPR Calibrated Pressure</a> for the self-calibrating variant of this stream.</p>
 
         <h2 id="stations">Stations</h2>
-        <p>PREST instruments on the OOI Regional Cabled Array contribute tidal seafloor pressure to the ASP product family.</p>
+        <p>PREST instruments on the OOI Regional Cabled Array contribute tidal seafloor pressure to the ASP product family. <code>DO</code> channels carry absolute pressure; paired <code>K1</code> channels carry the sensor's internal pressure-temperature reading. <code>_10</code> is the SEED location code.</p>
         <table class="specs-table">
           <thead>
-            <tr><th>Reference</th><th>Site</th><th>OO Net.Sta</th><th>Sample period</th></tr>
+            <tr><th>Reference</th><th>Site</th><th>OO Net.Sta</th><th>Channels</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>RS01SLBS-MJ01A-06-PRESTA101</code></td><td>Slope Base, Hydrate Ridge</td><td><code>OO.HYSB1</code></td><td>1 s (Dep 2), 15 s (Dep 1)</td></tr>
-            <tr><td><code>RS01SUM1-LJ01B-09-PRESTB102</code></td><td>Southern Hydrate Summit 1</td><td><code>OO.HYS14</code></td><td>1 s (Dep 2), 15 s (Dep 1)</td></tr>
-            <tr><td><code>RS03AXBS-MJ03A-06-PRESTA301</code></td><td>Axial Base</td><td><code>OO.AXBA1</code></td><td>15 s (all 4 deployments)</td></tr>
+            <tr><td><code>RS01SLBS-MJ01A-06-PRESTA101</code></td><td>Slope Base, Hydrate Ridge</td><td><code>OO.HYSB1</code></td><td><code>UDO_10</code>, <code>UK1_10</code>, <code>LDO_10</code>, <code>LK1_10</code></td></tr>
+            <tr><td><code>RS01SUM1-LJ01B-09-PRESTB102</code></td><td>Southern Hydrate Summit 1</td><td><code>OO.HYS14</code></td><td><code>UDO_10</code>, <code>UK1_10</code>, <code>LDO_10</code>, <code>LK1_10</code></td></tr>
+            <tr><td><code>RS03AXBS-MJ03A-06-PRESTA301</code></td><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>UDO_10</code>, <code>UK1_10</code></td></tr>
+          </tbody>
+        </table>
+
+        <p>Deployment history per station, with the channels active during each deployment and their nominal sample rate:</p>
+        <table class="specs-table">
+          <thead>
+            <tr><th>Station</th><th>Dep</th><th>Start</th><th>End</th><th>Channels</th><th>Sample rate</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>OO.HYSB1</code></td><td>1</td><td>2014-09-13</td><td>2018-06-26</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
+            <tr><td><code>OO.HYSB1</code></td><td>2</td><td>2018-06-26</td><td>ongoing</td><td><code>LDO_10</code>, <code>LK1_10</code></td><td>1 s (1 Hz)</td></tr>
+            <tr><td><code>OO.HYS14</code></td><td>1</td><td>2014-09-07</td><td>2017-08-11</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
+            <tr><td><code>OO.HYS14</code></td><td>2</td><td>2017-08-11</td><td>ongoing</td><td><code>LDO_10</code>, <code>LK1_10</code></td><td>1 s (1 Hz)</td></tr>
+            <tr><td><code>OO.AXBA1</code></td><td>1</td><td>2014-08-08</td><td>2016-07-12</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
+            <tr><td><code>OO.AXBA1</code></td><td>2</td><td>2016-07-13</td><td>2020-08-05</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
+            <tr><td><code>OO.AXBA1</code></td><td>3</td><td>2020-08-06</td><td>2022-08-29</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
+            <tr><td><code>OO.AXBA1</code></td><td>4</td><td>2022-08-30</td><td>ongoing</td><td><code>UDO_10</code>, <code>UK1_10</code></td><td>15 s (0.0667 Hz)</td></tr>
           </tbody>
         </table>
 
