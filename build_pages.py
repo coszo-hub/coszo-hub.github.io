@@ -503,24 +503,6 @@ INFRASTRUCTURE_BODY = page_hero(
     </div>
   </div>
 </section>
-
-<section class="cruise-log">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-header-intro">
-        <div class="section-eyebrow">Recent Operations</div>
-        <h2 class="section-heading">Cruises and deployments.</h2>
-      </div>
-    </div>
-    <div class="cruise-timeline">
-      <div class="cruise-item">
-        <div class="cruise-date"><span class="year">2026</span>Summer &middot; RR2614</div>
-        <div class="cruise-info"><div class="cruise-label">Upcoming &middot; Installation</div><h3>First COSZO Instrument Installation Cruise</h3><p>R/V Roger Revelle &middot; Newport, OR to Cascadia Margin</p></div>
-        <div class="cruise-status upcoming">Upcoming</div>
-      </div>
-    </div>
-  </div>
-</section>
 """
 
 # ============================================================
@@ -2061,12 +2043,31 @@ CRUISES_BODY = page_hero(
     "Field operations for COSZO: the daily plan, dispatches from sea, the cruise diary, and live video from the ship.",
     ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', "Cruises"]
 ) + f"""
+<section class="cruise-log" id="operations">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-intro">
+        <div class="section-eyebrow">Recent Operations</div>
+        <h2 class="section-heading">Cruises and deployments.</h2>
+      </div>
+    </div>
+    <div class="cruise-timeline">
+      <div class="cruise-item">
+        <div class="cruise-date"><span class="year">2026</span>Summer &middot; RR2614</div>
+        <div class="cruise-info"><div class="cruise-label">Upcoming &middot; Installation</div><h3>First COSZO Instrument Installation Cruise</h3><p>R/V Roger Revelle &middot; Newport, OR to Cascadia Margin</p></div>
+        <div class="cruise-status upcoming">Upcoming</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article">
   <div class="container">
     <div class="article-grid">
       <aside class="article-sidebar">
         <h4>On This Page</h4>
         <ul>
+          <li><a href="#operations">Recent Operations</a></li>
           <li><a href="#plan" class="active">Plan for the Day</a></li>
           <li><a href="#blog">Blog from Sea</a></li>
           <li><a href="#diary">Cruise Diary</a></li>
