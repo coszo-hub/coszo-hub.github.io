@@ -92,17 +92,14 @@ def build_header(active=""):
       <div class="nav-item has-dropdown">
         <a href="data.html"{cls("data")}>Data</a>
         <div class="dropdown wide">
-          <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a>
-          <a href="data.html">Differential Seafloor Pressure</a>
-          <a href="data.html">GSSM Calibrated Pressure &amp; Ground Acceleration</a>
-          <a href="data.html">SCPR Calibrated Pressure</a>
+          <a href="data.html">Broadband Seismometer &amp; Strong Motion</a>
+          <a href="data.html">Short-Period Seismometer</a>
+          <a href="data.html">Differential Pressure Gauge</a>
           <a href="data.html">Hydrophone</a>
-          <hr />
-          <a href="data.html">Strong-Motion Ground Acceleration</a>
-          <a href="data.html">Broadband Ground Velocity</a>
-          <a href="data.html">Short-Period Ground Velocity</a>
-          <hr />
-          <a href="data.html">Sea Water Velocity</a>
+          <a href="absolute-seafloor-pressure.html">Absolute Pressure Gauge</a>
+          <a href="data.html">GSSM &mdash; Calibrated Pressure &amp; Acceleration</a>
+          <a href="data.html">CSCPR &mdash; Calibrated Pressure</a>
+          <a href="data.html">Current Meter</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
@@ -1303,15 +1300,14 @@ WORKSHOP_BODY = page_hero(
 # ============================================================
 
 DATA_PRODUCT_CARDS = [
-    ("absolute-seafloor-pressure.html", "Absolute Seafloor Pressure", "Total pressure at the seafloor for tsunami detection and seafloor deformation monitoring.", "Pressure &middot; High-precision"),
-    ("data.html", "Differential Seafloor Pressure", "Short-period pressure variations capturing tsunami signals and hydroacoustic waves.", "Pressure &middot; Broadband"),
-    ("data.html", "GSSM Calibrated Pressure &amp; Ground Acceleration", "Combined pressure and strong-motion records from geodetic seafloor stations.", "Composite &middot; Calibrated"),
-    ("data.html", "SCPR Calibrated Pressure", "Self-calibrating pressure recorder data corrected for instrument drift.", "Pressure &middot; Drift-corrected"),
-    ("data.html", "Hydrophone", "Hydrophone data in the infrasound band for T-phase and cetacean monitoring.", "Acoustic &middot; Infrasound"),
-    ("data.html", "Strong-Motion Ground Acceleration", "High-dynamic-range accelerometer data for near-source ground motion during large events.", "Motion &middot; Strong-motion"),
-    ("data.html", "Broadband Ground Velocity", "Wideband seismometer velocity records for global to regional earthquake characterization.", "Motion &middot; Broadband"),
-    ("data.html", "Short-Period Ground Velocity", "High-frequency seismometer data for local microseismicity and P-wave detection.", "Motion &middot; Short-period"),
-    ("data.html", "Sea Water Velocity", "Current meter and ADCP measurements of water velocity through the water column.", "Water &middot; ADCP"),
+    ("data.html", "Broadband Seismometer &amp; Strong Motion", "Three-component broadband ground velocity together with high-dynamic-range strong-motion acceleration.", "Motion &middot; Seismometer"),
+    ("data.html", "Short-Period Seismometer", "High-frequency seismometer data for local microseismicity and P-wave detection.", "Motion &middot; Short-period"),
+    ("data.html", "Differential Pressure Gauge", "Short-period seafloor pressure variations capturing tsunami signals and hydroacoustic waves.", "Pressure &middot; Differential"),
+    ("data.html", "Hydrophone", "Hydrophone data in the infrasound band for T-phase and hydroacoustic monitoring.", "Acoustic &middot; Hydrophone"),
+    ("absolute-seafloor-pressure.html", "Absolute Pressure Gauge", "Total pressure at the seafloor for tsunami detection and seafloor deformation monitoring.", "Pressure &middot; Absolute"),
+    ("data.html", "GSSM &mdash; Calibrated Pressure &amp; Acceleration", "Combined calibrated pressure and strong-motion records from geodetic seafloor stations.", "Composite &middot; Calibrated"),
+    ("data.html", "CSCPR &mdash; Calibrated Pressure", "Cabled self-calibrating pressure recorder data corrected for instrument drift.", "Pressure &middot; Drift-corrected"),
+    ("data.html", "Current Meter", "Current meter and ADCP measurements of sea-water velocity through the water column.", "Water &middot; Current meter"),
 ]
 
 def render_product_cards():
@@ -1328,7 +1324,7 @@ def render_product_cards():
 
 DATAPRODUCTS_BODY = page_hero(
     "Data", "Data",
-    "Nine continuous data streams from the COSZO and RCA sensor suite, covering pressure, ground motion, acoustic, and water velocity measurements. All data are openly available.",
+    "Eight continuous data streams from the COSZO and RCA sensor suite, covering ground motion, pressure, acoustic, and water-velocity measurements. All data are openly available.",
     ['<a href="index.html">Home</a>', "Data"]
 ) + f"""
 <section class="data-products">
