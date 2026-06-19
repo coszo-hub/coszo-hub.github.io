@@ -448,6 +448,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   box-shadow: var(--shadow-lg);
 }
 .welcome-media svg { width: 100%; height: 100%; }
+.welcome-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* Welcome figure: full-width image with caption rendered below the
    side-by-side welcome-grid (text left, small SVG right). */

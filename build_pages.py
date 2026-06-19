@@ -293,29 +293,7 @@ INDEX_BODY = """
         </div>
       </div>
       <div class="welcome-media">
-        <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e7cab"/><stop offset="0.5" stop-color="#0a2f4e"/><stop offset="1" stop-color="#04182a"/></linearGradient>
-          </defs>
-          <rect width="600" height="450" fill="url(#g1)"/>
-          <path d="M200 0 L230 200 L170 200 Z" fill="#fff" opacity="0.05"/>
-          <path d="M380 0 L410 240 L350 240 Z" fill="#fff" opacity="0.04"/>
-          <path d="M40 280 L560 380 L600 450 L0 450 Z" fill="#041628"/>
-          <path d="M240 290 L380 330" stroke="#f5a623" stroke-width="1.5" opacity="0.5" stroke-dasharray="3,3"/>
-          <circle cx="300" cy="285" r="4" fill="#f5a623"/>
-          <circle cx="300" cy="285" r="10" fill="none" stroke="#f5a623" opacity="0.6"/>
-          <circle cx="280" cy="295" r="3" fill="#f5a623"/>
-          <circle cx="320" cy="292" r="3" fill="#f5a623"/>
-          <line x1="140" y1="290" x2="420" y2="340" stroke="#17a2ab" stroke-width="1.5" opacity="0.8" stroke-dasharray="4,2"/>
-          <circle cx="170" cy="296" r="6" fill="#17a2ab"/>
-          <circle cx="220" cy="305" r="6" fill="#17a2ab"/>
-          <circle cx="280" cy="318" r="6" fill="#fff"/>
-          <circle cx="340" cy="328" r="6" fill="#17a2ab"/>
-          <circle cx="400" cy="338" r="6" fill="#fff"/>
-          <circle cx="420" cy="120" r="12" fill="#f5a623"/>
-          <circle cx="420" cy="120" r="5" fill="#fbfaf7"/>
-          <line x1="420" y1="132" x2="420" y2="338" stroke="#fff" stroke-width="1" opacity="0.3"/>
-        </svg>
+        <img src="cascadia_zoomed.png" alt="Zoomed map of the Cascadia subduction zone off the Oregon coast." />
       </div>
     </div>
     <figure class="welcome-figure welcome-figure-wide">
