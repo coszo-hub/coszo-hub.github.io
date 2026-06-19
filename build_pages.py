@@ -253,7 +253,7 @@ INDEX_BODY = """
       </a>
       <a href="data.html" class="tile">
         <svg class="tile-icon" viewBox="0 0 80 80" fill="none"><rect x="10" y="16" width="60" height="48" rx="2" stroke="currentColor" stroke-width="2.5"/><path d="M10 28 H70" stroke="currentColor" stroke-width="2.5"/><circle cx="18" cy="22" r="1.5" fill="currentColor"/><circle cx="24" cy="22" r="1.5" fill="currentColor"/><path d="M18 40 L28 50 L38 36 L50 54 L62 42" stroke="#17a2ab" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <h3 class="tile-title">Data Products</h3>
+        <h3 class="tile-title">Data</h3>
         <p class="tile-subtitle">Pressure, motion, water velocity</p>
       </a>
       <a href="outreach.html" class="tile">
