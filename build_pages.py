@@ -9,6 +9,7 @@ footer, and shared stylesheet (styles.css).
 Run: python3 build_pages.py
 """
 
+import csv
 import os
 
 OUT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -1386,84 +1387,109 @@ ASP_BODY = page_hero(
 # ============================================================
 # PEOPLE (hub)
 # ============================================================
-PEOPLE_BODY = page_hero(
-    "People", "People",
-    "The scientists, engineers, students, and collaborators working together to build the Cascadia Offshore Subduction Zone Observatory.",
-    ['<a href="index.html">Home</a>', "People"]
-) + """
-<section class="people-feature">
-  <div class="container">
-    <div class="people-section">
-      <h3 class="people-section-title">Leadership &amp; Principal Investigators</h3>
-      <div class="people-grid">"""
-
-# Generate person cards programmatically to keep the script readable
-_PEOPLE = [
-    ("Lead PI", "Principal Investigator", "UW &middot; School of Oceanography", "#1e7cab"),
-    ("Co-PI &middot; Seismology", "Co-Principal Investigator", "UW &middot; Earth &amp; Space Sciences", "#06223a"),
-    ("Co-PI &middot; Engineering", "Co-Principal Investigator", "UW &middot; Applied Physics Lab", "#f5a623"),
-    ("Co-PI &middot; Geodesy", "Co-Principal Investigator", "Scripps &middot; SIO", "#17a2ab"),
+# People are data-driven from data/people.csv, which a GitHub Action keeps in
+# sync with a published Google Sheet (see .github/workflows/sync-people.yml).
+# CSV columns: name, role, group, affiliation, photo, link, order
+#   group  -> selects the section (see PEOPLE_GROUPS; matched case-insensitively)
+#   photo  -> a filename in assets/people/ OR a full http(s) URL; blank = avatar
+#   link   -> optional profile URL; blank = non-clickable card
+#   order  -> optional integer sort within a section
+PEOPLE_GROUPS = [
+    ("leadership",    "Leadership &amp; Principal Investigators"),
+    ("research",      "Research Team"),
+    ("students",      "Postdoctoral Scholars &amp; Graduate Students"),
+    ("collaborators", "Collaborators &amp; Advisory Board"),
 ]
-for role, name, aff, color in _PEOPLE:
-    PEOPLE_BODY += f"""
-        <a href="#" class="person-card">
-          <div class="person-portrait"><svg viewBox="0 0 300 300"><rect width="300" height="300" fill="#0a2f4e"/><circle cx="150" cy="110" r="50" fill="{color}"/><path d="M60 300 Q 80 200, 150 200 Q 220 200, 240 300 Z" fill="{color}"/></svg></div>
-          <div class="person-name">{name}</div>
-          <div class="person-role">{role}</div>
-          <div class="person-affiliation">{aff}</div>
-        </a>"""
+_GROUP_ALIASES = {
+    "leadership": "leadership", "lead": "leadership", "pi": "leadership",
+    "principal investigator": "leadership", "principal investigators": "leadership",
+    "research": "research", "research team": "research", "team": "research",
+    "scientist": "research", "engineer": "research", "staff": "research",
+    "students": "students", "student": "students", "postdoc": "students",
+    "postdoctoral": "students", "postdoctoral scholar": "students",
+    "graduate": "students", "grad": "students", "graduate student": "students",
+    "collaborators": "collaborators", "collaborator": "collaborators",
+    "advisory": "collaborators", "advisory board": "collaborators", "external": "collaborators",
+}
+_AVATAR_COLORS = ["#1e7cab", "#06223a", "#f5a623", "#17a2ab", "#155e8a", "#3cbfc5"]
 
-PEOPLE_BODY += """
-      </div>
-    </div>
-    <div class="people-section">
-      <h3 class="people-section-title">Research Team</h3>
-      <div class="people-grid">"""
-for i in range(4):
-    PEOPLE_BODY += f"""
-        <a href="#" class="person-card">
-          <div class="person-portrait"><svg viewBox="0 0 300 300"><rect width="300" height="300" fill="#155e8a"/><circle cx="150" cy="110" r="50" fill="#06223a"/><path d="M60 300 Q 80 200, 150 200 Q 220 200, 240 300 Z" fill="#06223a"/></svg></div>
-          <div class="person-name">Research Scientist {i+1}</div>
-          <div class="person-role">Scientist</div>
-          <div class="person-affiliation">UW &middot; School of Oceanography</div>
-        </a>"""
 
-PEOPLE_BODY += """
-      </div>
-    </div>
-    <div class="people-section">
-      <h3 class="people-section-title">Postdoctoral Scholars &amp; Graduate Students</h3>
-      <div class="people-grid">"""
-for i in range(4):
-    PEOPLE_BODY += f"""
-        <a href="#" class="person-card">
-          <div class="person-portrait"><svg viewBox="0 0 300 300"><rect width="300" height="300" fill="#0f3e66"/><circle cx="150" cy="110" r="50" fill="#17a2ab"/><path d="M60 300 Q 80 200, 150 200 Q 220 200, 240 300 Z" fill="#17a2ab"/></svg></div>
-          <div class="person-name">Researcher Name</div>
-          <div class="person-role">{"Postdoctoral Scholar" if i < 2 else "Graduate Student"}</div>
-          <div class="person-affiliation">UW &middot; School of Oceanography</div>
-        </a>"""
+def _people_order(row):
+    try:
+        return int(str(row.get("order", "")).strip())
+    except (TypeError, ValueError):
+        return 1_000_000
 
-PEOPLE_BODY += """
-      </div>
-    </div>
-    <div class="people-section">
-      <h3 class="people-section-title">Collaborators &amp; Advisory Board</h3>
-      <div class="people-grid">"""
-for i in range(4):
-    PEOPLE_BODY += f"""
-        <a href="#" class="person-card">
-          <div class="person-portrait"><svg viewBox="0 0 300 300"><rect width="300" height="300" fill="#06223a"/><circle cx="150" cy="110" r="50" fill="#3cbfc5"/><path d="M60 300 Q 80 200, 150 200 Q 220 200, 240 300 Z" fill="#3cbfc5"/></svg></div>
-          <div class="person-name">Collaborator Name</div>
-          <div class="person-role">{"Advisory Board" if i < 2 else "External Collaborator"}</div>
-          <div class="person-affiliation">Partner Institution</div>
-        </a>"""
 
-PEOPLE_BODY += """
-      </div>
-    </div>
-  </div>
-</section>
-"""
+def load_people(csv_path):
+    """Read people.csv into {group_key: [rows]}, preserving file order then `order`."""
+    groups = {key: [] for key, _ in PEOPLE_GROUPS}
+    try:
+        with open(csv_path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                if not (row.get("name") or "").strip():
+                    continue
+                g = (row.get("group") or "").strip().lower()
+                groups[_GROUP_ALIASES.get(g, "research")].append(row)
+    except FileNotFoundError:
+        pass
+    for key in groups:
+        groups[key].sort(key=_people_order)
+    return groups
+
+
+def _person_portrait(photo, name, idx):
+    if photo:
+        src = photo if photo.startswith("http") else f"assets/people/{photo}"
+        return f'<div class="person-portrait"><img src="{src}" alt="{name}" loading="lazy"></div>'
+    color = _AVATAR_COLORS[idx % len(_AVATAR_COLORS)]
+    return (f'<div class="person-portrait"><svg viewBox="0 0 300 300">'
+            f'<rect width="300" height="300" fill="#0a2f4e"/>'
+            f'<circle cx="150" cy="110" r="50" fill="{color}"/>'
+            f'<path d="M60 300 Q 80 200, 150 200 Q 220 200, 240 300 Z" fill="{color}"/></svg></div>')
+
+
+def render_people():
+    groups = load_people(os.path.join(OUT_DIR, "data", "people.csv"))
+    if sum(len(v) for v in groups.values()) == 0:
+        return ('<section class="people-feature">\n  <div class="container">\n'
+                '    <p class="lede-para">Our team listing is coming soon.</p>\n'
+                '  </div>\n</section>\n')
+    idx = 0
+    html = '<section class="people-feature">\n  <div class="container">'
+    for key, title in PEOPLE_GROUPS:
+        rows = groups.get(key, [])
+        if not rows:
+            continue
+        html += (f'\n    <div class="people-section">'
+                 f'\n      <h3 class="people-section-title">{title}</h3>'
+                 f'\n      <div class="people-grid">')
+        for row in rows:
+            name = (row.get("name") or "").strip()
+            role = (row.get("role") or "").strip()
+            aff = (row.get("affiliation") or "").strip()
+            link = (row.get("link") or "").strip()
+            photo = (row.get("photo") or "").strip()
+            open_tag = (f'<a href="{link}" class="person-card" target="_blank" rel="noopener">'
+                        if link else '<div class="person-card">')
+            close_tag = "</a>" if link else "</div>"
+            html += (f'\n        {open_tag}'
+                     f'\n          {_person_portrait(photo, name, idx)}'
+                     f'\n          <div class="person-name">{name}</div>'
+                     f'\n          <div class="person-role">{role}</div>'
+                     f'\n          <div class="person-affiliation">{aff}</div>'
+                     f'\n        {close_tag}')
+            idx += 1
+        html += '\n      </div>\n    </div>'
+    html += '\n  </div>\n</section>\n'
+    return html
+
+
+PEOPLE_BODY = page_hero(
+    "About", "People",
+    "The scientists, engineers, students, and collaborators working together to build the Cascadia Offshore Subduction Zone Observatory.",
+    ['<a href="index.html">Home</a>', '<a href="science.html">About</a>', "People"]
+) + render_people()
 
 # ============================================================
 # OUTREACH (hub)

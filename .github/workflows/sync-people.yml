@@ -1,0 +1,55 @@
+name: Sync People from Google Sheet
+
+# Refreshes data/people.csv from the published Google Sheet, rebuilds the site,
+# and commits the result if anything changed. Set the repo variable
+# PEOPLE_SHEET_CSV_URL (Settings -> Secrets and variables -> Actions -> Variables)
+# to the Sheet's "Publish to web" CSV link.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 13 * * *"   # daily at 13:00 UTC
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-people
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch People sheet into data/people.csv
+        env:
+          SHEET_URL: ${{ vars.PEOPLE_SHEET_CSV_URL }}
+        run: |
+          if [ -z "$SHEET_URL" ]; then
+            echo "PEOPLE_SHEET_CSV_URL is not set; leaving data/people.csv unchanged."
+            exit 0
+          fi
+          mkdir -p data
+          curl -fsSL "$SHEET_URL" -o data/people.csv
+          echo "Fetched $(wc -l < data/people.csv) lines into data/people.csv."
+
+      - name: Rebuild site
+        run: python3 build_pages.py
+
+      - name: Commit changes if any
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Sync People page from Google Sheet"
+            git push
+          else
+            echo "No changes to commit."
+          fi

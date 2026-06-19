@@ -1,0 +1,3 @@
+# Profile photos referenced by data/people.csv (the `photo` column) live here.
+# Use a filename like alex-lee.jpg in the sheet's photo column, or paste a full
+# https:// URL to use a remote image instead.
