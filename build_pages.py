@@ -61,10 +61,10 @@ def build_header(active=""):
     </a>
     <nav class="main-nav" aria-label="Primary">
       <div class="nav-item has-dropdown">
-        <span{cls("about")} role="button" tabindex="0" aria-haspopup="true">About</span>
+        <a href="about.html"{cls("about")}>About</a>
         <div class="dropdown">
-          <a href="science.html#motivation">Motivation</a>
-          <a href="science.html#objectives">Objectives</a>
+          <a href="motivation.html">Motivation</a>
+          <a href="scientific-objectives.html">Objectives</a>
           <a href="publications.html">Publications</a>
           <a href="people.html">People</a>
           <a href="contact.html">Contact</a>
@@ -641,6 +641,52 @@ FUTURE_BODY = page_hero(
         <p>If your experiment or network produces data that would benefit COSZO science, we can work with you to cross-register, archive, and distribute it alongside our own streams through the OOI cyberinfrastructure.</p>
         <a href="contact.html" class="card-link">Start a conversation</a>
       </div>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# ABOUT (hub with square cards -> Motivation / Objectives / Publications / People / Contact)
+# ============================================================
+ABOUT_BODY = page_hero(
+    "About", "About",
+    "The motivation, science objectives, publications, people, and contacts behind the Cascadia Offshore Subduction Zone Observatory.",
+    ['<a href="index.html">Home</a>', "About"]
+) + """
+<section class="hub-section">
+  <div class="container">
+    <div class="hub-cards">
+      <a href="motivation.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="20" r="10" stroke="currentColor" stroke-width="2"/><path d="M20 31 H28 M21 35 H27" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/><path d="M24 6 V9 M39 20 H42 M6 20 H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Motivation</h3>
+        <p>Why a dedicated geophysical observatory for the Cascadia subduction zone, and the hazard it addresses.</p>
+        <span class="card-link">Read the motivation &rarr;</span>
+      </a>
+      <a href="scientific-objectives.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="9" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="3" fill="#f5a623"/></svg>
+        <h3>Scientific Objectives</h3>
+        <p>The five interlocking research thrusts the COSZO sensor suite is designed to address.</p>
+        <span class="card-link">View objectives &rarr;</span>
+      </a>
+      <a href="publications.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M24 12 C18 8, 10 8, 8 10 V36 C10 34, 18 34, 24 38 C30 34, 38 34, 40 36 V10 C38 8, 30 8, 24 12 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><line x1="24" y1="12" x2="24" y2="38" stroke="#17a2ab" stroke-width="2"/></svg>
+        <h3>Publications</h3>
+        <p>Foundational reports, workshop documents, and peer-reviewed work behind the project.</p>
+        <span class="card-link">Browse publications &rarr;</span>
+      </a>
+      <a href="people.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><circle cx="18" cy="20" r="6" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="22" r="5" stroke="#17a2ab" stroke-width="2"/><path d="M8 38 Q 18 28, 28 38" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M26 38 Q 34 30, 42 38" stroke="#17a2ab" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <h3>People</h3>
+        <p>The scientists, engineers, students, and collaborators building COSZO.</p>
+        <span class="card-link">Meet the team &rarr;</span>
+      </a>
+      <a href="contact.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><rect x="8" y="12" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 14 L24 26 L40 14" stroke="#f5a623" stroke-width="2" fill="none"/></svg>
+        <h3>Contact</h3>
+        <p>Reach the project office for collaboration, data questions, press, or REU inquiries.</p>
+        <span class="card-link">Get in touch &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -2049,6 +2095,7 @@ CRUISES_BODY = page_hero(
 # ============================================================
 PAGES = [
     ("index.html",                              "COSZO — Cascadia Offshore Subduction Zone Observatory",  "home",          INDEX_BODY),
+    ("about.html",                              "About · COSZO",                                           "about",         ABOUT_BODY),
     ("science.html",                            "About · COSZO",                                           "about",         SCIENCE_BODY),
     ("publications.html",                       "Publications · COSZO",                                    "about",         PUBLICATIONS_BODY),
     ("motivation.html",                         "Motivation · COSZO",                                      "about",         MOTIVATION_BODY),
