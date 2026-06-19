@@ -892,7 +892,7 @@ SITES_BODY = page_hero(
 ) + """
 <section class="hub-section">
   <div class="container">
-    <div class="hub-cards cols-3">
+    <div class="hub-cards cols-4">
       <a href="hydrate-ridge.html" class="hub-card">
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 36 L18 18 L26 28 L34 14 L42 36 Z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
         <h3>Hydrate Ridge</h3>
@@ -908,7 +908,13 @@ SITES_BODY = page_hero(
       <a href="oregon-shelf.html" class="hub-card">
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 30 H42 M6 36 H42" stroke="currentColor" stroke-width="2"/><path d="M10 30 L16 22 L24 26 L32 20 L40 30" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
         <h3>Oregon Shelf</h3>
-        <p>Shallow continental-shelf site offshore Oregon, extending COSZO coverage shoreward of the continental slope.</p>
+        <p>Shallow continental-shelf benthic site offshore Oregon (~80 m), in a highly productive coastal upwelling zone.</p>
+        <span class="card-link">View site &rarr;</span>
+      </a>
+      <a href="oregon-offshore.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 28 H42" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 30 L30 35 L42 27" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
+        <h3>Oregon Offshore</h3>
+        <p>Continental-slope benthic site off Oregon (~550 m), in the same dynamic coastal upwelling environment.</p>
         <span class="card-link">View site &rarr;</span>
       </a>
     </div>
@@ -930,17 +936,20 @@ SITES_BODY = page_hero(
 # PER-SITE STUBS
 # ============================================================
 HYDRATE_RIDGE_BODY = page_hero(
-    "Sites", "Hydrate Ridge",
-    "Accretionary wedge site near the Cascadia deformation front, roughly 80 km offshore Newport, Oregon.",
-    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Sites</a>', "Hydrate Ridge"]
+    "Sites", "Southern Hydrate Ridge",
+    "Methane-hydrate seafloor observatory on the Oregon continental slope, ~775 m deep (OOI Southern Hydrate Summit 1, RS01SUM1).",
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Sites</a>', "Southern Hydrate Ridge"]
 ) + """
 <section class="article">
   <div class="container">
     <div class="article-grid narrow">
       <article class="article-content">
-        <p class="lede-para">Hydrate Ridge sits at the leading edge of the Cascadia accretionary prism. The site combines a shallow methane hydrate system, frontal thrust deformation, and seismicity near the updip limit of the locked zone.</p>
-        <figure class="welcome-figure"><div class="image-placeholder">Map of Hydrate Ridge — placeholder</div><figcaption>Location and bathymetry of the Hydrate Ridge site on the Cascadia margin.</figcaption></figure>
-        <p>Detailed instrument list, depth, location, and science role will be added here.</p>
+        <h2>Overview</h2>
+        <p class="lede-para">Southern Hydrate Ridge, on the Oregon continental slope at about 775 m depth, is a seafloor observatory for studying methane-hydrate deposits and seepage. Abundant methane-ice deposits release methane-rich fluids and bubble plumes that rise several hundred meters above the seafloor, supporting distinctive microbial and animal communities and providing a natural laboratory for ocean chemistry and chemical-flux measurements.</p>
+        <p>The scientific focus includes how methane release affects seawater and marine life, and broader carbon-cycle dynamics. Because methane is a potent greenhouse gas, monitoring its flux from the seafloor — and how warming and seismic events influence hydrate stability — is a central goal.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Map of Southern Hydrate Ridge — placeholder</div><figcaption>Location and bathymetry of the Southern Hydrate Ridge site on the Cascadia margin.</figcaption></figure>
+        <p><strong>Location:</strong> 44.5691&deg;N, 125.1481&deg;W &middot; ~775 m water depth.</p>
+        <p>OOI site page: <a href="https://oceanobservatories.org/site/rs01sum1/" target="_blank" rel="noopener">RS01SUM1 &#8599;</a></p>
       </article>
     </div>
   </div>
@@ -949,15 +958,19 @@ HYDRATE_RIDGE_BODY = page_hero(
 
 SLOPE_BASE_BODY = page_hero(
     "Sites", "Slope Base",
-    "Deep-water reference site seaward of the locked zone at the base of the continental slope.",
+    "Cabled seafloor site at the base of the Oregon continental slope, ~2,900 m deep (OOI Oregon Slope Base, RS01SLBS).",
     ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Sites</a>', "Slope Base"]
 ) + """
 <section class="article">
   <div class="container">
     <div class="article-grid narrow">
       <article class="article-content">
-        <p class="lede-para">Slope Base provides a deep-water reference for seismic and pressure observations beyond the toe of the deformation front.</p>
-        <p>Detailed instrument list, depth, location, and science role will be added here.</p>
+        <h2>Overview</h2>
+        <p class="lede-para">Oregon Slope Base sits adjacent to the continental slope off Oregon at roughly 2,900 m depth, in a region shaped by the California Current and internal waves. Wind-driven upwelling brings nutrient-rich deep water toward the surface, boosting productivity but also driving periodic hypoxia and acidified-water events that affect seafloor fauna.</p>
+        <p>Two cabled junction boxes on the seafloor &mdash; a medium-power and a low-power box &mdash; supply power and high-bandwidth communication to geophysical and near-seafloor instrumentation. The site works alongside the Slope Base profiler moorings and, with the rest of the Cabled Array, supports observation of seismic activity and coastal variability off central Oregon.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Map of Slope Base — placeholder</div><figcaption>Location and bathymetry of the Slope Base site on the Cascadia margin.</figcaption></figure>
+        <p><strong>Location:</strong> 44.5153&deg;N, 125.3898&deg;W &middot; ~2,900 m water depth.</p>
+        <p>OOI site page: <a href="https://oceanobservatories.org/site/rs01slbs/" target="_blank" rel="noopener">RS01SLBS &#8599;</a></p>
       </article>
     </div>
   </div>
@@ -1955,16 +1968,43 @@ BLOG_BODY = page_hero(
 # ============================================================
 OREGON_SHELF_BODY = page_hero(
     "Sites", "Oregon Shelf",
-    "Shallow continental-shelf site offshore Oregon, extending COSZO coverage shoreward of the continental slope.",
+    "Shallow continental-shelf benthic site offshore Oregon, ~80 m deep (OOI Oregon Shelf Cabled BEP, CE02SHBP).",
     ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Oregon Shelf"]
 ) + """
 <section class="article">
   <div class="container">
     <div class="article-grid narrow">
       <article class="article-content">
-        <p class="lede-para">The Oregon Shelf site extends COSZO observations onto the continental shelf, complementing the deeper Slope Base and Hydrate Ridge installations.</p>
+        <h2>Overview</h2>
+        <p class="lede-para">The Oregon Shelf Cabled Benthic Experiment Package operates in a highly productive upwelling zone off the Oregon coast at about 80 m depth. Upwelling brings nutrients to the surface, sparking primary production and fueling the food web, but it can also carry hypoxic, low-oxygen water onto the shelf that is harmful to organisms in the area.</p>
+        <p>Connected to the Cabled Array by fiber-optic cable, the benthic package powers its instruments and transmits seafloor data to shore in real time. Working alongside nearby surface moorings and profilers, it provides complementary bottom-water measurements for a fuller picture of shelf dynamics.</p>
         <figure class="welcome-figure"><div class="image-placeholder">Map of Oregon Shelf site &mdash; placeholder</div><figcaption>Location of the Oregon Shelf site on the Cascadia margin.</figcaption></figure>
-        <p>Detailed instrument list, depth, location, and science role will be added here.</p>
+        <p><strong>Location:</strong> 44.6371&deg;N, 124.306&deg;W &middot; ~80 m water depth.</p>
+        <p>OOI site page: <a href="https://oceanobservatories.org/site/ce02shbp/" target="_blank" rel="noopener">CE02SHBP &#8599;</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# OREGON OFFSHORE (site)
+# ============================================================
+OREGON_OFFSHORE_BODY = page_hero(
+    "Sites", "Oregon Offshore",
+    "Continental-slope benthic site off Oregon, ~550 m deep (OOI Oregon Offshore Cabled BEP, CE04OSBP).",
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Oregon Offshore"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <h2>Overview</h2>
+        <p class="lede-para">The Oregon Offshore Cabled Benthic Experiment Package is located on the continental slope off Oregon at about 550 m depth. The continental shelf-slope area off the Oregon coast is a highly productive, dynamic upwelling environment, where upwelling brings nutrients to the surface, sparking primary production and fueling the food web.</p>
+        <p>Powered by fiber-optic cable, the package houses two instrument cages that measure seafloor properties and operates alongside nearby profiler moorings, complementing water-column observations with bottom measurements to capture shelf and slope dynamics.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Map of Oregon Offshore site &mdash; placeholder</div><figcaption>Location of the Oregon Offshore site on the Cascadia margin.</figcaption></figure>
+        <p><strong>Location:</strong> 44.3695&deg;N, 124.954&deg;W &middot; ~550 m water depth.</p>
+        <p>OOI site page: <a href="https://oceanobservatories.org/site/ce04osbp/" target="_blank" rel="noopener">CE04OSBP &#8599;</a></p>
       </article>
     </div>
   </div>
@@ -2032,6 +2072,7 @@ PAGES = [
     ("hydrate-ridge.html",                      "Hydrate Ridge · COSZO",                                   "infrastructure",HYDRATE_RIDGE_BODY),
     ("slope-base.html",                         "Slope Base · COSZO",                                      "infrastructure",SLOPE_BASE_BODY),
     ("oregon-shelf.html",                       "Oregon Shelf · COSZO",                                    "infrastructure",OREGON_SHELF_BODY),
+    ("oregon-offshore.html",                    "Oregon Offshore · COSZO",                                 "infrastructure",OREGON_OFFSHORE_BODY),
     ("existing-instruments.html",               "Existing Instruments · COSZO",                            "infrastructure",EXISTING_BODY),
     ("coszo-instruments.html",                  "COSZO Instruments · COSZO",                               "infrastructure",COSZO_INSTR_BODY),
     ("cruises.html",                            "Cruises · COSZO",                                         "infrastructure",CRUISES_BODY),
