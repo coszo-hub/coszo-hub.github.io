@@ -1389,7 +1389,6 @@ ASP_BODY = page_hero(
         </table>
 
         <h2 id="access">Data Access</h2>
-        <p>Data access for these instruments is available through <a href="https://www.earthscope.org/" target="_blank" rel="noopener">EarthScope</a>.</p>
         <p>More station information, data quality status, and deployments are available through the GitHub webpage: <a href="https://github.com/coszo-hub/absolute-seafloor-pressure" target="_blank" rel="noopener">github.com/coszo-hub/absolute-seafloor-pressure</a>.</p>
 
         <blockquote>Raw pressure data are released within 24 hours of acquisition. Detided and drift-corrected products are typically available within 7 days.</blockquote>
