@@ -1856,6 +1856,99 @@ CONTACT_BODY = page_hero(
 """
 
 # ============================================================
+# BLOG FROM SEA (data-driven; GitHub Issues + Action populate data/blog.csv)
+# ============================================================
+# CSV columns: date, title, author, image, excerpt, slug, body
+#   date    -> YYYY-MM-DD (posts sorted newest first)
+#   image   -> filename in assets/blog/ or a full URL; blank = gradient block
+#   slug    -> post page filename is blog-<slug>.html
+#   excerpt -> short text shown on the square block
+#   body    -> post HTML/text shown on the individual post page
+BLOG_CSV = os.path.join(OUT_DIR, "data", "blog.csv")
+
+def load_blog():
+    posts = []
+    try:
+        with open(BLOG_CSV, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                if (row.get("title") or "").strip() and (row.get("slug") or "").strip():
+                    posts.append(row)
+    except FileNotFoundError:
+        pass
+    posts.sort(key=lambda r: (r.get("date") or ""), reverse=True)
+    return posts
+
+def _blog_thumb(image, title):
+    if image:
+        src = image if image.startswith("http") else f"assets/blog/{image}"
+        return f'<div class="blog-card-thumb"><img src="{src}" alt="{title}" loading="lazy"></div>'
+    return '<div class="blog-card-thumb blog-card-thumb--blank"></div>'
+
+def render_blog_cards(posts, limit=None):
+    items = posts[:limit] if limit else posts
+    if not items:
+        return '<p class="blog-empty"><em>No posts yet. Check back during the next cruise.</em></p>'
+    html = '<div class="blog-grid">'
+    for p in items:
+        slug = (p.get("slug") or "").strip()
+        title = (p.get("title") or "").strip()
+        meta = " &middot; ".join(x for x in [(p.get("date") or "").strip(),
+                                             (p.get("author") or "").strip()] if x)
+        excerpt = (p.get("excerpt") or "").strip()
+        html += (f'\n  <a class="blog-card" href="blog-{slug}.html">'
+                 f'{_blog_thumb((p.get("image") or "").strip(), title)}'
+                 f'<div class="blog-card-body">'
+                 f'<div class="blog-card-meta">{meta}</div>'
+                 f'<h3 class="blog-card-title">{title}</h3>'
+                 f'<p class="blog-card-excerpt">{excerpt}</p>'
+                 f'</div></a>')
+    return html + '\n</div>'
+
+def blog_post_body(p):
+    title = (p.get("title") or "").strip()
+    meta = " &middot; ".join(x for x in [(p.get("date") or "").strip(),
+                                         (p.get("author") or "").strip()] if x)
+    body = (p.get("body") or "").strip() or "<p>(No content yet.)</p>"
+    image = (p.get("image") or "").strip()
+    fig = ""
+    if image:
+        src = image if image.startswith("http") else f"assets/blog/{image}"
+        fig = f'<figure class="welcome-figure"><img src="{src}" alt="{title}"></figure>'
+    return page_hero(
+        "Cruises", title, meta,
+        ['<a href="index.html">Home</a>', '<a href="cruises.html">Cruises</a>',
+         '<a href="blog-from-sea.html">Blog from Sea</a>', title]
+    ) + f"""
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        {fig}
+        {body}
+        <p style="margin-top:2.5rem;"><a href="blog-from-sea.html">&larr; All posts</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+_BLOG_SUBMIT = ('https://github.com/coszo-hub/coszo-hub.github.io/issues/new'
+                '?labels=blog-submission&amp;title=%5BBlog%5D+')
+
+BLOG_BODY = page_hero(
+    "Cruises", "Blog from Sea",
+    "Daily dispatches from the COSZO team at sea, reviewed before they appear here.",
+    ['<a href="index.html">Home</a>', '<a href="cruises.html">Cruises</a>', "Blog from Sea"]
+) + f"""
+<section class="article">
+  <div class="container">
+    <p style="margin-bottom:2rem;"><a class="btn-primary" href="{_BLOG_SUBMIT}" target="_blank" rel="noopener">Submit a post &#8599;</a></p>
+    {render_blog_cards(load_blog())}
+  </div>
+</section>
+"""
+
+# ============================================================
 # OREGON SHELF (site)
 # ============================================================
 OREGON_SHELF_BODY = page_hero(
@@ -1883,7 +1976,7 @@ CRUISES_BODY = page_hero(
     "Infrastructure", "Cruises",
     "Field operations for COSZO: the daily plan, dispatches from sea, the cruise diary, and live video from the ship.",
     ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', "Cruises"]
-) + """
+) + f"""
 <section class="article">
   <div class="container">
     <div class="article-grid">
@@ -1897,19 +1990,13 @@ CRUISES_BODY = page_hero(
         </ul>
       </aside>
       <article class="article-content">
-        <p class="lede-para">Live operational updates from COSZO installation and maintenance cruises along the Cascadia margin.</p>
-
         <h2 id="plan">Plan for the Day</h2>
         <p>The current day's operational plan will appear here during active cruises.</p>
         <figure class="welcome-figure"><div class="image-placeholder">Daily plan / station map &mdash; placeholder</div><figcaption>Planned operations for the day.</figcaption></figure>
 
         <h2 id="blog">Blog from Sea</h2>
-        <p>Daily dispatches written by the team at sea. Posts are reviewed before they appear here.</p>
-        <p><a class="btn-primary" href="https://github.com/coszo-hub/coszo-hub.github.io/issues/new?labels=blog-submission&amp;title=%5BBlog%5D+" target="_blank" rel="noopener">Submit a post &#8599;</a></p>
-        <div class="blog-entries">
-          <!-- Approved blog entries are rendered here by the GitHub Action (Phase 5b). -->
-          <p><em>No posts yet. Check back during the next cruise.</em></p>
-        </div>
+        <p>Daily dispatches written by the team at sea. <a href="blog-from-sea.html">See all posts &rarr;</a></p>
+        {render_blog_cards(load_blog(), limit=6)}
 
         <h2 id="diary">Cruise Diary</h2>
         <p>A chronological record of the cruise, compiled from daily logs.</p>
@@ -1946,6 +2033,7 @@ PAGES = [
     ("existing-instruments.html",               "Existing Instruments · COSZO",                            "infrastructure",EXISTING_BODY),
     ("coszo-instruments.html",                  "COSZO Instruments · COSZO",                               "infrastructure",COSZO_INSTR_BODY),
     ("cruises.html",                            "Cruises · COSZO",                                         "infrastructure",CRUISES_BODY),
+    ("blog-from-sea.html",                      "Blog from Sea · COSZO",                                   "infrastructure",BLOG_BODY),
     ("data.html",                               "Data · COSZO",                                            "data",          DATAPRODUCTS_BODY),
     ("absolute-seafloor-pressure.html",         "Absolute Seafloor Pressure · COSZO",                      "data",          ASP_BODY),
     ("people.html",                             "People · COSZO",                                          "about",         PEOPLE_BODY),
@@ -1977,6 +2065,22 @@ def main():
             f.write(html)
         written.append(filename)
         print(f"  wrote {filename}")
+
+    # One page per blog post (blog-<slug>.html), linked from the square blocks.
+    for p in load_blog():
+        slug = (p.get("slug") or "").strip()
+        filename = f"blog-{slug}.html"
+        html = DOC.format(
+            title=f"{(p.get('title') or '').strip()} · COSZO",
+            header=build_header("infrastructure"),
+            body=blog_post_body(p),
+            footer=FOOTER,
+        )
+        with open(os.path.join(OUT_DIR, filename), "w", encoding="utf-8") as f:
+            f.write(html)
+        written.append(filename)
+        print(f"  wrote {filename}")
+
     print(f"\nGenerated {len(written)} pages in {OUT_DIR}")
 
 if __name__ == "__main__":

@@ -1,0 +1,41 @@
+name: Blog from Sea post
+description: Submit a dispatch from the cruise. A maintainer reviews and adds the "approved" label to publish it.
+title: "[Blog] "
+labels: ["blog-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: "Fill this in to submit a post. It appears on the site only after a maintainer adds the **approved** label."
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      placeholder: "2026-08-20"
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      placeholder: "Your name"
+    validations:
+      required: true
+  - type: input
+    id: excerpt
+    attributes:
+      label: Excerpt
+      description: One-line summary shown on the square block.
+    validations:
+      required: true
+  - type: input
+    id: image
+    attributes:
+      label: Image URL
+      description: Optional. A link to a photo for the post (leave blank for a gradient block).
+  - type: textarea
+    id: post
+    attributes:
+      label: Post
+      description: The full post. Separate paragraphs with a blank line.
+    validations:
+      required: true

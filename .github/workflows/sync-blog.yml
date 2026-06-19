@@ -1,0 +1,50 @@
+name: Sync Blog from Sea
+
+# Rebuilds data/blog.csv from issues labelled both "blog-submission" and
+# "approved", regenerates the site, and commits if anything changed.
+# Fires whenever an issue's labels change (e.g. a maintainer adds "approved").
+
+on:
+  issues:
+    types: [labeled, unlabeled, edited, deleted, closed, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: sync-blog
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build data/blog.csv from approved issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 bin/build_blog_csv.py
+
+      - name: Rebuild site
+        run: |
+          rm -f blog-[0-9]*.html       # drop stale per-post pages
+          python3 build_pages.py
+
+      - name: Commit changes if any
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Sync Blog from Sea from approved issues"
+            git push
+          else
+            echo "No changes to commit."
+          fi
