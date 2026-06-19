@@ -1079,3 +1079,31 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .logo-text .wordmark { font-size: 24px; }
   .logo-text .sublabel { display: none; }
 }
+
+/* Placeholder boxes for images / video not yet supplied. */
+.image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 220px;
+  padding: 2rem;
+  background: repeating-linear-gradient(45deg, #eef1f5, #eef1f5 12px, #e6eaef 12px, #e6eaef 24px);
+  border: 1px dashed #aeb8c4;
+  border-radius: 6px;
+  color: #5b6573;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.welcome-figure .image-placeholder { border-radius: 0; border: 0; }
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-embed .image-placeholder { height: 100%; min-height: 100%; }
+.instr-site { color: #5b6573; font-size: 0.92rem; margin-top: -0.25rem; }

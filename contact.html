@@ -16,7 +16,6 @@
   <div class="container">
     <div class="funding-note">An <strong>NSF</strong> Mid-scale Research Infrastructure project</div>
     <div class="utility-bar-links">
-      <a href="archives.html">Archives</a>
       <a href="contact.html">Contact</a>
       <a href="#">Search</a>
     </div>
@@ -33,38 +32,34 @@
       </div>
     </a>
     <nav class="main-nav" aria-label="Primary">
-      <div class="nav-item">
-        <a href="index.html" class="nav-link">Home</a>
-      </div>
       <div class="nav-item has-dropdown">
-        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Science</span>
+        <span class="nav-link active" role="button" tabindex="0" aria-haspopup="true">About</span>
         <div class="dropdown">
           <a href="science.html#motivation">Motivation</a>
           <a href="science.html#objectives">Objectives</a>
           <a href="publications.html">Publications</a>
+          <a href="people.html">People</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
         <a href="infrastructure.html" class="nav-link">Infrastructure</a>
         <div class="dropdown">
-          <a href="infrastructure.html">Infrastructure Overview</a>
-          <a href="sites.html">Sites</a>
+          <a href="sites.html">Seafloor Sites</a>
           <a href="existing-instruments.html">Existing Instruments</a>
           <a href="coszo-instruments.html">COSZO Instruments</a>
-          <a href="future-opportunities.html">Future Opportunities</a>
+          <a href="cruises.html">Cruises</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
         <a href="data.html" class="nav-link">Data</a>
         <div class="dropdown wide">
-          <a href="data.html">All Data Products</a>
-          <hr />
           <div class="dropdown-section-heading">Pressure</div>
           <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a>
           <a href="data.html">Differential Seafloor Pressure</a>
           <a href="data.html">GSSM Calibrated Pressure &amp; Ground Acceleration</a>
           <a href="data.html">SCPR Calibrated Pressure</a>
-          <a href="data.html">Low-Frequency Acoustic Pressure</a>
+          <a href="data.html">Hydrophone</a>
           <hr />
           <div class="dropdown-section-heading">Motion</div>
           <a href="data.html">Strong-Motion Ground Acceleration</a>
@@ -76,33 +71,10 @@
         </div>
       </div>
       <div class="nav-item has-dropdown">
-        <a href="people.html" class="nav-link">People</a>
-        <div class="dropdown">
-          <a href="people.html">All People</a>
-          <hr />
-          <div class="dropdown-section-heading">Team</div>
-          <a href="people.html">Leadership</a>
-          <a href="people.html">Principal Investigators</a>
-          <a href="people.html">Research Team</a>
-          <hr />
-          <div class="dropdown-section-heading">Students &amp; Scholars</div>
-          <a href="people.html">Postdoctoral Scholars</a>
-          <a href="people.html">Graduate Students</a>
-          <a href="people.html">Undergraduate Researchers</a>
-          <hr />
-          <a href="people.html">Collaborators</a>
-          <a href="people.html">Advisory Board</a>
-        </div>
-      </div>
-      <div class="nav-item has-dropdown">
         <a href="outreach.html" class="nav-link">Outreach</a>
         <div class="dropdown">
-          <a href="outreach.html">Outreach Overview</a>
           <a href="research-experiences-for-undergraduates.html">Research Experiences for Undergraduates</a>
-          <a href="outreach.html">Graduate Students</a>
           <a href="early-career-workshop.html">2027 Early Career Workshop</a>
-          <a href="meetings.html">Meetings</a>
-          <a href="partners.html">Partners</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
@@ -110,6 +82,7 @@
         <div class="dropdown">
           <a href="early-warning.html">Early Warning Overview</a>
           <a href="feasibility-study.html">2019 Feasibility Study</a>
+          <a href="archives.html">Archives</a>
         </div>
       </div>
     </nav>
@@ -128,24 +101,24 @@
 <section class="article">
   <div class="container">
     <div class="form-grid">
-      <form>
+      <form action="mailto:usherm42@uw.edu?subject=COSZO%20website%20contact" method="post" enctype="text/plain">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Your name">
+            <input id="name" name="Name" type="text" placeholder="Your name">
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@institution.edu">
+            <input id="email" name="Email" type="email" placeholder="you@institution.edu">
           </div>
         </div>
         <div class="form-group">
           <label for="affiliation">Affiliation</label>
-          <input id="affiliation" type="text" placeholder="Your institution or organization">
+          <input id="affiliation" name="Affiliation" type="text" placeholder="Your institution or organization">
         </div>
         <div class="form-group">
           <label for="topic">Topic</label>
-          <select id="topic">
+          <select id="topic" name="Topic">
             <option>Science collaboration</option>
             <option>Data access question</option>
             <option>REU program</option>
@@ -156,9 +129,9 @@
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" placeholder="Tell us what we can help with..."></textarea>
+          <textarea id="message" name="Message" placeholder="Tell us what we can help with..."></textarea>
         </div>
-        <button type="button" class="btn-primary">Send message
+        <button type="submit" class="btn-primary">Send message
           <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </form>
@@ -169,7 +142,8 @@
             COSZO Project Office<br>
             School of Oceanography<br>
             University of Washington<br>
-            Seattle, WA 98195
+            Seattle, WA 98195<br>
+            <a href="mailto:usherm42@uw.edu">usherm42@uw.edu</a>
           </address>
         </div>
         <div class="form-sidebar-block">
@@ -200,30 +174,29 @@
         </p>
       </div>
       <div class="footer-col">
-        <h4>Science</h4>
+        <h4>About</h4>
         <ul>
           <li><a href="motivation.html">Motivation</a></li>
           <li><a href="scientific-objectives.html">Scientific Objectives</a></li>
-          <li><a href="early-warning.html">Early Warning</a></li>
-          <li><a href="feasibility-study.html">Feasibility Study</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="people.html">People</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Infrastructure</h4>
         <ul>
           <li><a href="infrastructure.html">Overview</a></li>
+          <li><a href="sites.html">Seafloor Sites</a></li>
           <li><a href="existing-instruments.html">Existing Instruments</a></li>
           <li><a href="coszo-instruments.html">COSZO Instruments</a></li>
-          <li><a href="future-opportunities.html">Future Opportunities</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Community</h4>
+        <h4>Engage</h4>
         <ul>
-          <li><a href="people.html">People</a></li>
           <li><a href="outreach.html">Outreach</a></li>
-          <li><a href="partners.html">Partners</a></li>
-          <li><a href="meetings.html">Meetings</a></li>
+          <li><a href="early-warning.html">Early Warning</a></li>
+          <li><a href="feasibility-study.html">Feasibility Study</a></li>
         </ul>
       </div>
       <div class="footer-col">

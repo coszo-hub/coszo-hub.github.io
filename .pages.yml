@@ -159,32 +159,6 @@ content:
               format: html
               switcher: true
 
-      - name: meetings
-        label: Meetings
-        type: file
-        path: meetings.html
-        format: raw
-        fields:
-          - name: content
-            label: Content
-            type: rich-text
-            options:
-              format: html
-              switcher: true
-
-      - name: future-opportunities
-        label: Future Opportunities
-        type: file
-        path: future-opportunities.html
-        format: raw
-        fields:
-          - name: content
-            label: Content
-            type: rich-text
-            options:
-              format: html
-              switcher: true
-
       - name: partners
         label: Partners
         type: file

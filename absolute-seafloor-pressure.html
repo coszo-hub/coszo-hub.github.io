@@ -16,7 +16,6 @@
   <div class="container">
     <div class="funding-note">An <strong>NSF</strong> Mid-scale Research Infrastructure project</div>
     <div class="utility-bar-links">
-      <a href="archives.html">Archives</a>
       <a href="contact.html">Contact</a>
       <a href="#">Search</a>
     </div>
@@ -33,38 +32,34 @@
       </div>
     </a>
     <nav class="main-nav" aria-label="Primary">
-      <div class="nav-item">
-        <a href="index.html" class="nav-link">Home</a>
-      </div>
       <div class="nav-item has-dropdown">
-        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Science</span>
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">About</span>
         <div class="dropdown">
           <a href="science.html#motivation">Motivation</a>
           <a href="science.html#objectives">Objectives</a>
           <a href="publications.html">Publications</a>
+          <a href="people.html">People</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
         <a href="infrastructure.html" class="nav-link">Infrastructure</a>
         <div class="dropdown">
-          <a href="infrastructure.html">Infrastructure Overview</a>
-          <a href="sites.html">Sites</a>
+          <a href="sites.html">Seafloor Sites</a>
           <a href="existing-instruments.html">Existing Instruments</a>
           <a href="coszo-instruments.html">COSZO Instruments</a>
-          <a href="future-opportunities.html">Future Opportunities</a>
+          <a href="cruises.html">Cruises</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
         <a href="data.html" class="nav-link active">Data</a>
         <div class="dropdown wide">
-          <a href="data.html">All Data Products</a>
-          <hr />
           <div class="dropdown-section-heading">Pressure</div>
           <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a>
           <a href="data.html">Differential Seafloor Pressure</a>
           <a href="data.html">GSSM Calibrated Pressure &amp; Ground Acceleration</a>
           <a href="data.html">SCPR Calibrated Pressure</a>
-          <a href="data.html">Low-Frequency Acoustic Pressure</a>
+          <a href="data.html">Hydrophone</a>
           <hr />
           <div class="dropdown-section-heading">Motion</div>
           <a href="data.html">Strong-Motion Ground Acceleration</a>
@@ -76,33 +71,10 @@
         </div>
       </div>
       <div class="nav-item has-dropdown">
-        <a href="people.html" class="nav-link">People</a>
-        <div class="dropdown">
-          <a href="people.html">All People</a>
-          <hr />
-          <div class="dropdown-section-heading">Team</div>
-          <a href="people.html">Leadership</a>
-          <a href="people.html">Principal Investigators</a>
-          <a href="people.html">Research Team</a>
-          <hr />
-          <div class="dropdown-section-heading">Students &amp; Scholars</div>
-          <a href="people.html">Postdoctoral Scholars</a>
-          <a href="people.html">Graduate Students</a>
-          <a href="people.html">Undergraduate Researchers</a>
-          <hr />
-          <a href="people.html">Collaborators</a>
-          <a href="people.html">Advisory Board</a>
-        </div>
-      </div>
-      <div class="nav-item has-dropdown">
         <a href="outreach.html" class="nav-link">Outreach</a>
         <div class="dropdown">
-          <a href="outreach.html">Outreach Overview</a>
           <a href="research-experiences-for-undergraduates.html">Research Experiences for Undergraduates</a>
-          <a href="outreach.html">Graduate Students</a>
           <a href="early-career-workshop.html">2027 Early Career Workshop</a>
-          <a href="meetings.html">Meetings</a>
-          <a href="partners.html">Partners</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
@@ -110,6 +82,7 @@
         <div class="dropdown">
           <a href="early-warning.html">Early Warning Overview</a>
           <a href="feasibility-study.html">2019 Feasibility Study</a>
+          <a href="archives.html">Archives</a>
         </div>
       </div>
     </nav>
@@ -133,40 +106,26 @@
         <ul>
           <li><a href="#overview" class="active">Overview</a></li>
           <li><a href="#stations">Stations</a></li>
-          <li><a href="#specs">Specifications</a></li>
           <li><a href="#access">Data Access</a></li>
-          <li><a href="#citation">Citation</a></li>
         </ul>
       </aside>
       <article class="article-content">
-        <p class="lede-para">Absolute Seafloor Pressure (ASP) captures the total hydrostatic pressure at the sensor, combining the static pressure of the overlying water column with tidal, oceanographic, and tectonic signals. With appropriate detiding and ocean-loading correction, it reveals vertical deformation of the seafloor.</p>
-
         <h2 id="overview">Overview</h2>
-        <p>Each ASP sensor records absolute pressure at a sampling rate of 1 Hz with nominal resolution better than 1 mm of water equivalent. Raw records are distributed alongside detided and drift-corrected products. See <a href="data.html">SCPR Calibrated Pressure</a> for the self-calibrating variant of this stream.</p>
+        <p>Pressure incorporates tidal pressure gauges sampling at rates varying from 0.0667 Hz to 1.0 Hz. Each instrument also carries a temperature channel.</p>
 
         <h2 id="stations">Stations</h2>
-        <p>PREST instruments on the OOI Regional Cabled Array contribute tidal seafloor pressure to the ASP product family. <code>DO</code> channels carry absolute pressure; paired <code>K1</code> channels carry the sensor's internal pressure-temperature reading. <code>_10</code> is the SEED location code.</p>
+        <p>The table below lists the station, location code, and channels for the data.</p>
         <table class="specs-table">
           <thead>
-            <tr><th>Reference</th><th>Site</th><th>OO Net.Sta</th><th>Channels</th></tr>
+            <tr><th>Site</th><th>Station</th><th>Location</th><th>Channel</th><th>Channel codes (sample rate)</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>RS01SLBS-MJ01A-06-PRESTA101</code></td><td>Slope Base, Hydrate Ridge</td><td><code>OO.HYSB1</code></td><td><code>UDO_10</code>, <code>UK1_10</code>, <code>LDO_10</code>, <code>LK1_10</code></td></tr>
-            <tr><td><code>RS01SUM1-LJ01B-09-PRESTB102</code></td><td>Southern Hydrate Summit 1</td><td><code>OO.HYS14</code></td><td><code>UDO_10</code>, <code>UK1_10</code>, <code>LDO_10</code>, <code>LK1_10</code></td></tr>
-            <tr><td><code>RS03AXBS-MJ03A-06-PRESTA301</code></td><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>UDO_10</code>, <code>UK1_10</code></td></tr>
-          </tbody>
-        </table>
-
-        <h2 id="specs">Specifications</h2>
-        <table class="specs-table">
-          <tbody>
-            <tr><td>Sampling Rate</td><td>1 Hz (primary), 10 Hz (tsunami-band)</td></tr>
-            <tr><td>Pressure Range</td><td>0 to 10000 dbar</td></tr>
-            <tr><td>Resolution</td><td>&lt; 1 mm water equivalent</td></tr>
-            <tr><td>Accuracy (absolute)</td><td>0.01 % full scale</td></tr>
-            <tr><td>Long-term Drift</td><td>&lt; 2 cm / year (uncalibrated)</td></tr>
-            <tr><td>Deployment Depth</td><td>500 to 3000 m</td></tr>
-            <tr><td>Telemetry</td><td>Real-time via RCA fiber</td></tr>
+            <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LDO/" target="_blank" rel="noopener">LDO</a> (1.0 Hz)</td></tr>
+            <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
+            <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LDO/" target="_blank" rel="noopener">LDO</a> (1.0 Hz)</td></tr>
+            <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
+            <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz)</td></tr>
+            <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz)</td></tr>
           </tbody>
         </table>
 
@@ -175,9 +134,6 @@
         <p>More station information, data quality status, and deployments are available through the GitHub webpage: <a href="https://github.com/coszo-hub/absolute-seafloor-pressure" target="_blank" rel="noopener">github.com/coszo-hub/absolute-seafloor-pressure</a>.</p>
 
         <blockquote>Raw pressure data are released within 24 hours of acquisition. Detided and drift-corrected products are typically available within 7 days.</blockquote>
-
-        <h2 id="citation">Citation</h2>
-        <p>When citing COSZO ASP data, please acknowledge both the COSZO project and the originating NSF awards. A recommended citation string is available through the OOI data portal at the time of download.</p>
       </article>
     </div>
   </div>
@@ -198,30 +154,29 @@
         </p>
       </div>
       <div class="footer-col">
-        <h4>Science</h4>
+        <h4>About</h4>
         <ul>
           <li><a href="motivation.html">Motivation</a></li>
           <li><a href="scientific-objectives.html">Scientific Objectives</a></li>
-          <li><a href="early-warning.html">Early Warning</a></li>
-          <li><a href="feasibility-study.html">Feasibility Study</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="people.html">People</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Infrastructure</h4>
         <ul>
           <li><a href="infrastructure.html">Overview</a></li>
+          <li><a href="sites.html">Seafloor Sites</a></li>
           <li><a href="existing-instruments.html">Existing Instruments</a></li>
           <li><a href="coszo-instruments.html">COSZO Instruments</a></li>
-          <li><a href="future-opportunities.html">Future Opportunities</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Community</h4>
+        <h4>Engage</h4>
         <ul>
-          <li><a href="people.html">People</a></li>
           <li><a href="outreach.html">Outreach</a></li>
-          <li><a href="partners.html">Partners</a></li>
-          <li><a href="meetings.html">Meetings</a></li>
+          <li><a href="early-warning.html">Early Warning</a></li>
+          <li><a href="feasibility-study.html">Feasibility Study</a></li>
         </ul>
       </div>
       <div class="footer-col">

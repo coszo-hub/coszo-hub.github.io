@@ -35,7 +35,7 @@ GLOBE_GRATICULE = _read_path(_GRATICULE_FILE)
 # All hrefs point to local HTML files in the same directory.
 # ============================================================
 def build_header(active=""):
-    """active is a short key for the current tab: home, science, infrastructure, data, people, outreach, ew"""
+    """active is a short key for the current tab: about, infrastructure, data, outreach, ew"""
     def cls(key):
         return ' class="nav-link active"' if active == key else ' class="nav-link"'
     return f"""
@@ -43,7 +43,6 @@ def build_header(active=""):
   <div class="container">
     <div class="funding-note">An <strong>NSF</strong> Mid-scale Research Infrastructure project</div>
     <div class="utility-bar-links">
-      <a href="archives.html">Archives</a>
       <a href="contact.html">Contact</a>
       <a href="#">Search</a>
     </div>
@@ -60,38 +59,34 @@ def build_header(active=""):
       </div>
     </a>
     <nav class="main-nav" aria-label="Primary">
-      <div class="nav-item">
-        <a href="index.html"{cls("home")}>Home</a>
-      </div>
       <div class="nav-item has-dropdown">
-        <span{cls("science")} role="button" tabindex="0" aria-haspopup="true">Science</span>
+        <span{cls("about")} role="button" tabindex="0" aria-haspopup="true">About</span>
         <div class="dropdown">
           <a href="science.html#motivation">Motivation</a>
           <a href="science.html#objectives">Objectives</a>
           <a href="publications.html">Publications</a>
+          <a href="people.html">People</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
         <a href="infrastructure.html"{cls("infrastructure")}>Infrastructure</a>
         <div class="dropdown">
-          <a href="infrastructure.html">Infrastructure Overview</a>
-          <a href="sites.html">Sites</a>
+          <a href="sites.html">Seafloor Sites</a>
           <a href="existing-instruments.html">Existing Instruments</a>
           <a href="coszo-instruments.html">COSZO Instruments</a>
-          <a href="future-opportunities.html">Future Opportunities</a>
+          <a href="cruises.html">Cruises</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
         <a href="data.html"{cls("data")}>Data</a>
         <div class="dropdown wide">
-          <a href="data.html">All Data Products</a>
-          <hr />
           <div class="dropdown-section-heading">Pressure</div>
           <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a>
           <a href="data.html">Differential Seafloor Pressure</a>
           <a href="data.html">GSSM Calibrated Pressure &amp; Ground Acceleration</a>
           <a href="data.html">SCPR Calibrated Pressure</a>
-          <a href="data.html">Low-Frequency Acoustic Pressure</a>
+          <a href="data.html">Hydrophone</a>
           <hr />
           <div class="dropdown-section-heading">Motion</div>
           <a href="data.html">Strong-Motion Ground Acceleration</a>
@@ -103,33 +98,10 @@ def build_header(active=""):
         </div>
       </div>
       <div class="nav-item has-dropdown">
-        <a href="people.html"{cls("people")}>People</a>
-        <div class="dropdown">
-          <a href="people.html">All People</a>
-          <hr />
-          <div class="dropdown-section-heading">Team</div>
-          <a href="people.html">Leadership</a>
-          <a href="people.html">Principal Investigators</a>
-          <a href="people.html">Research Team</a>
-          <hr />
-          <div class="dropdown-section-heading">Students &amp; Scholars</div>
-          <a href="people.html">Postdoctoral Scholars</a>
-          <a href="people.html">Graduate Students</a>
-          <a href="people.html">Undergraduate Researchers</a>
-          <hr />
-          <a href="people.html">Collaborators</a>
-          <a href="people.html">Advisory Board</a>
-        </div>
-      </div>
-      <div class="nav-item has-dropdown">
         <a href="outreach.html"{cls("outreach")}>Outreach</a>
         <div class="dropdown">
-          <a href="outreach.html">Outreach Overview</a>
           <a href="research-experiences-for-undergraduates.html">Research Experiences for Undergraduates</a>
-          <a href="outreach.html">Graduate Students</a>
           <a href="early-career-workshop.html">2027 Early Career Workshop</a>
-          <a href="meetings.html">Meetings</a>
-          <a href="partners.html">Partners</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
@@ -137,6 +109,7 @@ def build_header(active=""):
         <div class="dropdown">
           <a href="early-warning.html">Early Warning Overview</a>
           <a href="feasibility-study.html">2019 Feasibility Study</a>
+          <a href="archives.html">Archives</a>
         </div>
       </div>
     </nav>
@@ -159,30 +132,29 @@ FOOTER = """
         </p>
       </div>
       <div class="footer-col">
-        <h4>Science</h4>
+        <h4>About</h4>
         <ul>
           <li><a href="motivation.html">Motivation</a></li>
           <li><a href="scientific-objectives.html">Scientific Objectives</a></li>
-          <li><a href="early-warning.html">Early Warning</a></li>
-          <li><a href="feasibility-study.html">Feasibility Study</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="people.html">People</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Infrastructure</h4>
         <ul>
           <li><a href="infrastructure.html">Overview</a></li>
+          <li><a href="sites.html">Seafloor Sites</a></li>
           <li><a href="existing-instruments.html">Existing Instruments</a></li>
           <li><a href="coszo-instruments.html">COSZO Instruments</a></li>
-          <li><a href="future-opportunities.html">Future Opportunities</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Community</h4>
+        <h4>Engage</h4>
         <ul>
-          <li><a href="people.html">People</a></li>
           <li><a href="outreach.html">Outreach</a></li>
-          <li><a href="partners.html">Partners</a></li>
-          <li><a href="meetings.html">Meetings</a></li>
+          <li><a href="early-warning.html">Early Warning</a></li>
+          <li><a href="feasibility-study.html">Feasibility Study</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -256,9 +228,8 @@ INDEX_BODY = """
   </svg>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-eyebrow">Geophysical Observations &middot; Early Warning</div>
       <h1>Watching the <em>Cascadia fault</em> from the seafloor.</h1>
-      <p class="hero-lede">COSZO adds geophysical instrumentation to the OOI Regional Cabled Array off the coast of Oregon, delivering continuous, high-fidelity seafloor data to investigate how subduction zone faults work and to support the development of offshore earthquake early warning.</p>
+      <p class="hero-lede">COSZO adds geophysical instrumentation to the <a href="https://oceanobservatories.org/">Ocean Observatories Initiative (OOI)</a> Regional Cabled Array off the coast of Oregon, delivering continuous, high-fidelity seafloor data to investigate how subduction zone faults work and to support the development of offshore earthquake and tsunami early warning.</p>
       <div class="hero-ctas">
         <a href="scientific-objectives.html" class="hero-cta">Science objectives
           <svg class="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -516,12 +487,6 @@ INFRASTRUCTURE_BODY = page_hero(
         <p>The new geophysical sensors being added by COSZO: strong-motion accelerometers, broadband seismometers, high-precision pressure gauges, and acoustic hydrophones.</p>
         <span class="card-link">View new instrumentation</span>
       </a>
-      <a href="future-opportunities.html" class="hub-card">
-        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M8 34 L24 10 L40 34" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/><circle cx="24" cy="10" r="3" fill="#17a2ab"/><path d="M8 40 H40" stroke="currentColor" stroke-width="2"/></svg>
-        <h3>Future Opportunities</h3>
-        <p>How the community can propose additional instrumentation, piggyback on COSZO cruises, or integrate complementary sensors into the facility over time.</p>
-        <span class="card-link">Explore opportunities</span>
-      </a>
     </div>
   </div>
 </section>
@@ -570,25 +535,24 @@ EXISTING_BODY = page_hero(
         <p class="lede-para">Since 2015, the OOI Regional Cabled Array has delivered real-time data from a suite of seafloor instruments along the Cascadia margin. These existing instruments are the foundation COSZO extends.</p>
 
         <h2>Seismic and geodetic</h2>
-        <table class="specs-table">
-          <thead><tr><th>Instrument</th><th>Location</th><th>Measurement</th></tr></thead>
-          <tbody>
-            <tr><td>Broadband Ocean-Bottom Seismometer</td><td>Primary nodes at Slope Base, Axial Base</td><td>Three-component ground velocity, 0.01 to 40 Hz</td></tr>
-            <tr><td>Bottom Pressure Tilt</td><td>Multiple RCA sites</td><td>Seafloor pressure and two-axis tilt</td></tr>
-            <tr><td>Hydrophone</td><td>Axial Seamount, Slope Base</td><td>Low-frequency acoustic pressure</td></tr>
-            <tr><td>Short-period 4C OBS</td><td>Axial Seamount caldera</td><td>Short-period three-component + hydrophone</td></tr>
-          </tbody>
-        </table>
+        <figure class="welcome-figure"><div class="image-placeholder">Photo &mdash; RCA seismic / geodetic instruments (placeholder)</div><figcaption>Existing RCA seismic and geodetic instruments.</figcaption></figure>
+        <h3>Broadband Ocean-Bottom Seismometer</h3>
+        <p>Three-component ground velocity, 0.01 to 40 Hz. <strong>Sites:</strong> primary nodes at Slope Base and Axial Base.</p>
+        <h3>Bottom Pressure Tilt</h3>
+        <p>Seafloor pressure and two-axis tilt. <strong>Sites:</strong> multiple RCA sites.</p>
+        <h3>Hydrophone</h3>
+        <p>Low-frequency acoustic pressure. <strong>Sites:</strong> Axial Seamount, Slope Base.</p>
+        <h3>Short-period 4C OBS</h3>
+        <p>Short-period three-component plus hydrophone. <strong>Sites:</strong> Axial Seamount caldera.</p>
 
         <h2>Oceanographic</h2>
-        <table class="specs-table">
-          <thead><tr><th>Instrument</th><th>Location</th><th>Measurement</th></tr></thead>
-          <tbody>
-            <tr><td>Acoustic Doppler Current Profiler</td><td>Shelf and slope moorings</td><td>Water column velocity</td></tr>
-            <tr><td>CTD</td><td>Profilers and moorings</td><td>Conductivity, temperature, depth</td></tr>
-            <tr><td>Single-point current meter</td><td>Benthic platforms</td><td>Near-bottom water velocity</td></tr>
-          </tbody>
-        </table>
+        <figure class="welcome-figure"><div class="image-placeholder">Photo &mdash; RCA oceanographic instruments (placeholder)</div><figcaption>Existing RCA oceanographic instruments.</figcaption></figure>
+        <h3>Acoustic Doppler Current Profiler</h3>
+        <p>Water column velocity. <strong>Sites:</strong> shelf and slope moorings.</p>
+        <h3>CTD</h3>
+        <p>Conductivity, temperature, depth. <strong>Sites:</strong> profilers and moorings.</p>
+        <h3>Single-point current meter</h3>
+        <p>Near-bottom water velocity. <strong>Sites:</strong> benthic platforms.</p>
 
         <h2>Why these matter for COSZO</h2>
         <p>The existing instruments provide two things. First, a decade of baseline data that COSZO's new sensors can be cross-calibrated against. Second, the oceanographic measurements, especially current velocity and temperature, are essential for interpreting the geophysical signals. Tidal and current-driven pressure fluctuations must be modeled and removed before a tectonic signal becomes visible.</p>
@@ -610,28 +574,42 @@ COSZO_INSTR_BODY = page_hero(
   <div class="container">
     <div class="article-grid narrow">
       <article class="article-content">
-        <p class="lede-para">COSZO is adding a geophysical sensor suite purpose-built for subduction zone science. The instrumentation is grouped into three categories: seismic, geodetic, and acoustic.</p>
+        <p class="lede-para">COSZO is adding a geophysical sensor suite purpose-built for subduction zone science. The instruments below span seismic, pressure, geodetic, acoustic, and oceanographic observations.</p>
 
-        <h2>Seismic instrumentation</h2>
-        <h3>Strong-Motion Accelerometers</h3>
-        <p>High-dynamic-range accelerometers sited close to the expected rupture surface. Their purpose is to record the unclipped ground motion of a great earthquake, providing the near-source data that ground-motion models require.</p>
-        <h3>Broadband Seismometers</h3>
-        <p>Three-component broadband instruments for regional and teleseismic seismology, ambient-noise interferometry, and moment tensor inversion.</p>
-        <h3>Short-Period Seismometers</h3>
-        <p>Compact, high-frequency seismometers optimized for local microseismicity and P-wave detection at the sites where broadband performance is not required.</p>
+        <h2>Broadband Seismometers</h2>
+        <p>Three-component broadband instruments for regional and teleseismic seismology, ambient-noise interferometry, and moment tensor inversion. The primary seismic backbone of the COSZO network.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Photo &mdash; Broadband seismometer (placeholder)</div><figcaption>Broadband seismometer.</figcaption></figure>
+        <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
 
-        <h2>Geodetic instrumentation</h2>
-        <h3>Self-Calibrating Pressure Recorders (SCPR)</h3>
-        <p>Seafloor pressure gauges with on-board calibration against a known mass standard, enabling correction for the long-period instrumental drift that normally obscures tectonic deformation signals.</p>
-        <h3>Geodetic Seafloor Stations (GSSM)</h3>
-        <p>Combined calibrated pressure and strong-motion platforms that provide both geodetic and seismological observations from the same seafloor site.</p>
+        <h2>Buried 3-Component Seismometer</h2>
+        <p>A buried three-component seismometer (Nanometrics) deployed as part of the Atlantis COBSO effort, emplaced beneath the seafloor for reduced noise and improved coupling relative to surface instruments.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Photo &mdash; Buried 3-component seismometer / Atlantis COBSO (placeholder)</div><figcaption>Buried 3-component seismometer (Nanometrics, Atlantis COBSO).</figcaption></figure>
+        <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
 
-        <h2>Acoustic instrumentation</h2>
-        <h3>Low-Frequency Hydrophones</h3>
-        <p>Hydrophones tuned to the infrasound band for T-phase detection, hydroacoustic event characterization, and long-range propagation studies.</p>
+        <h2>Short-Period Seismometers</h2>
+        <p>Compact, high-frequency seismometers optimized for local microseismicity and P-wave detection at sites where broadband performance is not required.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Photo &mdash; Short-period seismometer (placeholder)</div><figcaption>Short-period seismometer.</figcaption></figure>
+        <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
 
-        <h2>Deployment timeline</h2>
-        <p>The first tranche of COSZO instruments is scheduled for deployment on the <a href="infrastructure.html">summer 2026 installation cruise</a>. Full network buildout is planned across three annual maintenance cycles, with all instruments expected to be reporting by early 2029.</p>
+        <h2>Differential Pressure Gauge</h2>
+        <p>Measures short-period pressure variations at the seafloor, capturing tsunami signals and hydroacoustic waves complementary to the absolute pressure record.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Photo &mdash; Differential pressure gauge (placeholder)</div><figcaption>Differential pressure gauge.</figcaption></figure>
+        <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
+
+        <h2>Cabled Self-Calibrating Pressure Recorder (SCPR)</h2>
+        <p>A seafloor pressure gauge with on-board calibration against a known reference, correcting the long-period instrumental drift that normally obscures tectonic deformation signals.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Photo &mdash; Cabled self-calibrating pressure recorder (placeholder)</div><figcaption>Cabled self-calibrating pressure recorder (SCPR).</figcaption></figure>
+        <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
+
+        <h2>Tidal Pressure Gauges</h2>
+        <p>Absolute seafloor pressure sensors recording the tidal band, with a paired temperature channel on each instrument. These feed the <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a> data product.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Photo &mdash; Tidal pressure gauge (placeholder)</div><figcaption>Tidal pressure gauge.</figcaption></figure>
+        <p class="instr-site"><strong>Sites:</strong> Slope Base, Southern Hydrate Ridge, Axial Base.</p>
+
+        <h2>Current Meters</h2>
+        <p>Measure near-bottom water velocity, providing the oceanographic context needed to model and remove current- and tide-driven pressure fluctuations before a tectonic signal becomes visible.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Photo &mdash; Current meter (placeholder)</div><figcaption>Current meter.</figcaption></figure>
+        <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
       </article>
     </div>
   </div>
@@ -882,6 +860,25 @@ PUBLICATIONS_BODY = page_hero(
 </section>
 """
 
+# Publications is "Coming soon" for now. The full reference list above is
+# preserved for later restoration; the stub below overrides it in the build.
+PUBLICATIONS_BODY = page_hero(
+    "About", "Publications",
+    "Publications from the Cascadia Offshore Subduction Zone Observatory.",
+    ['<a href="index.html">Home</a>', '<a href="science.html">About</a>', "Publications"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <p class="lede-para">Coming soon.</p>
+        <p>COSZO publications will be listed here as they become available. In the meantime, please <a href="contact.html">get in touch</a> with any questions.</p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
 # ============================================================
 # SITES (overview with site cards)
 # ============================================================
@@ -905,10 +902,10 @@ SITES_BODY = page_hero(
         <p>Deep-water site at the base of the continental slope, providing reference seismic and pressure observations seaward of the locked zone.</p>
         <span class="card-link">View site &rarr;</span>
       </a>
-      <a href="axial-seamount.html" class="hub-card">
-        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="28" r="14" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="24" cy="28" r="5" fill="#17a2ab"/></svg>
-        <h3>Axial Seamount</h3>
-        <p>Active submarine volcano on the Juan de Fuca Ridge. Long-running RCA instrumentation and a natural laboratory for inflation/deflation cycles.</p>
+      <a href="oregon-shelf.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 30 H42 M6 36 H42" stroke="currentColor" stroke-width="2"/><path d="M10 30 L16 22 L24 26 L32 20 L40 30" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
+        <h3>Oregon Shelf</h3>
+        <p>Shallow continental-shelf site offshore Oregon, extending COSZO coverage shoreward of the continental slope.</p>
         <span class="card-link">View site &rarr;</span>
       </a>
     </div>
@@ -939,6 +936,7 @@ HYDRATE_RIDGE_BODY = page_hero(
     <div class="article-grid narrow">
       <article class="article-content">
         <p class="lede-para">Hydrate Ridge sits at the leading edge of the Cascadia accretionary prism. The site combines a shallow methane hydrate system, frontal thrust deformation, and seismicity near the updip limit of the locked zone.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Map of Hydrate Ridge — placeholder</div><figcaption>Location and bathymetry of the Hydrate Ridge site on the Cascadia margin.</figcaption></figure>
         <p>Detailed instrument list, depth, location, and science role will be added here.</p>
       </article>
     </div>
@@ -1296,7 +1294,7 @@ DATA_PRODUCT_CARDS = [
     ("data.html", "Differential Seafloor Pressure", "Short-period pressure variations capturing tsunami signals and hydroacoustic waves.", "Pressure &middot; Broadband"),
     ("data.html", "GSSM Calibrated Pressure &amp; Ground Acceleration", "Combined pressure and strong-motion records from geodetic seafloor stations.", "Composite &middot; Calibrated"),
     ("data.html", "SCPR Calibrated Pressure", "Self-calibrating pressure recorder data corrected for instrument drift.", "Pressure &middot; Drift-corrected"),
-    ("data.html", "Low-Frequency Acoustic Pressure", "Hydrophone data in the infrasound band for T-phase and cetacean monitoring.", "Acoustic &middot; Infrasound"),
+    ("data.html", "Hydrophone", "Hydrophone data in the infrasound band for T-phase and cetacean monitoring.", "Acoustic &middot; Infrasound"),
     ("data.html", "Strong-Motion Ground Acceleration", "High-dynamic-range accelerometer data for near-source ground motion during large events.", "Motion &middot; Strong-motion"),
     ("data.html", "Broadband Ground Velocity", "Wideband seismometer velocity records for global to regional earthquake characterization.", "Motion &middot; Broadband"),
     ("data.html", "Short-Period Ground Velocity", "High-frequency seismometer data for local microseismicity and P-wave detection.", "Motion &middot; Short-period"),
@@ -1351,40 +1349,26 @@ ASP_BODY = page_hero(
         <ul>
           <li><a href="#overview" class="active">Overview</a></li>
           <li><a href="#stations">Stations</a></li>
-          <li><a href="#specs">Specifications</a></li>
           <li><a href="#access">Data Access</a></li>
-          <li><a href="#citation">Citation</a></li>
         </ul>
       </aside>
       <article class="article-content">
-        <p class="lede-para">Absolute Seafloor Pressure (ASP) captures the total hydrostatic pressure at the sensor, combining the static pressure of the overlying water column with tidal, oceanographic, and tectonic signals. With appropriate detiding and ocean-loading correction, it reveals vertical deformation of the seafloor.</p>
-
         <h2 id="overview">Overview</h2>
-        <p>Each ASP sensor records absolute pressure at a sampling rate of 1 Hz with nominal resolution better than 1 mm of water equivalent. Raw records are distributed alongside detided and drift-corrected products. See <a href="data.html">SCPR Calibrated Pressure</a> for the self-calibrating variant of this stream.</p>
+        <p>Pressure incorporates tidal pressure gauges sampling at rates varying from 0.0667 Hz to 1.0 Hz. Each instrument also carries a temperature channel.</p>
 
         <h2 id="stations">Stations</h2>
-        <p>PREST instruments on the OOI Regional Cabled Array contribute tidal seafloor pressure to the ASP product family. <code>DO</code> channels carry absolute pressure; paired <code>K1</code> channels carry the sensor's internal pressure-temperature reading. <code>_10</code> is the SEED location code.</p>
+        <p>The table below lists the station, location code, and channels for the data.</p>
         <table class="specs-table">
           <thead>
-            <tr><th>Reference</th><th>Site</th><th>OO Net.Sta</th><th>Channels</th></tr>
+            <tr><th>Site</th><th>Station</th><th>Location</th><th>Channel</th><th>Channel codes (sample rate)</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>RS01SLBS-MJ01A-06-PRESTA101</code></td><td>Slope Base, Hydrate Ridge</td><td><code>OO.HYSB1</code></td><td><code>UDO_10</code>, <code>UK1_10</code>, <code>LDO_10</code>, <code>LK1_10</code></td></tr>
-            <tr><td><code>RS01SUM1-LJ01B-09-PRESTB102</code></td><td>Southern Hydrate Summit 1</td><td><code>OO.HYS14</code></td><td><code>UDO_10</code>, <code>UK1_10</code>, <code>LDO_10</code>, <code>LK1_10</code></td></tr>
-            <tr><td><code>RS03AXBS-MJ03A-06-PRESTA301</code></td><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>UDO_10</code>, <code>UK1_10</code></td></tr>
-          </tbody>
-        </table>
-
-        <h2 id="specs">Specifications</h2>
-        <table class="specs-table">
-          <tbody>
-            <tr><td>Sampling Rate</td><td>1 Hz (primary), 10 Hz (tsunami-band)</td></tr>
-            <tr><td>Pressure Range</td><td>0 to 10000 dbar</td></tr>
-            <tr><td>Resolution</td><td>&lt; 1 mm water equivalent</td></tr>
-            <tr><td>Accuracy (absolute)</td><td>0.01 % full scale</td></tr>
-            <tr><td>Long-term Drift</td><td>&lt; 2 cm / year (uncalibrated)</td></tr>
-            <tr><td>Deployment Depth</td><td>500 to 3000 m</td></tr>
-            <tr><td>Telemetry</td><td>Real-time via RCA fiber</td></tr>
+            <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LDO/" target="_blank" rel="noopener">LDO</a> (1.0 Hz)</td></tr>
+            <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
+            <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LDO/" target="_blank" rel="noopener">LDO</a> (1.0 Hz)</td></tr>
+            <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
+            <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz)</td></tr>
+            <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz)</td></tr>
           </tbody>
         </table>
 
@@ -1393,9 +1377,6 @@ ASP_BODY = page_hero(
         <p>More station information, data quality status, and deployments are available through the GitHub webpage: <a href="https://github.com/coszo-hub/absolute-seafloor-pressure" target="_blank" rel="noopener">github.com/coszo-hub/absolute-seafloor-pressure</a>.</p>
 
         <blockquote>Raw pressure data are released within 24 hours of acquisition. Detided and drift-corrected products are typically available within 7 days.</blockquote>
-
-        <h2 id="citation">Citation</h2>
-        <p>When citing COSZO ASP data, please acknowledge both the COSZO project and the originating NSF awards. A recommended citation string is available through the OOI data portal at the time of download.</p>
       </article>
     </div>
   </div>
@@ -1501,29 +1482,11 @@ OUTREACH_BODY = page_hero(
         <p>Paid summer research placements for undergraduates interested in marine geophysics, seismology, and instrumentation engineering.</p>
         <span class="card-link">REU details</span>
       </a>
-      <a href="outreach.html" class="hub-card">
-        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="28" height="32" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 16 H32 M16 22 H32 M16 28 H26" stroke="#17a2ab" stroke-width="2"/></svg>
-        <h3>Graduate Students</h3>
-        <p>Opportunities for graduate students to engage with COSZO data, participate in cruises, and pursue MS and PhD research at partner institutions.</p>
-        <span class="card-link">Graduate opportunities</span>
-      </a>
       <a href="early-career-workshop.html" class="hub-card">
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="4" fill="#f5a623"/><circle cx="24" cy="24" r="10" fill="none" stroke="#f5a623" opacity="0.6"/></svg>
         <h3>2027 Early Career Workshop</h3>
         <p>A multi-day workshop bringing together early-career scientists working on subduction zone science and seafloor observation.</p>
         <span class="card-link">Workshop info</span>
-      </a>
-      <a href="meetings.html" class="hub-card">
-        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><rect x="8" y="10" width="32" height="28" rx="2" stroke="currentColor" stroke-width="2"/><line x1="8" y1="18" x2="40" y2="18" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="14" r="1.5" fill="currentColor"/><circle cx="20" cy="14" r="1.5" fill="currentColor"/></svg>
-        <h3>Meetings</h3>
-        <p>Science team meetings, town halls, community updates, and conference sessions organized or co-sponsored by COSZO.</p>
-        <span class="card-link">Meeting calendar</span>
-      </a>
-      <a href="partners.html" class="hub-card">
-        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><circle cx="16" cy="24" r="10" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="24" r="10" stroke="#17a2ab" stroke-width="2"/></svg>
-        <h3>Partners</h3>
-        <p>Institutional partners, affiliated networks, and scientific collaborations that make COSZO possible.</p>
-        <span class="card-link">Our partners</span>
       </a>
     </div>
   </div>
@@ -1807,24 +1770,24 @@ CONTACT_BODY = page_hero(
 <section class="article">
   <div class="container">
     <div class="form-grid">
-      <form>
+      <form action="mailto:usherm42@uw.edu?subject=COSZO%20website%20contact" method="post" enctype="text/plain">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Your name">
+            <input id="name" name="Name" type="text" placeholder="Your name">
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@institution.edu">
+            <input id="email" name="Email" type="email" placeholder="you@institution.edu">
           </div>
         </div>
         <div class="form-group">
           <label for="affiliation">Affiliation</label>
-          <input id="affiliation" type="text" placeholder="Your institution or organization">
+          <input id="affiliation" name="Affiliation" type="text" placeholder="Your institution or organization">
         </div>
         <div class="form-group">
           <label for="topic">Topic</label>
-          <select id="topic">
+          <select id="topic" name="Topic">
             <option>Science collaboration</option>
             <option>Data access question</option>
             <option>REU program</option>
@@ -1835,9 +1798,9 @@ CONTACT_BODY = page_hero(
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" placeholder="Tell us what we can help with..."></textarea>
+          <textarea id="message" name="Message" placeholder="Tell us what we can help with..."></textarea>
         </div>
-        <button type="button" class="btn-primary">Send message
+        <button type="submit" class="btn-primary">Send message
           <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </form>
@@ -1848,7 +1811,8 @@ CONTACT_BODY = page_hero(
             COSZO Project Office<br>
             School of Oceanography<br>
             University of Washington<br>
-            Seattle, WA 98195
+            Seattle, WA 98195<br>
+            <a href="mailto:usherm42@uw.edu">usherm42@uw.edu</a>
           </address>
         </div>
         <div class="form-sidebar-block">
@@ -1866,34 +1830,107 @@ CONTACT_BODY = page_hero(
 """
 
 # ============================================================
+# OREGON SHELF (site)
+# ============================================================
+OREGON_SHELF_BODY = page_hero(
+    "Sites", "Oregon Shelf",
+    "Shallow continental-shelf site offshore Oregon, extending COSZO coverage shoreward of the continental slope.",
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Oregon Shelf"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <p class="lede-para">The Oregon Shelf site extends COSZO observations onto the continental shelf, complementing the deeper Slope Base and Hydrate Ridge installations.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Map of Oregon Shelf site &mdash; placeholder</div><figcaption>Location of the Oregon Shelf site on the Cascadia margin.</figcaption></figure>
+        <p>Detailed instrument list, depth, location, and science role will be added here.</p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# CRUISES
+# ============================================================
+CRUISES_BODY = page_hero(
+    "Infrastructure", "Cruises",
+    "Field operations for COSZO: the daily plan, dispatches from sea, the cruise diary, and live video from the ship.",
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', "Cruises"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid">
+      <aside class="article-sidebar">
+        <h4>On This Page</h4>
+        <ul>
+          <li><a href="#plan" class="active">Plan for the Day</a></li>
+          <li><a href="#blog">Blog from Sea</a></li>
+          <li><a href="#diary">Cruise Diary</a></li>
+          <li><a href="#stream">Live Video</a></li>
+        </ul>
+      </aside>
+      <article class="article-content">
+        <p class="lede-para">Live operational updates from COSZO installation and maintenance cruises along the Cascadia margin.</p>
+
+        <h2 id="plan">Plan for the Day</h2>
+        <p>The current day's operational plan will appear here during active cruises.</p>
+        <figure class="welcome-figure"><div class="image-placeholder">Daily plan / station map &mdash; placeholder</div><figcaption>Planned operations for the day.</figcaption></figure>
+
+        <h2 id="blog">Blog from Sea</h2>
+        <p>Daily dispatches written by the team at sea. Posts are reviewed before they appear here.</p>
+        <p><a class="btn-primary" href="https://github.com/coszo-hub/coszo-hub.github.io/issues/new?labels=blog-submission&amp;title=%5BBlog%5D+" target="_blank" rel="noopener">Submit a post &#8599;</a></p>
+        <div class="blog-entries">
+          <!-- Approved blog entries are rendered here by the GitHub Action (Phase 5b). -->
+          <p><em>No posts yet. Check back during the next cruise.</em></p>
+        </div>
+
+        <h2 id="diary">Cruise Diary</h2>
+        <p>A chronological record of the cruise, compiled from daily logs.</p>
+        <div class="cruise-diary">
+          <p><em>The cruise diary will be populated during operations.</em></p>
+        </div>
+
+        <h2 id="stream">Live Video</h2>
+        <p>When a live feed is available, it streams here.</p>
+        <div class="video-embed">
+          <!-- Replace with the live stream embed (YouTube Live / Vimeo) when available. -->
+          <div class="image-placeholder">Live video stream offline</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
 # REGISTER ALL PAGES AND WRITE THEM
 # ============================================================
 PAGES = [
     ("index.html",                              "COSZO — Cascadia Offshore Subduction Zone Observatory",  "home",          INDEX_BODY),
-    ("science.html",                            "Science · COSZO",                                         "science",       SCIENCE_BODY),
-    ("publications.html",                       "Publications · COSZO",                                    "science",       PUBLICATIONS_BODY),
-    ("motivation.html",                         "Motivation · COSZO",                                      "science",       MOTIVATION_BODY),
-    ("scientific-objectives.html",              "Scientific Objectives · COSZO",                           "science",       SCIOBJ_BODY),
+    ("science.html",                            "About · COSZO",                                           "about",         SCIENCE_BODY),
+    ("publications.html",                       "Publications · COSZO",                                    "about",         PUBLICATIONS_BODY),
+    ("motivation.html",                         "Motivation · COSZO",                                      "about",         MOTIVATION_BODY),
+    ("scientific-objectives.html",              "Scientific Objectives · COSZO",                           "about",         SCIOBJ_BODY),
     ("infrastructure.html",                     "Infrastructure · COSZO",                                  "infrastructure",INFRASTRUCTURE_BODY),
-    ("sites.html",                              "Sites · COSZO",                                           "infrastructure",SITES_BODY),
+    ("sites.html",                              "Seafloor Sites · COSZO",                                  "infrastructure",SITES_BODY),
     ("hydrate-ridge.html",                      "Hydrate Ridge · COSZO",                                   "infrastructure",HYDRATE_RIDGE_BODY),
     ("slope-base.html",                         "Slope Base · COSZO",                                      "infrastructure",SLOPE_BASE_BODY),
-    ("axial-seamount.html",                     "Axial Seamount · COSZO",                                  "infrastructure",AXIAL_SEAMOUNT_BODY),
+    ("oregon-shelf.html",                       "Oregon Shelf · COSZO",                                    "infrastructure",OREGON_SHELF_BODY),
     ("existing-instruments.html",               "Existing Instruments · COSZO",                            "infrastructure",EXISTING_BODY),
     ("coszo-instruments.html",                  "COSZO Instruments · COSZO",                               "infrastructure",COSZO_INSTR_BODY),
-    ("future-opportunities.html",               "Future Opportunities · COSZO",                            "infrastructure",FUTURE_BODY),
+    ("cruises.html",                            "Cruises · COSZO",                                         "infrastructure",CRUISES_BODY),
     ("data.html",                               "Data · COSZO",                                            "data",          DATAPRODUCTS_BODY),
     ("absolute-seafloor-pressure.html",         "Absolute Seafloor Pressure · COSZO",                      "data",          ASP_BODY),
-    ("people.html",                             "People · COSZO",                                          "people",        PEOPLE_BODY),
+    ("people.html",                             "People · COSZO",                                          "about",         PEOPLE_BODY),
     ("outreach.html",                           "Outreach · COSZO",                                        "outreach",      OUTREACH_BODY),
     ("research-experiences-for-undergraduates.html", "Research Experiences for Undergraduates · COSZO",    "outreach",      REU_BODY),
     ("early-career-workshop.html",              "2027 Early Career Workshop · COSZO",                      "outreach",      WORKSHOP_BODY),
-    ("meetings.html",                           "Meetings · COSZO",                                        "outreach",      MEETINGS_BODY),
     ("partners.html",                           "Partners · COSZO",                                        "outreach",      PARTNERS_BODY),
     ("early-warning.html",                      "Early Warning · COSZO",                                   "ew",            EW_BODY),
     ("feasibility-study.html",                  "2019 Feasibility Study · COSZO",                          "ew",            FEAS_BODY),
-    ("contact.html",                            "Contact · COSZO",                                         "",              CONTACT_BODY),
-    ("archives.html",                           "Archives · COSZO",                                        "",              ARCHIVES_BODY),
+    ("contact.html",                            "Contact · COSZO",                                         "about",         CONTACT_BODY),
+    ("archives.html",                           "Archives · COSZO",                                        "ew",            ARCHIVES_BODY),
     ("resources.html",                          "Resources · COSZO",                                       "",              RESOURCES_BODY),
     ("white-paper.html",                        "White Paper · COSZO",                                     "",              WHITE_PAPER_BODY),
     ("workshop-documents.html",                 "Workshop Documents · COSZO",                              "",              WORKSHOP_DOCUMENTS_BODY),
