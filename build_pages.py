@@ -82,19 +82,16 @@ def build_header(active=""):
       <div class="nav-item has-dropdown">
         <a href="data.html"{cls("data")}>Data</a>
         <div class="dropdown wide">
-          <div class="dropdown-section-heading">Pressure</div>
           <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a>
           <a href="data.html">Differential Seafloor Pressure</a>
           <a href="data.html">GSSM Calibrated Pressure &amp; Ground Acceleration</a>
           <a href="data.html">SCPR Calibrated Pressure</a>
           <a href="data.html">Hydrophone</a>
           <hr />
-          <div class="dropdown-section-heading">Motion</div>
           <a href="data.html">Strong-Motion Ground Acceleration</a>
           <a href="data.html">Broadband Ground Velocity</a>
           <a href="data.html">Short-Period Ground Velocity</a>
           <hr />
-          <div class="dropdown-section-heading">Water</div>
           <a href="data.html">Sea Water Velocity</a>
         </div>
       </div>
