@@ -241,7 +241,7 @@ INDEX_BODY = """
 <section class="quick-access">
   <div class="container">
     <div class="tiles">
-      <a href="science.html" class="tile">
+      <a href="about.html" class="tile">
         <svg class="tile-icon" viewBox="0 0 80 80" fill="none"><path d="M40 24 C32 18, 16 18, 12 20 V62 C16 60, 32 60, 40 66 C48 60, 64 60, 68 62 V20 C64 18, 48 18, 40 24 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><line x1="40" y1="24" x2="40" y2="66" stroke="#17a2ab" stroke-width="2.5"/><circle cx="40" cy="14" r="3.5" fill="#f5a623"/></svg>
         <h3 class="tile-title">About</h3>
         <p class="tile-subtitle">Motivation, objectives, people</p>
@@ -373,7 +373,7 @@ INDEX_BODY = INDEX_BODY.replace("__GLOBE_GRATICULE__", GLOBE_GRATICULE)
 MOTIVATION_BODY = page_hero(
     "Home", "Motivation",
     "The Cascadia subduction zone presents one of the greatest natural hazards to the Pacific Northwest. The tools to observe it in real time have, until now, been largely onshore.",
-    ['<a href="index.html">Home</a>', "Motivation"]
+    ['<a href="index.html">Home</a>', '<a href="about.html">About</a>', "Motivation"]
 ) + """
 <section class="article">
   <div class="container">
@@ -429,7 +429,7 @@ MOTIVATION_BODY = page_hero(
 SCIOBJ_BODY = page_hero(
     "Home", "Scientific Objectives",
     "Five research thrusts that the COSZO sensor suite is designed to address, spanning subduction mechanics, seismicity, deformation, and hazard science.",
-    ['<a href="index.html">Home</a>', "Scientific Objectives"]
+    ['<a href="index.html">Home</a>', '<a href="about.html">About</a>', "Scientific Objectives"]
 ) + """
 <section class="article">
   <div class="container">
@@ -901,7 +901,7 @@ PUBLICATIONS_BODY = page_hero(
 PUBLICATIONS_BODY = page_hero(
     "About", "Publications",
     "Publications from the Cascadia Offshore Subduction Zone Observatory.",
-    ['<a href="index.html">Home</a>', '<a href="science.html">About</a>', "Publications"]
+    ['<a href="index.html">Home</a>', '<a href="about.html">About</a>', "Publications"]
 ) + """
 <section class="article">
   <div class="container">
@@ -1535,7 +1535,7 @@ def render_people():
 PEOPLE_BODY = page_hero(
     "About", "People",
     "The scientists, engineers, students, and collaborators working together to build the Cascadia Offshore Subduction Zone Observatory.",
-    ['<a href="index.html">Home</a>', '<a href="science.html">About</a>', "People"]
+    ['<a href="index.html">Home</a>', '<a href="about.html">About</a>', "People"]
 ) + render_people()
 
 # ============================================================
@@ -2096,7 +2096,6 @@ CRUISES_BODY = page_hero(
 PAGES = [
     ("index.html",                              "COSZO — Cascadia Offshore Subduction Zone Observatory",  "home",          INDEX_BODY),
     ("about.html",                              "About · COSZO",                                           "about",         ABOUT_BODY),
-    ("science.html",                            "About · COSZO",                                           "about",         SCIENCE_BODY),
     ("publications.html",                       "Publications · COSZO",                                    "about",         PUBLICATIONS_BODY),
     ("motivation.html",                         "Motivation · COSZO",                                      "about",         MOTIVATION_BODY),
     ("scientific-objectives.html",              "Scientific Objectives · COSZO",                           "about",         SCIOBJ_BODY),
