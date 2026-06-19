@@ -1862,7 +1862,7 @@ CONTACT_BODY = page_hero(
 <section class="article">
   <div class="container">
     <div class="form-grid">
-      <form action="mailto:usherm42@uw.edu?subject=COSZO%20website%20contact" method="post" enctype="text/plain">
+      <form onsubmit="event.preventDefault(); coszoSendEmail();">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Name</label>
@@ -1896,6 +1896,13 @@ CONTACT_BODY = page_hero(
           <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </form>
+      <script>
+      function coszoSendEmail(){
+        var v=function(id){var e=document.getElementById(id);return e?e.value.trim():'';};
+        var body="Name: "+v('name')+"\\nEmail: "+v('email')+"\\nAffiliation: "+v('affiliation')+"\\nTopic: "+v('topic')+"\\n\\n"+v('message');
+        window.location.href="mailto:usherm42@uw.edu?subject="+encodeURIComponent("COSZO website contact")+"&body="+encodeURIComponent(body);
+      }
+      </script>
       <div>
         <div class="form-sidebar-block">
           <h3>Project office</h3>
