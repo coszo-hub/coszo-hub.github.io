@@ -1317,9 +1317,9 @@ def render_product_cards():
     return html
 
 DATAPRODUCTS_BODY = page_hero(
-    "Data Products", "Data Products",
+    "Data", "Data",
     "Nine continuous data streams from the COSZO and RCA sensor suite, covering pressure, ground motion, acoustic, and water velocity measurements. All data are openly available.",
-    ['<a href="index.html">Home</a>', "Data Products"]
+    ['<a href="index.html">Home</a>', "Data"]
 ) + f"""
 <section class="data-products">
   <div class="container">
@@ -1340,9 +1340,9 @@ DATAPRODUCTS_BODY = page_hero(
 # ABSOLUTE SEAFLOOR PRESSURE (example product detail page)
 # ============================================================
 ASP_BODY = page_hero(
-    "Data Products", "Absolute Seafloor Pressure",
+    "Data", "Absolute Seafloor Pressure",
     "High-precision total pressure measured at the seafloor. Used for tsunami detection, long-period seafloor deformation monitoring, and as a reference for relative pressure products.",
-    ['<a href="index.html">Home</a>', '<a href="data.html">Data Products</a>', "Absolute Seafloor Pressure"]
+    ['<a href="index.html">Home</a>', '<a href="data.html">Data</a>', "Absolute Seafloor Pressure"]
 ) + """
 <section class="article">
   <div class="container">
