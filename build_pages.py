@@ -1395,21 +1395,21 @@ ASP_BODY = page_hero(
 #   link   -> optional profile URL; blank = non-clickable card
 #   order  -> optional integer sort within a section
 PEOPLE_GROUPS = [
-    ("leadership",    "Leadership &amp; Principal Investigators"),
-    ("research",      "Research Team"),
-    ("students",      "Postdoctoral Scholars &amp; Graduate Students"),
-    ("collaborators", "Collaborators &amp; Advisory Board"),
+    ("leadership", "Leadership"),
+    ("research",   "Research"),
+    ("postdocs",   "Postdoctoral Scholars"),
+    ("graduate",   "Graduate Students"),
 ]
 _GROUP_ALIASES = {
     "leadership": "leadership", "lead": "leadership", "pi": "leadership",
     "principal investigator": "leadership", "principal investigators": "leadership",
+    "co-pi": "leadership", "co-investigator": "leadership", "faculty": "leadership",
     "research": "research", "research team": "research", "team": "research",
-    "scientist": "research", "engineer": "research", "staff": "research",
-    "students": "students", "student": "students", "postdoc": "students",
-    "postdoctoral": "students", "postdoctoral scholar": "students",
-    "graduate": "students", "grad": "students", "graduate student": "students",
-    "collaborators": "collaborators", "collaborator": "collaborators",
-    "advisory": "collaborators", "advisory board": "collaborators", "external": "collaborators",
+    "scientist": "research", "engineer": "research", "staff": "research", "apl": "research",
+    "postdocs": "postdocs", "postdoc": "postdocs", "postdoctoral": "postdocs",
+    "postdoctoral scholar": "postdocs", "postdoctoral scholars": "postdocs", "scholars": "postdocs",
+    "graduate": "graduate", "grad": "graduate", "graduate student": "graduate",
+    "graduate students": "graduate", "students": "graduate", "student": "graduate",
 }
 _AVATAR_COLORS = ["#1e7cab", "#06223a", "#f5a623", "#17a2ab", "#155e8a", "#3cbfc5"]
 
