@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oregon Offshore · COSZO</title>
+  <title>Search · COSZO</title>
   <link rel="icon" type="image/png" href="coszo-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="nav-item has-dropdown">
-        <a href="infrastructure.html" class="nav-link active">Infrastructure</a>
+        <a href="infrastructure.html" class="nav-link">Infrastructure</a>
         <div class="dropdown">
           <a href="sites.html">Seafloor Sites</a>
           <a href="existing-instruments.html">Existing Instruments</a>
@@ -89,9 +89,9 @@
 
 <section class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> <a href="infrastructure.html">Infrastructure</a> <span class="sep">/</span> <a href="sites.html">Seafloor Sites</a> <span class="sep">/</span> Oregon Offshore</div>
-    <h1>Oregon Offshore</h1>
-    <p class="lede">Continental-slope benthic site off Oregon, ~550 m deep (OOI Oregon Offshore Cabled BEP, CE04OSBP).</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> Search</div>
+    <h1>Search</h1>
+    <p class="lede">Search across the COSZO site.</p>
   </div>
 </section>
 
@@ -99,16 +99,43 @@
   <div class="container">
     <div class="article-grid narrow">
       <article class="article-content">
-        <h2>Overview</h2>
-        <p class="lede-para">Oregon Offshore Cabled Benthic Experiment Package (BEP) is located on the Continental Slope, approximately 550 meters deep. The Continental Shelf-Slope area off the Oregon coast is a highly productive, dynamic upwelling environment. Upwelling brings nutrients to the surface sparking primary production and fueling the food web. In recent years, upwelling has also brought onto the shelf hypoxic, low oxygen, waters that can be harmful to organisms in the area. By sampling in this area, the OOI seeks to gain better insight into upwelling dynamics of this system.</p>
-        <p>Like other BEPs the Oregon Offshore Cabled BEP is connected to and draws energy from Fiber Optic Cables to power its instruments and to transmit data from the instruments back to shore. Within the yellow protective armor of the BEP are two cages containing instruments that measure various properties of the bottom water.</p>
-        <p>The Oregon Offshore Cabled BEP is located near the base of a shallow and deep profiler mooring providing complementary seafloor data to the water column data collected by the profilers, allowing for the sampling of a full picture of shelf dynamics.</p>
-        <figure class="welcome-figure"><div class="image-placeholder">Map of Oregon Offshore site &mdash; placeholder</div><figcaption>Location of the Oregon Offshore site on the Cascadia margin.</figcaption></figure>
-        <p><strong>Location:</strong> 44.3695&deg;N, 124.954&deg;W &middot; ~550 m water depth.</p>
+        <input id="searchq" type="search" class="search-input" placeholder="Search the site…" autocomplete="off" autofocus>
+        <div id="searchresults" class="search-results"></div>
       </article>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var input=document.getElementById('searchq'),out=document.getElementById('searchresults'),idx=[];
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function snippet(text,terms){
+    var low=text.toLowerCase(),i=-1;
+    for(var k=0;k<terms.length&&i<0;k++) i=low.indexOf(terms[k]);
+    if(i<0) i=0; var start=Math.max(0,i-70);
+    return (start>0?'…':'')+esc(text.slice(start,start+200)).trim()+'…';
+  }
+  function run(){
+    var q=input.value.trim().toLowerCase();
+    if(!q){out.innerHTML='';return;}
+    var terms=q.split(/\s+/);
+    var hits=idx.map(function(e){
+      var title=e.title.toLowerCase(),hay=title+' '+e.text.toLowerCase(),score=0;
+      terms.forEach(function(t){ if(title.indexOf(t)>=0) score+=8; score+=(hay.split(t).length-1); });
+      return {e:e,score:score};
+    }).filter(function(x){return x.score>0;}).sort(function(a,b){return b.score-a.score;}).slice(0,25);
+    if(!hits.length){out.innerHTML='<p>No results for “'+esc(q)+'”.</p>';return;}
+    out.innerHTML=hits.map(function(h){
+      return '<a class="search-result" href="'+h.e.url+'"><h3>'+esc(h.e.title)+'</h3><p>'+snippet(h.e.text,terms)+'</p></a>';
+    }).join('');
+  }
+  fetch('search-index.json').then(function(r){return r.json();}).then(function(d){
+    idx=d; var p=new URLSearchParams(location.search).get('q');
+    if(p){input.value=p;} run();
+  }).catch(function(){out.innerHTML='<p>Search is unavailable.</p>';});
+  input.addEventListener('input',run);
+})();
+</script>
 
 
 <footer class="site-footer">

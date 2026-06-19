@@ -10,9 +10,19 @@ Run: python3 build_pages.py
 """
 
 import csv
+import json
 import os
+import re
 
 OUT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+def strip_html(html):
+    """Plain searchable text from a body HTML string."""
+    text = re.sub(r"(?is)<(script|style).*?</\1>", " ", html)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"&[#a-z0-9]+;", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
 
 # Coastline path for the Get Involved globe, pre-projected (orthographic,
 # centered on Cascadia ~125W/45N) onto a 400x400 SVG with sphere center
@@ -45,7 +55,7 @@ def build_header(active=""):
     <div class="funding-note">An <strong>NSF</strong> Mid-scale Research Infrastructure project</div>
     <div class="utility-bar-links">
       <a href="contact.html">Contact</a>
-      <a href="#">Search</a>
+      <a href="search.html">Search</a>
     </div>
   </div>
 </div>
@@ -160,7 +170,7 @@ FOOTER = """
         <ul>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="archives.html">Archives</a></li>
-          <li><a href="#">Search</a></li>
+          <li><a href="search.html">Search</a></li>
           <li><a href="https://oceanobservatories.org/" target="_blank" rel="noopener">OOI Website &#8599;</a></li>
         </ul>
       </div>
@@ -2091,6 +2101,57 @@ CRUISES_BODY = page_hero(
 """
 
 # ============================================================
+# SEARCH (client-side; reads search-index.json built in main())
+# ============================================================
+SEARCH_BODY = page_hero(
+    "Search", "Search",
+    "Search across the COSZO site.",
+    ['<a href="index.html">Home</a>', "Search"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <input id="searchq" type="search" class="search-input" placeholder="Search the site…" autocomplete="off" autofocus>
+        <div id="searchresults" class="search-results"></div>
+      </article>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var input=document.getElementById('searchq'),out=document.getElementById('searchresults'),idx=[];
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function snippet(text,terms){
+    var low=text.toLowerCase(),i=-1;
+    for(var k=0;k<terms.length&&i<0;k++) i=low.indexOf(terms[k]);
+    if(i<0) i=0; var start=Math.max(0,i-70);
+    return (start>0?'…':'')+esc(text.slice(start,start+200)).trim()+'…';
+  }
+  function run(){
+    var q=input.value.trim().toLowerCase();
+    if(!q){out.innerHTML='';return;}
+    var terms=q.split(/\\s+/);
+    var hits=idx.map(function(e){
+      var title=e.title.toLowerCase(),hay=title+' '+e.text.toLowerCase(),score=0;
+      terms.forEach(function(t){ if(title.indexOf(t)>=0) score+=8; score+=(hay.split(t).length-1); });
+      return {e:e,score:score};
+    }).filter(function(x){return x.score>0;}).sort(function(a,b){return b.score-a.score;}).slice(0,25);
+    if(!hits.length){out.innerHTML='<p>No results for “'+esc(q)+'”.</p>';return;}
+    out.innerHTML=hits.map(function(h){
+      return '<a class="search-result" href="'+h.e.url+'"><h3>'+esc(h.e.title)+'</h3><p>'+snippet(h.e.text,terms)+'</p></a>';
+    }).join('');
+  }
+  fetch('search-index.json').then(function(r){return r.json();}).then(function(d){
+    idx=d; var p=new URLSearchParams(location.search).get('q');
+    if(p){input.value=p;} run();
+  }).catch(function(){out.innerHTML='<p>Search is unavailable.</p>';});
+  input.addEventListener('input',run);
+})();
+</script>
+"""
+
+# ============================================================
 # REGISTER ALL PAGES AND WRITE THEM
 # ============================================================
 PAGES = [
@@ -2119,6 +2180,7 @@ PAGES = [
     ("early-warning.html",                      "Early Warning · COSZO",                                   "ew",            EW_BODY),
     ("feasibility-study.html",                  "2019 Feasibility Study · COSZO",                          "ew",            FEAS_BODY),
     ("contact.html",                            "Contact · COSZO",                                         "about",         CONTACT_BODY),
+    ("search.html",                             "Search · COSZO",                                          "",              SEARCH_BODY),
     ("archives.html",                           "Archives · COSZO",                                        "ew",            ARCHIVES_BODY),
     ("resources.html",                          "Resources · COSZO",                                       "",              RESOURCES_BODY),
     ("white-paper.html",                        "White Paper · COSZO",                                     "",              WHITE_PAPER_BODY),
@@ -2128,6 +2190,17 @@ PAGES = [
 
 def main():
     written = []
+    search_index = []
+
+    def add_index(filename, title, body):
+        if filename == "search.html":
+            return
+        search_index.append({
+            "url": filename,
+            "title": title.split(" · ")[0].split(" — ")[0],
+            "text": strip_html(body)[:2000],
+        })
+
     for filename, title, active, body in PAGES:
         html = DOC.format(
             title=title,
@@ -2139,22 +2212,29 @@ def main():
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(html)
         written.append(filename)
+        add_index(filename, title, body)
         print(f"  wrote {filename}")
 
     # One page per blog post (blog-<slug>.html), linked from the square blocks.
     for p in load_blog():
         slug = (p.get("slug") or "").strip()
         filename = f"blog-{slug}.html"
+        body = blog_post_body(p)
         html = DOC.format(
             title=f"{(p.get('title') or '').strip()} · COSZO",
             header=build_header("infrastructure"),
-            body=blog_post_body(p),
+            body=body,
             footer=FOOTER,
         )
         with open(os.path.join(OUT_DIR, filename), "w", encoding="utf-8") as f:
             f.write(html)
         written.append(filename)
+        add_index(filename, (p.get("title") or "").strip(), body)
         print(f"  wrote {filename}")
+
+    with open(os.path.join(OUT_DIR, "search-index.json"), "w", encoding="utf-8") as f:
+        json.dump(search_index, f, ensure_ascii=False)
+    print(f"  wrote search-index.json ({len(search_index)} entries)")
 
     print(f"\nGenerated {len(written)} pages in {OUT_DIR}")
 

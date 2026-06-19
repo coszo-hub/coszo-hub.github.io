@@ -1121,3 +1121,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .blog-card-title { font-size: 18px; margin: 0; line-height: 1.25; }
 .blog-card-excerpt { font-size: 14px; color: #5b6573; margin: 0; }
 .blog-empty { color: #5b6573; }
+
+/* Site search */
+.search-input { width: 100%; padding: 14px 16px; font-size: 16px; font-family: var(--font-body); border: 1px solid #cdd5df; border-radius: 8px; margin-bottom: 24px; }
+.search-input:focus { outline: none; border-color: #1e7cab; box-shadow: 0 0 0 3px rgba(30,124,171,.15); }
+.search-results { display: flex; flex-direction: column; gap: 14px; }
+.search-result { display: block; padding: 16px; border: 1px solid #e2e7ee; border-radius: 8px; text-decoration: none; color: inherit; transition: box-shadow .15s ease, border-color .15s ease; }
+.search-result:hover { border-color: #1e7cab; box-shadow: var(--shadow-lg); }
+.search-result h3 { margin: 0 0 4px; font-size: 18px; }
+.search-result p { margin: 0; font-size: 14px; color: #5b6573; }
