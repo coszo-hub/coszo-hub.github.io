@@ -237,7 +237,7 @@ INDEX_BODY = """
   <div class="container">
     <div class="hero-content">
       <h1>Watching the <em>Cascadia fault</em> from the seafloor.</h1>
-      <p class="hero-lede">COSZO adds geophysical instrumentation to the <a href="https://oceanobservatories.org/">Ocean Observatories Initiative (OOI)</a> Regional Cabled Array off the coast of Oregon, delivering continuous, high-fidelity seafloor data to investigate how subduction zone faults work and to support the development of offshore earthquake and tsunami early warning.</p>
+      <p class="hero-lede">COSZO adds geophysical instrumentation to the <a href="https://oceanobservatories.org/">Ocean Observatories Initiative (OOI)</a> Regional Cabled Array off the coast of Oregon, delivering continuous, high-fidelity seafloor data to investigate how the Cascadia subduction zone fault works and to support the development of offshore earthquake and tsunami early warning.</p>
       <div class="hero-ctas">
         <a href="scientific-objectives.html" class="hero-cta">Science objectives
           <svg class="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
