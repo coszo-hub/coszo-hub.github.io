@@ -241,6 +241,11 @@ INDEX_BODY = """
 <section class="quick-access">
   <div class="container">
     <div class="tiles">
+      <a href="science.html" class="tile">
+        <svg class="tile-icon" viewBox="0 0 80 80" fill="none"><path d="M40 24 C32 18, 16 18, 12 20 V62 C16 60, 32 60, 40 66 C48 60, 64 60, 68 62 V20 C64 18, 48 18, 40 24 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><line x1="40" y1="24" x2="40" y2="66" stroke="#17a2ab" stroke-width="2.5"/><circle cx="40" cy="14" r="3.5" fill="#f5a623"/></svg>
+        <h3 class="tile-title">About</h3>
+        <p class="tile-subtitle">Motivation, objectives, people</p>
+      </a>
       <a href="infrastructure.html" class="tile">
         <svg class="tile-icon" viewBox="0 0 80 80" fill="none"><path d="M8 58 L40 20 L72 58" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="40" cy="20" r="4" fill="#f5a623"/><line x1="8" y1="66" x2="72" y2="66" stroke="currentColor" stroke-width="2.5"/><circle cx="22" cy="62" r="3" fill="#17a2ab"/><circle cx="40" cy="58" r="3" fill="#17a2ab"/><circle cx="58" cy="62" r="3" fill="#17a2ab"/></svg>
         <h3 class="tile-title">Infrastructure</h3>
@@ -251,15 +256,15 @@ INDEX_BODY = """
         <h3 class="tile-title">Data Products</h3>
         <p class="tile-subtitle">Pressure, motion, water velocity</p>
       </a>
-      <a href="early-warning.html" class="tile">
-        <svg class="tile-icon" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="5" fill="#f5a623"/><circle cx="40" cy="40" r="14" fill="none" stroke="#f5a623" stroke-width="2" opacity="0.7"/><circle cx="40" cy="40" r="24" fill="none" stroke="#f5a623" stroke-width="2" opacity="0.45"/><circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" stroke-width="2" opacity="0.7"/></svg>
-        <h3 class="tile-title">Early Warning</h3>
-        <p class="tile-subtitle">Seafloor detection for EEW</p>
-      </a>
       <a href="outreach.html" class="tile">
         <svg class="tile-icon" viewBox="0 0 80 80" fill="none"><circle cx="30" cy="28" r="10" stroke="currentColor" stroke-width="2.5"/><circle cx="54" cy="32" r="8" stroke="#17a2ab" stroke-width="2.5"/><path d="M12 66 Q 30 48, 48 66" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M40 64 Q 54 50, 68 64" stroke="#17a2ab" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
         <h3 class="tile-title">Outreach</h3>
         <p class="tile-subtitle">REUs, workshops, community</p>
+      </a>
+      <a href="early-warning.html" class="tile">
+        <svg class="tile-icon" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="5" fill="#f5a623"/><circle cx="40" cy="40" r="14" fill="none" stroke="#f5a623" stroke-width="2" opacity="0.7"/><circle cx="40" cy="40" r="24" fill="none" stroke="#f5a623" stroke-width="2" opacity="0.45"/><circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" stroke-width="2" opacity="0.7"/></svg>
+        <h3 class="tile-title">Early Warning</h3>
+        <p class="tile-subtitle">Seafloor detection for EEW</p>
       </a>
     </div>
   </div>
