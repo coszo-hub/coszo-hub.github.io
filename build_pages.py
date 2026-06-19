@@ -484,30 +484,61 @@ EXISTING_BODY = page_hero(
 ) + """
 <section class="article">
   <div class="container">
-    <div class="article-grid narrow">
-      <article class="article-content">
-        <p class="lede-para">Since 2015, the OOI Regional Cabled Array has delivered real-time data from a suite of seafloor instruments along the Cascadia margin. These existing instruments are the foundation COSZO extends.</p>
+    <p class="lede-para" style="max-width:820px; margin:0 0 44px;">Since 2015, the OOI Regional Cabled Array has delivered real-time data from a suite of seafloor instruments along the Cascadia margin. These existing instruments &mdash; listed below with their makes, models, and the sites where COSZO uses them &mdash; are the foundation COSZO extends. Each links to its OOI instrument page for full specifications.</p>
 
-        <h2>Seismic and geodetic</h2>
-        <figure class="welcome-figure"><div class="image-placeholder">Photo &mdash; RCA seismic / geodetic instruments (placeholder)</div><figcaption>Existing RCA seismic and geodetic instruments.</figcaption></figure>
-        <h3>Broadband Ocean-Bottom Seismometer</h3>
-        <p>Three-component ground velocity, 0.01 to 40 Hz. <strong>Sites:</strong> primary nodes at Slope Base and Axial Base.</p>
-        <h3>Bottom Pressure Tilt</h3>
-        <p>Seafloor pressure and two-axis tilt. <strong>Sites:</strong> multiple RCA sites.</p>
-        <h3>Hydrophone</h3>
-        <p>Low-frequency acoustic pressure. <strong>Sites:</strong> Axial Seamount, Slope Base.</p>
-        <h3>Short-period 4C OBS</h3>
-        <p>Short-period three-component plus hydrophone. <strong>Sites:</strong> Axial Seamount caldera.</p>
+    <div class="instr-row">
+      <div class="instr-text">
+        <h2>Broadband Ocean-Bottom Seismometer</h2>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> Güralp CMG-1T (360&nbsp;s&ndash;50&nbsp;Hz) with CMG-5T strong-motion and a DM24/7-EAM digitizer; Ethernet (10/100), synced to pulse-per-second timing.</p>
+        <p>Broadband seismometers measure seismicity and earthquake activity along tectonic plate boundaries &mdash; from large-magnitude subduction-zone earthquakes to smaller events associated with faulting, melt migration, and hydrothermal upflow. Each instrument sits in a titanium housing; in sediment-covered areas it is set in a 60&nbsp;cm caisson filled with silica beads to improve seafloor coupling and data resolution. The cabled connection enables real-time earthquake detection along the Oregon margin.</p>
+        <p class="instr-site"><strong>Sites:</strong> Slope Base, Southern Hydrate Ridge.</p>
+        <p><a href="https://interactiveoceans.washington.edu/instruments/broadband-ocean-bottom-seismometer/" target="_blank" rel="noopener">Instrument details &#8599;</a></p>
+      </div>
+      <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Broadband ocean-bottom seismometer (placeholder)</div></figure>
+    </div>
 
-        <h2>Oceanographic</h2>
-        <figure class="welcome-figure"><div class="image-placeholder">Photo &mdash; RCA oceanographic instruments (placeholder)</div><figcaption>Existing RCA oceanographic instruments.</figcaption></figure>
-        <h3>Acoustic Doppler Current Profiler</h3>
-        <p>Water column velocity. <strong>Sites:</strong> shelf and slope moorings.</p>
-        <h3>CTD</h3>
-        <p>Conductivity, temperature, depth. <strong>Sites:</strong> profilers and moorings.</p>
-        <h3>Single-point current meter</h3>
-        <p>Near-bottom water velocity. <strong>Sites:</strong> benthic platforms.</p>
-      </article>
+    <div class="instr-row">
+      <div class="instr-text">
+        <h2>Short-Period Seismometer</h2>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> Güralp short-period ocean-bottom seismometer (CMG-6TF), frequency range ~0.1&ndash;100&nbsp;Hz; three units.</p>
+        <p>Short-period ocean-bottom seismometers detect the seismic vibrations of small earthquakes as energy travels through the seafloor, across a frequency range from roughly 0.1&nbsp;Hz to 100&nbsp;Hz. Three units monitor the Southern Hydrate Ridge summit, a methane-seep site offshore Newport, Oregon, helping resolve local subsurface processes. All instruments transmit real-time data and are publicly available.</p>
+        <p class="instr-site"><strong>Sites:</strong> Southern Hydrate Ridge (three units).</p>
+        <p><a href="https://interactiveoceans.washington.edu/instruments/short-period-seismometer/" target="_blank" rel="noopener">Instrument details &#8599;</a></p>
+      </div>
+      <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Short-period seismometer (placeholder)</div></figure>
+    </div>
+
+    <div class="instr-row">
+      <div class="instr-text">
+        <h2>Low-Frequency Hydrophone</h2>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> HTI-90-U; detection band ~2&nbsp;Hz to 20&nbsp;kHz.</p>
+        <p>Low-frequency hydrophones detect the hydroacoustic tertiary (T) phase of oceanic earthquakes as well as solid-earth P waves from regional and teleseismic events. Working alongside the ocean-bottom seismometers, they enhance real-time offshore earthquake detection and improve magnitude and location accuracy. During the April 2015 Axial Seamount eruption, the hydrophones recorded over 30,000 water-borne acoustic events.</p>
+        <p class="instr-site"><strong>Sites:</strong> Slope Base, Southern Hydrate Ridge.</p>
+        <p><a href="https://interactiveoceans.washington.edu/instruments/low-frequency-hydrophone/" target="_blank" rel="noopener">Instrument details &#8599;</a></p>
+      </div>
+      <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Low-frequency hydrophone (placeholder)</div></figure>
+    </div>
+
+    <div class="instr-row">
+      <div class="instr-text">
+        <h2>Seafloor Pressure Gauge</h2>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> Sea-Bird SBE 54.</p>
+        <p>Sea-Bird SBE 54 sensors record absolute seafloor pressure in real time. Pressure is sensitive to lunar tides, storms, and currents, which can drive fluid migration into and out of seafloor crust and sediments; the same instruments can also measure the passing of tsunamis in real time.</p>
+        <p class="instr-site"><strong>Sites:</strong> Slope Base, Southern Hydrate Ridge (also Axial Base).</p>
+        <p><a href="https://interactiveoceans.washington.edu/instruments/pressure-at-the-seafloor/" target="_blank" rel="noopener">Instrument details &#8599;</a></p>
+      </div>
+      <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Seafloor pressure gauge (placeholder)</div></figure>
+    </div>
+
+    <div class="instr-row">
+      <div class="instr-text">
+        <h2>Current Meter</h2>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> Nobska MAVS-4 (VEL3D) on the seafloor; Nortek Vector (VEL3D) on the Oregon Shelf and Oregon Offshore benthic experiment platforms.</p>
+        <p>Single-point current meters measure the speed and direction of local currents along with water temperature. The measurements are key to understanding how heat, mass, and momentum are transported and how seawater mixes at small scales, and they also help filter current-driven acoustic noise from the seismic signals along the steep Cascadia bathymetry.</p>
+        <p class="instr-site"><strong>Sites:</strong> Slope Base, Southern Hydrate Ridge, Oregon Shelf, Oregon Offshore.</p>
+        <p><a href="https://interactiveoceans.washington.edu/instruments/current-meter/" target="_blank" rel="noopener">Instrument details &#8599;</a></p>
+      </div>
+      <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Current meter (placeholder)</div></figure>
     </div>
   </div>
 </section>
