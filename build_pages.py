@@ -1832,8 +1832,14 @@ CONTACT_BODY = page_hero(
       </form>
       <div>
         <div class="form-sidebar-block">
-          <h3>Email</h3>
-          <p><a href="mailto:usherm42@uw.edu">usherm42@uw.edu</a></p>
+          <h3>Project office</h3>
+          <address>
+            COSZO Project Office<br>
+            School of Oceanography<br>
+            University of Washington<br>
+            Seattle, WA 98195<br>
+            <a href="mailto:usherm42@uw.edu">usherm42@uw.edu</a>
+          </address>
         </div>
         <div class="form-sidebar-block">
           <h3>Data questions</h3>
