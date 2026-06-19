@@ -945,11 +945,11 @@ HYDRATE_RIDGE_BODY = page_hero(
     <div class="article-grid narrow">
       <article class="article-content">
         <h2>Overview</h2>
-        <p class="lede-para">Southern Hydrate Ridge, on the Oregon continental slope at about 775 m depth, is a seafloor observatory for studying methane-hydrate deposits and seepage. Abundant methane-ice deposits release methane-rich fluids and bubble plumes that rise several hundred meters above the seafloor, supporting distinctive microbial and animal communities and providing a natural laboratory for ocean chemistry and chemical-flux measurements.</p>
-        <p>The scientific focus includes how methane release affects seawater and marine life, and broader carbon-cycle dynamics. Because methane is a potent greenhouse gas, monitoring its flux from the seafloor — and how warming and seismic events influence hydrate stability — is a central goal.</p>
+        <p class="lede-para">The Southern Hydrate Summit 1 Seafloor study site, situated on the continental slope off the coast of Oregon at a water depth of ~775 m, hosts abundant deposits of methane ice (methane hydrates) that are buried beneath, and sometimes exposed at the seafloor. The deposits vent methane-rich fluids and bubbles that escape through seeps on the ocean bottom. At Southern Hydrate Ridge plumes of bubbles rise several hundred meters above the seafloor. Dense and fascinating communities of microbes and animals with symbiotic microbes in their guts are fueled by these escaping gases. These seeps provide a unique opportunity to study ocean chemistry, quantifying chemical fluxes from the seafloor and the impacts of methane release on overlying seawater and biota.</p>
+        <p>Methane is a powerful greenhouse gas and, therefore, quantifying the flux of methane from the seafloor into the hydrosphere is critical to understanding carbon-cycle dynamics and the impacts of global warming on methane release, particularly in the context of the hydrates response to seismic events.</p>
+        <p>This Low-Power JBox (LJ01B) rests on the seafloor and contains geophysical and near seafloor water column instrumentation, and is attached to a fiber-optic cable. Instrumentation hosted on the JBox is largely geophysical in nature, hosting both short-period and broadband seismometers. The fiber-optic cable provides the JBox with significant power and 1 Gb communication bandwidth for two-way communication to instruments for their operation and transmission of data to shore. This JBox is also co-located with a Medium-Power JBox that collects a complementary suite of seafloor and water column measurements.</p>
         <figure class="welcome-figure"><div class="image-placeholder">Map of Southern Hydrate Ridge — placeholder</div><figcaption>Location and bathymetry of the Southern Hydrate Ridge site on the Cascadia margin.</figcaption></figure>
         <p><strong>Location:</strong> 44.5691&deg;N, 125.1481&deg;W &middot; ~775 m water depth.</p>
-        <p>OOI site page: <a href="https://oceanobservatories.org/site/rs01sum1/" target="_blank" rel="noopener">RS01SUM1 &#8599;</a></p>
       </article>
     </div>
   </div>
@@ -966,11 +966,11 @@ SLOPE_BASE_BODY = page_hero(
     <div class="article-grid narrow">
       <article class="article-content">
         <h2>Overview</h2>
-        <p class="lede-para">Oregon Slope Base sits adjacent to the continental slope off Oregon at roughly 2,900 m depth, in a region shaped by the California Current and internal waves. Wind-driven upwelling brings nutrient-rich deep water toward the surface, boosting productivity but also driving periodic hypoxia and acidified-water events that affect seafloor fauna.</p>
-        <p>Two cabled junction boxes on the seafloor &mdash; a medium-power and a low-power box &mdash; supply power and high-bandwidth communication to geophysical and near-seafloor instrumentation. The site works alongside the Slope Base profiler moorings and, with the rest of the Cabled Array, supports observation of seismic activity and coastal variability off central Oregon.</p>
+        <p class="lede-para">The Oregon Slope Base Seafloor site is located adjacent to the continental slope off the coast of Oregon at a water depth of ~2,900 meters. The site contains a Medium-Power JBox (MJ01A) and a Low-Power JBox (LJ01A). Here, ocean water properties are profoundly impacted by the California Current, and perhaps internal waves. The coastal region of the Pacific Northwest is a classic wind-driven upwelling system where nutrient-rich deep waters rise to replace warmer surface waters. The result is a large increase in marine productivity that ranges from phytoplankton to fish to marine mammals. Near bottom fauna are periodically negatively impacted by the flow of deep waters with very low oxygen concentrations (hypoxia events), and upwelling of corrosive, acidified waters onto the continental shelf. This area is also just outboard of the Cascadia Subduction Zone, which experienced a &gt;9M earthquake January 26, 1700 and which is now characterized by episodic tremors (slow earthquakes).</p>
+        <p>As with other JBoxes, these rest on the seafloor, contain geophysical and near seafloor water column instrumentation, and are attached to a fiber-optic cable. The fiber-optic cable provides the JBoxes with a significant power and 1 Gb communication bandwidth that provides two-way communication to instruments for their operation and transmission of data to shore. This seafloor site is also co-located with a Deep and Shallow Profiler Mooring, that collect complementary water column data.</p>
+        <p>When coupled with other Cabled Array and Endurance Array installations off the central Oregon coast, the Slope Base infrastructure provides a wide variety of opportunities for observing seismic and coastal phenomena, including cross-shelf and along-shelf variability.</p>
         <figure class="welcome-figure"><div class="image-placeholder">Map of Slope Base — placeholder</div><figcaption>Location and bathymetry of the Slope Base site on the Cascadia margin.</figcaption></figure>
         <p><strong>Location:</strong> 44.5153&deg;N, 125.3898&deg;W &middot; ~2,900 m water depth.</p>
-        <p>OOI site page: <a href="https://oceanobservatories.org/site/rs01slbs/" target="_blank" rel="noopener">RS01SLBS &#8599;</a></p>
       </article>
     </div>
   </div>
@@ -1976,11 +1976,11 @@ OREGON_SHELF_BODY = page_hero(
     <div class="article-grid narrow">
       <article class="article-content">
         <h2>Overview</h2>
-        <p class="lede-para">The Oregon Shelf Cabled Benthic Experiment Package operates in a highly productive upwelling zone off the Oregon coast at about 80 m depth. Upwelling brings nutrients to the surface, sparking primary production and fueling the food web, but it can also carry hypoxic, low-oxygen water onto the shelf that is harmful to organisms in the area.</p>
-        <p>Connected to the Cabled Array by fiber-optic cable, the benthic package powers its instruments and transmits seafloor data to shore in real time. Working alongside nearby surface moorings and profilers, it provides complementary bottom-water measurements for a fuller picture of shelf dynamics.</p>
+        <p class="lede-para">The Oregon Shelf Cabled BEP is located on the Continental Shelf, approximately 80 meters deep. The Continental Shelf-Slope area off the Oregon coast is a highly productive, dynamic upwelling environment. Upwelling brings nutrients to the surface sparking primary production and fueling the food web. In recent years, upwelling has also brought onto the shelf hypoxic, low oxygen, waters that can be harmful to organisms in the area. By sampling in this area, the OOI seeks to gain better insight into upwelling dynamics of this system.</p>
+        <p>Like other BEPs the Oregon Shelf Cabled BEP is connected to and draws energy from Fiber Optic Cables to power its instruments and to transmit data from the instruments back to shore. Within the yellow protective armor of the BEP are two cages containing instruments that measure various properties of the bottom water.</p>
+        <p>The Cabled Endurance Oregon Shelf Cabled BEP is located near the base of a surface mooring and surface-piercing profiler mooring, providing complementary seafloor data to the air-sea and water column data collected by the moorings, allowing for the sampling of a full picture of shelf dynamics.</p>
         <figure class="welcome-figure"><div class="image-placeholder">Map of Oregon Shelf site &mdash; placeholder</div><figcaption>Location of the Oregon Shelf site on the Cascadia margin.</figcaption></figure>
         <p><strong>Location:</strong> 44.6371&deg;N, 124.306&deg;W &middot; ~80 m water depth.</p>
-        <p>OOI site page: <a href="https://oceanobservatories.org/site/ce02shbp/" target="_blank" rel="noopener">CE02SHBP &#8599;</a></p>
       </article>
     </div>
   </div>
@@ -2000,11 +2000,11 @@ OREGON_OFFSHORE_BODY = page_hero(
     <div class="article-grid narrow">
       <article class="article-content">
         <h2>Overview</h2>
-        <p class="lede-para">The Oregon Offshore Cabled Benthic Experiment Package is located on the continental slope off Oregon at about 550 m depth. The continental shelf-slope area off the Oregon coast is a highly productive, dynamic upwelling environment, where upwelling brings nutrients to the surface, sparking primary production and fueling the food web.</p>
-        <p>Powered by fiber-optic cable, the package houses two instrument cages that measure seafloor properties and operates alongside nearby profiler moorings, complementing water-column observations with bottom measurements to capture shelf and slope dynamics.</p>
+        <p class="lede-para">Oregon Offshore Cabled Benthic Experiment Package (BEP) is located on the Continental Slope, approximately 550 meters deep. The Continental Shelf-Slope area off the Oregon coast is a highly productive, dynamic upwelling environment. Upwelling brings nutrients to the surface sparking primary production and fueling the food web. In recent years, upwelling has also brought onto the shelf hypoxic, low oxygen, waters that can be harmful to organisms in the area. By sampling in this area, the OOI seeks to gain better insight into upwelling dynamics of this system.</p>
+        <p>Like other BEPs the Oregon Offshore Cabled BEP is connected to and draws energy from Fiber Optic Cables to power its instruments and to transmit data from the instruments back to shore. Within the yellow protective armor of the BEP are two cages containing instruments that measure various properties of the bottom water.</p>
+        <p>The Oregon Offshore Cabled BEP is located near the base of a shallow and deep profiler mooring providing complementary seafloor data to the water column data collected by the profilers, allowing for the sampling of a full picture of shelf dynamics.</p>
         <figure class="welcome-figure"><div class="image-placeholder">Map of Oregon Offshore site &mdash; placeholder</div><figcaption>Location of the Oregon Offshore site on the Cascadia margin.</figcaption></figure>
         <p><strong>Location:</strong> 44.3695&deg;N, 124.954&deg;W &middot; ~550 m water depth.</p>
-        <p>OOI site page: <a href="https://oceanobservatories.org/site/ce04osbp/" target="_blank" rel="noopener">CE04OSBP &#8599;</a></p>
       </article>
     </div>
   </div>
