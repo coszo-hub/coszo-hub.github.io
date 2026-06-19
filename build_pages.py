@@ -1584,7 +1584,7 @@ WORKSHOP_BODY = page_hero(
         <p class="lede-para">The 2027 COSZO Early Career Workshop will bring together graduate students, postdocs, and early-career faculty for three days of talks, poster sessions, and working groups at the University of Washington.</p>
 
         <h2>When &amp; where</h2>
-        <p><strong>Dates:</strong> June 14 to 16, 2027<br>
+        <p><strong>Dates:</strong> TBD<br>
         <strong>Location:</strong> University of Washington, Seattle<br>
         <strong>Format:</strong> In-person with limited remote participation</p>
 
