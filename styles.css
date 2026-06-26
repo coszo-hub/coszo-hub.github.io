@@ -439,6 +439,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: color 0.2s, border-color 0.2s;
 }
 .welcome-body a:hover { color: var(--teal-500); border-color: var(--teal-500); }
+/* Full-width intro: eyebrow + heading span the container above the body. */
+.welcome-intro { margin-bottom: 32px; }
+.welcome-intro .section-heading { max-width: none; margin-bottom: 0; text-wrap: balance; }
+
+/* Magazine flow: the map floats right and the body text wraps around it,
+   then continues full width once the text runs past the image. */
+.welcome-flow::after { content: ""; display: block; clear: both; }
+.welcome-flow .welcome-media {
+  float: right;
+  width: 52%;
+  margin: 6px 0 24px 40px;
+}
 .welcome-media {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -1055,6 +1067,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .cta-grid,
   .form-grid,
   .article-grid { grid-template-columns: 1fr; gap: 48px; }
+  /* Narrow: stop the map from floating; stack it full width above the text. */
+  .welcome-flow .welcome-media { float: none; width: 100%; margin: 0 0 28px; }
   .article-sidebar { position: static; }
   .products-grid { grid-template-columns: repeat(2, 1fr); }
   .people-grid { grid-template-columns: repeat(2, 1fr); }
