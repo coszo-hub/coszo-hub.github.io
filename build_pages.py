@@ -1465,6 +1465,7 @@ PEOPLE_GROUPS = [
     ("research",   "Research"),
     ("postdocs",   "Postdoctoral Scholars"),
     ("graduate",   "Graduate Students"),
+    ("committee",  "Science Advisory Committee"),
 ]
 _GROUP_ALIASES = {
     "leadership": "leadership", "lead": "leadership", "pi": "leadership",
@@ -1476,6 +1477,8 @@ _GROUP_ALIASES = {
     "postdoctoral scholar": "postdocs", "postdoctoral scholars": "postdocs", "scholars": "postdocs",
     "graduate": "graduate", "grad": "graduate", "graduate student": "graduate",
     "graduate students": "graduate", "students": "graduate", "student": "graduate",
+    "committee": "committee", "science advisory committee": "committee",
+    "sac": "committee", "advisory": "committee", "advisory committee": "committee",
 }
 _AVATAR_COLORS = ["#1e7cab", "#06223a", "#f5a623", "#17a2ab", "#155e8a", "#3cbfc5"]
 
