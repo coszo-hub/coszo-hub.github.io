@@ -432,6 +432,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--ink);
   line-height: 1.7;
   margin-bottom: 18px;
+  text-align: justify;
+  hyphens: auto;
 }
 .welcome-body a {
   color: var(--ocean-500);
