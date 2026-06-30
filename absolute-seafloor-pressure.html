@@ -100,33 +100,46 @@
         <ul>
           <li><a href="#overview" class="active">Overview</a></li>
           <li><a href="#stations">Stations</a></li>
+          <li><a href="#additional">Additional Data</a></li>
           <li><a href="#access">Data Access</a></li>
         </ul>
       </aside>
       <article class="article-content">
         <h2 id="overview">Overview</h2>
-        <p>Pressure incorporates tidal pressure gauges sampling at rates varying from 0.0667 Hz to 1.0 Hz. Each instrument also carries a temperature channel.</p>
+        <p>Pressure incorporates tidal pressure gauges sampling at rates varying from 0.0667 Hz to 1.0 Hz. Each instrument also carries a housing temperature channel.</p>
 
         <h2 id="stations">Stations</h2>
         <p>The table below lists the station, location code, and channels for the data.</p>
         <table class="specs-table">
           <thead>
-            <tr><th>Site</th><th>Station</th><th>Location</th><th>Channel</th><th>Channel codes (sample rate)</th></tr>
+            <tr><th>Site</th><th>Station</th><th>Location</th><th>Data type</th><th>Channel</th></tr>
           </thead>
           <tbody>
             <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LDO/" target="_blank" rel="noopener">LDO</a> (1.0 Hz)</td></tr>
-            <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
+            <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Housing temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
             <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LDO/" target="_blank" rel="noopener">LDO</a> (1.0 Hz)</td></tr>
-            <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
+            <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Housing temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
+          </tbody>
+        </table>
+        <p class="instr-site">Entries without a link under Channel are data that will be available once COSZO comes online.</p>
+
+        <h2 id="additional">Additional Data</h2>
+        <p>Absolute pressure data from Axial Base, served through the same OOI infrastructure.</p>
+        <table class="specs-table">
+          <thead>
+            <tr><th>Site</th><th>Station</th><th>Location</th><th>Data type</th><th>Channel</th></tr>
+          </thead>
+          <tbody>
             <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz)</td></tr>
-            <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz)</td></tr>
+            <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Housing temperature</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz)</td></tr>
           </tbody>
         </table>
 
         <h2 id="access">Data Access</h2>
         <p>More station information, data quality status, and deployments are available through the GitHub webpage: <a href="https://github.com/coszo-hub/absolute-seafloor-pressure" target="_blank" rel="noopener">github.com/coszo-hub/absolute-seafloor-pressure</a>.</p>
+        <p>Scripts for detiding and drift-correcting the data are available through the COSZO GitHub.</p>
 
-        <blockquote>Raw pressure data are released within 24 hours of acquisition. Detided and drift-corrected products are typically available within 7 days.</blockquote>
+        <blockquote>Raw pressure data are released within 24 hours of acquisition.</blockquote>
       </article>
     </div>
   </div>
@@ -143,42 +156,49 @@
         </div>
         <p>
           The Cascadia Offshore Subduction Zone Observatory is an NSF Mid-scale Research Infrastructure project
-          adding geophysical instrumentation to the OOI Regional Cabled Array off the coast of Oregon.
+          adding geophysical instrumentation to the OOI Regional Cabled Array off the coast of Oregon
+          to understand the science of subduction-zone hazard.
         </p>
       </div>
       <div class="footer-col">
-        <h4>About</h4>
+        <h4><a href="about.html">About</a></h4>
         <ul>
           <li><a href="motivation.html">Motivation</a></li>
-          <li><a href="scientific-objectives.html">Scientific Objectives</a></li>
+          <li><a href="scientific-objectives.html">Objectives</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="people.html">People</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Infrastructure</h4>
+        <h4><a href="infrastructure.html">Infrastructure</a></h4>
         <ul>
-          <li><a href="infrastructure.html">Overview</a></li>
           <li><a href="sites.html">Seafloor Sites</a></li>
           <li><a href="existing-instruments.html">Existing Instruments</a></li>
           <li><a href="coszo-instruments.html">COSZO Instruments</a></li>
+          <li><a href="cruises.html">Cruises</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Engage</h4>
+        <h4><a href="data.html">Data</a></h4>
         <ul>
-          <li><a href="outreach.html">Outreach</a></li>
-          <li><a href="early-warning.html">Early Warning</a></li>
-          <li><a href="feasibility-study.html">Feasibility Study</a></li>
+          <li><a href="data.html">Data Products</a></li>
+          <li><a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Stay Connected</h4>
+        <h4><a href="outreach.html">Outreach</a></h4>
         <ul>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="research-experiences-for-undergraduates.html">Research Experiences for Undergraduates</a></li>
+          <li><a href="early-career-workshop.html">2027 Early Career Workshop</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><a href="early-warning.html">Early Warning</a></h4>
+        <ul>
+          <li><a href="early-warning.html">Early Warning Overview</a></li>
+          <li><a href="feasibility-study.html">2019 Feasibility Study</a></li>
           <li><a href="archives.html">Archives</a></li>
-          <li><a href="search.html">Search</a></li>
-          <li><a href="https://oceanobservatories.org/" target="_blank" rel="noopener">OOI Website &#8599;</a></li>
         </ul>
       </div>
     </div>

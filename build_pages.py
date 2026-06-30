@@ -133,42 +133,49 @@ FOOTER = """
         </div>
         <p>
           The Cascadia Offshore Subduction Zone Observatory is an NSF Mid-scale Research Infrastructure project
-          adding geophysical instrumentation to the OOI Regional Cabled Array off the coast of Oregon.
+          adding geophysical instrumentation to the OOI Regional Cabled Array off the coast of Oregon
+          to understand the science of subduction-zone hazard.
         </p>
       </div>
       <div class="footer-col">
-        <h4>About</h4>
+        <h4><a href="about.html">About</a></h4>
         <ul>
           <li><a href="motivation.html">Motivation</a></li>
-          <li><a href="scientific-objectives.html">Scientific Objectives</a></li>
+          <li><a href="scientific-objectives.html">Objectives</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="people.html">People</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Infrastructure</h4>
+        <h4><a href="infrastructure.html">Infrastructure</a></h4>
         <ul>
-          <li><a href="infrastructure.html">Overview</a></li>
           <li><a href="sites.html">Seafloor Sites</a></li>
           <li><a href="existing-instruments.html">Existing Instruments</a></li>
           <li><a href="coszo-instruments.html">COSZO Instruments</a></li>
+          <li><a href="cruises.html">Cruises</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Engage</h4>
+        <h4><a href="data.html">Data</a></h4>
         <ul>
-          <li><a href="outreach.html">Outreach</a></li>
-          <li><a href="early-warning.html">Early Warning</a></li>
-          <li><a href="feasibility-study.html">Feasibility Study</a></li>
+          <li><a href="data.html">Data Products</a></li>
+          <li><a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Stay Connected</h4>
+        <h4><a href="outreach.html">Outreach</a></h4>
         <ul>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="research-experiences-for-undergraduates.html">Research Experiences for Undergraduates</a></li>
+          <li><a href="early-career-workshop.html">2027 Early Career Workshop</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><a href="early-warning.html">Early Warning</a></h4>
+        <ul>
+          <li><a href="early-warning.html">Early Warning Overview</a></li>
+          <li><a href="feasibility-study.html">2019 Feasibility Study</a></li>
           <li><a href="archives.html">Archives</a></li>
-          <li><a href="search.html">Search</a></li>
-          <li><a href="https://oceanobservatories.org/" target="_blank" rel="noopener">OOI Website &#8599;</a></li>
         </ul>
       </div>
     </div>
@@ -279,7 +286,10 @@ INDEX_BODY = """
     </div>
     <div class="welcome-body welcome-flow">
       <figure class="welcome-media">
-        <img src="cascadia_zoomed.jpg" alt="Zoomed map of the Cascadia subduction zone off the Oregon coast." loading="lazy" />
+        <div class="welcome-media-frame">
+          <img src="cascadia_zoomed.jpg" alt="Zoomed map of the Cascadia subduction zone off the Oregon coast." loading="lazy" />
+        </div>
+        <figcaption>Detailed bathymetric map of the Cascadia subduction zone off the Oregon coast, showing the COSZO study area along the OOI Regional Cabled Array.</figcaption>
       </figure>
       <p>The Cascadia Offshore Subduction Zone Observatory (COSZO) is a National Science Foundation funded Mid-scale Research Infrastructure (RI-1) implementation project. Scientists and engineers from the University of Washington School of Oceanography, Department of Earth and Space Sciences, and Applied Physics Laboratory, together with the Scripps Institution of Oceanography, are adding geophysical instrumentation to the <a href="https://oceanobservatories.org/">Ocean Observatories Initiative</a> <a href="https://interactiveoceans.washington.edu/about/regional-cabled-array/">Regional Cabled Array</a> off the coast of Oregon.</p>
       <p>The RCA, established in 2015, was originally positioned on the continental margin to support coastal oceanography. It is also fortuitously located in a region of geophysical significance where the locked region of the Cascadia fault extends well offshore and clusters of earthquakes occur beneath the continental shelf.</p>
@@ -296,14 +306,14 @@ INDEX_BODY = """
   <div class="container">
     <div class="cta-grid">
       <div>
-        <div class="section-eyebrow" style="color: var(--epicenter);">Get Involved</div>
-        <h2>Bringing the seafloor into the earthquake early-warning conversation.</h2>
-        <p>COSZO data will be openly available through the OOI cyberinfrastructure. Researchers, educators, and emergency-response practitioners are invited to explore the science, contribute ideas for future instrumentation, or participate in our workshops and training programs.</p>
+        <div class="section-eyebrow" style="color: var(--epicenter);">Explore</div>
+        <h2>What you&rsquo;ll find on this site.</h2>
+        <p>On this website you can find information related to the COSZO project, its instrumentation, the data it will collect, and our offshore earthquake early-warning efforts.</p>
+        <p>If you have any questions, please reach out &mdash; we&rsquo;re happy to help.</p>
         <div class="cta-row">
-          <a href="outreach.html" class="btn-primary">Explore Outreach
+          <a href="contact.html" class="btn-primary">Contact the Team
             <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="contact.html" class="btn-ghost">Contact the Team</a>
         </div>
       </div>
       <div class="cta-visual">
@@ -405,7 +415,7 @@ MOTIVATION_BODY = page_hero(
 # ============================================================
 SCIOBJ_BODY = page_hero(
     "Home", "Scientific Objectives",
-    "Five research thrusts that the COSZO sensor suite is designed to address, spanning subduction mechanics, seismicity, deformation, and hazard science.",
+    "Four research thrusts that the COSZO sensor suite is designed to address, spanning subduction mechanics, seismicity, deformation, and hazard science.",
     ['<a href="index.html">Home</a>', '<a href="about.html">About</a>', "Scientific Objectives"]
 ) + """
 <section class="article">
@@ -426,11 +436,9 @@ SCIOBJ_BODY = page_hero(
         <h2>4. Quantify near-source ground motion</h2>
         <p>Strong-motion accelerometers on the seafloor give the first direct measurements of ground shaking near the expected rupture surface of a future great earthquake. These records are essential for calibrating ground-motion prediction equations used by engineers and emergency planners.</p>
 
-        <h2>5. Develop and test offshore earthquake early warning</h2>
+        <h2>Offshore earthquake early warning</h2>
+        <p>In addition to the science objectives, COSZO will provide a test bed for offshore earthquake early warning.</p>
         <p>Because COSZO instruments sit offshore of population centers, they can detect rupture initiation seconds to tens of seconds before onshore networks. Integrating COSZO data streams into the USGS ShakeAlert system is an explicit project goal and is the focus of our <a href="early-warning.html">Early Warning</a> work.</p>
-
-        <h2>Cross-cutting themes</h2>
-        <p>Across these five thrusts, several cross-cutting methodological themes recur: ambient-noise interferometry for continuous wavespeed monitoring, distributed acoustic sensing on the existing fiber, and machine-learning driven event detection and classification. Each is an active research direction within the COSZO team.</p>
       </article>
     </div>
   </div>
@@ -491,7 +499,7 @@ EXISTING_BODY = page_hero(
         <p>Broadband seismometers measure seismicity and earthquake activity along tectonic plate boundaries &mdash; from large-magnitude subduction-zone earthquakes to smaller events associated with faulting, melt migration, and hydrothermal upflow. Each instrument sits in a titanium housing; in sediment-covered areas it is set in a 60&nbsp;cm caisson filled with silica beads to improve seafloor coupling and data resolution. The cabled connection enables real-time earthquake detection along the Oregon margin.</p>
         <p class="instr-site"><strong>Sites:</strong> <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>.</p>
       </div>
-      <figure class="instr-figure"><img src="assets/instruments/broadband-seismometer.jpg" alt="Broadband ocean-bottom seismometer" loading="lazy"><figcaption>Image: OOI / UW Interactive Oceans</figcaption></figure>
+      <figure class="instr-figure"><img src="assets/instruments/broadband-seismometer-caisson.jpg" alt="Broadband ocean-bottom seismometer set in its caisson" loading="lazy"><figcaption>Image: OOI / UW Interactive Oceans</figcaption></figure>
     </div>
 
     <div class="instr-row">
@@ -527,9 +535,9 @@ EXISTING_BODY = page_hero(
     <div class="instr-row">
       <div class="instr-text">
         <h2>Current Meter</h2>
-        <p class="instr-meta"><strong>Make &amp; model:</strong> Nobska MAVS-4 (VEL3D) on the seafloor; Nortek Vector (VEL3D) on the Oregon Shelf and Oregon Offshore benthic experiment platforms.</p>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> Nobska MAVS-4 (VEL3D) on the seafloor; Nortek Vector (VEL3D) on the Outer Shelf and Oregon Offshore benthic experiment platforms.</p>
         <p>Single-point current meters measure the speed and direction of local currents along with water temperature. The measurements are key to understanding how heat, mass, and momentum are transported and how seawater mixes at small scales, and they also help filter current-driven acoustic noise from the seismic signals along the steep Cascadia bathymetry.</p>
-        <p class="instr-site"><strong>Sites:</strong> <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, <a href="oregon-shelf.html">Oregon Shelf</a>, <a href="oregon-offshore.html">Oregon Offshore</a>.</p>
+        <p class="instr-site"><strong>Sites:</strong> <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, <a href="oregon-shelf.html">Outer Shelf</a>, <a href="oregon-offshore.html">Oregon Offshore</a>.</p>
       </div>
       <figure class="instr-figure"><img src="assets/instruments/current-meter.jpg" alt="Single-point current meter" loading="lazy"><figcaption>Image: OOI / UW Interactive Oceans</figcaption></figure>
     </div>
@@ -946,7 +954,7 @@ SITES_BODY = page_hero(
     <div class="hub-cards cols-4">
       <a href="hydrate-ridge.html" class="hub-card">
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 36 L18 18 L26 28 L34 14 L42 36 Z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-        <h3>Hydrate Ridge</h3>
+        <h3>Southern Hydrate Ridge</h3>
         <p>Accretionary wedge site near the deformation front. Methane hydrate system, shallow seismicity, and frontal thrust deformation.</p>
         <span class="card-link">View site &rarr;</span>
       </a>
@@ -958,7 +966,7 @@ SITES_BODY = page_hero(
       </a>
       <a href="oregon-shelf.html" class="hub-card">
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 30 H42 M6 36 H42" stroke="currentColor" stroke-width="2"/><path d="M10 30 L16 22 L24 26 L32 20 L40 30" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
-        <h3>Oregon Shelf</h3>
+        <h3>Outer Shelf</h3>
         <p>Shallow continental-shelf benthic site offshore Oregon (~80 m), in a highly productive coastal upwelling zone.</p>
         <span class="card-link">View site &rarr;</span>
       </a>
@@ -999,7 +1007,7 @@ HYDRATE_RIDGE_BODY = page_hero(
         <p class="lede-para">The Southern Hydrate Summit 1 Seafloor study site, situated on the continental slope off the coast of Oregon at a water depth of ~775 m, hosts abundant deposits of methane ice (methane hydrates) that are buried beneath, and sometimes exposed at the seafloor. The deposits vent methane-rich fluids and bubbles that escape through seeps on the ocean bottom. At Southern Hydrate Ridge plumes of bubbles rise several hundred meters above the seafloor. Dense and fascinating communities of microbes and animals with symbiotic microbes in their guts are fueled by these escaping gases. These seeps provide a unique opportunity to study ocean chemistry, quantifying chemical fluxes from the seafloor and the impacts of methane release on overlying seawater and biota.</p>
         <p>Methane is a powerful greenhouse gas and, therefore, quantifying the flux of methane from the seafloor into the hydrosphere is critical to understanding carbon-cycle dynamics and the impacts of global warming on methane release, particularly in the context of the hydrates response to seismic events.</p>
         <p>This Low-Power JBox (LJ01B) rests on the seafloor and contains geophysical and near seafloor water column instrumentation, and is attached to a fiber-optic cable. Instrumentation hosted on the JBox is largely geophysical in nature, hosting both short-period and broadband seismometers. The fiber-optic cable provides the JBox with significant power and 1 Gb communication bandwidth for two-way communication to instruments for their operation and transmission of data to shore. This JBox is also co-located with a Medium-Power JBox that collects a complementary suite of seafloor and water column measurements.</p>
-        <figure class="welcome-figure"><div class="image-placeholder">Map of Southern Hydrate Ridge — placeholder</div><figcaption>Location and bathymetry of the Southern Hydrate Ridge site on the Cascadia margin.</figcaption></figure>
+        <figure class="welcome-figure"><img src="assets/sites/southern-hydrate-ridge.jpg" alt="Cabled infrastructure at the Southern Hydrate Ridge site" loading="lazy"><figcaption>Cabled infrastructure at the Southern Hydrate Ridge site on the Cascadia margin. Image: OOI Regional Cabled Array.</figcaption></figure>
         <p><strong>Location:</strong> 44.5691&deg;N, 125.1481&deg;W &middot; ~775 m water depth.</p>
       </article>
     </div>
@@ -1020,7 +1028,7 @@ SLOPE_BASE_BODY = page_hero(
         <p class="lede-para">The Oregon Slope Base Seafloor site is located adjacent to the continental slope off the coast of Oregon at a water depth of ~2,900 meters. The site contains a Medium-Power JBox (MJ01A) and a Low-Power JBox (LJ01A). Here, ocean water properties are profoundly impacted by the California Current, and perhaps internal waves. The coastal region of the Pacific Northwest is a classic wind-driven upwelling system where nutrient-rich deep waters rise to replace warmer surface waters. The result is a large increase in marine productivity that ranges from phytoplankton to fish to marine mammals. Near bottom fauna are periodically negatively impacted by the flow of deep waters with very low oxygen concentrations (hypoxia events), and upwelling of corrosive, acidified waters onto the continental shelf. This area is also just outboard of the Cascadia Subduction Zone, which experienced a &gt;9M earthquake January 26, 1700 and which is now characterized by episodic tremors (slow earthquakes).</p>
         <p>As with other JBoxes, these rest on the seafloor, contain geophysical and near seafloor water column instrumentation, and are attached to a fiber-optic cable. The fiber-optic cable provides the JBoxes with a significant power and 1 Gb communication bandwidth that provides two-way communication to instruments for their operation and transmission of data to shore. This seafloor site is also co-located with a Deep and Shallow Profiler Mooring, that collect complementary water column data.</p>
         <p>When coupled with other Cabled Array and Endurance Array installations off the central Oregon coast, the Slope Base infrastructure provides a wide variety of opportunities for observing seismic and coastal phenomena, including cross-shelf and along-shelf variability.</p>
-        <figure class="welcome-figure"><div class="image-placeholder">Map of Slope Base — placeholder</div><figcaption>Location and bathymetry of the Slope Base site on the Cascadia margin.</figcaption></figure>
+        <figure class="welcome-figure"><img src="assets/sites/slope-base.jpg" alt="Cabled infrastructure at the Oregon Slope Base site" loading="lazy"><figcaption>Cabled infrastructure at the Oregon Slope Base site on the Cascadia margin. Image: OOI Regional Cabled Array.</figcaption></figure>
         <p><strong>Location:</strong> 44.5153&deg;N, 125.3898&deg;W &middot; ~2,900 m water depth.</p>
       </article>
     </div>
@@ -1392,7 +1400,6 @@ DATAPRODUCTS_BODY = page_hero(
         <h2 class="section-heading">The full data catalog.</h2>
         <p>Each data product is served as a continuous real-time stream and as archived records, accessible through the OOI data portal.</p>
       </div>
-      <a href="https://oceanobservatories.org/data-access/" class="btn-outline" target="_blank" rel="noopener">OOI Data Portal &#8599;</a>
     </div>
     <div class="products-grid">{render_product_cards()}</div>
   </div>
@@ -1415,33 +1422,46 @@ ASP_BODY = page_hero(
         <ul>
           <li><a href="#overview" class="active">Overview</a></li>
           <li><a href="#stations">Stations</a></li>
+          <li><a href="#additional">Additional Data</a></li>
           <li><a href="#access">Data Access</a></li>
         </ul>
       </aside>
       <article class="article-content">
         <h2 id="overview">Overview</h2>
-        <p>Pressure incorporates tidal pressure gauges sampling at rates varying from 0.0667 Hz to 1.0 Hz. Each instrument also carries a temperature channel.</p>
+        <p>Pressure incorporates tidal pressure gauges sampling at rates varying from 0.0667 Hz to 1.0 Hz. Each instrument also carries a housing temperature channel.</p>
 
         <h2 id="stations">Stations</h2>
         <p>The table below lists the station, location code, and channels for the data.</p>
         <table class="specs-table">
           <thead>
-            <tr><th>Site</th><th>Station</th><th>Location</th><th>Channel</th><th>Channel codes (sample rate)</th></tr>
+            <tr><th>Site</th><th>Station</th><th>Location</th><th>Data type</th><th>Channel</th></tr>
           </thead>
           <tbody>
             <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LDO/" target="_blank" rel="noopener">LDO</a> (1.0 Hz)</td></tr>
-            <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
+            <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Housing temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
             <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LDO/" target="_blank" rel="noopener">LDO</a> (1.0 Hz)</td></tr>
-            <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
+            <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Housing temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
+          </tbody>
+        </table>
+        <p class="instr-site">Entries without a link under Channel are data that will be available once COSZO comes online.</p>
+
+        <h2 id="additional">Additional Data</h2>
+        <p>Absolute pressure data from Axial Base, served through the same OOI infrastructure.</p>
+        <table class="specs-table">
+          <thead>
+            <tr><th>Site</th><th>Station</th><th>Location</th><th>Data type</th><th>Channel</th></tr>
+          </thead>
+          <tbody>
             <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz)</td></tr>
-            <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Pressure-temperature</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz)</td></tr>
+            <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Housing temperature</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz)</td></tr>
           </tbody>
         </table>
 
         <h2 id="access">Data Access</h2>
         <p>More station information, data quality status, and deployments are available through the GitHub webpage: <a href="https://github.com/coszo-hub/absolute-seafloor-pressure" target="_blank" rel="noopener">github.com/coszo-hub/absolute-seafloor-pressure</a>.</p>
+        <p>Scripts for detiding and drift-correcting the data are available through the COSZO GitHub.</p>
 
-        <blockquote>Raw pressure data are released within 24 hours of acquisition. Detided and drift-corrected products are typically available within 7 days.</blockquote>
+        <blockquote>Raw pressure data are released within 24 hours of acquisition.</blockquote>
       </article>
     </div>
   </div>
@@ -1459,22 +1479,27 @@ ASP_BODY = page_hero(
 #   link   -> optional profile URL; blank = non-clickable card
 #   order  -> optional integer sort within a section
 PEOPLE_GROUPS = [
-    ("leadership", "Leadership"),
-    ("research",   "Research"),
-    ("postdocs",   "Postdoctoral Scholars"),
-    ("graduate",   "Graduate Students"),
+    ("leadership", "UW Investigators"),
+    ("uw",         "University of Washington Team"),
+    ("scripps",    "Scripps Institution of Oceanography Team"),
     ("committee",  "Science Advisory Committee"),
 ]
+# Legacy group names (research/postdocs/graduate) fold into the UW team so the
+# build stays robust if the synced sheet still uses the old vocabulary.
 _GROUP_ALIASES = {
     "leadership": "leadership", "lead": "leadership", "pi": "leadership",
     "principal investigator": "leadership", "principal investigators": "leadership",
     "co-pi": "leadership", "co-investigator": "leadership", "faculty": "leadership",
-    "research": "research", "research team": "research", "team": "research",
-    "scientist": "research", "engineer": "research", "staff": "research", "apl": "research",
-    "postdocs": "postdocs", "postdoc": "postdocs", "postdoctoral": "postdocs",
-    "postdoctoral scholar": "postdocs", "postdoctoral scholars": "postdocs", "scholars": "postdocs",
-    "graduate": "graduate", "grad": "graduate", "graduate student": "graduate",
-    "graduate students": "graduate", "students": "graduate", "student": "graduate",
+    "investigators": "leadership", "uw investigators": "leadership",
+    "uw": "uw", "university of washington team": "uw", "uw team": "uw",
+    "research": "uw", "research team": "uw", "team": "uw",
+    "scientist": "uw", "engineer": "uw", "staff": "uw", "apl": "uw",
+    "postdocs": "uw", "postdoc": "uw", "postdoctoral": "uw",
+    "postdoctoral scholar": "uw", "postdoctoral scholars": "uw", "scholars": "uw",
+    "graduate": "uw", "grad": "uw", "graduate student": "uw",
+    "graduate students": "uw", "students": "uw", "student": "uw",
+    "scripps": "scripps", "scripps institution of oceanography team": "scripps",
+    "scripps team": "scripps", "sio": "scripps",
     "committee": "committee", "science advisory committee": "committee",
     "sac": "committee", "advisory": "committee", "advisory committee": "committee",
 }
@@ -1497,7 +1522,7 @@ def load_people(csv_path):
                 if not (row.get("name") or "").strip():
                     continue
                 g = (row.get("group") or "").strip().lower()
-                groups[_GROUP_ALIASES.get(g, "research")].append(row)
+                groups[_GROUP_ALIASES.get(g, "uw")].append(row)
     except FileNotFoundError:
         pass
     for key in groups:
@@ -1598,24 +1623,30 @@ REU_BODY = page_hero(
   <div class="container">
     <div class="article-grid narrow">
       <article class="article-content">
-        <p class="lede-para">The COSZO REU program is a paid 10-week summer research experience, hosted at the University of Washington, that pairs undergraduate students with COSZO scientists to work on a focused research project tied to the observatory's mission.</p>
+        <p class="lede-para">Each year of the project, COSZO hosts interns through its Research Experience for Undergraduates (REU) Program. Students participate through the UW Applied Physics Laboratory Summer Undergraduate Research Program and join the annual UW School of Oceanography VISIONS Expedition.</p>
 
-        <h2>Program structure</h2>
-        <p>Students arrive at the University of Washington in mid-June and spend the summer working on a research project mentored by a COSZO scientist. Each student is also paired with a peer mentor from the graduate student or postdoctoral cohort. The program culminates in a symposium where students present their work to the full COSZO community.</p>
-        <ul>
-          <li>10 weeks, mid-June through late August</li>
-          <li>Stipend, housing, and travel provided</li>
-          <li>Field trip to sea (when cruise schedules align)</li>
-          <li>Weekly professional development seminars</li>
-          <li>End-of-summer research symposium</li>
-        </ul>
+        <h2>2025 Program</h2>
+        <figure class="welcome-figure"><img src="assets/reu/2025-cohort.jpg" alt="COSZO 2025 REU undergraduates aboard a boat" loading="lazy"><figcaption>COSZO 2025 REU interns in the field.</figcaption></figure>
+        <table class="specs-table">
+          <thead><tr><th>Student</th><th>Project</th><th>Mentor(s)</th></tr></thead>
+          <tbody>
+            <tr><td>Liv Dentoni</td><td>Laboratory Evaluations of an A-0-A Calibrated Pressure Instrument for the Cascadia Offshore Subduction Zone Observatory</td><td>William Wilcock, Dana Manalang</td></tr>
+            <tr><td>Lydia Kelley</td><td>Investigating Occurrences of Tectonic Tremor using Ocean Bottom Seismometers</td><td>Marine Denolle</td></tr>
+            <tr><td>Nik Patel</td><td>The Soundscape at the Washington Coast</td><td>Barry Ma</td></tr>
+          </tbody>
+        </table>
 
-        <h2>Eligibility</h2>
-        <p>Applicants must be current U.S. undergraduates and must not yet have earned a bachelor's degree at the start of the program. Students from backgrounds historically underrepresented in the ocean and earth sciences are strongly encouraged to apply.</p>
-
-        <h2>How to apply</h2>
-        <p>Applications for the 2027 REU cohort will open October 15, 2026 and close January 15, 2027. The application includes a personal statement, unofficial transcript, and two letters of recommendation. Decisions are made by mid-March.</p>
-        <blockquote>The COSZO REU does not require prior research experience. We are looking for students curious about the ocean, the solid Earth, and the instruments we use to study both.</blockquote>
+        <h2>2024 Program</h2>
+        <figure class="welcome-figure"><img src="assets/reu/2024-cohort.jpg" alt="COSZO 2024 REU participants aboard a ship" loading="lazy"><figcaption>COSZO 2024 REU interns aboard ship.</figcaption></figure>
+        <table class="specs-table">
+          <thead><tr><th>Student</th><th>Project</th><th>Mentor(s)</th></tr></thead>
+          <tbody>
+            <tr><td>Elena S. Calderón-Aceituno</td><td>Investigation of Tectonic Shifts Using Seafloor Pressure Data</td><td>David A. Schmidt</td></tr>
+            <tr><td>Chloe Buford</td><td>Hidden Hiccups: Understanding Bad Calibrations in a Self-Calibrating A-0-A Pressure Gauge</td><td>William Wilcock, Dana Manalang</td></tr>
+            <tr><td>Usman Choudhary</td><td>Under Pressure: Tracking Volcanic Movements at Axial Seamount</td><td>William Wilcock, Maleen Wijeratna</td></tr>
+            <tr><td>Jose Cornejo</td><td>Analyzing the Influence of Chemosynthetic and Photosynthetic Productivity on Benthic Megafauna Abundance at Southern Hydrate Ridge</td><td>Deborah Kelley, Katie Bigham</td></tr>
+          </tbody>
+        </table>
 
         <h2>Questions</h2>
         <p>For questions about the REU program, please <a href="contact.html">contact the COSZO team</a>.</p>
@@ -1645,7 +1676,7 @@ WORKSHOP_BODY = page_hero(
         <strong>Format:</strong> In-person with limited remote participation</p>
 
         <h2>Who should attend</h2>
-        <p>Graduate students, postdoctoral researchers, and faculty within five years of their first appointment are eligible. We welcome applicants working on any of the following:</p>
+        <p>We welcome applicants working on any of the following:</p>
         <ul>
           <li>Subduction zone mechanics and seismicity</li>
           <li>Seafloor geodesy and ambient-noise monitoring</li>
@@ -1655,17 +1686,7 @@ WORKSHOP_BODY = page_hero(
         </ul>
 
         <h2>Registration</h2>
-        <p>Registration opens November 2026. Travel support will be available for participants without other funding, with priority given to applicants from U.S. minority-serving institutions.</p>
-
-        <h2>Agenda</h2>
-        <table class="specs-table">
-          <thead><tr><th>Day</th><th>Program</th></tr></thead>
-          <tbody>
-            <tr><td>Day 1</td><td>Keynote, science talks, welcome reception</td></tr>
-            <tr><td>Day 2</td><td>Working groups, poster session, RCA tour at APL</td></tr>
-            <tr><td>Day 3</td><td>Hands-on data analysis, career panel, closing</td></tr>
-          </tbody>
-        </table>
+        <p>Coming soon.</p>
 
         <h2>Questions</h2>
         <p>For questions about the workshop, please <a href="contact.html">reach out to the organizing committee</a>.</p>
@@ -1822,30 +1843,29 @@ EW_BODY = page_hero(
 # ============================================================
 FEAS_BODY = page_hero(
     "Early Warning", "2019 Feasibility Study",
-    "The 2019 community study that quantified the benefit of seafloor observations for Cascadia earthquake early warning and tsunami detection.",
+    "Exploring the design options for offshore monitoring of the subduction zone.",
     ['<a href="index.html">Home</a>', '<a href="early-warning.html">Early Warning</a>', "2019 Feasibility Study"]
 ) + """
 <section class="article">
   <div class="container">
     <div class="article-grid narrow">
       <article class="article-content">
-        <p class="lede-para">In 2019, a community study quantified the earthquake early warning (EEW) and tsunami detection benefits of adding geophysical instrumentation to the OOI Regional Cabled Array. The results motivated the proposal that became COSZO.</p>
+        <p class="lede-para">The 2019 Feasibility Study explored the design options for offshore monitoring of the Cascadia subduction zone. It aimed to enhance early warning systems for offshore earthquakes and tsunamis while improving Cascadia subduction zone monitoring capabilities. Funding came from the Gordon and Betty Moore Foundation.</p>
 
-        <h2>Scope of the study</h2>
-        <p>The study simulated a suite of plausible Cascadia rupture scenarios and evaluated the timing, location accuracy, and magnitude-estimation improvements that would result from adding seafloor seismic and pressure sensors to the existing onshore ShakeAlert network.</p>
+        <h2>Study components</h2>
+        <p>The research involved four main components:</p>
+        <ol>
+          <li>Analysis of existing offshore data and modeling studies to establish monitoring requirements.</li>
+          <li>Examination of current observatories and emerging technologies to evaluate different approaches.</li>
+          <li>Development of engineering requirements through an iterative process.</li>
+          <li>A spring 2017 <a href="workshop.html">workshop</a> convening scientists, engineers, and stakeholders, resulting in a white paper.</li>
+        </ol>
 
-        <h2>Key findings</h2>
-        <ul>
-          <li>Offshore P-wave detection reduces EEW alert latency by 10 to 20 seconds for offshore epicenters.</li>
-          <li>Seafloor pressure observations confirm tsunami source characteristics within two to three minutes of rupture.</li>
-          <li>Adding modest seafloor instrumentation produced the majority of the benefit; additional instruments provide diminishing returns past the first dozen stations.</li>
-        </ul>
+        <h2>White paper</h2>
+        <p>The <a href="white-paper.html">white paper</a> outlined the rationale for an offshore network, presented implementation tasks, established a timeline, and provided budget projections.</p>
 
-        <h2>From study to facility</h2>
-        <p>The feasibility study's instrument count, spatial distribution, and sampling requirements informed the COSZO instrument design. Where the study recommended a minimum configuration, COSZO implements a scientifically-motivated superset that also supports the broader science objectives outlined in <a href="scientific-objectives.html">our objectives page</a>.</p>
-
-        <h2>Download</h2>
-        <p>The full 2019 Feasibility Study report is available as a PDF. For a pre-print or supplementary materials, <a href="contact.html">contact the project office</a>.</p>
+        <h2>Beyond Cascadia</h2>
+        <p>While focused on Cascadia, the study notes that its findings are &ldquo;a useful resource for groups who are planning offshore monitoring infrastructure in other subduction zones.&rdquo;</p>
       </article>
     </div>
   </div>
@@ -1857,7 +1877,7 @@ FEAS_BODY = page_hero(
 # ============================================================
 CONTACT_BODY = page_hero(
     "Contact", "Contact",
-    "For project inquiries, science collaboration, press, data access questions, or REU information.",
+    "For any inquiry about the project or the data, please contact us through the form below or send us an email at coszo@uw.edu.",
     ['<a href="index.html">Home</a>', "Contact"]
 ) + """
 <section class="article">
@@ -1901,27 +1921,23 @@ CONTACT_BODY = page_hero(
       function coszoSendEmail(){
         var v=function(id){var e=document.getElementById(id);return e?e.value.trim():'';};
         var body="Name: "+v('name')+"\\nEmail: "+v('email')+"\\nAffiliation: "+v('affiliation')+"\\nTopic: "+v('topic')+"\\n\\n"+v('message');
-        window.location.href="mailto:usherm42@uw.edu?subject="+encodeURIComponent("COSZO website contact")+"&body="+encodeURIComponent(body);
+        window.location.href="mailto:coszo@uw.edu?subject="+encodeURIComponent("COSZO website contact")+"&body="+encodeURIComponent(body);
       }
       </script>
       <div>
         <div class="form-sidebar-block">
           <h3>Project office</h3>
           <address>
-            COSZO Project Office<br>
+            COSZO Project<br>
             School of Oceanography<br>
             University of Washington<br>
-            Seattle, WA 98195<br>
-            <a href="mailto:usherm42@uw.edu">usherm42@uw.edu</a>
+            <a href="mailto:coszo@uw.edu">coszo@uw.edu</a>
           </address>
         </div>
         <div class="form-sidebar-block">
           <h3>Data questions</h3>
-          <p>Data are distributed through the OOI cyberinfrastructure. For data questions, start with the <a href="https://oceanobservatories.org/helpdesk/">OOI Helpdesk</a>, then contact us if you need COSZO-specific help.</p>
-        </div>
-        <div class="form-sidebar-block">
-          <h3>Press</h3>
-          <p>For press inquiries, please email the UW College of the Environment communications team.</p>
+          <p>If you have questions about data streams accessed through EarthScope, please email us at <a href="mailto:coszo@uw.edu">coszo@uw.edu</a> or complete the form on the left.</p>
+          <p>If you have questions about data streams accessed through OOI/PINAS, please email the <a href="https://oceanobservatories.org/helpdesk/">OOI Helpdesk</a>.</p>
         </div>
       </div>
     </div>
@@ -2026,9 +2042,9 @@ BLOG_BODY = page_hero(
 # OREGON SHELF (site)
 # ============================================================
 OREGON_SHELF_BODY = page_hero(
-    "Sites", "Oregon Shelf",
+    "Sites", "Outer Shelf",
     "Shallow continental-shelf benthic site offshore Oregon, ~80 m deep (OOI Oregon Shelf Cabled BEP, CE02SHBP).",
-    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Oregon Shelf"]
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Outer Shelf"]
 ) + """
 <section class="article">
   <div class="container">
@@ -2089,7 +2105,7 @@ CRUISES_BODY = page_hero(
     <div class="cruise-timeline">
       <div class="cruise-item">
         <div class="cruise-date"><span class="year">2026</span>Summer &middot; RR2614</div>
-        <div class="cruise-info"><div class="cruise-label">Upcoming &middot; Installation</div><h3>First COSZO Instrument Installation Cruise</h3><p>R/V Roger Revelle &middot; Newport, OR to Cascadia Margin</p></div>
+        <div class="cruise-info"><div class="cruise-label">Upcoming &middot; Installation</div><h3>COSZO Installation Cruise</h3><p>R/V Roger Revelle &middot; Newport, OR to Cascadia Margin</p></div>
         <div class="cruise-status upcoming">Upcoming</div>
       </div>
     </div>
@@ -2102,14 +2118,21 @@ CRUISES_BODY = page_hero(
       <aside class="article-sidebar">
         <h4>On This Page</h4>
         <ul>
+          <li><a href="#stream" class="active">Live Video</a></li>
           <li><a href="#operations">Recent Operations</a></li>
-          <li><a href="#plan" class="active">Plan for the Day</a></li>
+          <li><a href="#plan">Plan for the Day</a></li>
           <li><a href="#blog">Blog from Sea</a></li>
           <li><a href="#diary">Cruise Diary</a></li>
-          <li><a href="#stream">Live Video</a></li>
         </ul>
       </aside>
       <article class="article-content">
+        <h2 id="stream">Live Video</h2>
+        <p>When a live feed is available, it streams here.</p>
+        <div class="video-embed">
+          <!-- Replace with the live stream embed (YouTube Live / Vimeo) when available. -->
+          <div class="image-placeholder">Live video stream offline</div>
+        </div>
+
         <h2 id="plan">Plan for the Day</h2>
         <p>The current day's operational plan will appear here during active cruises.</p>
         <figure class="welcome-figure"><div class="image-placeholder">Daily plan / station map &mdash; placeholder</div><figcaption>Planned operations for the day.</figcaption></figure>
@@ -2122,13 +2145,6 @@ CRUISES_BODY = page_hero(
         <p>A chronological record of the cruise, compiled from daily logs.</p>
         <div class="cruise-diary">
           <p><em>The cruise diary will be populated during operations.</em></p>
-        </div>
-
-        <h2 id="stream">Live Video</h2>
-        <p>When a live feed is available, it streams here.</p>
-        <div class="video-embed">
-          <!-- Replace with the live stream embed (YouTube Live / Vimeo) when available. -->
-          <div class="image-placeholder">Live video stream offline</div>
         </div>
       </article>
     </div>
@@ -2198,9 +2214,9 @@ PAGES = [
     ("scientific-objectives.html",              "Scientific Objectives · COSZO",                           "about",         SCIOBJ_BODY),
     ("infrastructure.html",                     "Infrastructure · COSZO",                                  "infrastructure",INFRASTRUCTURE_BODY),
     ("sites.html",                              "Seafloor Sites · COSZO",                                  "infrastructure",SITES_BODY),
-    ("hydrate-ridge.html",                      "Hydrate Ridge · COSZO",                                   "infrastructure",HYDRATE_RIDGE_BODY),
+    ("hydrate-ridge.html",                      "Southern Hydrate Ridge · COSZO",                          "infrastructure",HYDRATE_RIDGE_BODY),
     ("slope-base.html",                         "Slope Base · COSZO",                                      "infrastructure",SLOPE_BASE_BODY),
-    ("oregon-shelf.html",                       "Oregon Shelf · COSZO",                                    "infrastructure",OREGON_SHELF_BODY),
+    ("oregon-shelf.html",                       "Outer Shelf · COSZO",                                     "infrastructure",OREGON_SHELF_BODY),
     ("oregon-offshore.html",                    "Oregon Offshore · COSZO",                                 "infrastructure",OREGON_OFFSHORE_BODY),
     ("existing-instruments.html",               "Existing Instruments · COSZO",                            "infrastructure",EXISTING_BODY),
     ("coszo-instruments.html",                  "COSZO Instruments · COSZO",                               "infrastructure",COSZO_INSTR_BODY),
