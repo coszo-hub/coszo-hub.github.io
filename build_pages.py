@@ -535,9 +535,9 @@ EXISTING_BODY = page_hero(
     <div class="instr-row">
       <div class="instr-text">
         <h2>Current Meter</h2>
-        <p class="instr-meta"><strong>Make &amp; model:</strong> Nobska MAVS-4 (VEL3D) on the seafloor; Nortek Vector (VEL3D) on the Outer Shelf and Oregon Offshore benthic experiment platforms.</p>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> Nobska MAVS-4 (VEL3D) on the seafloor; Nortek Vector (VEL3D) on the Outer Shelf and Mid Slope benthic experiment platforms.</p>
         <p>Single-point current meters measure the speed and direction of local currents along with water temperature. The measurements are key to understanding how heat, mass, and momentum are transported and how seawater mixes at small scales, and they also help filter current-driven acoustic noise from the seismic signals along the steep Cascadia bathymetry.</p>
-        <p class="instr-site"><strong>Sites:</strong> <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, <a href="oregon-shelf.html">Outer Shelf</a>, <a href="oregon-offshore.html">Oregon Offshore</a>.</p>
+        <p class="instr-site"><strong>Sites:</strong> <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, <a href="oregon-shelf.html">Outer Shelf</a>, <a href="oregon-offshore.html">Mid Slope</a>.</p>
       </div>
       <figure class="instr-figure"><img src="assets/instruments/current-meter.jpg" alt="Single-point current meter" loading="lazy"><figcaption>Image: OOI / UW Interactive Oceans</figcaption></figure>
     </div>
@@ -830,13 +830,13 @@ PUBLICATIONS_BODY = page_hero(
           <em>Earthquake and Tsunami Early Warning on the Cascadia Subduction Zone: A Feasibility Study for an Offshore Geophysical Monitoring Network.</em>
           University of Washington, 81 pp.
           [<a href="http://hdl.handle.net/1773/50968" target="_blank" rel="noopener">Online ref</a>]
-          [<a href="http://cascadiaoffshore.org/files/whitepaper_lowres-20200505101921.pdf" target="_blank" rel="noopener">PDF, low-res 8 MB</a>]
-          [<a href="http://cascadiaoffshore.org/files/whitepaper_highres-20200505101421.pdf" target="_blank" rel="noopener">PDF, high-res 45 MB</a>]
+          [<a href="assets/archives/whitepaper_lowres.pdf" target="_blank" rel="noopener">PDF, low-res 8 MB</a>]
+          [<a href="assets/archives/whitepaper_highres.pdf" target="_blank" rel="noopener">PDF, high-res 45 MB</a>]
         </p>
         <p style="margin-top:0.5rem;">Supplements:
-          [<a href="http://cascadiaoffshore.org/files/tradestudy-20200508044416.pdf" target="_blank" rel="noopener">Engineering Trade Study, PDF 1.5 MB</a>]
+          [<a href="assets/archives/tradestudy.pdf" target="_blank" rel="noopener">Engineering Trade Study, PDF 1.5 MB</a>]
           &nbsp;
-          [<a href="http://cascadiaoffshore.org/files/desktop_survey-20200518121105.pdf" target="_blank" rel="noopener">Desktop Survey, PDF 28 MB</a>]
+          [<a href="assets/archives/desktop_survey.pdf" target="_blank" rel="noopener">Desktop Survey, PDF 28 MB</a>]
         </p>
 
         <h2 id="workshops">Workshop Reports</h2>
@@ -848,21 +848,21 @@ PUBLICATIONS_BODY = page_hero(
           </li>
           <li>
             <strong>Offshore Geophysical Monitoring of Cascadia for Early Warning and Hazards Research</strong> &mdash; Seattle, WA, April 3–5, 2017.
-            [<a href="http://cascadiaoffshore.org/files/workshop_report-20180710061005.pdf" target="_blank" rel="noopener">Final Report, PDF 13 MB</a>]
-            [<a href="http://cascadia.washington.edu/files/master_abstract-20170403075402.pdf" target="_blank" rel="noopener">Abstracts, PDF 33 MB</a>]
-            [<a href="http://cascadia.washington.edu/files/master_whitepaper-20170403075446.pdf" target="_blank" rel="noopener">Participant Whitepapers, PDF 13 MB</a>]
+            [<a href="assets/archives/workshop_report.pdf" target="_blank" rel="noopener">Final Report, PDF 13 MB</a>]
+            [<a href="assets/archives/master_abstract.pdf" target="_blank" rel="noopener">Abstracts, PDF 33 MB</a>]
+            [<a href="assets/archives/master_whitepaper.pdf" target="_blank" rel="noopener">Participant Whitepapers, PDF 13 MB</a>]
           </li>
           <li>
             <strong>Subduction Zone Observatory Workshop</strong> &mdash; Boise, ID, September 29 – October 1, 2016.
-            [<a href="https://www.iris.edu/hq/files/workshops/2016/09/szo_16/sz4d.pdf" target="_blank" rel="noopener">Report</a>]
+            [<a href="assets/archives/sz4d.pdf" target="_blank" rel="noopener">Report</a>]
           </li>
           <li>
             <strong>Investigating Cascadia Subduction Zone Geodynamics Through Scientific Ocean Drilling</strong> &mdash; Seattle, WA, April 2015.
-            [<a href="http://usoceandiscovery.org/wp-content/uploads/2016/06/Cascadia-Report.pdf" target="_blank" rel="noopener">Report</a>]
+            [<a href="assets/archives/cascadia_report.pdf" target="_blank" rel="noopener">Report</a>]
           </li>
           <li>
             <strong>Seafloor Geodesy in Cascadia</strong> &mdash; Seattle, WA, June 2012.
-            [<a href="http://faculty.washington.edu/wilcock/wordpress/wp-content/uploads/2014/10/SeafloorGeodesyCascadiaReport_ver130203_HighRes.pdf" target="_blank" rel="noopener">Report</a>]
+            [<a href="assets/archives/seafloor_geodesy_cascadia_report.pdf" target="_blank" rel="noopener">Report</a>]
           </li>
         </ul>
 
@@ -972,7 +972,7 @@ SITES_BODY = page_hero(
       </a>
       <a href="oregon-offshore.html" class="hub-card">
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 28 H42" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 30 L30 35 L42 27" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
-        <h3>Oregon Offshore</h3>
+        <h3>Mid Slope</h3>
         <p>Continental-slope benthic site off Oregon (~550 m), in the same dynamic coastal upwelling environment.</p>
         <span class="card-link">View site &rarr;</span>
       </a>
@@ -1124,20 +1124,20 @@ RESOURCES_BODY = page_hero(
           </li>
           <li>
             <strong>Offshore Geophysical Monitoring of Cascadia for Early Warning and Hazards Research</strong> &mdash; Seattle, WA, April 3–5, 2017.
-            [<a href="http://cascadiaoffshore.org/files/workshop_report-20180710061005.pdf" target="_blank" rel="noopener">Workshop Report</a>]
+            [<a href="assets/archives/workshop_report.pdf" target="_blank" rel="noopener">Workshop Report</a>]
             [<a href="workshop.html">Workshop Homepage</a>]
           </li>
           <li>
             <strong>Subduction Zone Observatory Workshop</strong> &mdash; Boise, ID, September 29 – October 1, 2016.
-            [<a href="https://www.iris.edu/hq/files/workshops/2016/09/szo_16/sz4d.pdf" target="_blank" rel="noopener">Workshop Report</a>]
+            [<a href="assets/archives/sz4d.pdf" target="_blank" rel="noopener">Workshop Report</a>]
           </li>
           <li>
             <strong>Investigating Cascadia Subduction Zone Geodynamics Through Scientific Ocean Drilling</strong> &mdash; Seattle, WA, April 2015.
-            [<a href="http://usoceandiscovery.org/wp-content/uploads/2016/06/Cascadia-Report.pdf" target="_blank" rel="noopener">Workshop Report</a>]
+            [<a href="assets/archives/cascadia_report.pdf" target="_blank" rel="noopener">Workshop Report</a>]
           </li>
           <li>
             <strong>Seafloor Geodesy in Cascadia</strong> &mdash; Seattle, WA, June 2012.
-            [<a href="http://faculty.washington.edu/wilcock/wordpress/wp-content/uploads/2014/10/SeafloorGeodesyCascadiaReport_ver130203_HighRes.pdf" target="_blank" rel="noopener">Workshop Report</a>]
+            [<a href="assets/archives/seafloor_geodesy_cascadia_report.pdf" target="_blank" rel="noopener">Workshop Report</a>]
           </li>
         </ul>
 
@@ -1234,14 +1234,14 @@ WHITE_PAPER_BODY = page_hero(
 
         <h2>Download</h2>
         <ul>
-          <li><a href="http://cascadiaoffshore.org/files/whitepaper_lowres-20200505101921.pdf" target="_blank" rel="noopener">White Paper, low-resolution PDF (8 MB)</a></li>
-          <li><a href="http://cascadiaoffshore.org/files/whitepaper_highres-20200505101421.pdf" target="_blank" rel="noopener">White Paper, high-resolution PDF (45 MB)</a></li>
+          <li><a href="assets/archives/whitepaper_lowres.pdf" target="_blank" rel="noopener">White Paper, low-resolution PDF (8 MB)</a></li>
+          <li><a href="assets/archives/whitepaper_highres.pdf" target="_blank" rel="noopener">White Paper, high-resolution PDF (45 MB)</a></li>
         </ul>
 
         <h2>Supplementary Documents</h2>
         <ul>
-          <li><a href="http://cascadiaoffshore.org/files/tradestudy-20200508044416.pdf" target="_blank" rel="noopener">Engineering Trade Study, PDF (1.5 MB)</a></li>
-          <li><a href="http://cascadiaoffshore.org/files/desktop_survey-20200518121105.pdf" target="_blank" rel="noopener">Desktop Survey, PDF (28 MB)</a></li>
+          <li><a href="assets/archives/tradestudy.pdf" target="_blank" rel="noopener">Engineering Trade Study, PDF (1.5 MB)</a></li>
+          <li><a href="assets/archives/desktop_survey.pdf" target="_blank" rel="noopener">Desktop Survey, PDF (28 MB)</a></li>
         </ul>
       </article>
     </div>
@@ -1272,25 +1272,25 @@ WORKSHOP_DOCUMENTS_BODY = page_hero(
 
         <h2 id="main">Main Documents</h2>
         <ul>
-          <li><strong>Final Workshop Report</strong> &mdash; July 10, 2018. [<a href="http://cascadiaoffshore.org/files/workshop_report-20180710061005.pdf" target="_blank" rel="noopener">PDF, 13 MB</a>]</li>
-          <li><strong>Abstracts</strong> &mdash; April 3, 2017. [<a href="http://cascadia.washington.edu/files/master_abstract-20170403075402.pdf" target="_blank" rel="noopener">PDF, 33 MB</a>]</li>
-          <li><strong>Whitepapers</strong> &mdash; Participant submissions, April 3, 2017. [<a href="http://cascadia.washington.edu/files/master_whitepaper-20170403075446.pdf" target="_blank" rel="noopener">PDF, 13 MB</a>]</li>
-          <li><strong>Workshop Agenda</strong> &mdash; [<a href="http://cascadia.washington.edu/story/Agenda" target="_blank" rel="noopener">Online</a>]</li>
-          <li><strong>Attendee List</strong> &mdash; [<a href="http://cascadia.washington.edu/story/Registrants" target="_blank" rel="noopener">Online</a>]</li>
+          <li><strong>Final Workshop Report</strong> &mdash; July 10, 2018. [<a href="assets/archives/workshop_report.pdf" target="_blank" rel="noopener">PDF, 13 MB</a>]</li>
+          <li><strong>Abstracts</strong> &mdash; April 3, 2017. [<a href="assets/archives/master_abstract.pdf" target="_blank" rel="noopener">PDF, 33 MB</a>]</li>
+          <li><strong>Whitepapers</strong> &mdash; Participant submissions, April 3, 2017. [<a href="assets/archives/master_whitepaper.pdf" target="_blank" rel="noopener">PDF, 13 MB</a>]</li>
+          <li><strong>Workshop Agenda</strong> &mdash; [<a href="https://web.archive.org/web/2018id_/http://cascadia.washington.edu/story/Agenda" target="_blank" rel="noopener">Online</a>]</li>
+          <li><strong>Attendee List</strong> &mdash; [<a href="https://web.archive.org/web/2018id_/http://cascadia.washington.edu/story/Registrants" target="_blank" rel="noopener">Online</a>]</li>
         </ul>
 
         <h2 id="reference">Reference Materials</h2>
         <ul>
-          <li><strong>Comparison Table of Technologies</strong> &mdash; April 3, 2017. [<a href="http://cascadia.washington.edu/files/technologyalternativescomparisonsheet-20170403081232.pdf" target="_blank" rel="noopener">PDF</a>]</li>
-          <li><strong>BW Basemap of Cascadia Margin</strong> &mdash; April 1, 2017. [<a href="http://cascadia.washington.edu/files/bwbasemap-11x17-20170401013432.pdf" target="_blank" rel="noopener">PDF, 13 MB</a>]</li>
-          <li><strong>UW Campus Map</strong> &mdash; [<a href="http://cascadia.washington.edu/files/uw-campus-map-5-16-20170401021713.pdf" target="_blank" rel="noopener">PDF</a>]</li>
+          <li><strong>Comparison Table of Technologies</strong> &mdash; April 3, 2017. [<a href="assets/archives/technology_alternatives_comparison.pdf" target="_blank" rel="noopener">PDF</a>]</li>
+          <li><strong>BW Basemap of Cascadia Margin</strong> &mdash; April 1, 2017. [<a href="assets/archives/bw_basemap_11x17.pdf" target="_blank" rel="noopener">PDF, 13 MB</a>]</li>
+          <li><strong>UW Campus Map</strong> &mdash; [<a href="assets/archives/uw_campus_map.pdf" target="_blank" rel="noopener">PDF</a>]</li>
         </ul>
 
         <h2 id="templates">Network Design Templates</h2>
         <ul>
-          <li><a href="http://cascadia.washington.edu/files/ewocconfigurationtemplate-3-31-17-20170401010352.pptx" target="_blank" rel="noopener">PowerPoint Template (11 MB)</a></li>
-          <li><a href="http://cascadia.washington.edu/files/ewocnetworkconfigurationtoolhdformat-20170401010544.key" target="_blank" rel="noopener">Keynote Template (8 MB)</a></li>
-          <li><a href="http://cascadia.washington.edu/files/ewocconfigurationtemplate-20170401010220.doc" target="_blank" rel="noopener">Word Template (21 MB)</a></li>
+          <li><a href="assets/archives/ewoc_configuration_template.pptx" target="_blank" rel="noopener">PowerPoint Template (11 MB)</a></li>
+          <li><a href="assets/archives/ewoc_network_configuration_tool.key" target="_blank" rel="noopener">Keynote Template (8 MB)</a></li>
+          <li><a href="assets/archives/ewoc_configuration_template.doc" target="_blank" rel="noopener">Word Template (21 MB)</a></li>
         </ul>
       </article>
     </div>
@@ -2066,9 +2066,9 @@ OREGON_SHELF_BODY = page_hero(
 # OREGON OFFSHORE (site)
 # ============================================================
 OREGON_OFFSHORE_BODY = page_hero(
-    "Sites", "Oregon Offshore",
+    "Sites", "Mid Slope",
     "Continental-slope benthic site off Oregon, ~550 m deep (OOI Oregon Offshore Cabled BEP, CE04OSBP).",
-    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Oregon Offshore"]
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Mid Slope"]
 ) + """
 <section class="article">
   <div class="container">
@@ -2078,7 +2078,7 @@ OREGON_OFFSHORE_BODY = page_hero(
         <p class="lede-para">Oregon Offshore Cabled Benthic Experiment Package (BEP) is located on the Continental Slope, approximately 550 meters deep. The Continental Shelf-Slope area off the Oregon coast is a highly productive, dynamic upwelling environment. Upwelling brings nutrients to the surface sparking primary production and fueling the food web. In recent years, upwelling has also brought onto the shelf hypoxic, low oxygen, waters that can be harmful to organisms in the area. By sampling in this area, the OOI seeks to gain better insight into upwelling dynamics of this system.</p>
         <p>Like other BEPs the Oregon Offshore Cabled BEP is connected to and draws energy from Fiber Optic Cables to power its instruments and to transmit data from the instruments back to shore. Within the yellow protective armor of the BEP are two cages containing instruments that measure various properties of the bottom water.</p>
         <p>The Oregon Offshore Cabled BEP is located near the base of a shallow and deep profiler mooring providing complementary seafloor data to the water column data collected by the profilers, allowing for the sampling of a full picture of shelf dynamics.</p>
-        <figure class="welcome-figure"><div class="image-placeholder">Map of Oregon Offshore site &mdash; placeholder</div><figcaption>Location of the Oregon Offshore site on the Cascadia margin.</figcaption></figure>
+        <figure class="welcome-figure"><div class="image-placeholder">Map of Mid Slope site &mdash; placeholder</div><figcaption>Location of the Mid Slope site on the Cascadia margin.</figcaption></figure>
         <p><strong>Location:</strong> 44.3695&deg;N, 124.954&deg;W &middot; ~550 m water depth.</p>
       </article>
     </div>
@@ -2217,7 +2217,7 @@ PAGES = [
     ("hydrate-ridge.html",                      "Southern Hydrate Ridge · COSZO",                          "infrastructure",HYDRATE_RIDGE_BODY),
     ("slope-base.html",                         "Slope Base · COSZO",                                      "infrastructure",SLOPE_BASE_BODY),
     ("oregon-shelf.html",                       "Outer Shelf · COSZO",                                     "infrastructure",OREGON_SHELF_BODY),
-    ("oregon-offshore.html",                    "Oregon Offshore · COSZO",                                 "infrastructure",OREGON_OFFSHORE_BODY),
+    ("oregon-offshore.html",                    "Mid Slope · COSZO",                                       "infrastructure",OREGON_OFFSHORE_BODY),
     ("existing-instruments.html",               "Existing Instruments · COSZO",                            "infrastructure",EXISTING_BODY),
     ("coszo-instruments.html",                  "COSZO Instruments · COSZO",                               "infrastructure",COSZO_INSTR_BODY),
     ("cruises.html",                            "Cruises · COSZO",                                         "infrastructure",CRUISES_BODY),
