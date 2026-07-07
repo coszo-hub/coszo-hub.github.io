@@ -948,6 +948,33 @@ PUBLICATIONS_BODY = page_hero(
 # ============================================================
 # SITES (overview with site cards)
 # ============================================================
+# Interactive overview map: each hotspot is placed as a percentage of the
+# all-sites.jpg image (left%, top%). Adjust the numbers to nudge a marker.
+SITE_MAP_HOTSPOTS = [
+    # (href, label, left%, top%)
+    ("slope-base.html",        "Slope Base",             5,  55),
+    ("hydrate-ridge.html",     "Southern Hydrate Ridge", 25, 50),
+    ("oregon-mid-slope.html",  "Oregon Mid Slope",       27, 57),
+    ("oregon-offshore.html",   "Oregon Offshore",        42, 82),
+    ("oregon-outer-shelf.html","Oregon Outer Shelf",     84, 26),
+    ("oregon-shelf.html",      "Oregon Shelf",           95, 37),
+]
+
+def render_site_map():
+    spots = ""
+    for href, label, x, y in SITE_MAP_HOTSPOTS:
+        spots += (f'\n        <a class="site-hotspot" href="{href}" style="left:{x}%;top:{y}%" aria-label="{label}">'
+                  f'<span class="site-hotspot-label">{label}</span></a>')
+    return (
+        '<figure class="welcome-figure welcome-figure-wide sitemap-figure" style="width:75%; margin:52px auto 0;">\n'
+        '      <div class="sitemap">\n'
+        '        <img src="assets/sites/all-sites.jpg" alt="Bathymetric map of all COSZO seafloor sites along the Cascadia margin off Oregon" loading="lazy">'
+        f'{spots}\n'
+        '      </div>\n'
+        '      <figcaption>Overview of the COSZO seafloor sites along the OOI Regional Cabled Array on the Cascadia margin off Oregon. Hover a marker to see the site name; click to open its page.</figcaption>\n'
+        '    </figure>'
+    )
+
 SITES_BODY = page_hero(
     "Infrastructure", "Sites",
     "COSZO instruments are installed at sites along the OOI Regional Cabled Array spanning the Cascadia margin. Each site has its own geological setting, instrument complement, and science role.",
@@ -993,10 +1020,7 @@ SITES_BODY = page_hero(
         <span class="card-link">View site &rarr;</span>
       </a>
     </div>
-    <figure class="welcome-figure welcome-figure-wide" style="width:75%; margin:52px auto 0;">
-      <img src="assets/sites/all-sites.jpg" alt="Bathymetric map of all COSZO seafloor sites along the Cascadia margin off Oregon" loading="lazy">
-      <figcaption>Overview of the COSZO seafloor sites along the OOI Regional Cabled Array on the Cascadia margin off Oregon.</figcaption>
-    </figure>
+    __SITE_MAP__
   </div>
 </section>
 
@@ -1010,6 +1034,7 @@ SITES_BODY = page_hero(
   </div>
 </section>
 """
+SITES_BODY = SITES_BODY.replace("__SITE_MAP__", render_site_map())
 
 # ============================================================
 # PER-SITE STUBS
