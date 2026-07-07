@@ -1519,7 +1519,7 @@ def data_page_body(slug, info):
         <p class="instr-site">These data streams will be available once COSZO comes online.</p>
 
         <h2 id="access">Data Access</h2>
-        <p>COSZO data will be openly available through the OOI cyberinfrastructure and EarthScope. Station and channel details will be published here as the network is commissioned.</p>
+        <p>COSZO data is available through EarthScope.</p>
       </article>
     </div>
   </div>
