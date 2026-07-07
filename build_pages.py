@@ -2289,7 +2289,7 @@ CRUISES_BODY = page_hero(
     "Field operations for COSZO: the daily plan, dispatches from sea, the cruise diary, and live video from the ship.",
     ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', "Cruises"]
 ) + f"""
-<section class="cruise-log" id="operations">
+<section class="cruise-log" id="operations" style="padding-top:36px;">
   <div class="container">
     <div class="cruise-timeline">
       <div class="cruise-item">
