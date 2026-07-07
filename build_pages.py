@@ -951,10 +951,6 @@ SITES_BODY = page_hero(
 ) + """
 <section class="hub-section">
   <div class="container">
-    <figure class="welcome-figure welcome-figure-wide" style="margin:0 0 44px;">
-      <img src="assets/sites/all-sites.jpg" alt="Bathymetric map of all COSZO seafloor sites along the Cascadia margin off Oregon" loading="lazy">
-      <figcaption>Overview of the COSZO seafloor sites along the OOI Regional Cabled Array on the Cascadia margin off Oregon.</figcaption>
-    </figure>
     <div class="hub-cards">
       <a href="oregon-shelf.html" class="hub-card">
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 30 H42 M6 36 H42" stroke="currentColor" stroke-width="2"/><path d="M10 30 L16 22 L24 26 L32 20 L40 30" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
@@ -993,6 +989,10 @@ SITES_BODY = page_hero(
         <span class="card-link">View site &rarr;</span>
       </a>
     </div>
+    <figure class="welcome-figure welcome-figure-wide" style="margin:52px 0 0;">
+      <img src="assets/sites/all-sites.jpg" alt="Bathymetric map of all COSZO seafloor sites along the Cascadia margin off Oregon" loading="lazy">
+      <figcaption>Overview of the COSZO seafloor sites along the OOI Regional Cabled Array on the Cascadia margin off Oregon.</figcaption>
+    </figure>
   </div>
 </section>
 
