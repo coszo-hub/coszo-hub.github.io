@@ -953,11 +953,11 @@ PUBLICATIONS_BODY = page_hero(
 SITE_MAP_HOTSPOTS = [
     # (href, label, left%, top%)
     ("slope-base.html",        "Slope Base",             5,  55),
-    ("hydrate-ridge.html",     "Southern Hydrate Ridge", 25, 50),
-    ("oregon-mid-slope.html",  "Oregon Mid Slope",       27, 57),
+    ("hydrate-ridge.html",     "Southern Hydrate Ridge", 26, 46),
+    ("oregon-mid-slope.html",  "Oregon Mid Slope",       26, 63),
     ("oregon-offshore.html",   "Oregon Offshore",        42, 82),
     ("oregon-outer-shelf.html","Oregon Outer Shelf",     84, 26),
-    ("oregon-shelf.html",      "Oregon Shelf",           95, 37),
+    ("oregon-shelf.html",      "Oregon Shelf",           97, 37),
 ]
 
 def render_site_map():
