@@ -1,10 +1,10 @@
 name,role,group,affiliation,photo,link,order
-William Wilcock,Principal Investigator,leadership,UW · School of Oceanography,william-wilcock.jpg,https://environment.uw.edu/faculty/william-wilcock/,1
-Mike Harrington,Chief Engineer,leadership,UW · Applied Physics Laboratory,mike-harrington.png,https://apl.uw.edu/people/profile.php?last_name=Harrington&first_name=Mike,2
-David Schmidt,"Science, Training, and Outreach Team",leadership,UW · Earth & Space Sciences,david-schmidt.jpg,https://environment.uw.edu/faculty/david-schmidt/,3
-Deborah Kelley,"Science, Training, and Outreach Team",leadership,UW · School of Oceanography,deborah-kelley.jpg,https://environment.uw.edu/faculty/deborah-kelley/,4
-Harold Tobin,"Science, Training, and Outreach Team",leadership,UW · Earth & Space Sciences,harold-tobin.jpg,https://environment.uw.edu/faculty/harold-tobin/,5
-Marine Denolle,"Science, Training, and Outreach Team",leadership,UW · Earth & Space Sciences,marine-denolle.jpg,https://environment.uw.edu/faculty/marine-denolle/,6
+William Wilcock,Principal Investigator,uw,UW · School of Oceanography,william-wilcock.jpg,https://environment.uw.edu/faculty/william-wilcock/,1
+Mike Harrington,Chief Engineer,uw,UW · Applied Physics Laboratory,mike-harrington.png,https://apl.uw.edu/people/profile.php?last_name=Harrington&first_name=Mike,2
+David Schmidt,"Co-PI; Science, Training, and Outreach Team",uw,UW · Earth & Space Sciences,david-schmidt.jpg,https://environment.uw.edu/faculty/david-schmidt/,3
+Deborah Kelley,"Co-PI; Science, Training, and Outreach Team",uw,UW · School of Oceanography,deborah-kelley.jpg,https://environment.uw.edu/faculty/deborah-kelley/,4
+Harold Tobin,"Co-PI; Science, Training, and Outreach Team",uw,UW · Earth & Space Sciences,harold-tobin.jpg,https://environment.uw.edu/faculty/harold-tobin/,5
+Marine Denolle,"Science, Training, and Outreach Team",uw,UW · Earth & Space Sciences,marine-denolle.jpg,https://environment.uw.edu/faculty/marine-denolle/,6
 Mika Thompson,Project Manager,uw,UW · Earth & Space Sciences,mika-thompson.jpg,https://www.ocean.washington.edu/home/Mika_Thompson,1
 Dana Manalang,Lead Instrument Engineer,uw,UW · Applied Physics Laboratory,dana-manalang.png,https://apl.uw.edu/people/profile.php?last_name=Manalang&first_name=Dana,2
 Geoff Cram,Lead Mechanical Engineer,uw,UW · Applied Physics Laboratory,geoff-cram.png,https://apl.uw.edu/people/profile.php?last_name=Cram&first_name=Geoff,3
@@ -27,7 +27,7 @@ Derek Martin,Mechanical Engineer,uw,UW · Applied Physics Laboratory,,,19
 Jake Ploskey,Software Engineer,uw,UW · Applied Physics Laboratory,,https://apl.uw.edu/people/profile.php?last_name=Ploskey&first_name=Jake,20
 Maleen Kidiwela,Postdoctoral Scholar,uw,UW · School of Oceanography,maleen-kidiwela.png,https://maleenkidiwela.github.io,21
 Yoichiro Dobashi,Graduate Student,uw,UW · School of Oceanography,yoichiro-dobashi.jpg,https://www.ocean.washington.edu/home/Yoichiro_Dobashi,22
-Michael Hemmett,Graduate Student,uw,UW · School of Oceanography,michael-hemmett.jpg,https://ess.uw.edu/people/michael-hemmett/,23
+Michael Hemmett,Graduate Student,uw,UW · Earth & Space Sciences,michael-hemmett.jpg,https://ess.uw.edu/people/michael-hemmett/,23
 Mark Zumberge,Research Geophysicist,scripps,UCSD Scripps Institution of Oceanography,,,1
 Glenn Sasagawa,R&D Engineer,scripps,UCSD Scripps Institution of Oceanography,,,2
 Joel White,Development Technician,scripps,UCSD Scripps Institution of Oceanography,,,3

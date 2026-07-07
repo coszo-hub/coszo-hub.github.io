@@ -1495,20 +1495,19 @@ ASP_BODY = page_hero(
 #   group  -> selects the section (see PEOPLE_GROUPS; matched case-insensitively)
 #   photo  -> a filename in assets/people/ OR a full http(s) URL; blank = avatar
 #   link   -> optional profile URL; blank = non-clickable card
-#   order  -> optional integer sort within a section
+#   order  -> retained for reference only; each section is sorted alphabetically by name
 PEOPLE_GROUPS = [
-    ("leadership", "UW Investigators"),
     ("uw",         "University of Washington Team"),
     ("scripps",    "Scripps Institution of Oceanography Team"),
     ("committee",  "Science Advisory Committee"),
 ]
-# Legacy group names (research/postdocs/graduate) fold into the UW team so the
-# build stays robust if the synced sheet still uses the old vocabulary.
+# Legacy/leadership group names all fold into the UW team so the build stays
+# robust if the synced sheet still uses the old vocabulary.
 _GROUP_ALIASES = {
-    "leadership": "leadership", "lead": "leadership", "pi": "leadership",
-    "principal investigator": "leadership", "principal investigators": "leadership",
-    "co-pi": "leadership", "co-investigator": "leadership", "faculty": "leadership",
-    "investigators": "leadership", "uw investigators": "leadership",
+    "leadership": "uw", "lead": "uw", "pi": "uw",
+    "principal investigator": "uw", "principal investigators": "uw",
+    "co-pi": "uw", "co-investigator": "uw", "faculty": "uw",
+    "investigators": "uw", "uw investigators": "uw",
     "uw": "uw", "university of washington team": "uw", "uw team": "uw",
     "research": "uw", "research team": "uw", "team": "uw",
     "scientist": "uw", "engineer": "uw", "staff": "uw", "apl": "uw",
@@ -1532,7 +1531,7 @@ def _people_order(row):
 
 
 def load_people(csv_path):
-    """Read people.csv into {group_key: [rows]}, preserving file order then `order`."""
+    """Read people.csv into {group_key: [rows]}, each section sorted alphabetically by name (first name)."""
     groups = {key: [] for key, _ in PEOPLE_GROUPS}
     try:
         with open(csv_path, newline="", encoding="utf-8") as f:
@@ -1544,7 +1543,7 @@ def load_people(csv_path):
     except FileNotFoundError:
         pass
     for key in groups:
-        groups[key].sort(key=_people_order)
+        groups[key].sort(key=lambda r: (r.get("name") or "").strip().lower())
     return groups
 
 
