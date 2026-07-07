@@ -2390,6 +2390,36 @@ SEARCH_BODY = page_hero(
 </script>
 """
 
+# ------------------------------------------------------------
+# Fill each COSZO instrument's "Sites:" line with the sites that host it,
+# derived from data/data_channels.csv (so editing the sheet keeps them in sync).
+# ------------------------------------------------------------
+DATA_SITE_LINKS = {
+    "EA Shelf":       ("oregon-shelf.html",       "Oregon Shelf"),
+    "OR Outer Shelf": ("oregon-outer-shelf.html", "Oregon Outer Shelf"),
+    "OR Offshore":    ("oregon-offshore.html",    "Oregon Offshore"),
+    "OR Mid Slope":   ("oregon-mid-slope.html",   "Oregon Mid Slope"),
+}
+_DATA_SITE_ORDER = ["oregon-shelf.html", "oregon-outer-shelf.html", "oregon-offshore.html", "oregon-mid-slope.html"]
+
+def instrument_sites_links(slug):
+    info = load_data_channels(os.path.join(OUT_DIR, "data", "data_channels.csv")).get(slug)
+    seen = []
+    for site, stn, loc, dt, ch in (info["rows"] if info else []):
+        link = DATA_SITE_LINKS.get(site)
+        if link and link not in seen:
+            seen.append(link)
+    seen.sort(key=lambda l: _DATA_SITE_ORDER.index(l[0]) if l[0] in _DATA_SITE_ORDER else 99)
+    if not seen:
+        return "to be confirmed."
+    return ", ".join(f'<a href="{u}">{n}</a>' for u, n in seen) + "."
+
+for _slug in ["broadband-seismometer", "differential-pressure-gauge", "hydrophone", "gssm", "cscpr", "current-meter"]:
+    COSZO_INSTR_BODY = COSZO_INSTR_BODY.replace(
+        f'<strong>Sites:</strong> to be confirmed.</p>\n        <p class="instr-site"><strong>Data:</strong> <a href="{_slug}.html">',
+        f'<strong>Sites:</strong> {instrument_sites_links(_slug)}</p>\n        <p class="instr-site"><strong>Data:</strong> <a href="{_slug}.html">',
+    )
+
 # ============================================================
 # REGISTER ALL PAGES AND WRITE THEM
 # ============================================================
