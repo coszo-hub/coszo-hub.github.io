@@ -961,9 +961,9 @@ SITE_MAP_HOTSPOTS = [
     # (href, label, left%, top%)
     ("slope-base.html",        "Slope Base",             5,  55),
     ("hydrate-ridge.html",     "Southern Hydrate Ridge", 26, 46),
-    ("oregon-mid-slope.html",  "Oregon Mid Slope",       26, 63),
+    ("oregon-mid-slope.html",  "Mid Slope",       26, 63),
     ("oregon-offshore.html",   "Oregon Offshore",        42, 82),
-    ("oregon-outer-shelf.html","Oregon Outer Shelf",     84, 26),
+    ("oregon-outer-shelf.html","Outer Shelf",     84, 26),
     ("oregon-shelf.html",      "Oregon Shelf",           97, 37),
 ]
 
@@ -998,7 +998,7 @@ SITES_BODY = page_hero(
       </a>
       <a href="oregon-outer-shelf.html" class="hub-card">
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 30 H42 M6 36 H42" stroke="currentColor" stroke-width="2"/><path d="M10 30 L18 24 L26 27 L34 22 L42 26" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
-        <h3>Oregon Outer Shelf</h3>
+        <h3>Outer Shelf</h3>
         <p>Cabled COSZO node on the outer continental shelf (~110 m), hosting a seafloor geophysical sensor suite (node PN1D).</p>
         <span class="card-link">View site &rarr;</span>
       </a>
@@ -1010,7 +1010,7 @@ SITES_BODY = page_hero(
       </a>
       <a href="oregon-mid-slope.html" class="hub-card">
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 34 L20 22 L30 28 L42 16" stroke="currentColor" stroke-width="2" fill="none"/><path d="M6 40 L20 30 L30 35 L42 26" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
-        <h3>Oregon Mid Slope</h3>
+        <h3>Mid Slope</h3>
         <p>Cabled COSZO node on the mid continental slope (~1,250 m), hosting a seafloor geophysical sensor suite (node PN1B).</p>
         <span class="card-link">View site &rarr;</span>
       </a>
@@ -2237,18 +2237,18 @@ OREGON_OFFSHORE_BODY = page_hero(
 # OREGON OUTER SHELF (COSZO cabled site, node PN1D)
 # ============================================================
 OREGON_OUTER_SHELF_BODY = page_hero(
-    "Sites", "Oregon Outer Shelf",
+    "Sites", "Outer Shelf",
     "COSZO cabled node on the outer continental shelf off Oregon, ~110 m deep (node PN1D).",
-    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Oregon Outer Shelf"]
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Outer Shelf"]
 ) + """
 <section class="article">
   <div class="container">
     <div class="article-grid narrow">
       <article class="article-content">
         <h2>Overview</h2>
-        <p class="lede-para">Oregon Outer Shelf is a new COSZO cabled node (PN1D) on the outer continental shelf off Oregon, at roughly 110 meters water depth. It extends the OOI Regional Cabled Array with a purpose-built seafloor geophysical station in the shallowest part of the COSZO footprint.</p>
+        <p class="lede-para">Outer Shelf is a new COSZO cabled node (PN1D) on the outer continental shelf off Oregon, at roughly 110 meters water depth. It extends the OOI Regional Cabled Array with a purpose-built seafloor geophysical station in the shallowest part of the COSZO footprint.</p>
         <p>The node hosts a co-located geophysical sensor suite &mdash; a broadband ocean-bottom seismometer, a calibrated seafloor pressure gauge (GSSM), a differential pressure and point-current sensor (VEL3D), a self-calibrating pressure sensor (PREST), and a low-frequency hydrophone &mdash; all cabled for continuous, real-time data return.</p>
-        <figure class="welcome-figure"><img src="assets/sites/oregon-outershelf1.jpg" alt="Bathymetric map of the Oregon Outer Shelf cabled node (PN1D)" loading="lazy"><figcaption>Cabled instrument layout at the Oregon Outer Shelf node (PN1D, ~110 m). Image: OOI Regional Cabled Array.</figcaption></figure>
+        <figure class="welcome-figure"><img src="assets/sites/oregon-outershelf1.jpg" alt="Bathymetric map of the Outer Shelf cabled node (PN1D)" loading="lazy"><figcaption>Cabled instrument layout at the Outer Shelf node (PN1D, ~110 m). Image: OOI Regional Cabled Array.</figcaption></figure>
         <p><strong>Node:</strong> PN1D &middot; ~110 m water depth.</p>
       </article>
     </div>
@@ -2260,18 +2260,18 @@ OREGON_OUTER_SHELF_BODY = page_hero(
 # OREGON MID SLOPE (COSZO cabled site, node PN1B)
 # ============================================================
 OREGON_MID_SLOPE_BODY = page_hero(
-    "Sites", "Oregon Mid Slope",
+    "Sites", "Mid Slope",
     "COSZO cabled node on the mid continental slope off Oregon, ~1,250 m deep (node PN1B).",
-    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Oregon Mid Slope"]
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Mid Slope"]
 ) + """
 <section class="article">
   <div class="container">
     <div class="article-grid narrow">
       <article class="article-content">
         <h2>Overview</h2>
-        <p class="lede-para">Oregon Mid Slope is a new COSZO cabled node (PN1B) on the mid continental slope off Oregon, at roughly 1,250 meters water depth. It sits between the shelf sites and the deep Slope Base station, sampling deformation and seismicity across the seaward extent of the locked megathrust.</p>
+        <p class="lede-para">Mid Slope is a new COSZO cabled node (PN1B) on the mid continental slope off Oregon, at roughly 1,250 meters water depth. It sits between the shelf sites and the deep Slope Base station, sampling deformation and seismicity across the seaward extent of the locked megathrust.</p>
         <p>The node hosts a co-located geophysical sensor suite &mdash; a broadband ocean-bottom seismometer, a calibrated seafloor pressure gauge (GSSM), a differential pressure and point-current sensor (VEL3D), a self-calibrating pressure sensor (PREST), and a low-frequency hydrophone &mdash; all cabled for continuous, real-time data return.</p>
-        <figure class="welcome-figure"><img src="assets/sites/oregon-midslope.jpg" alt="Bathymetric map of the Oregon Mid Slope cabled node (PN1B)" loading="lazy"><figcaption>Cabled instrument layout at the Oregon Mid Slope node (PN1B, ~1,250 m). Image: OOI Regional Cabled Array.</figcaption></figure>
+        <figure class="welcome-figure"><img src="assets/sites/oregon-midslope.jpg" alt="Bathymetric map of the Mid Slope cabled node (PN1B)" loading="lazy"><figcaption>Cabled instrument layout at the Mid Slope node (PN1B, ~1,250 m). Image: OOI Regional Cabled Array.</figcaption></figure>
         <p><strong>Node:</strong> PN1B &middot; ~1,250 m water depth.</p>
       </article>
     </div>
@@ -2435,8 +2435,8 @@ PAGES = [
     ("slope-base.html",                         "Slope Base · COSZO",                                      "infrastructure",SLOPE_BASE_BODY),
     ("oregon-shelf.html",                       "Oregon Shelf · COSZO",                                    "infrastructure",OREGON_SHELF_BODY),
     ("oregon-offshore.html",                    "Oregon Offshore · COSZO",                                 "infrastructure",OREGON_OFFSHORE_BODY),
-    ("oregon-outer-shelf.html",                 "Oregon Outer Shelf · COSZO",                              "infrastructure",OREGON_OUTER_SHELF_BODY),
-    ("oregon-mid-slope.html",                   "Oregon Mid Slope · COSZO",                                "infrastructure",OREGON_MID_SLOPE_BODY),
+    ("oregon-outer-shelf.html",                 "Outer Shelf · COSZO",                              "infrastructure",OREGON_OUTER_SHELF_BODY),
+    ("oregon-mid-slope.html",                   "Mid Slope · COSZO",                                "infrastructure",OREGON_MID_SLOPE_BODY),
     ("existing-instruments.html",               "Existing Instruments · COSZO",                            "infrastructure",EXISTING_BODY),
     ("coszo-instruments.html",                  "COSZO Instruments · COSZO",                               "infrastructure",COSZO_INSTR_BODY),
     ("cruises.html",                            "Cruises · COSZO",                                         "infrastructure",CRUISES_BODY),
