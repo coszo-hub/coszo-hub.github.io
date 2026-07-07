@@ -92,14 +92,13 @@ def build_header(active=""):
       <div class="nav-item has-dropdown">
         <a href="data.html"{cls("data")}>Data</a>
         <div class="dropdown wide">
-          <a href="data.html">Broadband Seismometer &amp; Strong Motion</a>
-          <a href="data.html">Short-Period Seismometer</a>
-          <a href="data.html">Differential Pressure Gauge</a>
-          <a href="data.html">Hydrophone</a>
+          <a href="broadband-seismometer.html">Broadband Seismometer &amp; Strong Motion</a>
+          <a href="differential-pressure-gauge.html">Differential Pressure Gauge</a>
+          <a href="hydrophone.html">Hydrophone</a>
           <a href="absolute-seafloor-pressure.html">Absolute Pressure Gauge</a>
-          <a href="data.html">GSSM &mdash; Calibrated Pressure &amp; Acceleration</a>
-          <a href="data.html">CSCPR &mdash; Calibrated Pressure</a>
-          <a href="data.html">Current Meter</a>
+          <a href="gssm.html">GSSM &mdash; Calibrated Pressure &amp; Acceleration</a>
+          <a href="cscpr.html">CSCPR &mdash; Calibrated Pressure</a>
+          <a href="current-meter.html">Current Meter</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
@@ -1383,14 +1382,13 @@ WORKSHOP_BODY = page_hero(
 # ============================================================
 
 DATA_PRODUCT_CARDS = [
-    ("data.html", "Broadband Seismometer &amp; Strong Motion", "Three-component broadband ground velocity together with high-dynamic-range strong-motion acceleration.", "Motion &middot; Seismometer"),
-    ("data.html", "Short-Period Seismometer", "High-frequency seismometer data for local microseismicity and P-wave detection.", "Motion &middot; Short-period"),
-    ("data.html", "Differential Pressure Gauge", "Short-period seafloor pressure variations capturing tsunami signals and hydroacoustic waves.", "Pressure &middot; Differential"),
-    ("data.html", "Hydrophone", "Hydrophone data in the infrasound band for T-phase and hydroacoustic monitoring.", "Acoustic &middot; Hydrophone"),
+    ("broadband-seismometer.html", "Broadband Seismometer &amp; Strong Motion", "Three-component broadband ground velocity together with high-dynamic-range strong-motion acceleration.", "Motion &middot; Seismometer"),
+    ("differential-pressure-gauge.html", "Differential Pressure Gauge", "Short-period seafloor pressure variations capturing tsunami signals and hydroacoustic waves.", "Pressure &middot; Differential"),
+    ("hydrophone.html", "Hydrophone", "Hydrophone data in the infrasound band for T-phase and hydroacoustic monitoring.", "Acoustic &middot; Hydrophone"),
     ("absolute-seafloor-pressure.html", "Absolute Pressure Gauge", "Total pressure at the seafloor for tsunami detection and seafloor deformation monitoring.", "Pressure &middot; Absolute"),
-    ("data.html", "GSSM &mdash; Calibrated Pressure &amp; Acceleration", "Combined calibrated pressure and strong-motion records from geodetic seafloor stations.", "Composite &middot; Calibrated"),
-    ("data.html", "CSCPR &mdash; Calibrated Pressure", "Cabled self-calibrating pressure recorder data corrected for instrument drift.", "Pressure &middot; Drift-corrected"),
-    ("data.html", "Current Meter", "Current meter and ADCP measurements of sea-water velocity through the water column.", "Water &middot; Current meter"),
+    ("gssm.html", "GSSM &mdash; Calibrated Pressure &amp; Acceleration", "Combined calibrated pressure and strong-motion records from geodetic seafloor stations.", "Composite &middot; Calibrated"),
+    ("cscpr.html", "CSCPR &mdash; Calibrated Pressure", "Cabled self-calibrating pressure recorder data corrected for instrument drift.", "Pressure &middot; Drift-corrected"),
+    ("current-meter.html", "Current Meter", "Current meter and ADCP measurements of sea-water velocity through the water column.", "Water &middot; Current meter"),
 ]
 
 def render_product_cards():
@@ -1407,7 +1405,7 @@ def render_product_cards():
 
 DATAPRODUCTS_BODY = page_hero(
     "Data", "Data",
-    "Eight continuous data streams from the COSZO and RCA sensor suite, covering ground motion, pressure, acoustic, and water-velocity measurements. All data are openly available.",
+    "Seven continuous data streams from the COSZO and RCA sensor suite, covering ground motion, pressure, acoustic, and water-velocity measurements. All data are openly available.",
     ['<a href="index.html">Home</a>', "Data"]
 ) + f"""
 <section class="data-products">
@@ -1420,6 +1418,110 @@ DATAPRODUCTS_BODY = page_hero(
       </div>
     </div>
     <div class="products-grid">{render_product_cards()}</div>
+  </div>
+</section>
+"""
+
+# ------------------------------------------------------------
+# Data-product detail pages, generated from data/data_channels.csv.
+# Edit that spreadsheet (columns: page,title,site,station,location,data_type,
+# channels) and rebuild to change these pages. One page per unique `page` slug;
+# each row becomes a Stations-table entry. Prose lives in DATA_PAGE_META below.
+# ------------------------------------------------------------
+DATA_PAGE_META = {
+    "broadband-seismometer": {
+        "lede": "Three-component broadband ground velocity together with high-dynamic-range strong-motion acceleration.",
+        "overview": "The cabled ocean-bottom seismometer (COBSO) records three-component broadband ground velocity together with co-located strong-motion acceleration at each COSZO seafloor site. Each measurement is streamed at several sample rates, supporting both high-frequency earthquake detection and long-period analysis.",
+    },
+    "differential-pressure-gauge": {
+        "lede": "Short-period seafloor pressure variations capturing tsunami signals and hydroacoustic waves.",
+        "overview": "A differential pressure gauge on the cabled ocean-bottom seismometer measures short-period seafloor pressure variations, capturing tsunami signals and hydroacoustic waves. Data are streamed at several sample rates.",
+    },
+    "hydrophone": {
+        "lede": "Low-frequency hydrophone data for T-phase and hydroacoustic monitoring.",
+        "overview": "A low-frequency hydrophone on the cabled ocean-bottom seismometer records acoustic pressure for T-phase and hydroacoustic monitoring, from a broadband stream down to decimated long-period channels.",
+    },
+    "gssm": {
+        "lede": "Calibrated seafloor pressure and strong-motion acceleration from the geodetic seafloor sensor module.",
+        "overview": "The Geodetic Seafloor Sensor Module (GSSM) provides calibrated seafloor pressure from dual gauges together with strong-motion acceleration, each with a co-located sensor temperature, at each COSZO site.",
+    },
+    "cscpr": {
+        "lede": "Drift-corrected absolute seafloor pressure from a cabled self-calibrating pressure recorder.",
+        "overview": "The Cabled Self-Calibrating Pressure Recorder (CSCPR) provides drift-corrected absolute seafloor pressure from dual calibrated gauges, supporting long-term seafloor geodesy.",
+    },
+    "current-meter": {
+        "lede": "Three-component sea-water velocity with acoustic amplitude and correlation, pressure, and temperature.",
+        "overview": "The cabled current meter (Nortek Vector) measures three-component sea-water velocity along with per-beam acoustic amplitude and correlation, seafloor pressure, and water temperature at each COSZO site.",
+    },
+}
+
+def load_data_channels(csv_path):
+    """Read data/data_channels.csv into {slug: {title, rows:[(site,station,loc,data_type,channels)]}}."""
+    pages = {}
+    try:
+        with open(csv_path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                slug = (row.get("page") or "").strip()
+                if not slug:
+                    continue
+                p = pages.setdefault(slug, {"title": "", "rows": []})
+                if not p["title"]:
+                    p["title"] = (row.get("title") or "").strip()
+                p["rows"].append((
+                    (row.get("site") or "").strip(),
+                    (row.get("station") or "").strip(),
+                    (row.get("location") or "").strip(),
+                    (row.get("data_type") or "").strip(),
+                    (row.get("channels") or "").strip(),
+                ))
+    except FileNotFoundError:
+        pass
+    return pages
+
+def data_page_body(slug, info):
+    """Render one data-product detail page in the Absolute Seafloor Pressure format."""
+    title = info["title"].replace("&", "&amp;")
+    meta = DATA_PAGE_META.get(slug, {})
+    rows_html = ""
+    for site, stn, loc, dt, ch in info["rows"]:
+        locdisp = "&mdash;" if loc in ("--", "") else loc
+        station = f"OO.{stn}" if stn else ""
+        rows_html += (f'\n            <tr><td>{site}</td><td><code>{station}</code></td>'
+                      f'<td><code>{locdisp}</code></td><td>{dt}</td><td>{ch}</td></tr>')
+    return page_hero(
+        "Data", title, meta.get("lede", ""),
+        ['<a href="index.html">Home</a>', '<a href="data.html">Data</a>', title]
+    ) + f"""
+<section class="article">
+  <div class="container">
+    <div class="article-grid">
+      <aside class="article-sidebar">
+        <h4>On This Page</h4>
+        <ul>
+          <li><a href="#overview" class="active">Overview</a></li>
+          <li><a href="#stations">Stations</a></li>
+          <li><a href="#access">Data Access</a></li>
+        </ul>
+      </aside>
+      <article class="article-content">
+        <h2 id="overview">Overview</h2>
+        <p class="lede-para">{meta.get("overview", "")}</p>
+
+        <h2 id="stations">Stations</h2>
+        <p>The table below lists the station, location code, and channels for the data.</p>
+        <table class="specs-table">
+          <thead>
+            <tr><th>Site</th><th>Station</th><th>Location</th><th>Data type</th><th>Channel</th></tr>
+          </thead>
+          <tbody>{rows_html}
+          </tbody>
+        </table>
+        <p class="instr-site">These data streams will be available once COSZO comes online.</p>
+
+        <h2 id="access">Data Access</h2>
+        <p>COSZO data will be openly available through the OOI cyberinfrastructure and EarthScope. Station and channel details will be published here as the network is commissioned.</p>
+      </article>
+    </div>
   </div>
 </section>
 """
@@ -2304,6 +2406,11 @@ PAGES = [
     ("workshop-documents.html",                 "Workshop Documents · COSZO",                              "",              WORKSHOP_DOCUMENTS_BODY),
     ("workshop.html",                           "Workshop · COSZO",                                        "",              WORKSHOP_BODY),
 ]
+
+# Data-product detail pages, generated from data/data_channels.csv (see the
+# loader/DATA_PAGE_META above). Appended so editing the spreadsheet adds/edits pages.
+for _slug, _info in load_data_channels(os.path.join(OUT_DIR, "data", "data_channels.csv")).items():
+    PAGES.append((f"{_slug}.html", f'{_info["title"].replace("&", "&amp;")} · COSZO', "data", data_page_body(_slug, _info)))
 
 def main():
     written = []

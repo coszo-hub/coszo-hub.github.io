@@ -1,0 +1,54 @@
+page,title,site,station,location,data_type,channels
+broadband-seismometer,Broadband Seismometer & Strong Motion,OR Mid Slope,CZMID,--,Broadband ground velocity,"HHE, HHN, HHZ (200 Hz); BHE, BHN, BHZ (40 Hz); MHE, MHN, MHZ (8 Hz); LHE, LHN, LHZ (1 Hz)"
+broadband-seismometer,Broadband Seismometer & Strong Motion,OR Mid Slope,CZMID,--,Strong-motion acceleration,"HNE, HNN, HNZ (200 Hz); MNE, MNN, MNZ (8 Hz); LNE, LNN, LNZ (1 Hz)"
+broadband-seismometer,Broadband Seismometer & Strong Motion,OR Offshore,CZOFF,--,Broadband ground velocity,"HHE, HHN, HHZ (200 Hz); BHE, BHN, BHZ (40 Hz); MHE, MHN, MHZ (8 Hz); LHE, LHN, LHZ (1 Hz)"
+broadband-seismometer,Broadband Seismometer & Strong Motion,OR Offshore,CZOFF,--,Strong-motion acceleration,"HNE, HNN, HNZ (200 Hz); MNE, MNN, MNZ (8 Hz); LNE, LNN, LNZ (1 Hz)"
+broadband-seismometer,Broadband Seismometer & Strong Motion,OR Outer Shelf,CZOSH,--,Broadband ground velocity,"HHE, HHN, HHZ (200 Hz); BHE, BHN, BHZ (40 Hz); MHE, MHN, MHZ (8 Hz); LHE, LHN, LHZ (1 Hz)"
+broadband-seismometer,Broadband Seismometer & Strong Motion,OR Outer Shelf,CZOSH,--,Strong-motion acceleration,"HNE, HNN, HNZ (200 Hz); MNE, MNN, MNZ (8 Hz); LNE, LNN, LNZ (1 Hz)"
+broadband-seismometer,Broadband Seismometer & Strong Motion,EA Shelf,CZSHF,--,Broadband ground velocity,"HHE, HHN, HHZ (200 Hz); BHE, BHN, BHZ (40 Hz); MHE, MHN, MHZ (8 Hz); LHE, LHN, LHZ (1 Hz)"
+broadband-seismometer,Broadband Seismometer & Strong Motion,EA Shelf,CZSHF,--,Strong-motion acceleration,"HNE, HNN, HNZ (200 Hz); MNE, MNN, MNZ (8 Hz); LNE, LNN, LNZ (1 Hz)"
+differential-pressure-gauge,Differential Pressure Gauge,OR Mid Slope,CZMID,--,Differential pressure,HDO (200 Hz); BDO (40 Hz); MDO (8 Hz); LDO (1 Hz)
+differential-pressure-gauge,Differential Pressure Gauge,OR Offshore,CZOFF,--,Differential pressure,HDO (200 Hz); BDO (40 Hz); MDO (8 Hz); LDO (1 Hz)
+differential-pressure-gauge,Differential Pressure Gauge,OR Outer Shelf,CZOSH,--,Differential pressure,HDO (200 Hz); BDO (40 Hz); MDO (8 Hz); LDO (1 Hz)
+differential-pressure-gauge,Differential Pressure Gauge,EA Shelf,CZSHF,--,Differential pressure,HDO (200 Hz); BDO (40 Hz); MDO (8 Hz); LDO (1 Hz)
+hydrophone,Hydrophone,OR Mid Slope,CZMID,--,Low-frequency hydrophone,JDH (10000 Hz); HDH (200 Hz); MDH (8 Hz); LDH (1 Hz)
+hydrophone,Hydrophone,OR Offshore,CZOFF,--,Low-frequency hydrophone,JDH (10000 Hz); HDH (200 Hz); MDH (8 Hz); LDH (1 Hz)
+hydrophone,Hydrophone,OR Outer Shelf,CZOSH,--,Low-frequency hydrophone,JDH (10000 Hz); HDH (200 Hz); MDH (8 Hz); LDH (1 Hz)
+hydrophone,Hydrophone,EA Shelf,CZSHF,--,Low-frequency hydrophone,JDH (10000 Hz); HDH (200 Hz); MDH (8 Hz); LDH (1 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Mid Slope,CZMID,30,Calibrated acceleration,"BNE, BNN, BNZ (40 Hz)"
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Mid Slope,CZMID,30,Acceleration sensor temperature,BK1 (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Mid Slope,CZMID,30,Calibrated pressure (P1),BDO (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Mid Slope,CZMID,30,P1 sensor temperature,BK2 (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Mid Slope,CZMID,31,Calibrated pressure (P2),BDO (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Mid Slope,CZMID,31,P2 sensor temperature,BK2 (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Offshore,CZOFF,30,Calibrated acceleration,"BNE, BNN, BNZ (40 Hz)"
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Offshore,CZOFF,30,Acceleration sensor temperature,BK1 (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Offshore,CZOFF,30,Calibrated pressure (P1),BDO (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Offshore,CZOFF,30,P1 sensor temperature,BK2 (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Offshore,CZOFF,31,Calibrated pressure (P2),BDO (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Offshore,CZOFF,31,P2 sensor temperature,BK2 (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Outer Shelf,CZOSH,30,Calibrated acceleration,"BNE, BNN, BNZ (40 Hz)"
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Outer Shelf,CZOSH,30,Acceleration sensor temperature,BK1 (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Outer Shelf,CZOSH,30,Calibrated pressure (P1),BDO (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Outer Shelf,CZOSH,30,P1 sensor temperature,BK2 (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Outer Shelf,CZOSH,31,Calibrated pressure (P2),BDO (40 Hz)
+gssm,GSSM — Calibrated Pressure & Acceleration,OR Outer Shelf,CZOSH,31,P2 sensor temperature,BK2 (40 Hz)
+cscpr,CSCPR — Calibrated Pressure,OR Mid Slope,CZMID,40,Self-calibrated pressure (P1),LDO (1 Hz)
+cscpr,CSCPR — Calibrated Pressure,OR Mid Slope,CZMID,41,Self-calibrated pressure (P2),LDO (1 Hz)
+cscpr,CSCPR — Calibrated Pressure,OR Offshore,CZOFF,40,Self-calibrated pressure (P1),LDO (1 Hz)
+cscpr,CSCPR — Calibrated Pressure,OR Offshore,CZOFF,41,Self-calibrated pressure (P2),LDO (1 Hz)
+current-meter,Current Meter,OR Mid Slope,CZMID,20,Water temperature,LK1 (1 Hz)
+current-meter,Current Meter,OR Mid Slope,CZMID,20,"Current velocity (east, north, up)","MOE, MON, MOZ (8 Hz)"
+current-meter,Current Meter,OR Mid Slope,CZMID,20,Acoustic amplitude (beams 1-3),"MY1, MY2, MY3 (8 Hz)"
+current-meter,Current Meter,OR Mid Slope,CZMID,20,Acoustic correlation (beams 1-3),"ME1, ME2, ME3 (8 Hz)"
+current-meter,Current Meter,OR Mid Slope,CZMID,20,Pressure,MDO (8 Hz)
+current-meter,Current Meter,OR Offshore,CZOFF,20,Water temperature,LK1 (1 Hz)
+current-meter,Current Meter,OR Offshore,CZOFF,20,"Current velocity (east, north, up)","MOE, MON, MOZ (8 Hz)"
+current-meter,Current Meter,OR Offshore,CZOFF,20,Acoustic amplitude (beams 1-3),"MY1, MY2, MY3 (8 Hz)"
+current-meter,Current Meter,OR Offshore,CZOFF,20,Acoustic correlation (beams 1-3),"ME1, ME2, ME3 (8 Hz)"
+current-meter,Current Meter,OR Offshore,CZOFF,20,Pressure,MDO (8 Hz)
+current-meter,Current Meter,OR Outer Shelf,CZOSH,20,Water temperature,LK1 (1 Hz)
+current-meter,Current Meter,OR Outer Shelf,CZOSH,20,"Current velocity (east, north, up)","MOE, MON, MOZ (8 Hz)"
+current-meter,Current Meter,OR Outer Shelf,CZOSH,20,Acoustic amplitude (beams 1-3),"MY1, MY2, MY3 (8 Hz)"
+current-meter,Current Meter,OR Outer Shelf,CZOSH,20,Acoustic correlation (beams 1-3),"ME1, ME2, ME3 (8 Hz)"
+current-meter,Current Meter,OR Outer Shelf,CZOSH,20,Pressure,MDO (8 Hz)
