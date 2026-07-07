@@ -2291,12 +2291,6 @@ CRUISES_BODY = page_hero(
 ) + f"""
 <section class="cruise-log" id="operations">
   <div class="container">
-    <div class="section-header">
-      <div class="section-header-intro">
-        <div class="section-eyebrow">Recent Operations</div>
-        <h2 class="section-heading">Cruises.</h2>
-      </div>
-    </div>
     <div class="cruise-timeline">
       <div class="cruise-item">
         <div class="cruise-date"><span class="year">2026</span>Summer &middot; RR2614</div>
