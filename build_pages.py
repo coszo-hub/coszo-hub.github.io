@@ -535,9 +535,9 @@ EXISTING_BODY = page_hero(
     <div class="instr-row">
       <div class="instr-text">
         <h2>Current Meter</h2>
-        <p class="instr-meta"><strong>Make &amp; model:</strong> Nobska MAVS-4 (VEL3D) on the seafloor; Nortek Vector (VEL3D) on the Outer Shelf and Mid Slope benthic experiment platforms.</p>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> Nobska MAVS-4 (VEL3D) on the seafloor; Nortek Vector (VEL3D) on the Oregon Shelf and Oregon Offshore benthic experiment platforms.</p>
         <p>Single-point current meters measure the speed and direction of local currents along with water temperature. The measurements are key to understanding how heat, mass, and momentum are transported and how seawater mixes at small scales, and they also help filter current-driven acoustic noise from the seismic signals along the steep Cascadia bathymetry.</p>
-        <p class="instr-site"><strong>Sites:</strong> <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, <a href="oregon-shelf.html">Outer Shelf</a>, <a href="oregon-offshore.html">Mid Slope</a>.</p>
+        <p class="instr-site"><strong>Sites:</strong> <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, <a href="oregon-shelf.html">Oregon Shelf</a>, <a href="oregon-offshore.html">Oregon Offshore</a>.</p>
       </div>
       <figure class="instr-figure"><img src="assets/instruments/current-meter.jpg" alt="Single-point current meter" loading="lazy"><figcaption>Image: OOI / UW Interactive Oceans</figcaption></figure>
     </div>
@@ -951,7 +951,35 @@ SITES_BODY = page_hero(
 ) + """
 <section class="hub-section">
   <div class="container">
-    <div class="hub-cards cols-4">
+    <figure class="welcome-figure welcome-figure-wide" style="margin:0 0 44px;">
+      <img src="assets/sites/all-sites.jpg" alt="Bathymetric map of all COSZO seafloor sites along the Cascadia margin off Oregon" loading="lazy">
+      <figcaption>Overview of the COSZO seafloor sites along the OOI Regional Cabled Array on the Cascadia margin off Oregon.</figcaption>
+    </figure>
+    <div class="hub-cards">
+      <a href="oregon-shelf.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 30 H42 M6 36 H42" stroke="currentColor" stroke-width="2"/><path d="M10 30 L16 22 L24 26 L32 20 L40 30" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
+        <h3>Oregon Shelf</h3>
+        <p>Shallow continental-shelf benthic site offshore Oregon (~80 m), in a highly productive coastal upwelling zone.</p>
+        <span class="card-link">View site &rarr;</span>
+      </a>
+      <a href="oregon-outer-shelf.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 30 H42 M6 36 H42" stroke="currentColor" stroke-width="2"/><path d="M10 30 L18 24 L26 27 L34 22 L42 26" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
+        <h3>Oregon Outer Shelf</h3>
+        <p>Cabled COSZO node on the outer continental shelf (~110 m), hosting a seafloor geophysical sensor suite (node PN1D).</p>
+        <span class="card-link">View site &rarr;</span>
+      </a>
+      <a href="oregon-offshore.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 28 H42" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 30 L30 35 L42 27" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
+        <h3>Oregon Offshore</h3>
+        <p>Continental-slope benthic site off Oregon (~550 m), in the same dynamic coastal upwelling environment.</p>
+        <span class="card-link">View site &rarr;</span>
+      </a>
+      <a href="oregon-mid-slope.html" class="hub-card">
+        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 34 L20 22 L30 28 L42 16" stroke="currentColor" stroke-width="2" fill="none"/><path d="M6 40 L20 30 L30 35 L42 26" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
+        <h3>Oregon Mid Slope</h3>
+        <p>Cabled COSZO node on the mid continental slope (~1,250 m), hosting a seafloor geophysical sensor suite (node PN1B).</p>
+        <span class="card-link">View site &rarr;</span>
+      </a>
       <a href="hydrate-ridge.html" class="hub-card">
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 36 L18 18 L26 28 L34 14 L42 36 Z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
         <h3>Southern Hydrate Ridge</h3>
@@ -962,18 +990,6 @@ SITES_BODY = page_hero(
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 36 L20 20 L28 30 L42 12" stroke="currentColor" stroke-width="2" fill="none"/></svg>
         <h3>Slope Base</h3>
         <p>Deep-water site at the base of the continental slope, providing reference seismic and pressure observations seaward of the locked zone.</p>
-        <span class="card-link">View site &rarr;</span>
-      </a>
-      <a href="oregon-shelf.html" class="hub-card">
-        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 30 H42 M6 36 H42" stroke="currentColor" stroke-width="2"/><path d="M10 30 L16 22 L24 26 L32 20 L40 30" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
-        <h3>Outer Shelf</h3>
-        <p>Shallow continental-shelf benthic site offshore Oregon (~80 m), in a highly productive coastal upwelling zone.</p>
-        <span class="card-link">View site &rarr;</span>
-      </a>
-      <a href="oregon-offshore.html" class="hub-card">
-        <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><path d="M6 28 H42" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 30 L30 35 L42 27" stroke="#17a2ab" stroke-width="2" fill="none"/></svg>
-        <h3>Mid Slope</h3>
-        <p>Continental-slope benthic site off Oregon (~550 m), in the same dynamic coastal upwelling environment.</p>
         <span class="card-link">View site &rarr;</span>
       </a>
     </div>
@@ -1007,7 +1023,7 @@ HYDRATE_RIDGE_BODY = page_hero(
         <p class="lede-para">The Southern Hydrate Summit 1 Seafloor study site, situated on the continental slope off the coast of Oregon at a water depth of ~775 m, hosts abundant deposits of methane ice (methane hydrates) that are buried beneath, and sometimes exposed at the seafloor. The deposits vent methane-rich fluids and bubbles that escape through seeps on the ocean bottom. At Southern Hydrate Ridge plumes of bubbles rise several hundred meters above the seafloor. Dense and fascinating communities of microbes and animals with symbiotic microbes in their guts are fueled by these escaping gases. These seeps provide a unique opportunity to study ocean chemistry, quantifying chemical fluxes from the seafloor and the impacts of methane release on overlying seawater and biota.</p>
         <p>Methane is a powerful greenhouse gas and, therefore, quantifying the flux of methane from the seafloor into the hydrosphere is critical to understanding carbon-cycle dynamics and the impacts of global warming on methane release, particularly in the context of the hydrates response to seismic events.</p>
         <p>This Low-Power JBox (LJ01B) rests on the seafloor and contains geophysical and near seafloor water column instrumentation, and is attached to a fiber-optic cable. Instrumentation hosted on the JBox is largely geophysical in nature, hosting both short-period and broadband seismometers. The fiber-optic cable provides the JBox with significant power and 1 Gb communication bandwidth for two-way communication to instruments for their operation and transmission of data to shore. This JBox is also co-located with a Medium-Power JBox that collects a complementary suite of seafloor and water column measurements.</p>
-        <figure class="welcome-figure"><img src="assets/sites/southern-hydrate-ridge.jpg" alt="Cabled infrastructure at the Southern Hydrate Ridge site" loading="lazy"><figcaption>Cabled infrastructure at the Southern Hydrate Ridge site on the Cascadia margin. Image: OOI Regional Cabled Array.</figcaption></figure>
+        <figure class="welcome-figure"><img src="assets/sites/southern-hydrate-ridge1.png" alt="Bathymetric map of the Southern Hydrate Ridge site" loading="lazy"><figcaption>Location and bathymetry of the Southern Hydrate Ridge site on the Cascadia margin. Image: OOI Regional Cabled Array.</figcaption></figure>
         <p><strong>Location:</strong> 44.5691&deg;N, 125.1481&deg;W &middot; ~775 m water depth.</p>
       </article>
     </div>
@@ -1028,7 +1044,7 @@ SLOPE_BASE_BODY = page_hero(
         <p class="lede-para">The Oregon Slope Base Seafloor site is located adjacent to the continental slope off the coast of Oregon at a water depth of ~2,900 meters. The site contains a Medium-Power JBox (MJ01A) and a Low-Power JBox (LJ01A). Here, ocean water properties are profoundly impacted by the California Current, and perhaps internal waves. The coastal region of the Pacific Northwest is a classic wind-driven upwelling system where nutrient-rich deep waters rise to replace warmer surface waters. The result is a large increase in marine productivity that ranges from phytoplankton to fish to marine mammals. Near bottom fauna are periodically negatively impacted by the flow of deep waters with very low oxygen concentrations (hypoxia events), and upwelling of corrosive, acidified waters onto the continental shelf. This area is also just outboard of the Cascadia Subduction Zone, which experienced a &gt;9M earthquake January 26, 1700 and which is now characterized by episodic tremors (slow earthquakes).</p>
         <p>As with other JBoxes, these rest on the seafloor, contain geophysical and near seafloor water column instrumentation, and are attached to a fiber-optic cable. The fiber-optic cable provides the JBoxes with a significant power and 1 Gb communication bandwidth that provides two-way communication to instruments for their operation and transmission of data to shore. This seafloor site is also co-located with a Deep and Shallow Profiler Mooring, that collect complementary water column data.</p>
         <p>When coupled with other Cabled Array and Endurance Array installations off the central Oregon coast, the Slope Base infrastructure provides a wide variety of opportunities for observing seismic and coastal phenomena, including cross-shelf and along-shelf variability.</p>
-        <figure class="welcome-figure"><img src="assets/sites/slope-base.jpg" alt="Cabled infrastructure at the Oregon Slope Base site" loading="lazy"><figcaption>Cabled infrastructure at the Oregon Slope Base site on the Cascadia margin. Image: OOI Regional Cabled Array.</figcaption></figure>
+        <figure class="welcome-figure"><img src="assets/sites/slope-base1.jpg" alt="Cabled instrumentation at the Oregon Slope Base site (2,900 m)" loading="lazy"><figcaption>Cabled instrumentation at the Oregon Slope Base site (~2,900 m) on the Cascadia margin. Image: OOI Regional Cabled Array.</figcaption></figure>
         <p><strong>Location:</strong> 44.5153&deg;N, 125.3898&deg;W &middot; ~2,900 m water depth.</p>
       </article>
     </div>
@@ -2042,9 +2058,9 @@ BLOG_BODY = page_hero(
 # OREGON SHELF (site)
 # ============================================================
 OREGON_SHELF_BODY = page_hero(
-    "Sites", "Outer Shelf",
+    "Sites", "Oregon Shelf",
     "Shallow continental-shelf benthic site offshore Oregon, ~80 m deep (OOI Oregon Shelf Cabled BEP, CE02SHBP).",
-    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Outer Shelf"]
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Oregon Shelf"]
 ) + """
 <section class="article">
   <div class="container">
@@ -2054,7 +2070,7 @@ OREGON_SHELF_BODY = page_hero(
         <p class="lede-para">The Oregon Shelf Cabled BEP is located on the Continental Shelf, approximately 80 meters deep. The Continental Shelf-Slope area off the Oregon coast is a highly productive, dynamic upwelling environment. Upwelling brings nutrients to the surface sparking primary production and fueling the food web. In recent years, upwelling has also brought onto the shelf hypoxic, low oxygen, waters that can be harmful to organisms in the area. By sampling in this area, the OOI seeks to gain better insight into upwelling dynamics of this system.</p>
         <p>Like other BEPs the Oregon Shelf Cabled BEP is connected to and draws energy from Fiber Optic Cables to power its instruments and to transmit data from the instruments back to shore. Within the yellow protective armor of the BEP are two cages containing instruments that measure various properties of the bottom water.</p>
         <p>The Cabled Endurance Oregon Shelf Cabled BEP is located near the base of a surface mooring and surface-piercing profiler mooring, providing complementary seafloor data to the air-sea and water column data collected by the moorings, allowing for the sampling of a full picture of shelf dynamics.</p>
-        <figure class="welcome-figure"><div class="image-placeholder">Map of Oregon Shelf site &mdash; placeholder</div><figcaption>Location of the Oregon Shelf site on the Cascadia margin.</figcaption></figure>
+        <figure class="welcome-figure"><img src="assets/sites/oregon-shelf.jpg" alt="Bathymetric map of the Oregon Shelf cabled site (node MJ01C)" loading="lazy"><figcaption>Cabled infrastructure at the Oregon Shelf site (node MJ01C) on the Cascadia margin. Image: OOI Regional Cabled Array.</figcaption></figure>
         <p><strong>Location:</strong> 44.6371&deg;N, 124.306&deg;W &middot; ~80 m water depth.</p>
       </article>
     </div>
@@ -2066,9 +2082,9 @@ OREGON_SHELF_BODY = page_hero(
 # OREGON OFFSHORE (site)
 # ============================================================
 OREGON_OFFSHORE_BODY = page_hero(
-    "Sites", "Mid Slope",
+    "Sites", "Oregon Offshore",
     "Continental-slope benthic site off Oregon, ~550 m deep (OOI Oregon Offshore Cabled BEP, CE04OSBP).",
-    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Mid Slope"]
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Oregon Offshore"]
 ) + """
 <section class="article">
   <div class="container">
@@ -2078,8 +2094,54 @@ OREGON_OFFSHORE_BODY = page_hero(
         <p class="lede-para">Oregon Offshore Cabled Benthic Experiment Package (BEP) is located on the Continental Slope, approximately 550 meters deep. The Continental Shelf-Slope area off the Oregon coast is a highly productive, dynamic upwelling environment. Upwelling brings nutrients to the surface sparking primary production and fueling the food web. In recent years, upwelling has also brought onto the shelf hypoxic, low oxygen, waters that can be harmful to organisms in the area. By sampling in this area, the OOI seeks to gain better insight into upwelling dynamics of this system.</p>
         <p>Like other BEPs the Oregon Offshore Cabled BEP is connected to and draws energy from Fiber Optic Cables to power its instruments and to transmit data from the instruments back to shore. Within the yellow protective armor of the BEP are two cages containing instruments that measure various properties of the bottom water.</p>
         <p>The Oregon Offshore Cabled BEP is located near the base of a shallow and deep profiler mooring providing complementary seafloor data to the water column data collected by the profilers, allowing for the sampling of a full picture of shelf dynamics.</p>
-        <figure class="welcome-figure"><div class="image-placeholder">Map of Mid Slope site &mdash; placeholder</div><figcaption>Location of the Mid Slope site on the Cascadia margin.</figcaption></figure>
+        <figure class="welcome-figure"><img src="assets/sites/oregon-offshore-map.jpg" alt="Bathymetric map of the Oregon Offshore cabled site (node PN1C)" loading="lazy"><figcaption>Cabled infrastructure at the Oregon Offshore site (node PN1C) on the Cascadia margin. Image: OOI Regional Cabled Array.</figcaption></figure>
         <p><strong>Location:</strong> 44.3695&deg;N, 124.954&deg;W &middot; ~550 m water depth.</p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# OREGON OUTER SHELF (COSZO cabled site, node PN1D)
+# ============================================================
+OREGON_OUTER_SHELF_BODY = page_hero(
+    "Sites", "Oregon Outer Shelf",
+    "COSZO cabled node on the outer continental shelf off Oregon, ~110 m deep (node PN1D).",
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Oregon Outer Shelf"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <h2>Overview</h2>
+        <p class="lede-para">Oregon Outer Shelf is a new COSZO cabled node (PN1D) on the outer continental shelf off Oregon, at roughly 110 meters water depth. It extends the OOI Regional Cabled Array with a purpose-built seafloor geophysical station in the shallowest part of the COSZO footprint.</p>
+        <p>The node hosts a co-located geophysical sensor suite &mdash; a broadband ocean-bottom seismometer, a calibrated seafloor pressure gauge (GSSM), a differential pressure and point-current sensor (VEL3D), a self-calibrating pressure sensor (PREST), and a low-frequency hydrophone &mdash; all cabled for continuous, real-time data return.</p>
+        <figure class="welcome-figure"><img src="assets/sites/oregon-outershelf1.jpg" alt="Bathymetric map of the Oregon Outer Shelf cabled node (PN1D)" loading="lazy"><figcaption>Cabled instrument layout at the Oregon Outer Shelf node (PN1D, ~110 m). Image: OOI Regional Cabled Array.</figcaption></figure>
+        <p><strong>Node:</strong> PN1D &middot; ~110 m water depth.</p>
+      </article>
+    </div>
+  </div>
+</section>
+"""
+
+# ============================================================
+# OREGON MID SLOPE (COSZO cabled site, node PN1B)
+# ============================================================
+OREGON_MID_SLOPE_BODY = page_hero(
+    "Sites", "Oregon Mid Slope",
+    "COSZO cabled node on the mid continental slope off Oregon, ~1,250 m deep (node PN1B).",
+    ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', '<a href="sites.html">Seafloor Sites</a>', "Oregon Mid Slope"]
+) + """
+<section class="article">
+  <div class="container">
+    <div class="article-grid narrow">
+      <article class="article-content">
+        <h2>Overview</h2>
+        <p class="lede-para">Oregon Mid Slope is a new COSZO cabled node (PN1B) on the mid continental slope off Oregon, at roughly 1,250 meters water depth. It sits between the shelf sites and the deep Slope Base station, sampling deformation and seismicity across the seaward extent of the locked megathrust.</p>
+        <p>The node hosts a co-located geophysical sensor suite &mdash; a broadband ocean-bottom seismometer, a calibrated seafloor pressure gauge (GSSM), a differential pressure and point-current sensor (VEL3D), a self-calibrating pressure sensor (PREST), and a low-frequency hydrophone &mdash; all cabled for continuous, real-time data return.</p>
+        <figure class="welcome-figure"><img src="assets/sites/oregon-midslope.jpg" alt="Bathymetric map of the Oregon Mid Slope cabled node (PN1B)" loading="lazy"><figcaption>Cabled instrument layout at the Oregon Mid Slope node (PN1B, ~1,250 m). Image: OOI Regional Cabled Array.</figcaption></figure>
+        <p><strong>Node:</strong> PN1B &middot; ~1,250 m water depth.</p>
       </article>
     </div>
   </div>
@@ -2216,8 +2278,10 @@ PAGES = [
     ("sites.html",                              "Seafloor Sites · COSZO",                                  "infrastructure",SITES_BODY),
     ("hydrate-ridge.html",                      "Southern Hydrate Ridge · COSZO",                          "infrastructure",HYDRATE_RIDGE_BODY),
     ("slope-base.html",                         "Slope Base · COSZO",                                      "infrastructure",SLOPE_BASE_BODY),
-    ("oregon-shelf.html",                       "Outer Shelf · COSZO",                                     "infrastructure",OREGON_SHELF_BODY),
-    ("oregon-offshore.html",                    "Mid Slope · COSZO",                                       "infrastructure",OREGON_OFFSHORE_BODY),
+    ("oregon-shelf.html",                       "Oregon Shelf · COSZO",                                    "infrastructure",OREGON_SHELF_BODY),
+    ("oregon-offshore.html",                    "Oregon Offshore · COSZO",                                 "infrastructure",OREGON_OFFSHORE_BODY),
+    ("oregon-outer-shelf.html",                 "Oregon Outer Shelf · COSZO",                              "infrastructure",OREGON_OUTER_SHELF_BODY),
+    ("oregon-mid-slope.html",                   "Oregon Mid Slope · COSZO",                                "infrastructure",OREGON_MID_SLOPE_BODY),
     ("existing-instruments.html",               "Existing Instruments · COSZO",                            "infrastructure",EXISTING_BODY),
     ("coszo-instruments.html",                  "COSZO Instruments · COSZO",                               "infrastructure",COSZO_INSTR_BODY),
     ("cruises.html",                            "Cruises · COSZO",                                         "infrastructure",CRUISES_BODY),
