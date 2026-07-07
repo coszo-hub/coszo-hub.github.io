@@ -566,6 +566,7 @@ COSZO_INSTR_BODY = page_hero(
         <h2>Broadband Seismometer &amp; Strong Motion</h2>
         <p>Three-component broadband seismometers paired with high-dynamic-range strong-motion accelerometers. The broadband channels capture regional and teleseismic ground velocity for ambient-noise interferometry and moment-tensor work, while the co-located strong-motion sensors record the unclipped, near-source acceleration of a great earthquake.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
+        <p class="instr-site"><strong>Data:</strong> <a href="broadband-seismometer.html">View channels &rarr;</a></p>
       </div>
       <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Broadband seismometer &amp; strong motion (placeholder)</div></figure>
     </div>
@@ -584,6 +585,7 @@ COSZO_INSTR_BODY = page_hero(
         <h2>Differential Pressure Gauge</h2>
         <p>Measures short-period pressure variations at the seafloor, capturing tsunami signals and hydroacoustic waves that complement the absolute pressure record.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
+        <p class="instr-site"><strong>Data:</strong> <a href="differential-pressure-gauge.html">View channels &rarr;</a></p>
       </div>
       <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Differential pressure gauge (placeholder)</div></figure>
     </div>
@@ -593,6 +595,7 @@ COSZO_INSTR_BODY = page_hero(
         <h2>Hydrophone</h2>
         <p>Low-frequency hydrophones tuned to the infrasound band for T-phase detection, hydroacoustic event characterization, and long-range propagation studies.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
+        <p class="instr-site"><strong>Data:</strong> <a href="hydrophone.html">View channels &rarr;</a></p>
       </div>
       <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Hydrophone (placeholder)</div></figure>
     </div>
@@ -602,6 +605,7 @@ COSZO_INSTR_BODY = page_hero(
         <h2>Absolute Pressure Gauge</h2>
         <p>Absolute seafloor pressure sensors recording the tidal band, with a paired temperature channel on each instrument. These feed the <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a> data product for tsunami detection and long-period seafloor deformation monitoring.</p>
         <p class="instr-site"><strong>Sites:</strong> <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, Axial Base.</p>
+        <p class="instr-site"><strong>Data:</strong> <a href="absolute-seafloor-pressure.html">View channels &rarr;</a></p>
       </div>
       <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Absolute pressure gauge (placeholder)</div></figure>
     </div>
@@ -611,6 +615,7 @@ COSZO_INSTR_BODY = page_hero(
         <h2>GSSM &mdash; Calibrated Pressure &amp; Acceleration</h2>
         <p>Geodetic Seafloor Stations combine calibrated pressure and strong-motion platforms, providing both geodetic and seismological observations from the same seafloor site.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
+        <p class="instr-site"><strong>Data:</strong> <a href="gssm.html">View channels &rarr;</a></p>
       </div>
       <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; GSSM (placeholder)</div></figure>
     </div>
@@ -620,6 +625,7 @@ COSZO_INSTR_BODY = page_hero(
         <h2>CSCPR &mdash; Calibrated Pressure</h2>
         <p>A cabled self-calibrating pressure recorder with on-board calibration against a known reference, correcting the long-period instrumental drift that normally obscures tectonic deformation signals.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
+        <p class="instr-site"><strong>Data:</strong> <a href="cscpr.html">View channels &rarr;</a></p>
       </div>
       <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; CSCPR (placeholder)</div></figure>
     </div>
@@ -629,6 +635,7 @@ COSZO_INSTR_BODY = page_hero(
         <h2>Current Meter</h2>
         <p>Measures near-bottom sea-water velocity, providing the oceanographic context needed to model and remove current- and tide-driven pressure fluctuations before a tectonic signal becomes visible.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
+        <p class="instr-site"><strong>Data:</strong> <a href="current-meter.html">View channels &rarr;</a></p>
       </div>
       <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Current meter (placeholder)</div></figure>
     </div>
@@ -1024,15 +1031,6 @@ SITES_BODY = page_hero(
   </div>
 </section>
 
-<section class="article">
-  <div class="container">
-    <div class="article-grid narrow">
-      <article class="article-content">
-        <p>Additional sites along the cable spur lines will be documented here as the COSZO build-out progresses. The current Sites listing reflects the primary installation locations for the 2026 cruise.</p>
-      </article>
-    </div>
-  </div>
-</section>
 """
 SITES_BODY = SITES_BODY.replace("__SITE_MAP__", render_site_map())
 
