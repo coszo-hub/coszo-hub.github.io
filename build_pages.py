@@ -2395,10 +2395,10 @@ SEARCH_BODY = page_hero(
 # derived from data/data_channels.csv (so editing the sheet keeps them in sync).
 # ------------------------------------------------------------
 DATA_SITE_LINKS = {
-    "EA Shelf":       ("oregon-shelf.html",       "Oregon Shelf"),
-    "OR Outer Shelf": ("oregon-outer-shelf.html", "Oregon Outer Shelf"),
-    "OR Offshore":    ("oregon-offshore.html",    "Oregon Offshore"),
-    "OR Mid Slope":   ("oregon-mid-slope.html",   "Oregon Mid Slope"),
+    "Oregon Shelf":    ("oregon-shelf.html",       "Oregon Shelf"),
+    "Outer Shelf":     ("oregon-outer-shelf.html", "Outer Shelf"),
+    "Oregon Offshore": ("oregon-offshore.html",    "Oregon Offshore"),
+    "Mid Slope":       ("oregon-mid-slope.html",   "Mid Slope"),
 }
 _DATA_SITE_ORDER = ["oregon-shelf.html", "oregon-outer-shelf.html", "oregon-offshore.html", "oregon-mid-slope.html"]
 
