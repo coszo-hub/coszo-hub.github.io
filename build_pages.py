@@ -2294,7 +2294,7 @@ CRUISES_BODY = page_hero(
     <div class="section-header">
       <div class="section-header-intro">
         <div class="section-eyebrow">Recent Operations</div>
-        <h2 class="section-heading">Cruises and deployments.</h2>
+        <h2 class="section-heading">Cruises.</h2>
       </div>
     </div>
     <div class="cruise-timeline">
