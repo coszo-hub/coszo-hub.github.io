@@ -5,74 +5,100 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Live Video Stream</title>
-        <style>html,body{margin:0;padding:0;background:#000;height:100%;}#container{height:100%;}</style>
+        <style>
+            html,body{margin:0;padding:0;background:#000;height:100%;}
+            #stage{position:relative;width:100%;height:100%;}
+            #container{height:100%;}
+            /* Offline poster overlay — shown whenever the stream isn't playing so the
+               viewer sees an intentional message instead of a flickering player or a
+               raw JW error box. */
+            #offline{
+                position:absolute; inset:0; display:none;
+                background:#06131c center/cover no-repeat
+                    url('https://s3.us-west-2.amazonaws.com/media.ooica.net/wp-content/uploads/2021/09/02201335/jason-recovery-8_28_2021-1024x683.jpg');
+                align-items:flex-end; justify-content:center;
+            }
+            #offline .msg{
+                width:100%; box-sizing:border-box; text-align:center;
+                padding:14px 18px; background:linear-gradient(transparent,rgba(0,0,0,0.82));
+                color:#fff; font:600 15px/1.4 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+                letter-spacing:.01em;
+            }
+        </style>
         <script type="text/javascript" src="https://interactiveoceans.washington.edu/jwplayer/jwplayer.js"></script>
         <script>jwplayer.key="mj9LTtvpJ1Dy6DpIHY30xijBS9IQ4QJdGQoKHaS4D7o="</script>
     </head>
 
         <body>
-            <div id='container'></div>
+            <div id='stage'>
+                <div id='container'></div>
+                <div id='offline'><div class='msg'>Live feed is currently offline &mdash; video returns during cruises and ROV dives.</div></div>
+            </div>
             <script type="text/javascript">
-                const setupPlayer = () => {
-                const playerInstance = jwplayer("container").setup({
-                    sources: [
-                    {
-                        'file': 'https://stream.ocean.washington.edu:443/rsnLive1/mpeg-ts-1.stream'
-                    },
-                    {
-                        'file': 'https://stream.ocean.washington.edu:443/rsnLive1/mpeg-ts-1.stream/playlist.m3u8'
-                    }
-                    ],
+                // RCA live stream. Offline whenever no cruise/ROV dive is underway.
+                const SOURCES = [
+                    { 'file': 'https://stream.ocean.washington.edu:443/rsnLive1/mpeg-ts-1.stream' },
+                    { 'file': 'https://stream.ocean.washington.edu:443/rsnLive1/mpeg-ts-1.stream/playlist.m3u8' }
+                ];
+                const FAST_DELAY = 15000;   // initial reconnection cadence
+                const SLOW_DELAY = 60000;   // background poll once the stream looks offline
+                const FAST_LIMIT = 4;       // fast attempts before easing to the slow poll
+                const BUFFER_TIMEOUT = 30000;
+
+                const offlineEl = document.getElementById('offline');
+                let attempts = 0;
+                let reconnectTimer = null;
+                let bufferTimer = null;
+
+                const player = jwplayer("container").setup({
+                    sources: SOURCES,
                     width: "100%",
                     aspectratio: "16:9",
                     image: 'https://s3.us-west-2.amazonaws.com/media.ooica.net/wp-content/uploads/2021/09/02201335/jason-recovery-8_28_2021-1024x683.jpg',
                     autostart: true
                 });
 
-                let bufferingTimeout = null;
-                let retryLimit = 5;
-                let retries = 0;
+                const showOffline = () => { offlineEl.style.display = 'flex'; };
+                const hideOffline = () => { offlineEl.style.display = 'none'; };
 
-                const restartPlayer = () => {
-                    if (retries >= retryLimit) {
-                        console.warn("Retry limit reached, reloading page...");
-                        location.reload(); // last resort
-                    } else {
-                        retries++;
-                        console.log("Attempting to restart stream...");
-                        jwplayer().stop();
-                        setupPlayer(); // recursive restart
-                    }
+                // Reconnect by reloading the source in place (never a teardown/rebuild
+                // or a page reload, so nothing flickers). A single timer is pending at
+                // a time; the offline poster stays up over any transient buffering or
+                // error until playback actually starts, then it's hidden.
+                const scheduleReconnect = (reason) => {
+                    if (reconnectTimer) return;
+                    attempts++;
+                    const delay = attempts <= FAST_LIMIT ? FAST_DELAY : SLOW_DELAY;
+                    console.log("COSZO live: reconnect attempt " + attempts + " in " + (delay/1000) + "s (" + reason + ")");
+                    reconnectTimer = setTimeout(() => {
+                        reconnectTimer = null;
+                        player.load(SOURCES);
+                        player.play();
+                    }, delay);
                 };
 
-                playerInstance.on('buffer', () => {
-                    // Start timeout during buffering
-                    clearTimeout(bufferingTimeout);
-                    bufferingTimeout = setTimeout(() => {
-                        console.warn("Buffering too long, restarting player...");
-                        restartPlayer();
-                    }, 20000); // e.g., 20 seconds
+                player.on('play', () => {
+                    // Stream is live.
+                    attempts = 0;
+                    hideOffline();
+                    if (bufferTimer) { clearTimeout(bufferTimer); bufferTimer = null; }
+                    if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null; }
                 });
 
-                playerInstance.on('play', () => {
-                    // Clear timeout when stream resumes
-                    clearTimeout(bufferingTimeout);
-                    retries = 0; // reset retry count on success
+                player.on('buffer', () => {
+                    if (bufferTimer) clearTimeout(bufferTimer);
+                    bufferTimer = setTimeout(() => { showOffline(); scheduleReconnect('buffer-timeout'); }, BUFFER_TIMEOUT);
                 });
 
-                playerInstance.on('error', (err) => {
-                    console.error("Player error:", err.message);
-                    restartPlayer();
+                player.on('error', (err) => {
+                    console.error("COSZO live: player error", err && err.message);
+                    showOffline();
+                    scheduleReconnect('error');
                 });
 
-                playerInstance.on('idle', () => {
-                    console.warn("Player idle – likely stream ended or dropped.");
-                    restartPlayer();
-                });
-            };
-
-            setupPlayer();
-        </script>
-    </body>
+                // NOTE: no 'idle' handler. Idle is the normal not-playing state; treating
+                // it as a failure is what made the player flicker between paused/playing.
+            </script>
+        </body>
 
 </html>
