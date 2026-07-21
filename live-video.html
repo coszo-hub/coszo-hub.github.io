@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Live Video Stream</title>
+        <style>html,body{margin:0;padding:0;background:#000;height:100%;}#container{height:100%;}</style>
+        <script type="text/javascript" src="https://interactiveoceans.washington.edu/jwplayer/jwplayer.js"></script>
+        <script>jwplayer.key="mj9LTtvpJ1Dy6DpIHY30xijBS9IQ4QJdGQoKHaS4D7o="</script>
+    </head>
+
+        <body>
+            <div id='container'></div>
+            <script type="text/javascript">
+                const setupPlayer = () => {
+                const playerInstance = jwplayer("container").setup({
+                    sources: [
+                    {
+                        'file': 'https://stream.ocean.washington.edu:443/rsnLive1/mpeg-ts-1.stream'
+                    },
+                    {
+                        'file': 'https://stream.ocean.washington.edu:443/rsnLive1/mpeg-ts-1.stream/playlist.m3u8'
+                    }
+                    ],
+                    width: "100%",
+                    aspectratio: "16:9",
+                    image: 'https://s3.us-west-2.amazonaws.com/media.ooica.net/wp-content/uploads/2021/09/02201335/jason-recovery-8_28_2021-1024x683.jpg',
+                    autostart: true
+                });
+
+                let bufferingTimeout = null;
+                let retryLimit = 5;
+                let retries = 0;
+
+                const restartPlayer = () => {
+                    if (retries >= retryLimit) {
+                        console.warn("Retry limit reached, reloading page...");
+                        location.reload(); // last resort
+                    } else {
+                        retries++;
+                        console.log("Attempting to restart stream...");
+                        jwplayer().stop();
+                        setupPlayer(); // recursive restart
+                    }
+                };
+
+                playerInstance.on('buffer', () => {
+                    // Start timeout during buffering
+                    clearTimeout(bufferingTimeout);
+                    bufferingTimeout = setTimeout(() => {
+                        console.warn("Buffering too long, restarting player...");
+                        restartPlayer();
+                    }, 20000); // e.g., 20 seconds
+                });
+
+                playerInstance.on('play', () => {
+                    // Clear timeout when stream resumes
+                    clearTimeout(bufferingTimeout);
+                    retries = 0; // reset retry count on success
+                });
+
+                playerInstance.on('error', (err) => {
+                    console.error("Player error:", err.message);
+                    restartPlayer();
+                });
+
+                playerInstance.on('idle', () => {
+                    console.warn("Player idle – likely stream ended or dropped.");
+                    restartPlayer();
+                });
+            };
+
+            setupPlayer();
+        </script>
+    </body>
+
+</html>
