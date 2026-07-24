@@ -1772,6 +1772,18 @@ REU_BODY = page_hero(
       <article class="article-content">
         <p class="lede-para">Each year of the project, COSZO hosts interns through its Research Experience for Undergraduates (REU) Program. Students participate through the UW Applied Physics Laboratory Summer Undergraduate Research Program and join the annual UW School of Oceanography VISIONS Expedition.</p>
 
+        <h2>2026 Program</h2>
+        <table class="specs-table">
+          <thead><tr><th>Student</th><th>Project</th><th>Mentor(s)</th></tr></thead>
+          <tbody>
+            <tr><td>Chendi Luo</td><td></td><td>Deborah Kelley</td></tr>
+            <tr><td>Ahma Masselink</td><td></td><td>David Schmidt, Maleen Kidiwela</td></tr>
+            <tr><td>Ali Mousa</td><td></td><td>William Wilcock, Maleen Kidiwela</td></tr>
+            <tr><td>Ivonne Salazar</td><td></td><td>Dana Manalang, William Wilcock, Yoichiro Dobashi</td></tr>
+            <tr><td>Athena Tambanillo</td><td></td><td>David Schmidt</td></tr>
+          </tbody>
+        </table>
+
         <h2>2025 Program</h2>
         <figure class="welcome-figure"><img src="assets/reu/2025-cohort.jpg" alt="COSZO 2025 REU undergraduates aboard a boat" loading="lazy"><figcaption>COSZO 2025 REU interns in the field.</figcaption></figure>
         <table class="specs-table">
