@@ -2186,7 +2186,7 @@ _BLOG_SUBMIT = ('https://github.com/coszo-hub/coszo-hub.github.io/issues/new'
 
 BLOG_BODY = page_hero(
     "Cruises", "Blog from Sea",
-    "Daily dispatches from the COSZO team at sea, reviewed before they appear here.",
+    "Dispatches from the COSZO team at sea, reviewed before they appear here.",
     ['<a href="index.html">Home</a>', '<a href="cruises.html">Cruises</a>', "Blog from Sea"]
 ) + f"""
 <section class="article">
@@ -2336,7 +2336,7 @@ CRUISES_BODY = page_hero(
         <figure class="welcome-figure"><div class="image-placeholder">Daily plan / station map &mdash; placeholder</div><figcaption>Planned operations for the day.</figcaption></figure>
 
         <h2 id="blog">Blog from Sea</h2>
-        <p>Daily dispatches written by the team at sea. <a href="blog-from-sea.html">See all posts &rarr;</a></p>
+        <p>Dispatches written by the team at sea. <a href="blog-from-sea.html">See all posts &rarr;</a></p>
         {render_blog_cards(load_blog(), limit=6)}
 
         <h2 id="diary">Cruise Diary</h2>
