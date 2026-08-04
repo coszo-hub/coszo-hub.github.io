@@ -1,0 +1,44 @@
+name: Update Ship Track
+
+# Pulls the R/V Roger Revelle AIS track for the RR2608 cruise from the
+# UNOLS/SIO Marine Facilities Planning site into data/ship_track.json,
+# feeding the live cruise hero on the homepage. The script self-gates to
+# the cruise window (see bin/fetch_ship_track.py), so outside it every
+# run is a no-op.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "7 * * * *"   # hourly at :07
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-ship-track
+  cancel-in-progress: false
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch ship track
+        run: python3 bin/fetch_ship_track.py
+
+      - name: Commit changes if any
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/ship_track.json
+            git commit -m "Ship track: update RR2608 positions"
+            git push
+          else
+            echo "No changes to commit."
+          fi

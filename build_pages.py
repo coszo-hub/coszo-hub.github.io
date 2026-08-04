@@ -42,6 +42,130 @@ GLOBE_COASTLINES = _read_path(_COASTLINE_FILE)
 GLOBE_GRATICULE = _read_path(_GRATICULE_FILE)
 
 # ============================================================
+# LIVE CRUISE HERO (cruise tracker)
+# Flip CRUISE_TRACKER_ENABLED to True during an active cruise and rerun
+# this script: the homepage hero headline then fades into a live panel —
+# ship track map (left) + live video (right) — fed by data/ship_track.json,
+# which .github/workflows/update-ship-track.yml refreshes hourly via
+# bin/fetch_ship_track.py. With the flag False the hero is untouched.
+# ============================================================
+CRUISE_TRACKER_ENABLED = False
+CRUISE_TRACKER = {
+    "cruise": "RR2608",
+    "ship": "R/V Roger Revelle",
+}
+
+_HERO_LIVE_TMPL = """
+    <div class="hero-live" id="hero-live" hidden>
+      <div class="hero-live-head">
+        <span class="hero-live-badge"><span class="hero-live-dot"></span>Live</span>
+        <span class="hero-live-title">__CRUISE__ &middot; __SHIP__ &mdash; COSZO deployment cruise</span>
+        <span class="hero-live-updated" id="hero-live-updated"></span>
+      </div>
+      <div class="hero-live-grid">
+        <div>
+          <div id="cruise-map" aria-label="Map of the ship&rsquo;s position and cruise track"></div>
+          <p class="hero-live-note">Track since the start of cruise __CRUISE__. Orange dots mark each completed day &mdash; click one for that day&rsquo;s <a href="blog-from-sea.html">Blog from Sea</a> entry.</p>
+        </div>
+        <div>
+          <div class="video-embed"><iframe src="live-video.html" title="COSZO live video stream" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
+          <p class="hero-live-note">Live video from the ship &mdash; more on the <a href="cruises.html">Cruises</a> page.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+    (function () {
+      var DIARIES = __DIARIES__;
+      var TRACK_URL = 'data/ship_track.json';
+      var LEAFLET_CSS = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      var LEAFLET_JS = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      var HOLD_MS = 3500;
+
+      function pacificDay(iso) {
+        try { return new Date(iso).toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' }); }
+        catch (e) { return String(iso).slice(0, 10); }
+      }
+
+      function loadLeaflet() {
+        return new Promise(function (resolve, reject) {
+          var css = document.createElement('link');
+          css.rel = 'stylesheet'; css.href = LEAFLET_CSS;
+          document.head.appendChild(css);
+          var js = document.createElement('script');
+          js.src = LEAFLET_JS; js.onload = resolve; js.onerror = reject;
+          document.head.appendChild(js);
+        });
+      }
+
+      function buildMap(data) {
+        var map = L.map('cruise-map', { scrollWheelZoom: false });
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}',
+          { attribution: 'Esri, GEBCO, NOAA', maxZoom: 13, maxNativeZoom: 10 }).addTo(map);
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}',
+          { maxZoom: 13, maxNativeZoom: 10, opacity: 0.8 }).addTo(map);
+
+        var latlngs = data.points.map(function (p) { return [p.lat, p.lon]; });
+        var line = L.polyline(latlngs, { color: '#17a2ab', weight: 3, opacity: 0.9 }).addTo(map);
+
+        var byDay = {};
+        data.points.forEach(function (p) { byDay[pacificDay(p.t)] = p; });
+        var today = pacificDay(new Date().toISOString());
+        Object.keys(byDay).sort().forEach(function (day) {
+          if (day >= today) return;
+          var p = byDay[day];
+          var label = new Date(day + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+          var html = DIARIES[day]
+            ? '<strong>' + label + '</strong><br><a href="' + DIARIES[day] + '">Read the day\\u2019s diary \\u2192</a>'
+            : '<strong>' + label + '</strong><br>Diary coming soon';
+          L.circleMarker([p.lat, p.lon], { radius: 6, color: '#ffffff', weight: 2, fillColor: '#f5a623', fillOpacity: 1 })
+            .addTo(map).bindPopup(html);
+        });
+
+        var last = latlngs[latlngs.length - 1];
+        var course = data.current && data.current.course != null ? data.current.course : null;
+        var shipHtml = '<svg viewBox="0 0 26 26"' + (course != null ? ' style="transform:rotate(' + course + 'deg)"' : '') +
+          '><path d="M13 2 L21 22 L13 17.5 L5 22 Z" fill="#f5a623" stroke="#06223a" stroke-width="1.5"/></svg>';
+        var ship = L.marker(last, { icon: L.divIcon({ className: 'ship-marker', iconSize: [26, 26], iconAnchor: [13, 13], html: shipHtml }) }).addTo(map);
+        var upd = data.updated ? new Date(data.updated).toLocaleString('en-US', { timeZone: 'America/Los_Angeles', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
+        var speed = data.current && data.current.speed != null ? data.current.speed + ' kn' : '';
+        ship.bindPopup('<strong>' + data.ship + '</strong>' + (speed ? '<br>' + speed : '') + (upd ? '<br>Position updated ' + upd + ' PT' : ''));
+        var updEl = document.getElementById('hero-live-updated');
+        if (updEl && upd) updEl.textContent = 'Updated ' + upd + ' PT';
+
+        if (latlngs.length > 1) map.fitBounds(line.getBounds().pad(0.15));
+        else map.setView(last, 8);
+      }
+
+      function reveal(data) {
+        var stat = document.getElementById('hero-static');
+        var live = document.getElementById('hero-live');
+        if (!stat || !live) return;
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function swap() {
+          stat.style.display = 'none';
+          live.hidden = false;
+          if (!reduce) live.classList.add('hero-fade-in');
+          try { buildMap(data); }
+          catch (e) { live.hidden = true; stat.style.display = ''; stat.classList.remove('hero-fade-out'); }
+        }
+        if (reduce) { swap(); return; }
+        setTimeout(function () {
+          stat.classList.add('hero-fade-out');
+          setTimeout(swap, 750);
+        }, HOLD_MS);
+      }
+
+      fetch(TRACK_URL, { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (data) {
+          if (!data || !data.points || !data.points.length) return;
+          return loadLeaflet().then(function () { reveal(data); });
+        })
+        .catch(function () { /* track unavailable: keep the static hero */ });
+    })();
+    </script>"""
+
+# ============================================================
 # HEADER (utility bar + logo + nav with hover dropdowns)
 # All hrefs point to local HTML files in the same directory.
 # ============================================================
@@ -2466,6 +2590,28 @@ for _slug in ["broadband-seismometer", "differential-pressure-gauge", "hydrophon
         f'<strong>Sites:</strong> to be confirmed.</p>\n        <p class="instr-site"><strong>Data:</strong> <a href="{_slug}.html">',
         f'<strong>Sites:</strong> {instrument_sites_links(_slug)}</p>\n        <p class="instr-site"><strong>Data:</strong> <a href="{_slug}.html">',
     )
+
+# ------------------------------------------------------------
+# Live cruise hero: when CRUISE_TRACKER_ENABLED, inject the map + video
+# panel (and the blog date -> diary-page map for the day dots) into the
+# homepage hero. See the CRUISE_TRACKER block near the top of this file.
+# ------------------------------------------------------------
+if CRUISE_TRACKER_ENABLED:
+    _diaries = {}
+    for _p in load_blog():
+        _d = (_p.get("date") or "").strip()[:10]
+        if _d:
+            _diaries[_d] = f'blog-{_p["slug"].strip()}.html'
+    _hero_live = (_HERO_LIVE_TMPL
+                  .replace("__CRUISE__", CRUISE_TRACKER["cruise"])
+                  .replace("__SHIP__", CRUISE_TRACKER["ship"])
+                  .replace("__DIARIES__", json.dumps(_diaries)))
+    INDEX_BODY = INDEX_BODY.replace(
+        '<div class="hero-content">',
+        '<div class="hero-content" id="hero-static">', 1)
+    INDEX_BODY = INDEX_BODY.replace(
+        '  </div>\n</section>\n\n<section class="quick-access">',
+        _hero_live + '\n  </div>\n</section>\n\n<section class="quick-access">', 1)
 
 # ============================================================
 # REGISTER ALL PAGES AND WRITE THEM
