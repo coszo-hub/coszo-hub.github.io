@@ -79,7 +79,7 @@ _HERO_LIVE_TMPL = """
       var TRACK_URL = 'data/ship_track.json';
       var LEAFLET_CSS = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
       var LEAFLET_JS = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-      var HOLD_MS = 3500;
+      var HOLD_MS = 1500;
 
       function pacificDay(iso) {
         try { return new Date(iso).toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' }); }
@@ -97,15 +97,14 @@ _HERO_LIVE_TMPL = """
         });
       }
 
-      function buildMap(data) {
-        var map = L.map('cruise-map', { scrollWheelZoom: false });
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}',
-          { attribution: 'Esri, GEBCO, NOAA', maxZoom: 13, maxNativeZoom: 10 }).addTo(map);
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}',
-          { maxZoom: 13, maxNativeZoom: 10, opacity: 0.8 }).addTo(map);
+      var map = null, trackGroup = null;
+      var REFRESH_MS = 30 * 60 * 1000;
 
+      function drawTrack(data) {
+        if (!trackGroup) trackGroup = L.layerGroup().addTo(map);
+        trackGroup.clearLayers();
         var latlngs = data.points.map(function (p) { return [p.lat, p.lon]; });
-        var line = L.polyline(latlngs, { color: '#17a2ab', weight: 3, opacity: 0.9 }).addTo(map);
+        L.polyline(latlngs, { color: '#17a2ab', weight: 3, opacity: 0.9 }).addTo(trackGroup);
 
         var byDay = {};
         data.points.forEach(function (p) { byDay[pacificDay(p.t)] = p; });
@@ -118,22 +117,57 @@ _HERO_LIVE_TMPL = """
             ? '<strong>' + label + '</strong><br><a href="' + DIARIES[day] + '">Read the day\\u2019s diary \\u2192</a>'
             : '<strong>' + label + '</strong><br>Diary coming soon';
           L.circleMarker([p.lat, p.lon], { radius: 6, color: '#ffffff', weight: 2, fillColor: '#f5a623', fillOpacity: 1 })
-            .addTo(map).bindPopup(html);
+            .addTo(trackGroup).bindPopup(html);
         });
 
         var last = latlngs[latlngs.length - 1];
         var course = data.current && data.current.course != null ? data.current.course : null;
         var shipHtml = '<svg viewBox="0 0 26 26"' + (course != null ? ' style="transform:rotate(' + course + 'deg)"' : '') +
-          '><path d="M13 2 L21 22 L13 17.5 L5 22 Z" fill="#f5a623" stroke="#06223a" stroke-width="1.5"/></svg>';
-        var ship = L.marker(last, { icon: L.divIcon({ className: 'ship-marker', iconSize: [26, 26], iconAnchor: [13, 13], html: shipHtml }) }).addTo(map);
+          '><path d="M13 1 C16 5 18 8.5 18 13 L18 23 L8 23 L8 13 C8 8.5 10 5 13 1 Z" fill="#f5a623" stroke="#06223a" stroke-width="1.5" stroke-linejoin="round"/></svg>';
+        var ship = L.marker(last, { icon: L.divIcon({ className: 'ship-marker', iconSize: [26, 26], iconAnchor: [13, 13], html: shipHtml }) }).addTo(trackGroup);
         var upd = data.updated ? new Date(data.updated).toLocaleString('en-US', { timeZone: 'America/Los_Angeles', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
         var speed = data.current && data.current.speed != null ? data.current.speed + ' kn' : '';
         ship.bindPopup('<strong>' + data.ship + '</strong>' + (speed ? '<br>' + speed : '') + (upd ? '<br>Position updated ' + upd + ' PT' : ''));
         var updEl = document.getElementById('hero-live-updated');
         if (updEl && upd) updEl.textContent = 'Updated ' + upd + ' PT';
+      }
 
-        if (latlngs.length > 1) map.fitBounds(line.getBounds().pad(0.15));
-        else map.setView(last, 8);
+      function buildMap(data) {
+        map = L.map('cruise-map', { scrollWheelZoom: false });
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}',
+          { attribution: 'Esri, GEBCO, NOAA', maxZoom: 13, maxNativeZoom: 10 }).addTo(map);
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}',
+          { maxZoom: 13, maxNativeZoom: 10, opacity: 0.8 }).addTo(map);
+
+        var SITES = [
+          { name: 'Oregon Shelf', lat: 44.6371, lon: -124.306, href: 'oregon-shelf.html' },
+          { name: 'Outer Shelf', lat: 44.6912, lon: -124.4569, href: 'oregon-outer-shelf.html' },
+          { name: 'Oregon Offshore', lat: 44.3695, lon: -124.954, href: 'oregon-offshore.html' },
+          { name: 'Mid Slope', lat: 44.4784, lon: -125.1508, href: 'oregon-mid-slope.html' },
+          { name: 'Slope Base', lat: 44.5153, lon: -125.3898, href: 'slope-base.html' },
+          { name: 'Southern Hydrate Ridge', lat: 44.5691, lon: -125.1481, href: 'hydrate-ridge.html' }
+        ];
+        var PORT = [44.6259, -124.0449];  /* Newport, OR — cruise start/end */
+        var triIcon = L.divIcon({ className: 'site-tri', iconSize: [16, 14], iconAnchor: [8, 7],
+          html: '<svg viewBox="0 0 16 14"><path d="M8 1 L15 13 L1 13 Z" fill="#111820" stroke="#ffffff" stroke-width="1.5"/></svg>' });
+        SITES.forEach(function (s) {
+          L.marker([s.lat, s.lon], { icon: triIcon }).addTo(map)
+            .bindTooltip(s.name)
+            .bindPopup('<strong>' + s.name + '</strong><br><a href="' + s.href + '">Site details \\u2192</a>');
+        });
+
+        var bounds = L.latLngBounds(SITES.map(function (s) { return [s.lat, s.lon]; }));
+        bounds.extend(PORT);
+        map.fitBounds(bounds.pad(0.18));
+        map.setZoom(map.getZoom() + 1);
+
+        drawTrack(data);
+        setInterval(function () {
+          fetch(TRACK_URL, { cache: 'no-store' })
+            .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(function (d) { if (d && d.points && d.points.length) drawTrack(d); })
+            .catch(function () { /* keep the last drawn track */ });
+        }, REFRESH_MS);
       }
 
       function reveal(data) {
