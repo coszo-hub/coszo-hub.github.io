@@ -563,8 +563,20 @@ COSZO_INSTR_BODY = page_hero(
 
     <div class="instr-row">
       <div class="instr-text">
+        <h2>Science Junction Box</h2>
+        <p class="instr-meta"><strong>Designed &amp; built by:</strong> UW Applied Physics Laboratory, Electronic &amp; Photonic Systems Department.</p>
+        <p>Science junction boxes connect to the Regional Cabled Array nodes via 200-meter cables and are equipped with wet-mateable ports that provide low-voltage power and real-time internet connectivity to the scientific instruments. New junction boxes will be installed at the Outer Shelf (PN1D), Oregon Offshore (PN1C), and Mid Slope (PN1B) nodes; at Oregon Shelf the instruments join a preexisting junction box (MJ01C). Each new junction box also has 2&ndash;3 unused ports available for additional instruments through PI-driven initiatives.</p>
+        <p class="instr-site"><strong>Sites:</strong> <a href="oregon-outer-shelf.html">Outer Shelf</a>, <a href="oregon-offshore.html">Oregon Offshore</a>, <a href="oregon-mid-slope.html">Mid Slope</a>.</p>
+      </div>
+      <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Science junction box (placeholder)</div></figure>
+    </div>
+
+    <div class="instr-row">
+      <div class="instr-text">
         <h2>Broadband Seismometer &amp; Strong Motion</h2>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> Nanometrics Atlantis Cabled Observatory (T360-COBST2).</p>
         <p>Three-component broadband seismometers paired with high-dynamic-range strong-motion accelerometers. The broadband channels capture regional and teleseismic ground velocity for ambient-noise interferometry and moment-tensor work, while the co-located strong-motion sensors record the unclipped, near-source acceleration of a great earthquake.</p>
+        <p>Each ocean bottom seismic (OBS) package houses a Trillium 360 ocean bottom broadband seismometer, a Class A Titan accelerometer, and a Centaur Gen5 datalogger within a titanium pressure vessel proven for deployment depths up to 6,000 m. It has a dynamic range of 220 dB at 1 Hz, a 4 g acceleration clip level, and a noise floor below the Peterson Low Noise Model (Peterson, 1993) from 200 s to 10 Hz. Each package is placed within a caisson, buried in the sediment, and covered in silica beads; a low-frequency hydrophone and a differential pressure gauge connect directly to it via 5 m cables.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
         <p class="instr-site"><strong>Data:</strong> <a href="broadband-seismometer.html">View channels &rarr;</a></p>
       </div>
@@ -573,17 +585,10 @@ COSZO_INSTR_BODY = page_hero(
 
     <div class="instr-row">
       <div class="instr-text">
-        <h2>Short-Period Seismometer</h2>
-        <p>Compact, high-frequency seismometers optimized for local microseismicity and P-wave detection at sites where broadband performance is not required.</p>
-        <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
-      </div>
-      <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Short-period seismometer (placeholder)</div></figure>
-    </div>
-
-    <div class="instr-row">
-      <div class="instr-text">
         <h2>Differential Pressure Gauge</h2>
-        <p>Measures short-period pressure variations at the seafloor, capturing tsunami signals and hydroacoustic waves that complement the absolute pressure record.</p>
+        <p class="instr-meta"><strong>Design:</strong> Deep-sea differential pressure gauge (Cox et al., 1984).</p>
+        <p>Measures short-period pressure variations at the seafloor, capturing tsunami signals and hydroacoustic waves that complement the absolute pressure record. Collocated with the broadband seismometer, it helps distinguish seismic signals such as tremor from acoustic arrivals and enables optimal corrections for tilt noise on vertical seismometer channels.</p>
+        <p>The DPG is depth-rated for 6,000 m with a passband of 2 Hz to 500 s and noise of 5&nbsp;&times;&nbsp;10<sup>-3</sup> Pa&sup2;/Hz at 100 s. It is mounted on a tripod about one meter above the seafloor and connected to the OBS package with a 5 m cable.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
         <p class="instr-site"><strong>Data:</strong> <a href="differential-pressure-gauge.html">View channels &rarr;</a></p>
       </div>
@@ -593,7 +598,9 @@ COSZO_INSTR_BODY = page_hero(
     <div class="instr-row">
       <div class="instr-text">
         <h2>Hydrophone</h2>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> HTI-90-U low-frequency hydrophone.</p>
         <p>Low-frequency hydrophones tuned to the infrasound band for T-phase detection, hydroacoustic event characterization, and long-range propagation studies.</p>
+        <p>The HTI-90-U has a frequency response ranging from 2 Hz to 20 kHz, a maximum operating depth of 6,096 m, and a self-noise of 63 dB re 1 &micro;Pa. It is mounted on a tripod about one meter above the seafloor and connected to the OBS package with a 5 m cable.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
         <p class="instr-site"><strong>Data:</strong> <a href="hydrophone.html">View channels &rarr;</a></p>
       </div>
@@ -603,8 +610,16 @@ COSZO_INSTR_BODY = page_hero(
     <div class="instr-row">
       <div class="instr-text">
         <h2>Absolute Pressure Gauge</h2>
-        <p>Absolute seafloor pressure sensors recording the tidal band, with a paired temperature channel on each instrument. These feed the <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a> data product for tsunami detection and long-period seafloor deformation monitoring.</p>
-        <p class="instr-site"><strong>Sites:</strong> <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, Axial Base.</p>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> Paroscientific Series 8000 Submersible Depth Sensor.</p>
+        <p>Absolute seafloor pressure sensors recording the tidal band, with a paired temperature channel on each instrument. These feed the <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a> data product for tsunami detection and long-period seafloor deformation monitoring. The high-resolution, uncalibrated time series also help identify pressure-calibration artifacts that could be confused with slow slip, and support compliance measurements sensitive to changes in seismic velocity structure.</p>
+        <p>The Series 8000 incorporates Digiquartz transducers into submersible housings as depth sensors; the pressure range of each instrument is calibrated to its deployment depth to maximize performance.</p>
+        <table class="specs-table">
+          <tr><th>Site</th><th>Depth (m)</th><th>Absolute pressure range</th></tr>
+          <tr><td><a href="oregon-mid-slope.html">Mid Slope</a> (PN1B)</td><td>1,241</td><td>0&ndash;1,400 mH<sub>2</sub>O (2,000 psia, 13.8 MPa)</td></tr>
+          <tr><td><a href="oregon-offshore.html">Oregon Offshore</a> (PN1C)</td><td>619</td><td>0&ndash;700 mH<sub>2</sub>O (1,000 psia, 6.89 MPa)</td></tr>
+          <tr><td><a href="oregon-outer-shelf.html">Outer Shelf</a> (PN1D)</td><td>115</td><td>0&ndash;130 mH<sub>2</sub>O (200 psia, 1.38 MPa)</td></tr>
+        </table>
+        <p class="instr-site"><strong>Sites:</strong> <a href="oregon-outer-shelf.html">Outer Shelf</a>, <a href="oregon-offshore.html">Oregon Offshore</a>, <a href="oregon-mid-slope.html">Mid Slope</a>.</p>
         <p class="instr-site"><strong>Data:</strong> <a href="absolute-seafloor-pressure.html">View channels &rarr;</a></p>
       </div>
       <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Absolute pressure gauge (placeholder)</div></figure>
@@ -613,7 +628,9 @@ COSZO_INSTR_BODY = page_hero(
     <div class="instr-row">
       <div class="instr-text">
         <h2>GSSM &mdash; Calibrated Pressure &amp; Acceleration</h2>
-        <p>Geodetic Seafloor Stations combine calibrated pressure and strong-motion platforms, providing both geodetic and seismological observations from the same seafloor site.</p>
+        <p class="instr-meta"><strong>Designed &amp; built by:</strong> UW Applied Physics Laboratory (Wilcock et al., 2021).</p>
+        <p>The Geodetic and Seismic Sensor Module combines calibrated pressure and strong-motion platforms, providing both geodetic and seismological observations from the same seafloor site. Its calibrated pressure time series can be used to measure secular vertical strain and detect slow slip events.</p>
+        <p>Each GSSM utilizes a Paroscientific Seismic Oceanographic Sensor module (Model 7116-2K-2 for 1,400 m depth; Model 7116-1K-2 for 700 m depth) comprising two Paroscientific Digiquartz pressure transducers (Model 44.4K-302; maximum depth rating of 1,400 m, range of 0&ndash;4,400 psi, and accuracy of 0.01% of full scale with parts-per-billion resolution possible), a Digiquartz nano-resolution barometer (Model 6000-16B), and a Quartz Seismic Sensor 1.5 g accelerometer (Model QA-15). It employs the A-0-A method: a VICI HPLC valve periodically switches the two pressure transducers from measuring external water pressure to measuring the internal pressure of the titanium housing for calibration, and an internal temperature sensor measures and corrects for thermal effects.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
         <p class="instr-site"><strong>Data:</strong> <a href="gssm.html">View channels &rarr;</a></p>
       </div>
@@ -623,7 +640,9 @@ COSZO_INSTR_BODY = page_hero(
     <div class="instr-row">
       <div class="instr-text">
         <h2>CSCPR &mdash; Calibrated Pressure</h2>
-        <p>A cabled self-calibrating pressure recorder with on-board calibration against a known reference, correcting the long-period instrumental drift that normally obscures tectonic deformation signals.</p>
+        <p class="instr-meta"><strong>Designed &amp; built by:</strong> UC San Diego Scripps Institution of Oceanography (Sasagawa &amp; Zumberge, 2013).</p>
+        <p>A cabled self-calibrating pressure recorder with on-board calibration against a known reference, correcting the long-period instrumental drift that normally obscures tectonic deformation signals. Its calibrated measurements duplicate those of the GSSM, providing a long-term check on the validity of the GSSM calibrations &mdash; difficult to do in the laboratory because of the challenges of maintaining stable, high pressures.</p>
+        <p>The instrument includes two redundant Paroscientific quartz pressure gauges (Model 42 K) that are periodically switched between the ocean pressure signal and a stable, reproducible reference pressure generated by an onboard DH Instruments piston gauge (Model PC-7300-2), using motor-driven Swagelok valves (Series 41G) turned by Hanbay motorized actuators (Model MDM1000). The sensors measure the shift in the resonant frequency of a quartz force transducer attached to a Bourdon tube as the applied pressure changes, with a sensitivity of order 0.005 kPa. The instruments and electronics are housed in a titanium housing, which also hosts a temperature sensor.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
         <p class="instr-site"><strong>Data:</strong> <a href="cscpr.html">View channels &rarr;</a></p>
       </div>
@@ -633,11 +652,21 @@ COSZO_INSTR_BODY = page_hero(
     <div class="instr-row">
       <div class="instr-text">
         <h2>Current Meter</h2>
-        <p>Measures near-bottom sea-water velocity, providing the oceanographic context needed to model and remove current- and tide-driven pressure fluctuations before a tectonic signal becomes visible.</p>
+        <p class="instr-meta"><strong>Make &amp; model:</strong> Nortek Vector.</p>
+        <p>Measures near-bottom sea-water velocity, providing the oceanographic context needed to model and remove current- and tide-driven pressure fluctuations before a tectonic signal becomes visible, and contributing to an understanding of seismic noise that might be confused with tremor.</p>
+        <p>The Nortek Vector single-point current meter acquires 3D measurements at rates up to 64 Hz and is suitable for deployment down to a depth of 4,000 m. The instrument sits one meter above the seafloor.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
         <p class="instr-site"><strong>Data:</strong> <a href="current-meter.html">View channels &rarr;</a></p>
       </div>
       <figure class="instr-figure"><div class="image-placeholder">Photo &mdash; Current meter (placeholder)</div></figure>
+    </div>
+
+    <div style="max-width:820px; margin-top:48px;">
+      <h2 style="font-size:1.15rem; margin-bottom:12px;">References</h2>
+      <p class="instr-meta">Cox, C., T. Deaton, and S. Webb (1984). A Deep-Sea Differential Pressure Gauge. <em>Journal of Atmospheric and Oceanic Technology</em>, 1(3), 237&ndash;246.</p>
+      <p class="instr-meta">Peterson, J. (1993). Observations and Modeling of Seismic Background Noise. <em>USGS Open-File Report 93-322</em>.</p>
+      <p class="instr-meta">Sasagawa, G., and M. A. Zumberge (2013). A Self-Calibrating Pressure Recorder for Detecting Seafloor Height Change. <em>IEEE Journal of Oceanic Engineering</em>, 38, 447&ndash;454.</p>
+      <p class="instr-meta">Wilcock, W. S. D., et al. (2021). A Thirty-Month Seafloor Test of the A-0-A Method for Calibrating Pressure Gauges. <em>Frontiers in Earth Science</em>, 8, doi:10.3389/feart.2020.600671.</p>
     </div>
   </div>
 </section>
