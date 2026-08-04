@@ -611,7 +611,7 @@ COSZO_INSTR_BODY = page_hero(
       <div class="instr-text">
         <h2>Absolute Pressure Gauge</h2>
         <p class="instr-meta"><strong>Make &amp; model:</strong> Paroscientific Series 8000 Submersible Depth Sensor.</p>
-        <p>Absolute seafloor pressure sensors recording the tidal band, with a paired temperature channel on each instrument. These feed the <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a> data product for tsunami detection and long-period seafloor deformation monitoring. The high-resolution, uncalibrated time series also help identify pressure-calibration artifacts that could be confused with slow slip, and support compliance measurements sensitive to changes in seismic velocity structure.</p>
+        <p>Absolute seafloor pressure sensors recording the tidal band, with a paired temperature channel on each instrument. These feed the <a href="absolute-seafloor-pressure.html">Absolute Seafloor Pressure</a> data product for tsunami detection and long-period seafloor deformation monitoring, joining the existing gauges at <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, and Axial Base. The high-resolution, uncalibrated time series also help identify pressure-calibration artifacts that could be confused with slow slip, and support compliance measurements sensitive to changes in seismic velocity structure.</p>
         <p>The Series 8000 incorporates Digiquartz transducers into submersible housings as depth sensors; the pressure range of each instrument is calibrated to its deployment depth to maximize performance.</p>
         <table class="specs-table">
           <tr><th>Site</th><th>Depth (m)</th><th>Absolute pressure range</th></tr>
@@ -1606,6 +1606,7 @@ ASP_BODY = page_hero(
       <article class="article-content">
         <h2 id="overview">Overview</h2>
         <p>Pressure incorporates tidal pressure gauges sampling at rates varying from 0.0667 Hz to 1.0 Hz. Each instrument also carries a housing temperature channel.</p>
+        <p>The product spans two generations of instruments: existing gauges on the Regional Cabled Array at <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, and Axial Base, and new COSZO <a href="coszo-instruments.html">Paroscientific Series 8000 gauges</a> at <a href="oregon-outer-shelf.html">Outer Shelf</a>, <a href="oregon-offshore.html">Oregon Offshore</a>, and <a href="oregon-mid-slope.html">Mid Slope</a>.</p>
 
         <h2 id="stations">Stations</h2>
         <p>The table below lists the station, location code, and channels for the data.</p>
@@ -1618,6 +1619,12 @@ ASP_BODY = page_hero(
             <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Housing temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
             <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LDO/" target="_blank" rel="noopener">LDO</a> (1.0 Hz)</td></tr>
             <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Housing temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
+            <tr><td>Outer Shelf</td><td><code>OO.CZOSH</code></td><td><code>&mdash;</code></td><td>Absolute pressure</td><td>UDO (0.0667 Hz), LDO (1.0 Hz)</td></tr>
+            <tr><td>Outer Shelf</td><td><code>OO.CZOSH</code></td><td><code>&mdash;</code></td><td>Housing temperature</td><td>UK1 (0.0667 Hz), LK1 (1.0 Hz)</td></tr>
+            <tr><td>Oregon Offshore</td><td><code>OO.CZOFF</code></td><td><code>&mdash;</code></td><td>Absolute pressure</td><td>UDO (0.0667 Hz), LDO (1.0 Hz)</td></tr>
+            <tr><td>Oregon Offshore</td><td><code>OO.CZOFF</code></td><td><code>&mdash;</code></td><td>Housing temperature</td><td>UK1 (0.0667 Hz), LK1 (1.0 Hz)</td></tr>
+            <tr><td>Mid Slope</td><td><code>OO.CZMID</code></td><td><code>&mdash;</code></td><td>Absolute pressure</td><td>UDO (0.0667 Hz), LDO (1.0 Hz)</td></tr>
+            <tr><td>Mid Slope</td><td><code>OO.CZMID</code></td><td><code>&mdash;</code></td><td>Housing temperature</td><td>UK1 (0.0667 Hz), LK1 (1.0 Hz)</td></tr>
           </tbody>
         </table>
         <p class="instr-site">Entries without a link under Channel are data that will be available once COSZO comes online.</p>
