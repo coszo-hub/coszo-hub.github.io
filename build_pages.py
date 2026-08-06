@@ -227,6 +227,9 @@ def build_header(active=""):
         <span class="sublabel">Cascadia Offshore Subduction Zone Observatory</span>
       </div>
     </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var h=this.closest('.site-header');h.classList.toggle('nav-open');this.setAttribute('aria-expanded',h.classList.contains('nav-open'));">
+      <span></span><span></span><span></span>
+    </button>
     <nav class="main-nav" aria-label="Primary">
       <div class="nav-item has-dropdown">
         <a href="about.html"{cls("about")}>About</a>
