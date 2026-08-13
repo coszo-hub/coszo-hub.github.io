@@ -1222,34 +1222,55 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ============================================================
    LIVE CRUISE HERO (cruise tracker — see CRUISE_TRACKER_ENABLED
-   in build_pages.py). Static hero headline fades out, live panel
-   (ship-track map + live video) fades in.
+   in build_pages.py). Static hero headline fades out; a mission-
+   console panel (chart + live video, bridge nav readout) fades in.
+   Scoped to .hero-live / #cruise-map / marker classes only.
    ============================================================ */
 .hero-content { transition: opacity .7s ease; }
 .hero-content.hero-fade-out { opacity: 0; }
-.hero-live { position: relative; z-index: 2; padding: 44px 0 76px; }
+.hero-live { position: relative; z-index: 2; padding: 40px 0 72px; }
 .hero-live[hidden] { display: none; }
 .hero-live.hero-fade-in { animation: heroLiveIn .7s ease both; }
 @keyframes heroLiveIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-.hero-live-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; }
-.hero-live-badge { display: inline-flex; align-items: center; gap: 7px; font-weight: 800; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: #ffd9a0; }
-.hero-live-dot { width: 9px; height: 9px; border-radius: 50%; background: #f5a623; animation: heroLivePulse 1.6s ease-in-out infinite; }
+
+/* Console header: LIVE badge, cruise designation, bridge readout */
+.hero-live-head { display: flex; align-items: flex-start; gap: 18px; flex-wrap: wrap; margin-bottom: 20px; }
+.hero-live-badge { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; padding: 5px 12px 5px 10px; border: 1px solid rgba(245,166,35,.45); border-radius: 999px; font-weight: 800; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: #ffd9a0; background: rgba(245,166,35,.08); }
+.hero-live-dot { width: 8px; height: 8px; border-radius: 50%; background: #f5a623; animation: heroLivePulse 1.6s ease-in-out infinite; }
 @keyframes heroLivePulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(245,166,35,.55); } 50% { box-shadow: 0 0 0 7px rgba(245,166,35,0); } }
-.hero-live-title { font-weight: 600; font-size: 1rem; color: #fff; }
-.hero-live-updated { margin-left: auto; font-size: .85rem; color: #b8c7d6; }
-.hero-live-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
-#cruise-map { aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; background: #0a2f4e; border: 1px solid rgba(255,255,255,.14); }
-.hero-live .video-embed { border: 1px solid rgba(255,255,255,.14); }
-.hero-live-note { margin-top: 10px; font-size: .85rem; line-height: 1.5; color: #b8c7d6; }
-.hero-live-note a { color: #fff; }
+.hero-live-title-group { min-width: 0; }
+.hero-live-title { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; line-height: 1.15; color: #fff; letter-spacing: .01em; }
+.hero-live-sub { margin-top: 4px; font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #7f99ad; }
+.hero-nav { margin-left: auto; text-align: right; font-family: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .88rem; letter-spacing: .02em; color: #9fe0e4; white-space: nowrap; }
+.hero-nav-dim { margin-top: 4px; font-size: .74rem; color: #7f99ad; }
+
+/* Instrument panels: thin luminous bezel with reticle corners */
+.hero-live-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: stretch; }
+.console-panel { position: relative; padding: 14px 14px 12px; background: rgba(6, 34, 58, .55); border: 1px solid rgba(60, 191, 197, .28); border-radius: 8px; }
+.console-panel::before, .console-panel::after { content: ""; position: absolute; width: 18px; height: 18px; border: 2px solid #3cbfc5; pointer-events: none; }
+.console-panel::before { top: -2px; left: -2px; border-right: none; border-bottom: none; border-top-left-radius: 8px; }
+.console-panel::after { bottom: -2px; right: -2px; border-left: none; border-top: none; border-bottom-right-radius: 8px; }
+.console-panel-label { margin-bottom: 10px; font-family: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .7rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: #6fb7bd; }
+#cruise-map { aspect-ratio: 16 / 9; border-radius: 4px; overflow: hidden; background: #0a2f4e; }
+.console-panel .video-embed { border-radius: 4px; }
+.hero-live-note { margin-top: 12px; font-size: .84rem; line-height: 1.5; color: #a7b8c7; }
+.hero-live-note a { color: #fff; text-decoration: underline; text-decoration-color: rgba(60,191,197,.6); text-underline-offset: 2px; }
+
+/* Ship fix: hull + 1 Hz sonar ping */
 .ship-marker { background: none; border: none; }
-.ship-marker svg { display: block; width: 26px; height: 26px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.5)); animation: shipBlink 1s ease-in-out infinite; }
-@keyframes shipBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.15; } }
+.ship-marker svg { position: relative; z-index: 2; display: block; width: 26px; height: 26px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.5)); animation: shipGlow 1s ease-in-out infinite; }
+.ship-ping { position: absolute; inset: -7px; border-radius: 50%; border: 2px solid #f5a623; opacity: 0; animation: shipPing 1s ease-out infinite; }
+@keyframes shipPing { 0% { transform: scale(.35); opacity: .9; } 100% { transform: scale(1.5); opacity: 0; } }
+@keyframes shipGlow { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
 .site-tri { background: none; border: none; }
 .site-tri svg { display: block; width: 16px; height: 14px; filter: drop-shadow(0 1px 1px rgba(0,0,0,.4)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ship-marker svg, .ship-ping, .hero-live-dot, .hero-live.hero-fade-in { animation: none; }
+}
 @media (max-width: 960px) {
   .hero-live-grid { grid-template-columns: 1fr; }
-  .hero-live-updated { margin-left: 0; }
+  .hero-nav { margin-left: 0; text-align: left; width: 100%; white-space: normal; }
 }
 
 /* ============================================================

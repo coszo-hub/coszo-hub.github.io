@@ -59,17 +59,25 @@ _HERO_LIVE_TMPL = """
     <div class="hero-live" id="hero-live" hidden>
       <div class="hero-live-head">
         <span class="hero-live-badge"><span class="hero-live-dot"></span>Live</span>
-        <span class="hero-live-title">__CRUISE__ &middot; __SHIP__ &mdash; COSZO deployment cruise</span>
-        <span class="hero-live-updated" id="hero-live-updated"></span>
+        <div class="hero-live-title-group">
+          <div class="hero-live-title">__CRUISE__ &middot; __SHIP__</div>
+          <div class="hero-live-sub">COSZO deployment cruise &middot; Newport, Oregon</div>
+        </div>
+        <div class="hero-nav" aria-live="off">
+          <div id="hero-nav-pos"></div>
+          <div class="hero-nav-dim" id="hero-nav-meta"></div>
+        </div>
       </div>
       <div class="hero-live-grid">
-        <div>
+        <div class="console-panel">
+          <div class="console-panel-label">Ship track &mdash; Cascadia margin</div>
           <div id="cruise-map" aria-label="Map of the ship&rsquo;s position and cruise track"></div>
-          <p class="hero-live-note">Track since the start of cruise __CRUISE__. Orange dots mark each completed day &mdash; click one for that day&rsquo;s <a href="blog-from-sea.html">Blog from Sea</a> entry.</p>
+          <p class="hero-live-note">Orange dots mark each completed day &mdash; click one for that day&rsquo;s <a href="blog-from-sea.html">Blog from Sea</a> entry. Triangles are the COSZO seafloor sites.</p>
         </div>
-        <div>
+        <div class="console-panel">
+          <div class="console-panel-label">Live video &mdash; aboard the ship</div>
           <div class="video-embed"><iframe src="live-video.html" title="COSZO live video stream" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
-          <p class="hero-live-note">Live video from the ship &mdash; more on the <a href="cruises.html">Cruises</a> page.</p>
+          <p class="hero-live-note">Streaming from __SHIP__ &mdash; more on the <a href="cruises.html">Cruises</a> page.</p>
         </div>
       </div>
     </div>
@@ -122,18 +130,38 @@ _HERO_LIVE_TMPL = """
 
         var last = latlngs[latlngs.length - 1];
         var course = data.current && data.current.course != null ? data.current.course : null;
-        var shipHtml = '<svg viewBox="0 0 26 26"' + (course != null ? ' style="transform:rotate(' + course + 'deg)"' : '') +
+        var shipHtml = '<span class="ship-ping"></span><svg viewBox="0 0 26 26"' + (course != null ? ' style="transform:rotate(' + course + 'deg)"' : '') +
           '><path d="M13 1 C16 5 18 8.5 18 13 L18 23 L8 23 L8 13 C8 8.5 10 5 13 1 Z" fill="#f5a623" stroke="#06223a" stroke-width="1.5" stroke-linejoin="round"/></svg>';
         var ship = L.marker(last, { icon: L.divIcon({ className: 'ship-marker', iconSize: [26, 26], iconAnchor: [13, 13], html: shipHtml }) }).addTo(trackGroup);
         var upd = data.updated ? new Date(data.updated).toLocaleString('en-US', { timeZone: 'America/Los_Angeles', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
         var speed = data.current && data.current.speed != null ? data.current.speed + ' kn' : '';
         ship.bindPopup('<strong>' + data.ship + '</strong>' + (speed ? '<br>' + speed : '') + (upd ? '<br>Position updated ' + upd + ' PT' : ''));
-        var updEl = document.getElementById('hero-live-updated');
-        if (updEl && upd) updEl.textContent = 'Updated ' + upd + ' PT';
+
+        var posEl = document.getElementById('hero-nav-pos');
+        var metaEl = document.getElementById('hero-nav-meta');
+        if (posEl) {
+          var latS = Math.abs(last[0]).toFixed(4) + '\\u00b0' + (last[0] >= 0 ? 'N' : 'S');
+          var lonS = Math.abs(last[1]).toFixed(4) + '\\u00b0' + (last[1] >= 0 ? 'E' : 'W');
+          posEl.textContent = latS + '  ' + lonS +
+            (speed ? '  ' + speed : '') +
+            (course != null ? '  HDG ' + Math.round(course) + '\\u00b0' : '');
+        }
+        if (metaEl) {
+          var day = Math.floor((Date.now() - new Date(data.start + 'T00:00:00-07:00').getTime()) / 86400000) + 1;
+          metaEl.textContent = (day >= 1 ? 'Day ' + day : 'Mobilizing') + (upd ? ' \\u00b7 updated ' + upd + ' PT' : '');
+        }
       }
 
       function buildMap(data) {
-        map = L.map('cruise-map', { scrollWheelZoom: false });
+        map = L.map('cruise-map', { scrollWheelZoom: false, zoomSnap: 0.1, zoomDelta: 0.5 });
+        /* Trackpad pinch (and ctrl/cmd+scroll) zooms toward the pointer;
+           plain two-finger scroll still scrolls the page. */
+        map.getContainer().addEventListener('wheel', function (e) {
+          if (!e.ctrlKey && !e.metaKey) return;
+          e.preventDefault();
+          var z = Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), map.getZoom() - e.deltaY * 0.06));
+          map.setZoomAround(map.mouseEventToContainerPoint(e), z);
+        }, { passive: false });
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}',
           { attribution: 'Esri, GEBCO, NOAA', maxZoom: 13, maxNativeZoom: 10 }).addTo(map);
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}',
@@ -158,8 +186,12 @@ _HERO_LIVE_TMPL = """
 
         var bounds = L.latLngBounds(SITES.map(function (s) { return [s.lat, s.lon]; }));
         bounds.extend(PORT);
+        if (data.points.length) {
+          var p = data.points[data.points.length - 1];
+          bounds.extend([p.lat, p.lon]);  /* keep the ship in the opening view */
+        }
         map.fitBounds(bounds.pad(0.18));
-        map.setZoom(map.getZoom() + 1);
+        if (bounds.getWest() > -125.6) map.setZoom(map.getZoom() + 1);
 
         drawTrack(data);
         setInterval(function () {
@@ -803,7 +835,7 @@ COSZO_INSTR_BODY = page_hero(
         <h2>CSCPR &mdash; Calibrated Pressure</h2>
         <p class="instr-meta"><strong>Designed &amp; built by:</strong> UC San Diego Scripps Institution of Oceanography (Sasagawa &amp; Zumberge, 2013).</p>
         <p>A cabled self-calibrating pressure recorder with on-board calibration against a known reference, correcting the long-period instrumental drift that normally obscures tectonic deformation signals. Its calibrated measurements duplicate those of the GSSM, providing a long-term check on the validity of the GSSM calibrations &mdash; difficult to do in the laboratory because of the challenges of maintaining stable, high pressures.</p>
-        <p>The instrument includes two redundant Paroscientific quartz pressure gauges (Model 42 K) that are periodically switched between the ocean pressure signal and a stable, reproducible reference pressure generated by an onboard DH Instruments piston gauge (Model PC-7300-2), using motor-driven Swagelok valves (Series 41G) turned by Hanbay motorized actuators (Model MDM1000). The sensors measure the shift in the resonant frequency of a quartz force transducer attached to a Bourdon tube as the applied pressure changes, with a sensitivity of order 0.005 kPa. The instruments and electronics are housed in a titanium housing, which also hosts a temperature sensor.</p>
+        <p>The instrument includes two redundant Paroscientific quartz pressure gauges (Model 42 K) that are periodically switched between the ocean pressure signal and a stable, reproducible reference pressure generated by an onboard DH Instruments piston gauge (Model PG-7300-2), using motor-driven Swagelok valves (Series 41G) turned by Hanbay motorized actuators (Model MDM1000). The sensors measure the shift in the resonant frequency of a quartz force transducer attached to a Bourdon tube as the applied pressure changes, with a sensitivity of order 0.005 kPa. The instruments and electronics are housed in a titanium housing, which also hosts a temperature sensor.</p>
         <p class="instr-site"><strong>Sites:</strong> to be confirmed.</p>
         <p class="instr-site"><strong>Data:</strong> <a href="cscpr.html">View channels &rarr;</a></p>
       </div>
