@@ -2427,7 +2427,7 @@ def author_page_body(person):
         fig = ""
         if image:
             src = image if image.startswith("http") else f"assets/blog/{image}"
-            fig = f'<figure class="welcome-figure"><img src="{src}" alt="{title}"></figure>'
+            fig = f'<figure class="welcome-figure blog-post-portrait"><img src="{src}" alt="{title}"></figure>'
         slug = (p.get("slug") or "").strip()
         posts_html += f"""
       <article class="article-content" id="post-{slug}" style="margin-bottom:3.5rem;">

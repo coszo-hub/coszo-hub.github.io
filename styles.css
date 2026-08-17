@@ -1304,3 +1304,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .site-header.nav-open .dropdown a { padding: 9px 42px; font-size: 14px; color: var(--ink-muted); }
   .site-header.nav-open .dropdown a:hover { padding-left: 42px; }
 }
+
+/* Smaller portrait figure on Blog from Sea author pages (intro photos) */
+.blog-post-portrait { max-width: 300px; margin-top: 24px; }
+.blog-post-portrait img { width: 100%; height: auto; display: block; }
