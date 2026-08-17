@@ -43,8 +43,25 @@ def parse_form_body(body):
 
 
 def md_to_html(text):
-    paras = [p.strip() for p in re.split(r"\n\s*\n", text or "") if p.strip()]
-    return "".join(f"<p>{p}</p>" for p in paras)
+    """Paragraphs plus the Markdown people actually paste into issues:
+    ![images](url), [links](url), **bold**, *italic*. GitHub photo
+    attachments arrive as raw <img> tags and pass through untouched;
+    an image alone in a paragraph becomes a full-width figure."""
+    def inline(p):
+        p = re.sub(r"!\[([^\]]*)\]\((\S+?)\)", r'<img src="\2" alt="\1" loading="lazy">', p)
+        p = re.sub(r"\[([^\]]+)\]\((\S+?)\)", r'<a href="\2">\1</a>', p)
+        p = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", p)
+        p = re.sub(r"(?<!\*)\*([^*\n]+)\*(?!\*)", r"<em>\1</em>", p)
+        return p
+
+    out = []
+    for p in (p.strip() for p in re.split(r"\n\s*\n", text or "") if p.strip()):
+        p = inline(p)
+        if re.fullmatch(r"<img\s[^>]*>", p):
+            out.append(f'<figure class="welcome-figure">{p}</figure>')
+        else:
+            out.append(f"<p>{p}</p>")
+    return "".join(out)
 
 
 def main():

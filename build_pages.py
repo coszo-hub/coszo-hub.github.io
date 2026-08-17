@@ -2711,8 +2711,8 @@ if CRUISE_TRACKER_ENABLED:
     _diaries = {}
     for _p in load_blog():
         _d = (_p.get("date") or "").strip()[:10]
-        if _d:
-            _diaries[_d] = f'blog-{_p["slug"].strip()}.html'
+        if _d and _d not in _diaries:  # newest-first: keep that day's latest post
+            _diaries[_d] = f'blog-author-{blog_person_key(_p)}.html#post-{_p["slug"].strip()}'
     _hero_live = (_HERO_LIVE_TMPL
                   .replace("__CRUISE__", CRUISE_TRACKER["cruise"])
                   .replace("__SHIP__", CRUISE_TRACKER["ship"])
