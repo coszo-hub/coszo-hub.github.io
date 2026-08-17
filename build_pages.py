@@ -2336,12 +2336,16 @@ CONTACT_BODY = page_hero(
 # ============================================================
 # BLOG FROM SEA (data-driven; GitHub Issues + Action populate data/blog.csv)
 # ============================================================
-# CSV columns: date, title, author, image, excerpt, slug, body
+# CSV columns: date, title, author, github, image, excerpt, slug, body
 #   date    -> YYYY-MM-DD (posts sorted newest first)
+#   github  -> submitter's GitHub username (from the issue author); groups all
+#              of a person's posts onto one page: blog-author-<github>.html
 #   image   -> filename in assets/blog/ or a full URL; blank = gradient block
-#   slug    -> post page filename is blog-<slug>.html
+#   slug    -> anchor id for the post on the author page
 #   excerpt -> short text shown on the square block
-#   body    -> post HTML/text shown on the individual post page
+#   body    -> post HTML/text shown on the author page
+# The Blog from Sea page shows ONE square block per person (their photo = the
+# newest post image); clicking it opens that person's page with all their posts.
 BLOG_CSV = os.path.join(OUT_DIR, "data", "blog.csv")
 
 def load_blog():
@@ -2362,49 +2366,87 @@ def _blog_thumb(image, title):
         return f'<div class="blog-card-thumb"><img src="{src}" alt="{title}" loading="lazy"></div>'
     return '<div class="blog-card-thumb blog-card-thumb--blank"></div>'
 
-def render_blog_cards(posts, limit=None):
-    items = posts[:limit] if limit else posts
-    if not items:
+def blog_person_key(p):
+    """Stable per-person key: GitHub username when present, else slug of author."""
+    gh = (p.get("github") or "").strip().lower()
+    if gh:
+        return gh
+    author = (p.get("author") or "anonymous").lower()
+    return re.sub(r"[^a-z0-9]+", "-", author).strip("-") or "anonymous"
+
+def group_blog_by_person(posts):
+    """Group posts (already newest-first) into one entry per submitter."""
+    people = {}
+    for p in posts:
+        k = blog_person_key(p)
+        person = people.setdefault(k, {
+            "key": k,
+            "name": (p.get("author") or "").strip() or k,
+            "github": (p.get("github") or "").strip(),
+            "posts": [],
+        })
+        person["posts"].append(p)
+    return list(people.values())
+
+def render_person_cards(posts, limit=None):
+    """One square block per person, linking to their personal blog page."""
+    people = group_blog_by_person(posts)
+    if limit:
+        people = people[:limit]
+    if not people:
         return '<p class="blog-empty"><em>No posts yet. Check back during the next cruise.</em></p>'
     html = '<div class="blog-grid">'
-    for p in items:
-        slug = (p.get("slug") or "").strip()
-        title = (p.get("title") or "").strip()
-        meta = " &middot; ".join(x for x in [(p.get("date") or "").strip(),
-                                             (p.get("author") or "").strip()] if x)
-        excerpt = (p.get("excerpt") or "").strip()
-        html += (f'\n  <a class="blog-card" href="blog-{slug}.html">'
-                 f'{_blog_thumb((p.get("image") or "").strip(), title)}'
+    for person in people:
+        latest = person["posts"][0]
+        image = next(((q.get("image") or "").strip() for q in person["posts"]
+                      if (q.get("image") or "").strip()), "")
+        n = len(person["posts"])
+        meta = f'{n} post{"s" if n != 1 else ""} &middot; latest {(latest.get("date") or "").strip()}'
+        excerpt = (latest.get("excerpt") or "").strip()
+        html += (f'\n  <a class="blog-card" href="blog-author-{person["key"]}.html">'
+                 f'{_blog_thumb(image, person["name"])}'
                  f'<div class="blog-card-body">'
                  f'<div class="blog-card-meta">{meta}</div>'
-                 f'<h3 class="blog-card-title">{title}</h3>'
+                 f'<h3 class="blog-card-title">{person["name"]}</h3>'
                  f'<p class="blog-card-excerpt">{excerpt}</p>'
                  f'</div></a>')
     return html + '\n</div>'
 
-def blog_post_body(p):
-    title = (p.get("title") or "").strip()
-    meta = " &middot; ".join(x for x in [(p.get("date") or "").strip(),
-                                         (p.get("author") or "").strip()] if x)
-    body = (p.get("body") or "").strip() or "<p>(No content yet.)</p>"
-    image = (p.get("image") or "").strip()
-    fig = ""
-    if image:
-        src = image if image.startswith("http") else f"assets/blog/{image}"
-        fig = f'<figure class="welcome-figure"><img src="{src}" alt="{title}"></figure>'
+def author_page_body(person):
+    """A person's blog page: all of their posts, newest first."""
+    name = person["name"]
+    n = len(person["posts"])
+    gh_link = (f' &middot; <a href="https://github.com/{person["github"]}" target="_blank" '
+               f'rel="noopener">@{person["github"]}</a>') if person["github"] else ""
+    posts_html = ""
+    for p in person["posts"]:
+        title = (p.get("title") or "").strip()
+        meta = " &middot; ".join(x for x in [(p.get("date") or "").strip(), name] if x)
+        body = (p.get("body") or "").strip() or "<p>(No content yet.)</p>"
+        image = (p.get("image") or "").strip()
+        fig = ""
+        if image:
+            src = image if image.startswith("http") else f"assets/blog/{image}"
+            fig = f'<figure class="welcome-figure"><img src="{src}" alt="{title}"></figure>'
+        slug = (p.get("slug") or "").strip()
+        posts_html += f"""
+      <article class="article-content" id="post-{slug}" style="margin-bottom:3.5rem;">
+        <h2>{title}</h2>
+        <p class="blog-card-meta" style="margin-bottom:1rem;">{meta}</p>
+        {fig}
+        {body}
+      </article>"""
     return page_hero(
-        "Cruises", title, meta,
+        "Cruises", name, f'{n} post{"s" if n != 1 else ""} from sea{gh_link}',
         ['<a href="index.html">Home</a>', '<a href="cruises.html">Cruises</a>',
-         '<a href="blog-from-sea.html">Blog from Sea</a>', title]
+         '<a href="blog-from-sea.html">Blog from Sea</a>', name]
     ) + f"""
 <section class="article">
   <div class="container">
     <div class="article-grid narrow">
-      <article class="article-content">
-        {fig}
-        {body}
-        <p style="margin-top:2.5rem;"><a href="blog-from-sea.html">&larr; All posts</a></p>
-      </article>
+      <div>{posts_html}
+      <p style="margin-top:1rem;"><a href="blog-from-sea.html">&larr; All authors</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -2421,7 +2463,7 @@ BLOG_BODY = page_hero(
 <section class="article">
   <div class="container">
     <p style="margin-bottom:2rem;"><a class="btn-primary" href="{_BLOG_SUBMIT}" target="_blank" rel="noopener">Submit a post &#8599;</a></p>
-    {render_blog_cards(load_blog())}
+    {render_person_cards(load_blog())}
   </div>
 </section>
 """
@@ -2566,7 +2608,7 @@ CRUISES_BODY = page_hero(
 
         <h2 id="blog">Blog from Sea</h2>
         <p>Dispatches written by the team at sea. <a href="blog-from-sea.html">See all posts &rarr;</a></p>
-        {render_blog_cards(load_blog(), limit=6)}
+        {render_person_cards(load_blog(), limit=6)}
 
         <h2 id="diary">Cruise Diary</h2>
         <p>A chronological record of the cruise, compiled from daily logs.</p>
@@ -2753,13 +2795,13 @@ def main():
         add_index(filename, title, body)
         print(f"  wrote {filename}")
 
-    # One page per blog post (blog-<slug>.html), linked from the square blocks.
-    for p in load_blog():
-        slug = (p.get("slug") or "").strip()
-        filename = f"blog-{slug}.html"
-        body = blog_post_body(p)
+    # One page per person (blog-author-<github>.html) with all of their posts,
+    # linked from the square blocks on Blog from Sea.
+    for person in group_blog_by_person(load_blog()):
+        filename = f"blog-author-{person['key']}.html"
+        body = author_page_body(person)
         html = DOC.format(
-            title=f"{(p.get('title') or '').strip()} · COSZO",
+            title=f"{person['name']} · Blog from Sea · COSZO",
             header=build_header("infrastructure"),
             body=body,
             footer=FOOTER,
@@ -2767,7 +2809,7 @@ def main():
         with open(os.path.join(OUT_DIR, filename), "w", encoding="utf-8") as f:
             f.write(html)
         written.append(filename)
-        add_index(filename, (p.get("title") or "").strip(), body)
+        add_index(filename, person["name"], body)
         print(f"  wrote {filename}")
 
     with open(os.path.join(OUT_DIR, "search-index.json"), "w", encoding="utf-8") as f:

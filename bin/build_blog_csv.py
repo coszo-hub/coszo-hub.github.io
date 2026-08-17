@@ -13,7 +13,7 @@ import re
 import subprocess
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FIELDS = ["date", "title", "author", "image", "excerpt", "slug", "body"]
+FIELDS = ["date", "title", "author", "github", "image", "excerpt", "slug", "body"]
 
 
 def slugify(s):
@@ -25,7 +25,7 @@ def gh_issues():
         ["gh", "issue", "list",
          "--label", "blog-submission", "--label", "approved",
          "--state", "all", "--limit", "200",
-         "--json", "number,title,body,createdAt"],
+         "--json", "number,title,body,createdAt,author"],
         capture_output=True, text=True, check=True,
     ).stdout
     return json.loads(out)
@@ -52,10 +52,13 @@ def main():
     for iss in gh_issues():
         f = parse_form_body(iss.get("body", ""))
         title = re.sub(r"^\[blog\]\s*", "", iss["title"], flags=re.I).strip() or iss["title"]
+        gh_user = (iss.get("author") or {}).get("login", "")
+        gh_name = (iss.get("author") or {}).get("name", "")
         rows.append({
             "date": f.get("date", "") or iss.get("createdAt", "")[:10],
             "title": title,
-            "author": f.get("author", ""),
+            "author": f.get("author", "") or gh_name or gh_user,
+            "github": gh_user,
             "image": f.get("image url", "") or f.get("image", ""),
             "excerpt": f.get("excerpt", ""),
             "slug": f"{iss['number']}-{slugify(title)}",

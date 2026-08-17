@@ -34,7 +34,7 @@ jobs:
 
       - name: Rebuild site
         run: |
-          rm -f blog-[0-9]*.html       # drop stale per-post pages
+          rm -f blog-[0-9]*.html blog-author-*.html   # drop stale per-post/per-author pages
           python3 build_pages.py
 
       - name: Commit changes if any
