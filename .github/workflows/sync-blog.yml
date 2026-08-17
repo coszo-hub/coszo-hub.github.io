@@ -44,6 +44,15 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
             git commit -m "Sync Blog from Sea from approved issues"
+            # Another workflow (e.g. hourly ship-track update) may push to main
+            # between our checkout and push; rebase and retry instead of failing.
+            for attempt in 1 2 3; do
+              if git push; then
+                exit 0
+              fi
+              echo "Push rejected (attempt $attempt); rebasing onto latest main..."
+              git pull --rebase origin main
+            done
             git push
           else
             echo "No changes to commit."
