@@ -37,8 +37,8 @@
             <script type="text/javascript">
                 // RCA live stream. Offline whenever no cruise/ROV dive is underway.
                 const SOURCES = [
-                    { 'file': 'https://stream.ocean.washington.edu:443/rsnLive1/mpeg-ts-1.stream' },
-                    { 'file': 'https://stream.ocean.washington.edu:443/rsnLive1/mpeg-ts-1.stream/playlist.m3u8' }
+                    { 'file': 'https://stream.ocean.washington.edu:443/rsnLive1/mpeg-ts-1.stream/playlist.m3u8' },
+                    { 'file': 'https://stream.ocean.washington.edu:443/rsnLive1/mpeg-ts-1.stream' }
                 ];
                 const FAST_DELAY = 15000;   // initial reconnection cadence
                 const SLOW_DELAY = 60000;   // background poll once the stream looks offline
@@ -47,6 +47,7 @@
 
                 const offlineEl = document.getElementById('offline');
                 let attempts = 0;
+                let errors = 0;
                 let reconnectTimer = null;
                 let bufferTimer = null;
 
@@ -81,19 +82,25 @@
                 player.on('play', () => {
                     // Stream is live.
                     attempts = 0;
+                    errors = 0;
                     hideOffline();
                     if (bufferTimer) { clearTimeout(bufferTimer); bufferTimer = null; }
                     if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null; }
                 });
 
+                // Long buffering on a live stream is common and NOT proof the feed
+                // is down: reconnect quietly and keep the player up. The offline
+                // poster only appears after two consecutive errors with no
+                // successful playback in between.
                 player.on('buffer', () => {
                     if (bufferTimer) clearTimeout(bufferTimer);
-                    bufferTimer = setTimeout(() => { showOffline(); scheduleReconnect('buffer-timeout'); }, BUFFER_TIMEOUT);
+                    bufferTimer = setTimeout(() => { scheduleReconnect('buffer-timeout'); }, BUFFER_TIMEOUT);
                 });
 
                 player.on('error', (err) => {
                     console.error("COSZO live: player error", err && err.message);
-                    showOffline();
+                    errors++;
+                    if (errors >= 2) showOffline();
                     scheduleReconnect('error');
                 });
 
