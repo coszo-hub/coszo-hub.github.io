@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07151f"><title>RCA Atlas · Evidence workspace</title>
+  <link rel="stylesheet" href="atlas.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header><a class="brand" href="/"><span class="mark"><i></i><i></i><i></i></span><span><strong>RCA Atlas</strong><small>Regional Cabled Array · COSZO</small></span></a><span class="status"><i></i> Interface preview</span></header>
+  <main>
+    <section class="hero">
+      <span class="eyebrow">PRIVATE GRAPH-RAG WORKSPACE</span>
+      <h1>Ask the <em>observatory.</em></h1>
+      <p class="intro">A research surface for RCA and COSZO: hybrid retrieval, graph relationships, cited evidence, and optional live-data tools—visible together.</p>
+      <div class="query"><span class="beam"></span><textarea aria-label="Research question" placeholder="What do you want to investigate?" disabled>Where can I get COVIS data?</textarea><div><span>Evidence retrieval</span><button type="button" id="preview">Preview evidence <b>→</b></button></div></div>
+      <p class="notice">This public page is a visual preview. Live search requires a private RCA Atlas API deployment and API key.</p>
+      <section id="evidence" class="evidence" hidden><div class="heading"><span class="eyebrow">EXAMPLE EVIDENCE PACKAGE</span><h2>COVIS data access</h2></div><article><div class="meta"><span>RCA PI DATA PORTAL</span><span>stable corpus evidence</span></div><h3>Cabled Observatory Vent Imaging Sonar data availability and routing</h3><p>Corpus results connect COVIS with its ASHES site, download endpoints, formats, and OOI context. A private runtime then expands related graph entities and only suggests a live tool when current holdings or a download is requested.</p><a href="https://oceanobservatories.org/pi-instrument/cabled-array-vent-imaging-sonar-covis/" target="_blank" rel="noopener">↗ Cabled Array Vent Imaging Sonar (COVIS)</a></article></section>
+    </section>
+    <aside><span class="eyebrow">RESEARCH TRACE</span><div class="trace"><div><b>01</b><p><strong>Hybrid retrieval</strong><small>Keyword + semantic candidates</small></p></div><i></i><div><b>02</b><p><strong>Graph expansion</strong><small>Entities and relationships</small></p></div><i></i><div><b>03</b><p><strong>Evidence package</strong><small>Citations and tool guidance</small></p></div></div><section><h3>DESIGNED FOR</h3><p>Instruments · sites · deployments · channels · publications · figures · QA/QC · Chronfix · data access</p></section><section><h3>LOCAL RUNTIME</h3><p>Run the private API locally, then open its root URL to connect this workspace to your corpus.</p><a href="https://github.com/coszo-hub/RCA-Atlas">View RCA Atlas →</a></section></aside>
+  </main>
+  <script>document.getElementById('preview').onclick=()=>document.getElementById('evidence').hidden=false;</script>
+</body>
+</html>
