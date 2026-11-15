@@ -60,3 +60,5 @@ current-meter,Current Meter,Southern Hydrate Ridge,HYS14,20,Water temperature,LK
 current-meter,Current Meter,Southern Hydrate Ridge,HYS14,20,"Current velocity (east, north, up)","LOE, LON, LOZ (1 Hz)"
 current-meter,Current Meter,Slope Base,HYSB1,20,Water temperature,LKO (1 Hz)
 current-meter,Current Meter,Slope Base,HYSB1,20,"Current velocity (east, north, up)","LOE, LON, LOZ (1 Hz)"
+current-meter,Current Meter,Axial Base,AXBA1,20,Water temperature,LKO (1 Hz)
+current-meter,Current Meter,Axial Base,AXBA1,20,"Current velocity (east, north, up)","LOE, LON, LOZ (1 Hz)"
