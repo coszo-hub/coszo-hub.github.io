@@ -101,11 +101,11 @@ absolute-seafloor-pressure,Absolute Pressure Gauge,Slope Base,HYSB1,10,Absolute 
 absolute-seafloor-pressure,Absolute Pressure Gauge,Slope Base,HYSB1,10,Housing temperature,"UK1 (0.0667 Hz), LK1 (1.0 Hz)",
 absolute-seafloor-pressure,Absolute Pressure Gauge,Southern Hydrate Ridge,HYS14,10,Absolute pressure,"UDO (0.0667 Hz), LDO (1.0 Hz)",
 absolute-seafloor-pressure,Absolute Pressure Gauge,Southern Hydrate Ridge,HYS14,10,Housing temperature,"UK1 (0.0667 Hz), LK1 (1.0 Hz)",
-absolute-seafloor-pressure,Absolute Pressure Gauge,Outer Shelf,CZOSH,--,Absolute pressure,"UDO (0.0667 Hz), LDO (1.0 Hz)",
-absolute-seafloor-pressure,Absolute Pressure Gauge,Outer Shelf,CZOSH,--,Housing temperature,"UK1 (0.0667 Hz), LK1 (1.0 Hz)",
-absolute-seafloor-pressure,Absolute Pressure Gauge,Oregon Offshore,CZOFF,--,Absolute pressure,"UDO (0.0667 Hz), LDO (1.0 Hz)",
-absolute-seafloor-pressure,Absolute Pressure Gauge,Oregon Offshore,CZOFF,--,Housing temperature,"UK1 (0.0667 Hz), LK1 (1.0 Hz)",
-absolute-seafloor-pressure,Absolute Pressure Gauge,Mid Slope,CZMID,--,Absolute pressure,"UDO (0.0667 Hz), LDO (1.0 Hz)",
-absolute-seafloor-pressure,Absolute Pressure Gauge,Mid Slope,CZMID,--,Housing temperature,"UK1 (0.0667 Hz), LK1 (1.0 Hz)",
+absolute-seafloor-pressure,Absolute Pressure Gauge,Outer Shelf,CZOSH,10,Absolute pressure,"UDO (0.0667 Hz), LDO (1.0 Hz)",
+absolute-seafloor-pressure,Absolute Pressure Gauge,Outer Shelf,CZOSH,10,Housing temperature,"UK1 (0.0667 Hz), LK1 (1.0 Hz)",
+absolute-seafloor-pressure,Absolute Pressure Gauge,Oregon Offshore,CZOFF,10,Absolute pressure,"UDO (0.0667 Hz), LDO (1.0 Hz)",
+absolute-seafloor-pressure,Absolute Pressure Gauge,Oregon Offshore,CZOFF,10,Housing temperature,"UK1 (0.0667 Hz), LK1 (1.0 Hz)",
+absolute-seafloor-pressure,Absolute Pressure Gauge,Mid Slope,CZMID,10,Absolute pressure,"UDO (0.0667 Hz), LDO (1.0 Hz)",
+absolute-seafloor-pressure,Absolute Pressure Gauge,Mid Slope,CZMID,10,Housing temperature,"UK1 (0.0667 Hz), LK1 (1.0 Hz)",
 absolute-seafloor-pressure,Absolute Pressure Gauge,Axial Base,AXBA1,10,Absolute pressure,UDO (0.0667 Hz),additional
 absolute-seafloor-pressure,Absolute Pressure Gauge,Axial Base,AXBA1,10,Housing temperature,UK1 (0.0667 Hz),additional
