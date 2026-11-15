@@ -286,6 +286,44 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   max-width: 680px;
   margin-bottom: 36px;
 }
+/* Hero announcement — site-wide status notice at the foot of the hero.
+   Amber (--epicenter) carries the attention on the rule and label only; the
+   panel fill is neutral white-alpha, because a translucent amber wash over the
+   navy gradient goes olive. The date stays white so it does not compete with
+   the amber "Cascadia fault" emphasis in the h1 directly above. */
+.hero-notice {
+  max-width: 680px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 22px;
+  margin-bottom: 36px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-left: 4px solid var(--epicenter);
+  border-radius: 3px;
+}
+.hero-notice-label {
+  flex: none;
+  padding-top: 2px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--epicenter);
+  white-space: nowrap;
+}
+.hero-notice p {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: #fff;
+}
+.hero-notice strong { color: #fff; font-weight: 700; }
+@media (max-width: 640px) {
+  .hero-notice { flex-direction: column; gap: 8px; padding: 16px 18px; }
+}
+
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero-cta {
   display: inline-flex;

@@ -439,6 +439,10 @@ INDEX_BODY = """
     <div class="hero-content">
       <h1>Watching the <em>Cascadia fault</em> from the seafloor.</h1>
       <p class="hero-lede">COSZO adds geophysical instrumentation to the <a href="https://oceanobservatories.org/">Ocean Observatories Initiative (OOI)</a> Regional Cabled Array off the coast of Oregon, delivering continuous, high-fidelity seafloor data to investigate how the Cascadia subduction zone fault works and to support the development of offshore earthquake and tsunami early warning.</p>
+      <div class="hero-notice" role="status">
+        <span class="hero-notice-label">Cruise update</span>
+        <p>Due to mechanical problems, the COSZO installation cruise scheduled for August&ndash;September 2026 was cancelled. The deployment is now planned for <strong>Summer 2027</strong>.</p>
+      </div>
     </div>
   </div>
 </section>
