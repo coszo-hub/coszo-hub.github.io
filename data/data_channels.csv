@@ -41,8 +41,19 @@ cscpr,CSCPR — Calibrated Pressure,Mid Slope,CZMID,40,Self-calibrated pressure 
 cscpr,CSCPR — Calibrated Pressure,Mid Slope,CZMID,41,Self-calibrated pressure (P2),LDO (1 Hz),
 cscpr,CSCPR — Calibrated Pressure,Oregon Offshore,CZOFF,40,Self-calibrated pressure (P1),LDO (1 Hz),
 cscpr,CSCPR — Calibrated Pressure,Oregon Offshore,CZOFF,41,Self-calibrated pressure (P2),LDO (1 Hz),
-cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40,Self-calibrated pressure (P1),LDO (1 Hz),additional
-cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,41,Self-calibrated pressure (P2),LDO (1 Hz),additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40 / 41,Absolute pressure,LDO (1 Hz),additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40 / 41,Gauge pressure period,LE1 (1 Hz),additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40 / 41,Gauge temperature period,LE2 (1 Hz),additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40 / 41,Gauge temperature,LK1 (1 Hz),additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40 / 41,LVDT voltage (piston height),LE3 (1 Hz),additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40 / 41,LVDT piston height,LE9 (1 Hz),additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40,Internal barometer,LDI (1 Hz),additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40,PRT temperature (dead-weight tester),LKI (1 Hz),additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40,"Tilt X, Y","LAX, LAY (1 Hz)",additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40,"Barometer, PRT, tilt voltages","LE4, LE5, LE7, LE8 (1 Hz)",additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40,Mass-bell rotation,LE6 (1 Hz),additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40,Instrument clock minus arrival time,LCE (1/60 Hz),additional
+cscpr,CSCPR — Calibrated Pressure,Axial Seamount central caldera,AXCC1,40,Calibration flag,LEF (1 Hz),additional
 current-meter,Current Meter,Mid Slope,CZMID,20,Water temperature,LK1 (1 Hz),
 current-meter,Current Meter,Mid Slope,CZMID,20,"Current velocity (east, north, up)","MOE, MON, MOZ (8 Hz)",
 current-meter,Current Meter,Mid Slope,CZMID,20,Acoustic amplitude (beams 1-3),"MY1, MY2, MY3 (8 Hz)",

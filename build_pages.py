@@ -1771,7 +1771,7 @@ DATA_PAGE_META = {
     "cscpr": {
         "lede": "Drift-corrected absolute seafloor pressure from a cabled self-calibrating pressure recorder.",
         "overview": "The Cabled Self-Calibrating Pressure Recorder (CSCPR) provides drift-corrected absolute seafloor pressure from dual calibrated gauges, supporting long-term seafloor geodesy.",
-        "additional": "Self-calibrated pressure from the Axial Seamount central caldera recorder, served through the same OOI infrastructure.",
+        "additional": "All 23 channels from the self-calibrating pressure recorder at the Axial Seamount central caldera \u2014 both gauges plus the dead-weight tester and housekeeping channels. Locations 40 and 41 are the two gauges; channels listed against 40 / 41 exist once per gauge.",
     },
     "current-meter": {
         "lede": "Three-component sea-water velocity with acoustic amplitude and correlation, pressure, and temperature.",
