@@ -298,7 +298,7 @@ def build_header(active=""):
         <a href="outreach.html"{cls("outreach")}>Outreach</a>
         <div class="dropdown">
           <a href="research-experiences-for-undergraduates.html">Research Experiences for Undergraduates</a>
-          <a href="early-career-workshop.html">2027 Early Career Workshop</a>
+          <a href="early-career-workshop.html">2028 Early Career Workshop</a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
@@ -364,7 +364,7 @@ FOOTER = """
         <h4><a href="outreach.html">Outreach</a></h4>
         <ul>
           <li><a href="research-experiences-for-undergraduates.html">Research Experiences for Undergraduates</a></li>
-          <li><a href="early-career-workshop.html">2027 Early Career Workshop</a></li>
+          <li><a href="early-career-workshop.html">2028 Early Career Workshop</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1772,7 +1772,7 @@ def data_page_body(slug, info):
           <tbody>{rows_html}
           </tbody>
         </table>
-        <p class="instr-site">These data streams will be available once COSZO comes online.</p>
+        <div class="page-notice" role="status"><span class="page-notice-label">Status</span><p>The website will be updated to include all data streams once all systems are operational.</p></div>
 
         <h2 id="access">Data Access</h2>
         <p>COSZO data is available through EarthScope.</p>
@@ -1827,6 +1827,7 @@ ASP_BODY = page_hero(
           </tbody>
         </table>
         <p class="instr-site">Entries without a link under Channel are data that will be available once COSZO comes online.</p>
+        <div class="page-notice" role="status"><span class="page-notice-label">Status</span><p>The website will be updated to include all data streams once all systems are operational.</p></div>
 
         <h2 id="additional">Additional Data</h2>
         <p>Absolute pressure data from Axial Base, served through the same OOI infrastructure.</p>
@@ -1984,7 +1985,7 @@ OUTREACH_BODY = page_hero(
       </a>
       <a href="early-career-workshop.html" class="hub-card">
         <svg class="hub-card-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="4" fill="#f5a623"/><circle cx="24" cy="24" r="10" fill="none" stroke="#f5a623" opacity="0.6"/></svg>
-        <h3>2027 Early Career Workshop</h3>
+        <h3>2028 Early Career Workshop</h3>
         <p>A multi-day workshop bringing together early-career scientists working on subduction zone science and seafloor observation.</p>
         <span class="card-link">Workshop info</span>
       </a>
@@ -2054,18 +2055,18 @@ REU_BODY = page_hero(
 # EARLY CAREER WORKSHOP
 # ============================================================
 WORKSHOP_BODY = page_hero(
-    "Outreach", "2027 Early Career Workshop",
+    "Outreach", "2028 Early Career Workshop",
     "A three-day workshop convening early-career scientists working on subduction zones, seafloor observation, and earthquake early warning.",
-    ['<a href="index.html">Home</a>', '<a href="outreach.html">Outreach</a>', "2027 Early Career Workshop"]
+    ['<a href="index.html">Home</a>', '<a href="outreach.html">Outreach</a>', "2028 Early Career Workshop"]
 ) + """
 <section class="article">
   <div class="container">
     <div class="article-grid narrow">
       <article class="article-content">
-        <p class="lede-para">The 2027 COSZO Early Career Workshop will bring together graduate students, postdocs, and early-career faculty for three days of talks, poster sessions, and working groups at the University of Washington.</p>
+        <p class="lede-para">The 2028 COSZO Early Career Workshop will bring together graduate students, postdocs, and early-career faculty for three days of talks, poster sessions, and working groups at the University of Washington.</p>
 
         <h2>When &amp; where</h2>
-        <p><strong>Dates:</strong> TBD<br>
+        <p><strong>Dates:</strong> Expected spring&ndash;summer 2028 &mdash; approximately six months after the COSZO data streams have been verified.<br>
         <strong>Location:</strong> University of Washington, Seattle<br>
         <strong>Format:</strong> In-person with limited remote participation</p>
 
@@ -2577,14 +2578,21 @@ CRUISES_BODY = page_hero(
     "Infrastructure", "Cruises",
     "Field operations for COSZO: the daily plan, dispatches from sea, the cruise diary, and live video from the ship.",
     ['<a href="index.html">Home</a>', '<a href="infrastructure.html">Infrastructure</a>', "Cruises"]
-) + f"""
+).replace(
+    "</div>\n</section>",
+    """  <div class="hero-notice" role="status">
+    <span class="hero-notice-label">Cruise update</span>
+    <p>Due to mechanical problems, the COSZO installation cruise scheduled for August&ndash;September 2026 was cancelled. The deployment is now planned for <strong>Summer 2027</strong>.</p>
+  </div>
+  </div>
+</section>""", 1) + f"""
 <section class="cruise-log" id="operations" style="padding-top:36px;">
   <div class="container">
     <div class="cruise-timeline">
       <div class="cruise-item">
-        <div class="cruise-date"><span class="year">2026</span>Summer &middot; RR2614</div>
-        <div class="cruise-info"><div class="cruise-label">Upcoming &middot; Installation</div><h3>COSZO Installation Cruise</h3><p>R/V Roger Revelle &middot; Newport, OR to Cascadia Margin</p></div>
-        <div class="cruise-status upcoming">Upcoming</div>
+        <div class="cruise-date"><span class="year">2027</span>Summer &middot; TBD</div>
+        <div class="cruise-info"><div class="cruise-label">Postponed &middot; Installation</div><h3>COSZO Installation Cruise</h3><p>R/V Roger Revelle &middot; Newport, OR to Cascadia Margin<br><span class="instr-site">Postponed from August&ndash;September 2026 (RR2614).</span></p></div>
+        <div class="cruise-status postponed">Postponed</div>
       </div>
     </div>
   </div>
@@ -2758,7 +2766,7 @@ PAGES = [
     ("people.html",                             "People · COSZO",                                          "about",         PEOPLE_BODY),
     ("outreach.html",                           "Outreach · COSZO",                                        "outreach",      OUTREACH_BODY),
     ("research-experiences-for-undergraduates.html", "Research Experiences for Undergraduates · COSZO",    "outreach",      REU_BODY),
-    ("early-career-workshop.html",              "2027 Early Career Workshop · COSZO",                      "outreach",      WORKSHOP_BODY),
+    ("early-career-workshop.html",              "2028 Early Career Workshop · COSZO",                      "outreach",      WORKSHOP_BODY),
     ("partners.html",                           "Partners · COSZO",                                        "outreach",      PARTNERS_BODY),
     ("early-warning.html",                      "Early Warning · COSZO",                                   "ew",            EW_BODY),
     ("feasibility-study.html",                  "2019 Feasibility Study · COSZO",                          "ew",            FEAS_BODY),

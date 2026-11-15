@@ -324,6 +324,34 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .hero-notice { flex-direction: column; gap: 8px; padding: 16px 18px; }
 }
 
+/* Status notice on light article backgrounds — sibling of .hero-notice.
+   Same amber rule and label; ink body text for contrast on paper. */
+.page-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  margin: 20px 0 28px;
+  background: rgba(245, 166, 35, 0.07);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  border-left: 4px solid var(--epicenter);
+  border-radius: 3px;
+}
+.page-notice-label {
+  flex: none;
+  padding-top: 1px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--epicenter-dark);
+  white-space: nowrap;
+}
+.page-notice p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink); }
+@media (max-width: 640px) {
+  .page-notice { flex-direction: column; gap: 6px; }
+}
+
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero-cta {
   display: inline-flex;
@@ -729,6 +757,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .cruise-status.completed { color: var(--teal-500); border-color: var(--teal-500); }
 .cruise-status.upcoming  { color: var(--epicenter); border-color: var(--epicenter); }
 .cruise-status.ongoing   { color: var(--ocean-500); border-color: var(--ocean-500); background: rgba(30, 124, 171, 0.06); }
+.cruise-status.postponed { color: var(--ink-muted); border-color: var(--ink-muted); }
 
 /* ============ PEOPLE ============ */
 .people-feature { padding: 96px 0; background: #fff; }
