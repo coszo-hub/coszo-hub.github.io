@@ -1262,6 +1262,39 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .site-instruments a { font-weight: 600; }
 .site-instruments .instr-site { display: block; margin-top: 3px; }
 
+/* Collapsible per-station channel groups on the long data pages. Native
+   <details>, so the rows stay in the DOM for find-on-page and need no JS. */
+.station-group { border: 1px solid var(--rule); border-radius: 3px; margin: 0 0 10px; background: #fff; }
+.station-group + .station-group { margin-top: -1px; }
+.station-group > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 13px 16px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 15px;
+}
+.station-group > summary::-webkit-details-marker { display: none; }
+.station-group > summary::before {
+  content: "\25B8";
+  color: var(--teal-500);
+  font-size: 12px;
+  line-height: 1.4;
+  transition: transform 0.15s;
+}
+.station-group[open] > summary::before { content: "\25BE"; }
+.station-group > summary:hover { background: var(--sand-50); }
+.station-group .sg-site { font-weight: 650; color: var(--ink); }
+.station-group .sg-count { margin-left: auto; font-size: 13px; color: var(--ink-muted); }
+.station-group[open] > summary { border-bottom: 1px solid var(--rule); }
+.station-group .specs-table { border-top: 0; margin: 0; }
+.station-group > .specs-table th { background: var(--paper); }
+@media (max-width: 560px) {
+  .station-group .sg-count { margin-left: 0; flex-basis: 100%; }
+}
+
 /* COSZO instruments: description left, figure right */
 .instr-row { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; margin: 0 0 52px; }
 .instr-text h2 { margin-top: 0; margin-bottom: 0.6rem; }

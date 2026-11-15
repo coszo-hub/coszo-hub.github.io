@@ -1806,33 +1806,75 @@ def link_channels(station, location, channels):
                 f' target="_blank" rel="noopener">{ch}</a>')
     return CHANNEL_RE.sub(sub, channels)
 
+# A station's rows as one table. Pages whose table runs long are grouped per
+# station inside <details>, so the page stays scannable and each group can be
+# opened on demand. Native disclosure - no JavaScript, and the rows stay in the
+# DOM for in-page search.
+CHANNELS_PER_ROW = re.compile(r"\b[A-Z]{2}[A-Z0-9]\b")
+
+def _channel_count(rows):
+    n = 0
+    for _sect, _site, _stn, loc, _dt, ch in rows:
+        n += len(CHANNELS_PER_ROW.findall(ch)) * (2 if "/" in loc else 1)
+    return n
+
+def _rows_table(rows_html, compact=False):
+    head = ("<tr><th>Location</th><th>Data type</th><th>Channel</th></tr>" if compact
+            else "<tr><th>Site</th><th>Station</th><th>Location</th><th>Data type</th><th>Channel</th></tr>")
+    return f"""<table class="specs-table">
+          <thead>
+            {head}
+          </thead>
+          <tbody>{rows_html}
+          </tbody>
+        </table>"""
+
+def station_groups(rows, render_row, threshold=12):
+    """Flat table when short; one collapsible group per station when long."""
+    if len(rows) <= threshold:
+        return _rows_table("".join(render_row(r) for r in rows))
+    # grouped: the summary carries site and station, so the rows need not
+    groups, order = {}, []
+    for r in rows:
+        key = (r[1], r[2])                      # (site, station)
+        if key not in groups:
+            groups[key] = []; order.append(key)
+        groups[key].append(r)
+    out = ""
+    for site, stn in order:
+        grp = groups[(site, stn)]
+        station = f"OO.{stn}" if stn else ""
+        out += (f'\n        <details class="station-group">'
+                f'<summary><span class="sg-site">{site}</span>'
+                f'<code>{station}</code>'
+                f'<span class="sg-count">{_channel_count(grp)} channels</span></summary>'
+                f'\n        {_rows_table("".join(render_row(r, compact=True) for r in grp), compact=True)}'
+                f'\n        </details>')
+    return out
+
 def data_page_body(slug, info):
     """Render one data-product detail page in the Absolute Seafloor Pressure format."""
     title = info["title"].replace("&", "&amp;")
     meta = DATA_PAGE_META.get(slug, {})
-    rows_html, extra_html = "", ""
-    for sect, site, stn, loc, dt, ch in info["rows"]:
+    def render_row(r, compact=False):
+        _sect, site, stn, loc, dt, ch = r
         locdisp = "&mdash;" if loc in ("--", "") else loc
         station = f"OO.{stn}" if stn else ""
-        tr = (f'\n            <tr><td>{site}</td><td><code>{station}</code></td>'
-              f'<td><code>{locdisp}</code></td><td>{dt}</td>'
-              f'<td>{link_channels(stn, loc, ch)}</td></tr>')
-        if sect == "additional":
-            extra_html += tr
-        else:
-            rows_html += tr
+        lead = "" if compact else f'<td>{site}</td><td><code>{station}</code></td>'
+        return (f'\n            <tr>{lead}'
+                f'<td><code>{locdisp}</code></td><td>{dt}</td>'
+                f'<td>{link_channels(stn, loc, ch)}</td></tr>')
+
+    main_rows  = [r for r in info["rows"] if r[0] != "additional"]
+    extra_rows = [r for r in info["rows"] if r[0] == "additional"]
+    stations_table   = station_groups(main_rows, render_row)
+    additional_table = station_groups(extra_rows, render_row)
     additional_block = ""
     additional_nav = ""
-    if extra_html:
+    if extra_rows:
         additional_block = f"""        <h2 id="additional">Additional Data</h2>
         <p>{meta.get("additional", "Related data from other observatories, served through the same OOI infrastructure.")}</p>
-        <table class="specs-table">
-          <thead>
-            <tr><th>Site</th><th>Station</th><th>Location</th><th>Data type</th><th>Channel</th></tr>
-          </thead>
-          <tbody>{extra_html}
-          </tbody>
-        </table>
+        {additional_table}
 """
         additional_nav = '          <li><a href="#additional">Additional Data</a></li>\n'
 
@@ -1857,13 +1899,7 @@ def data_page_body(slug, info):
 
         <h2 id="stations">Stations</h2>
         <p>The table below lists the station, location code, and channels for the data.</p>
-        <table class="specs-table">
-          <thead>
-            <tr><th>Site</th><th>Station</th><th>Location</th><th>Data type</th><th>Channel</th></tr>
-          </thead>
-          <tbody>{rows_html}
-          </tbody>
-        </table>
+        {stations_table}
         <div class="page-notice" role="status"><span class="page-notice-label">Status</span><p>The website will be updated to include all data streams once all systems are operational.</p></div>
 
 {additional_block}        <h2 id="access">Data Access</h2>
