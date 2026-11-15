@@ -1773,6 +1773,13 @@ DATA_PAGE_META = {
         "lede": "Calibrated seafloor pressure and strong-motion acceleration from the geodetic seafloor sensor module.",
         "overview": "The Geodetic Seafloor Sensor Module (GSSM) provides calibrated seafloor pressure from dual gauges together with strong-motion acceleration, each with a co-located sensor temperature, at each COSZO site.",
     },
+    "absolute-seafloor-pressure": {
+        "lede": 'High-precision total pressure measured at the seafloor. Used for tsunami detection, long-period seafloor deformation monitoring, and as a reference for relative pressure products.',
+        "overview": '<p>Pressure incorporates tidal pressure gauges sampling at rates varying from 0.0667 Hz to 1.0 Hz. Each instrument also carries a housing temperature channel.</p>\n        <p>The product spans two generations of instruments: existing gauges on the Regional Cabled Array at <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, and Axial Base, and new COSZO <a href="coszo-instruments.html">Paroscientific Series 8000 gauges</a> at <a href="oregon-outer-shelf.html">Outer Shelf</a>, <a href="oregon-offshore.html">Oregon Offshore</a>, and <a href="oregon-mid-slope.html">Mid Slope</a>.</p>',
+        "caption": 'Entries without a link under Channel are data that will be available once COSZO comes online.',
+        "additional": 'Absolute pressure data from Axial Base, served through the same OOI infrastructure.',
+        "access": '<p>More station information, data quality status, and deployments are available through the GitHub webpage: <a href="https://github.com/coszo-hub/absolute-seafloor-pressure" target="_blank" rel="noopener">github.com/coszo-hub/absolute-seafloor-pressure</a>.</p>\n        <p>Scripts for detiding and drift-correcting the data are available through the COSZO GitHub.</p>\n\n        <blockquote>Raw pressure data are released within 24 hours of acquisition.</blockquote>',
+    },
     "cscpr": {
         "lede": "Drift-corrected absolute seafloor pressure from a cabled self-calibrating pressure recorder.",
         "overview": "The Cabled Self-Calibrating Pressure Recorder (CSCPR) provides drift-corrected absolute seafloor pressure from dual calibrated gauges, supporting long-term seafloor geodesy.",
@@ -1829,9 +1836,16 @@ def _rows_table(rows_html, compact=False):
           </tbody>
         </table>"""
 
-def station_groups(rows, render_row, threshold=12):
-    """Flat table when short; one collapsible group per station when long."""
-    if len(rows) <= threshold:
+def station_groups(rows, render_row, threshold=4):
+    """Flat table when short; one collapsible group per station when long.
+
+    Grouping only pays off when a station actually has several rows - a page
+    with one row per station would become a list of single-row groups, which
+    is more chrome than the flat table it replaced."""
+    per_station = {}
+    for r in rows:
+        per_station[(r[1], r[2])] = per_station.get((r[1], r[2]), 0) + 1
+    if len(rows) <= threshold or (per_station and max(per_station.values()) < 2):
         return _rows_table("".join(render_row(r) for r in rows))
     # grouped: the summary carries site and station, so the rows need not
     groups, order = {}, []
@@ -1870,6 +1884,11 @@ def data_page_body(slug, info):
     extra_rows = [r for r in info["rows"] if r[0] == "additional"]
     stations_table   = station_groups(main_rows, render_row)
     additional_table = station_groups(extra_rows, render_row)
+    _ov = meta.get("overview", "")
+    overview_html = _ov if _ov.lstrip().startswith("<") else f'<p class="lede-para">{_ov}</p>'
+    access_html = meta.get("access", "<p>COSZO data is available through EarthScope.</p>")
+    _cap = meta.get("caption", "")
+    caption_html = f'<p class="instr-site">{_cap}</p>' if _cap else ""
     additional_block = ""
     additional_nav = ""
     if extra_rows:
@@ -1896,15 +1915,16 @@ def data_page_body(slug, info):
       </aside>
       <article class="article-content">
         <h2 id="overview">Overview</h2>
-        <p class="lede-para">{meta.get("overview", "")}</p>
+        {overview_html}
 
         <h2 id="stations">Stations</h2>
         <p>The table below lists the station, location code, and channels for the data.</p>
         {stations_table}
+        {caption_html}
         <div class="page-notice" role="status"><span class="page-notice-label">Status</span><p>The website will be updated to include all data streams once all systems are operational.</p></div>
 
 {additional_block}        <h2 id="access">Data Access</h2>
-        <p>COSZO data is available through EarthScope.</p>
+        {access_html}
       </article>
     </div>
   </div>
@@ -1914,72 +1934,6 @@ def data_page_body(slug, info):
 # ============================================================
 # ABSOLUTE SEAFLOOR PRESSURE (example product detail page)
 # ============================================================
-ASP_BODY = page_hero(
-    "Data", "Absolute Seafloor Pressure",
-    "High-precision total pressure measured at the seafloor. Used for tsunami detection, long-period seafloor deformation monitoring, and as a reference for relative pressure products.",
-    ['<a href="index.html">Home</a>', '<a href="data.html">Data</a>', "Absolute Seafloor Pressure"]
-) + """
-<section class="article">
-  <div class="container">
-    <div class="article-grid">
-      <aside class="article-sidebar">
-        <h4>On This Page</h4>
-        <ul>
-          <li><a href="#overview" class="active">Overview</a></li>
-          <li><a href="#stations">Stations</a></li>
-          <li><a href="#additional">Additional Data</a></li>
-          <li><a href="#access">Data Access</a></li>
-        </ul>
-      </aside>
-      <article class="article-content">
-        <h2 id="overview">Overview</h2>
-        <p>Pressure incorporates tidal pressure gauges sampling at rates varying from 0.0667 Hz to 1.0 Hz. Each instrument also carries a housing temperature channel.</p>
-        <p>The product spans two generations of instruments: existing gauges on the Regional Cabled Array at <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, and Axial Base, and new COSZO <a href="coszo-instruments.html">Paroscientific Series 8000 gauges</a> at <a href="oregon-outer-shelf.html">Outer Shelf</a>, <a href="oregon-offshore.html">Oregon Offshore</a>, and <a href="oregon-mid-slope.html">Mid Slope</a>.</p>
-
-        <h2 id="stations">Stations</h2>
-        <p>The table below lists the station, location code, and channels for the data.</p>
-        <table class="specs-table">
-          <thead>
-            <tr><th>Site</th><th>Station</th><th>Location</th><th>Data type</th><th>Channel</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LDO/" target="_blank" rel="noopener">LDO</a> (1.0 Hz)</td></tr>
-            <tr><td>Slope Base</td><td><code>OO.HYSB1</code></td><td><code>10</code></td><td>Housing temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYSB1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYSB1/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
-            <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LDO/" target="_blank" rel="noopener">LDO</a> (1.0 Hz)</td></tr>
-            <tr><td>Southern Hydrate Ridge</td><td><code>OO.HYS14</code></td><td><code>10</code></td><td>Housing temperature</td><td><a href="https://ds.iris.edu/mda/OO/HYS14/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz), <a href="https://ds.iris.edu/mda/OO/HYS14/10/LK1/" target="_blank" rel="noopener">LK1</a> (1.0 Hz)</td></tr>
-            <tr><td>Outer Shelf</td><td><code>OO.CZOSH</code></td><td><code>&mdash;</code></td><td>Absolute pressure</td><td>UDO (0.0667 Hz), LDO (1.0 Hz)</td></tr>
-            <tr><td>Outer Shelf</td><td><code>OO.CZOSH</code></td><td><code>&mdash;</code></td><td>Housing temperature</td><td>UK1 (0.0667 Hz), LK1 (1.0 Hz)</td></tr>
-            <tr><td>Oregon Offshore</td><td><code>OO.CZOFF</code></td><td><code>&mdash;</code></td><td>Absolute pressure</td><td>UDO (0.0667 Hz), LDO (1.0 Hz)</td></tr>
-            <tr><td>Oregon Offshore</td><td><code>OO.CZOFF</code></td><td><code>&mdash;</code></td><td>Housing temperature</td><td>UK1 (0.0667 Hz), LK1 (1.0 Hz)</td></tr>
-            <tr><td>Mid Slope</td><td><code>OO.CZMID</code></td><td><code>&mdash;</code></td><td>Absolute pressure</td><td>UDO (0.0667 Hz), LDO (1.0 Hz)</td></tr>
-            <tr><td>Mid Slope</td><td><code>OO.CZMID</code></td><td><code>&mdash;</code></td><td>Housing temperature</td><td>UK1 (0.0667 Hz), LK1 (1.0 Hz)</td></tr>
-          </tbody>
-        </table>
-        <p class="instr-site">Entries without a link under Channel are data that will be available once COSZO comes online.</p>
-        <div class="page-notice" role="status"><span class="page-notice-label">Status</span><p>The website will be updated to include all data streams once all systems are operational.</p></div>
-
-        <h2 id="additional">Additional Data</h2>
-        <p>Absolute pressure data from Axial Base, served through the same OOI infrastructure.</p>
-        <table class="specs-table">
-          <thead>
-            <tr><th>Site</th><th>Station</th><th>Location</th><th>Data type</th><th>Channel</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Absolute pressure</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UDO/" target="_blank" rel="noopener">UDO</a> (0.0667 Hz)</td></tr>
-            <tr><td>Axial Base</td><td><code>OO.AXBA1</code></td><td><code>10</code></td><td>Housing temperature</td><td><a href="https://ds.iris.edu/mda/OO/AXBA1/10/UK1/" target="_blank" rel="noopener">UK1</a> (0.0667 Hz)</td></tr>
-          </tbody>
-        </table>
-
-        <h2 id="access">Data Access</h2>
-        <p>More station information, data quality status, and deployments are available through the GitHub webpage: <a href="https://github.com/coszo-hub/absolute-seafloor-pressure" target="_blank" rel="noopener">github.com/coszo-hub/absolute-seafloor-pressure</a>.</p>
-        <p>Scripts for detiding and drift-correcting the data are available through the COSZO GitHub.</p>
-
-        <blockquote>Raw pressure data are released within 24 hours of acquisition.</blockquote>
-      </article>
-    </div>
-  </div>
-</section>
-"""
 
 # ============================================================
 # PEOPLE (hub)
@@ -2898,7 +2852,6 @@ PAGES = [
     ("cruises.html",                            "Cruises · COSZO",                                         "infrastructure",CRUISES_BODY),
     ("blog-from-sea.html",                      "Blog from Sea · COSZO",                                   "infrastructure",BLOG_BODY),
     ("data.html",                               "Data · COSZO",                                            "data",          DATAPRODUCTS_BODY),
-    ("absolute-seafloor-pressure.html",         "Absolute Seafloor Pressure · COSZO",                      "data",          ASP_BODY),
     ("people.html",                             "People · COSZO",                                          "about",         PEOPLE_BODY),
     ("outreach.html",                           "Outreach · COSZO",                                        "outreach",      OUTREACH_BODY),
     ("research-experiences-for-undergraduates.html", "Research Experiences for Undergraduates · COSZO",    "outreach",      REU_BODY),
