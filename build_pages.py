@@ -70,8 +70,13 @@ def site_instruments_section(site_name):
         # newline between the two elements: HTML collapses it to a space, so the
         # text still reads correctly if the stylesheet is cached, stripped or
         # overridden - display:block must not be the only thing separating them.
+        # the site page is a scan, not an inventory: the data page holds the
+        # full table, so show a few data types and count the rest
+        shown = "; ".join(types[:3])
+        if len(types) > 3:
+            shown += f' &middot; and {len(types) - 3} more'
         rows += (f'\n          <li><a href="{slug}.html">{title.replace("&", "&amp;")}</a>\n'
-                 f'              <span class="instr-site">{stn}{"; ".join(types)}</span></li>')
+                 f'              <span class="instr-site">{stn}{shown}</span></li>')
     return f"""
         <h2 id="instruments">Instruments</h2>
         <p>COSZO instruments at this site. Each links to its data page, with the full
