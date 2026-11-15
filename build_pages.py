@@ -314,6 +314,7 @@ def build_header(active=""):
   <div class="container">
     <div class="funding-note">An <strong>NSF</strong> Mid-scale Research Infrastructure project</div>
     <div class="utility-bar-links">
+      <a href="atlas/">Atlas</a>
       <a href="contact.html">Contact</a>
       <a href="search.html">Search</a>
     </div>
