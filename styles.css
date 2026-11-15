@@ -1287,6 +1287,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .station-group[open] > summary::before { content: "\25BE"; }
 .station-group > summary:hover { background: var(--sand-50); }
 .station-group .sg-site { font-weight: 650; color: var(--ink); }
+.station-group .sg-code {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13.5px;
+  color: var(--ink-muted);
+}
 .station-group .sg-count { margin-left: auto; font-size: 13px; color: var(--ink-muted); }
 .station-group[open] > summary { border-bottom: 1px solid var(--rule); }
 .station-group .specs-table { border-top: 0; margin: 0; }

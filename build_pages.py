@@ -1845,9 +1845,10 @@ def station_groups(rows, render_row, threshold=12):
         grp = groups[(site, stn)]
         station = f"OO.{stn}" if stn else ""
         out += (f'\n        <details class="station-group">'
-                f'<summary><span class="sg-site">{site}</span>'
-                f'<code>{station}</code>'
-                f'<span class="sg-count">{_channel_count(grp)} channels</span></summary>'
+                f'<summary>\n          <span class="sg-site">{site}</span>\n'
+                f'          <span class="sg-code">({station})</span>\n'
+                f'          <span class="sg-count">{_channel_count(grp)} channels</span>\n'
+                f'        </summary>'
                 f'\n        {_rows_table("".join(render_row(r, compact=True) for r in grp), compact=True)}'
                 f'\n        </details>')
     return out
