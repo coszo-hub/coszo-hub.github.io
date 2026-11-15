@@ -66,8 +66,11 @@ def site_instruments_section(site_name):
     rows = ""
     for slug, title, station, types in sorted(items, key=lambda x: x[1]):
         stn = f'<code>OO.{station}</code> &middot; ' if station else ""
-        rows += (f'\n          <li><a href="{slug}.html">{title.replace("&", "&amp;")}</a>'
-                 f'<span class="instr-site">{stn}{"; ".join(types)}</span></li>')
+        # newline between the two elements: HTML collapses it to a space, so the
+        # text still reads correctly if the stylesheet is cached, stripped or
+        # overridden - display:block must not be the only thing separating them.
+        rows += (f'\n          <li><a href="{slug}.html">{title.replace("&", "&amp;")}</a>\n'
+                 f'              <span class="instr-site">{stn}{"; ".join(types)}</span></li>')
     return f"""
         <h2 id="instruments">Instruments</h2>
         <p>COSZO instruments at this site. Each links to its data page, with the full
@@ -1774,6 +1777,21 @@ DATA_PAGE_META = {
     },
 }
 
+# Channels on stations that are already recording are linked to the IRIS MDA
+# entry; COSZO stations (CZ*) are not live yet, so their channels stay plain
+# text. That is what the "entries without a link" note on the data pages means.
+CHANNEL_RE = re.compile(r"\b([A-Z]{2}[A-Z0-9])\b")
+
+def link_channels(station, location, channels):
+    if not station or station.upper().startswith("CZ"):
+        return channels
+    loc = location if location not in ("", "--") else "--"
+    def sub(m):
+        ch = m.group(1)
+        return (f'<a href="https://ds.iris.edu/mda/OO/{station}/{loc}/{ch}/"'
+                f' target="_blank" rel="noopener">{ch}</a>')
+    return CHANNEL_RE.sub(sub, channels)
+
 def data_page_body(slug, info):
     """Render one data-product detail page in the Absolute Seafloor Pressure format."""
     title = info["title"].replace("&", "&amp;")
@@ -1783,7 +1801,8 @@ def data_page_body(slug, info):
         locdisp = "&mdash;" if loc in ("--", "") else loc
         station = f"OO.{stn}" if stn else ""
         rows_html += (f'\n            <tr><td>{site}</td><td><code>{station}</code></td>'
-                      f'<td><code>{locdisp}</code></td><td>{dt}</td><td>{ch}</td></tr>')
+                      f'<td><code>{locdisp}</code></td><td>{dt}</td>'
+                      f'<td>{link_channels(stn, loc, ch)}</td></tr>')
     return page_hero(
         "Data", title, meta.get("lede", ""),
         ['<a href="index.html">Home</a>', '<a href="data.html">Data</a>', title]

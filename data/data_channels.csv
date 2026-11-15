@@ -7,6 +7,10 @@ broadband-seismometer,Broadband Seismometer & Strong Motion,Outer Shelf,CZOSH,--
 broadband-seismometer,Broadband Seismometer & Strong Motion,Outer Shelf,CZOSH,--,Strong-motion acceleration,"HNE, HNN, HNZ (200 Hz); MNE, MNN, MNZ (8 Hz); LNE, LNN, LNZ (1 Hz)"
 broadband-seismometer,Broadband Seismometer & Strong Motion,Oregon Shelf,CZSHF,--,Broadband ground velocity,"HHE, HHN, HHZ (200 Hz); BHE, BHN, BHZ (40 Hz); MHE, MHN, MHZ (8 Hz); LHE, LHN, LHZ (1 Hz)"
 broadband-seismometer,Broadband Seismometer & Strong Motion,Oregon Shelf,CZSHF,--,Strong-motion acceleration,"HNE, HNN, HNZ (200 Hz); MNE, MNN, MNZ (8 Hz); LNE, LNN, LNZ (1 Hz)"
+broadband-seismometer,Broadband Seismometer & Strong Motion,Southern Hydrate Ridge,HYS14,--,Broadband ground velocity,"HHE, HHN, HHZ (200 Hz); BHE, BHN, BHZ (40 Hz); MHE, MHN, MHZ (8 Hz); LHE, LHN, LHZ (1 Hz)"
+broadband-seismometer,Broadband Seismometer & Strong Motion,Southern Hydrate Ridge,HYS14,--,Strong-motion acceleration,"HNE, HNN, HNZ (200 Hz)"
+broadband-seismometer,Broadband Seismometer & Strong Motion,Slope Base,HYSB1,--,Broadband ground velocity,"HHE, HHN, HHZ (200 Hz); BHE, BHN, BHZ (40 Hz); MHE, MHN, MHZ (8 Hz); LHE, LHN, LHZ (1 Hz)"
+broadband-seismometer,Broadband Seismometer & Strong Motion,Slope Base,HYSB1,--,Strong-motion acceleration,"HNE, HNN, HNZ (200 Hz)"
 differential-pressure-gauge,Differential Pressure Gauge,Mid Slope,CZMID,--,Differential pressure,HDO (200 Hz); BDO (40 Hz); MDO (8 Hz); LDO (1 Hz)
 differential-pressure-gauge,Differential Pressure Gauge,Oregon Offshore,CZOFF,--,Differential pressure,HDO (200 Hz); BDO (40 Hz); MDO (8 Hz); LDO (1 Hz)
 differential-pressure-gauge,Differential Pressure Gauge,Outer Shelf,CZOSH,--,Differential pressure,HDO (200 Hz); BDO (40 Hz); MDO (8 Hz); LDO (1 Hz)
