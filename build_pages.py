@@ -29,6 +29,7 @@ def load_data_channels(csv_path):
                 if not p["title"]:
                     p["title"] = (row.get("title") or "").strip()
                 p["rows"].append((
+                    (row.get("section") or "").strip(),
                     (row.get("site") or "").strip(),
                     (row.get("station") or "").strip(),
                     (row.get("location") or "").strip(),
@@ -48,8 +49,8 @@ def site_instruments_section(site_name):
     items = []
     for slug, info in pages.items():
         types, station = [], ""
-        for site, stn, loc, dt, ch in info["rows"]:
-            if site != site_name:
+        for sect, site, stn, loc, dt, ch in info["rows"]:
+            if site != site_name or sect == "additional":
                 continue
             station = station or stn
             if dt and dt not in types:
@@ -1770,6 +1771,7 @@ DATA_PAGE_META = {
     "cscpr": {
         "lede": "Drift-corrected absolute seafloor pressure from a cabled self-calibrating pressure recorder.",
         "overview": "The Cabled Self-Calibrating Pressure Recorder (CSCPR) provides drift-corrected absolute seafloor pressure from dual calibrated gauges, supporting long-term seafloor geodesy.",
+        "additional": "Self-calibrated pressure from the Axial Seamount central caldera recorder, served through the same OOI infrastructure.",
     },
     "current-meter": {
         "lede": "Three-component sea-water velocity with acoustic amplitude and correlation, pressure, and temperature.",
@@ -1782,8 +1784,15 @@ DATA_PAGE_META = {
 # text. That is what the "entries without a link" note on the data pages means.
 CHANNEL_RE = re.compile(r"\b([A-Z]{2}[A-Z0-9])\b")
 
+# Stations whose published channels are confirmed present in the EarthScope/IRIS
+# archive. Anything not listed stays plain text: CZ* because COSZO has not been
+# deployed, AXCC1 because its SCPR gauges (locations 40/41) are served from
+# piweb and are not archived - MDA returns a 200 with an empty page for them,
+# so an unchecked link would look fine and lead nowhere.
+ARCHIVED_STATIONS = {"HYS14", "HYSB1", "AXBA1"}
+
 def link_channels(station, location, channels):
-    if not station or station.upper().startswith("CZ"):
+    if not station or station.upper() not in ARCHIVED_STATIONS:
         return channels
     loc = location if location not in ("", "--") else "--"
     def sub(m):
@@ -1796,13 +1805,32 @@ def data_page_body(slug, info):
     """Render one data-product detail page in the Absolute Seafloor Pressure format."""
     title = info["title"].replace("&", "&amp;")
     meta = DATA_PAGE_META.get(slug, {})
-    rows_html = ""
-    for site, stn, loc, dt, ch in info["rows"]:
+    rows_html, extra_html = "", ""
+    for sect, site, stn, loc, dt, ch in info["rows"]:
         locdisp = "&mdash;" if loc in ("--", "") else loc
         station = f"OO.{stn}" if stn else ""
-        rows_html += (f'\n            <tr><td>{site}</td><td><code>{station}</code></td>'
-                      f'<td><code>{locdisp}</code></td><td>{dt}</td>'
-                      f'<td>{link_channels(stn, loc, ch)}</td></tr>')
+        tr = (f'\n            <tr><td>{site}</td><td><code>{station}</code></td>'
+              f'<td><code>{locdisp}</code></td><td>{dt}</td>'
+              f'<td>{link_channels(stn, loc, ch)}</td></tr>')
+        if sect == "additional":
+            extra_html += tr
+        else:
+            rows_html += tr
+    additional_block = ""
+    additional_nav = ""
+    if extra_html:
+        additional_block = f"""        <h2 id="additional">Additional Data</h2>
+        <p>{meta.get("additional", "Related data from other observatories, served through the same OOI infrastructure.")}</p>
+        <table class="specs-table">
+          <thead>
+            <tr><th>Site</th><th>Station</th><th>Location</th><th>Data type</th><th>Channel</th></tr>
+          </thead>
+          <tbody>{extra_html}
+          </tbody>
+        </table>
+"""
+        additional_nav = '          <li><a href="#additional">Additional Data</a></li>\n'
+
     return page_hero(
         "Data", title, meta.get("lede", ""),
         ['<a href="index.html">Home</a>', '<a href="data.html">Data</a>', title]
@@ -1815,7 +1843,7 @@ def data_page_body(slug, info):
         <ul>
           <li><a href="#overview" class="active">Overview</a></li>
           <li><a href="#stations">Stations</a></li>
-          <li><a href="#access">Data Access</a></li>
+{additional_nav}          <li><a href="#access">Data Access</a></li>
         </ul>
       </aside>
       <article class="article-content">
@@ -1833,7 +1861,7 @@ def data_page_body(slug, info):
         </table>
         <div class="page-notice" role="status"><span class="page-notice-label">Status</span><p>The website will be updated to include all data streams once all systems are operational.</p></div>
 
-        <h2 id="access">Data Access</h2>
+{additional_block}        <h2 id="access">Data Access</h2>
         <p>COSZO data is available through EarthScope.</p>
       </article>
     </div>
@@ -2767,7 +2795,9 @@ _DATA_SITE_ORDER = ["oregon-shelf.html", "oregon-outer-shelf.html", "oregon-offs
 def instrument_sites_links(slug):
     info = load_data_channels(os.path.join(OUT_DIR, "data", "data_channels.csv")).get(slug)
     seen = []
-    for site, stn, loc, dt, ch in (info["rows"] if info else []):
+    for sect, site, stn, loc, dt, ch in (info["rows"] if info else []):
+        if sect == "additional":
+            continue
         link = DATA_SITE_LINKS.get(site)
         if link and link not in seen:
             seen.append(link)
