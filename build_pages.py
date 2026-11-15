@@ -585,12 +585,13 @@ INDEX_BODY = """
           <a href="contact.html" class="btn-primary">Contact the Team
             <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="atlas/" class="btn-ghost">Explore the Atlas
+          <a href="atlas/" class="btn-gold">Explore the Atlas
             <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
       <div class="cta-visual">
+        <a href="atlas/" class="cta-globe-link" aria-label="Explore the Cascadia Offshore Sensor Atlas">
         <svg viewBox="0 0 400 400">
           <defs>
             <radialGradient id="gg"><stop offset="0" stop-color="#1e7cab"/><stop offset="1" stop-color="#04182a"/></radialGradient>
@@ -618,6 +619,7 @@ INDEX_BODY = """
           <text x="260" y="88" font-family="Manrope, sans-serif" font-size="12" fill="#f5a623" letter-spacing="1" font-weight="600">COSZO</text>
           <circle cx="200" cy="200" r="170" fill="none" stroke="#17a2ab" stroke-width="1.5" opacity="0.5"/>
         </svg>
+        </a>
       </div>
     </div>
   </div>
