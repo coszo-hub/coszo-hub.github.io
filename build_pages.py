@@ -16,6 +16,67 @@ import re
 
 OUT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+def load_data_channels(csv_path):
+    """Read data/data_channels.csv into {slug: {title, rows:[(site,station,loc,data_type,channels)]}}."""
+    pages = {}
+    try:
+        with open(csv_path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                slug = (row.get("page") or "").strip()
+                if not slug:
+                    continue
+                p = pages.setdefault(slug, {"title": "", "rows": []})
+                if not p["title"]:
+                    p["title"] = (row.get("title") or "").strip()
+                p["rows"].append((
+                    (row.get("site") or "").strip(),
+                    (row.get("station") or "").strip(),
+                    (row.get("location") or "").strip(),
+                    (row.get("data_type") or "").strip(),
+                    (row.get("channels") or "").strip(),
+                ))
+    except FileNotFoundError:
+        pass
+    return pages
+
+def site_instruments_section(site_name):
+    """Instrument list for one seafloor site, inverted from data/data_channels.csv
+    so it tracks the same spreadsheet that drives the data pages. Each instrument
+    links to its own data page. Sites with no COSZO channels (the existing OOI
+    sites) point at Existing Instruments rather than inventing a list."""
+    pages = load_data_channels(os.path.join(OUT_DIR, "data", "data_channels.csv"))
+    items = []
+    for slug, info in pages.items():
+        types, station = [], ""
+        for site, stn, loc, dt, ch in info["rows"]:
+            if site != site_name:
+                continue
+            station = station or stn
+            if dt and dt not in types:
+                types.append(dt)
+        if types:
+            items.append((slug, info["title"], station, types))
+    if not items:
+        return ("""
+        <h2 id="instruments">Instruments</h2>
+        <p>This site carries existing OOI Regional Cabled Array instrumentation rather than
+        COSZO-installed instruments. See <a href="existing-instruments.html">Existing Instruments</a>
+        for what is deployed here.</p>
+""")
+    rows = ""
+    for slug, title, station, types in sorted(items, key=lambda x: x[1]):
+        stn = f'<code>OO.{station}</code> &middot; ' if station else ""
+        rows += (f'\n          <li><a href="{slug}.html">{title.replace("&", "&amp;")}</a>'
+                 f'<span class="instr-site">{stn}{"; ".join(types)}</span></li>')
+    return f"""
+        <h2 id="instruments">Instruments</h2>
+        <p>COSZO instruments at this site. Each links to its data page, with the full
+        station, location code and channel list.</p>
+        <ul class="site-instruments">{rows}
+        </ul>
+"""
+
+
 
 def strip_html(html):
     """Plain searchable text from a body HTML string."""
@@ -1280,6 +1341,7 @@ HYDRATE_RIDGE_BODY = page_hero(
         <figure class="welcome-figure"><img src="assets/sites/southern-hydrate-ridge.jpg" alt="Cabled infrastructure at the Southern Hydrate Ridge site" loading="lazy"><figcaption>Cabled infrastructure at the Southern Hydrate Ridge site on the Cascadia margin. Credit: UW/NSF-OOI</figcaption></figure>
         <figure class="welcome-figure"><img src="assets/sites/southern-hydrate-ridge1.png" alt="Bathymetric map of the Southern Hydrate Ridge site" loading="lazy"><figcaption>Location and bathymetry of the Southern Hydrate Ridge site on the Cascadia margin. Credit: M. Elend, University of Washington.</figcaption></figure>
         <p><strong>Location:</strong> 44.5691&deg;N, 125.1481&deg;W &middot; ~775 m water depth.</p>
+""" + site_instruments_section('Southern Hydrate Ridge') + """
       </article>
     </div>
   </div>
@@ -1303,6 +1365,7 @@ SLOPE_BASE_BODY = page_hero(
         <figure class="welcome-figure"><img src="assets/sites/slope-base.jpg" alt="Cabled infrastructure at the Oregon Slope Base site" loading="lazy"><figcaption>Cabled infrastructure at the Oregon Slope Base site on the Cascadia margin. Credit: UW/NSF-OOI</figcaption></figure>
         <figure class="welcome-figure"><img src="assets/sites/slope-base1.jpg" alt="Cabled instrumentation at the Oregon Slope Base site (2,900 m)" loading="lazy"><figcaption>Cabled instrumentation at the Oregon Slope Base site (~2,900 m) on the Cascadia margin. Credit: UW/NSF-OOI</figcaption></figure>
         <p><strong>Location:</strong> 44.5153&deg;N, 125.3898&deg;W &middot; ~2,900 m water depth.</p>
+""" + site_instruments_section('Slope Base') + """
       </article>
     </div>
   </div>
@@ -1710,29 +1773,6 @@ DATA_PAGE_META = {
         "overview": "The cabled current meter (Nortek Vector) measures three-component sea-water velocity along with per-beam acoustic amplitude and correlation, seafloor pressure, and water temperature at each COSZO site.",
     },
 }
-
-def load_data_channels(csv_path):
-    """Read data/data_channels.csv into {slug: {title, rows:[(site,station,loc,data_type,channels)]}}."""
-    pages = {}
-    try:
-        with open(csv_path, newline="", encoding="utf-8") as f:
-            for row in csv.DictReader(f):
-                slug = (row.get("page") or "").strip()
-                if not slug:
-                    continue
-                p = pages.setdefault(slug, {"title": "", "rows": []})
-                if not p["title"]:
-                    p["title"] = (row.get("title") or "").strip()
-                p["rows"].append((
-                    (row.get("site") or "").strip(),
-                    (row.get("station") or "").strip(),
-                    (row.get("location") or "").strip(),
-                    (row.get("data_type") or "").strip(),
-                    (row.get("channels") or "").strip(),
-                ))
-    except FileNotFoundError:
-        pass
-    return pages
 
 def data_page_body(slug, info):
     """Render one data-product detail page in the Absolute Seafloor Pressure format."""
@@ -2494,6 +2534,7 @@ OREGON_SHELF_BODY = page_hero(
         <p>More information about this site is available at the <a href="https://interactiveoceans.washington.edu/research-sites/oregon-shelf/" target="_blank" rel="noopener">UW/OOI Interactive Oceans webpage</a>.</p>
         <figure class="welcome-figure"><img src="assets/sites/oregon-shelf.jpg" alt="Bathymetric map of the Oregon Shelf cabled site (node MJ01C)" loading="lazy"><figcaption>Cabled infrastructure at the Oregon Shelf site (node MJ01C) on the Cascadia margin. Credit: M. Elend, University of Washington.</figcaption></figure>
         <p><strong>Location:</strong> 44.6371&deg;N, 124.306&deg;W &middot; ~80 m water depth.</p>
+""" + site_instruments_section('Oregon Shelf') + """
       </article>
     </div>
   </div>
@@ -2519,6 +2560,7 @@ OREGON_OFFSHORE_BODY = page_hero(
         <p>More information about this site is available at the <a href="https://interactiveoceans.washington.edu/research-sites/oregon-offshore/" target="_blank" rel="noopener">UW/OOI Interactive Oceans webpage</a>.</p>
         <figure class="welcome-figure"><img src="assets/sites/oregon-offshore-map.jpg" alt="Bathymetric map of the Oregon Offshore cabled site (node PN1C)" loading="lazy"><figcaption>Cabled infrastructure at the Oregon Offshore site (node PN1C) on the Cascadia margin. Credit: M. Elend, University of Washington.</figcaption></figure>
         <p><strong>Location:</strong> 44.3695&deg;N, 124.954&deg;W &middot; ~550 m water depth.</p>
+""" + site_instruments_section('Oregon Offshore') + """
       </article>
     </div>
   </div>
@@ -2542,6 +2584,7 @@ OREGON_OUTER_SHELF_BODY = page_hero(
         <p>The node hosts a co-located geophysical sensor suite &mdash; a broadband ocean-bottom seismometer, a calibrated seafloor pressure gauge (GSSM), a differential pressure and point-current sensor (VEL3D), a self-calibrating pressure sensor (PREST), and a low-frequency hydrophone &mdash; all cabled for continuous, real-time data return.</p>
         <figure class="welcome-figure"><img src="assets/sites/oregon-outershelf1.jpg" alt="Bathymetric map of the Outer Shelf cabled node (PN1D)" loading="lazy"><figcaption>Cabled instrument layout at the Outer Shelf node (PN1D, ~110 m). Credit: M. Elend, University of Washington.</figcaption></figure>
         <p><strong>Node:</strong> PN1D &middot; ~110 m water depth.</p>
+""" + site_instruments_section('Outer Shelf') + """
       </article>
     </div>
   </div>
@@ -2565,6 +2608,7 @@ OREGON_MID_SLOPE_BODY = page_hero(
         <p>The node hosts a co-located geophysical sensor suite &mdash; a broadband ocean-bottom seismometer, a calibrated seafloor pressure gauge (GSSM), a differential pressure and point-current sensor (VEL3D), a self-calibrating pressure sensor (PREST), and a low-frequency hydrophone &mdash; all cabled for continuous, real-time data return.</p>
         <figure class="welcome-figure"><img src="assets/sites/oregon-midslope.jpg" alt="Bathymetric map of the Mid Slope cabled node (PN1B)" loading="lazy"><figcaption>Cabled instrument layout at the Mid Slope node (PN1B, ~1,250 m). Credit: M. Elend, University of Washington.</figcaption></figure>
         <p><strong>Node:</strong> PN1B &middot; ~1,250 m water depth.</p>
+""" + site_instruments_section('Mid Slope') + """
       </article>
     </div>
   </div>

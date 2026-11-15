@@ -1251,6 +1251,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .video-embed .image-placeholder { height: 100%; min-height: 100%; }
 .instr-site { color: #5b6573; font-size: 0.92rem; }
 
+/* Per-site instrument list (site pages) — name on one line, station and the
+   data it produces beneath it, so the links stay scannable. */
+.site-instruments { list-style: none; padding: 0; margin: 0 0 1.4rem; }
+.site-instruments li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.site-instruments li:first-child { border-top: 1px solid var(--rule); }
+.site-instruments a { font-weight: 600; }
+.site-instruments .instr-site { display: block; margin-top: 3px; }
+
 /* COSZO instruments: description left, figure right */
 .instr-row { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; margin: 0 0 52px; }
 .instr-text h2 { margin-top: 0; margin-bottom: 0.6rem; }
