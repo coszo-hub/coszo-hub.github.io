@@ -1,13 +1,14 @@
 {
- "day": "2026-11-15",
- "generatedAt": "2026-11-16T20:27:35Z",
+ "from": "2026-11-15T21:06:00Z",
+ "to": "2026-11-16T21:06:00Z",
+ "day": "2026-11-16",
+ "generatedAt": "2026-11-16T21:07:47Z",
  "axial200Hz": "Navy Diversion",
  "counts": {
   "diverted": 24,
   "unchecked": 6,
   "no_data": 11,
-  "ok": 77,
-  "gaps": 1
+  "ok": 78
  },
  "sensors": [
   {
@@ -19,7 +20,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:05:43Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -63,7 +64,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:05:51Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -108,7 +109,7 @@
    "nereusStatus": "OPERATIONAL",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:05:41Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
@@ -152,7 +153,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:05:41Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
@@ -196,7 +197,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:05:44Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
@@ -239,7 +240,7 @@
    "method": "earthscope",
    "gap": 10,
    "state": "unchecked",
-   "detail": "EarthScope lists no 8 Hz and 200 Hz channels for OO.AXCC2 on 2026-11-15",
+   "detail": "EarthScope lists no 8 Hz and 200 Hz channels for OO.AXCC2",
    "since": "2026-11-15"
   },
   {
@@ -252,7 +253,7 @@
    "nereusStatus": "OPERATIONAL",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:05:44Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
@@ -296,7 +297,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:05:42Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -339,8 +340,8 @@
    "method": "earthscope",
    "gap": 10,
    "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "longestGapMin": 1,
+   "lastData": "2026-11-16T21:05:26Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
@@ -384,8 +385,8 @@
    "gap": 30,
    "nereusStatus": "OPERATIONAL",
    "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "longestGapMin": 1,
+   "lastData": "2026-11-16T21:05:26Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
@@ -428,8 +429,8 @@
    "method": "earthscope",
    "gap": 10,
    "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "longestGapMin": 1,
+   "lastData": "2026-11-16T21:05:26Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -473,7 +474,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:06:00Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -517,7 +518,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:05:35Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
@@ -562,7 +563,7 @@
    "nereusStatus": "OPERATIONAL",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:05:35Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
@@ -606,8 +607,8 @@
    "gap": 30,
    "nereusStatus": "OPERATIONAL",
    "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "longestGapMin": 1,
+   "lastData": "2026-11-16T21:05:19Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
@@ -651,7 +652,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:05:54Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -694,8 +695,8 @@
    "method": "earthscope",
    "gap": 10,
    "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "longestGapMin": 1,
+   "lastData": "2026-11-16T21:05:19Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
@@ -739,7 +740,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T21:05:30Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -782,8 +783,8 @@
    "method": "earthscope",
    "gap": 10,
    "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "longestGapMin": 1,
+   "lastData": "2026-11-16T21:05:24Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -831,7 +832,6 @@
    "state": "no_data",
    "coverage": 0.0,
    "lastData": "2026-10-28T22:38:00Z",
-   "detail": "ERDDAP's rows that day hold no measured value",
    "since": "2026-10-28"
   },
   {
@@ -993,18 +993,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:26:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:26:00Z",
+    "checkedTo": "2026-11-16T12:26:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1018,18 +1018,16 @@
    "gap": 30,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-15T11:29:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-15T11:29:00Z",
-    "checkedTo": "2026-11-15T11:29:00Z"
+    "state": "no_data",
+    "coverage": 0.0,
+    "lastData": "2026-11-15T11:28:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1043,18 +1041,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:27:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:27:00Z",
+    "checkedTo": "2026-11-16T12:27:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1071,7 +1069,7 @@
    "hoursGood": 2,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T13:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -1084,10 +1082,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -1100,10 +1098,10 @@
    "gap": 120,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -1116,18 +1114,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:30:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:30:00Z",
+    "checkedTo": "2026-11-16T12:30:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1141,18 +1139,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:28:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:28:00Z",
+    "checkedTo": "2026-11-16T12:28:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1166,18 +1164,18 @@
    "gap": 30,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:29:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:29:00Z",
+    "checkedTo": "2026-11-16T12:29:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1191,18 +1189,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:28:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:28:00Z",
+    "checkedTo": "2026-11-16T12:28:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1216,10 +1214,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -1232,10 +1230,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2025-12-09T00:59:00Z",
@@ -1258,7 +1256,7 @@
    "hoursGood": 2,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T13:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -1271,18 +1269,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:38:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:38:00Z",
+    "checkedTo": "2026-11-16T12:38:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1296,10 +1294,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2024-02-10T08:59:00Z",
@@ -1319,18 +1317,18 @@
    "gap": 240,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:00:00Z",
     "state": "ok",
-    "coverage": 0.167,
-    "longestGapMin": 50,
-    "lastData": "2026-11-15T23:10:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "coverage": 0.157,
+    "longestGapMin": 54,
+    "lastData": "2026-11-16T11:10:00Z",
+    "checkedTo": "2026-11-16T12:00:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1344,18 +1342,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:39:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:39:00Z",
+    "checkedTo": "2026-11-16T12:39:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1369,18 +1367,18 @@
    "gap": 360,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
-    "erddapNewest": "2026-11-15T11:38:00Z",
+    "erddapNewest": "2026-11-16T12:35:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-15T11:38:00Z",
-    "checkedTo": "2026-11-15T11:38:00Z"
+    "lastData": "2026-11-16T12:35:00Z",
+    "checkedTo": "2026-11-16T12:35:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1394,18 +1392,18 @@
    "gap": 360,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:37:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:37:00Z",
+    "checkedTo": "2026-11-16T12:37:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1419,18 +1417,16 @@
    "gap": 900,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-15T10:13:00Z",
-    "state": "ok",
-    "coverage": 0.168,
-    "longestGapMin": 260,
-    "lastData": "2026-11-15T10:13:00Z",
-    "checkedTo": "2026-11-15T10:13:00Z"
+    "state": "no_data",
+    "coverage": 0.0,
+    "lastData": "2026-11-15T10:01:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1444,18 +1440,18 @@
    "gap": 360,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:37:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:37:00Z",
+    "checkedTo": "2026-11-16T12:37:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1469,10 +1465,10 @@
    "gap": 360,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -1485,18 +1481,16 @@
    "gap": 360,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-15T11:37:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-15T11:37:00Z",
-    "checkedTo": "2026-11-15T11:37:00Z"
+    "state": "no_data",
+    "coverage": 0.0,
+    "lastData": "2026-11-15T11:36:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1510,10 +1504,10 @@
    "gap": 360,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-09-30T10:52:00Z",
@@ -1533,18 +1527,18 @@
    "gap": 900,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T07:44:00Z",
     "state": "ok",
-    "coverage": 0.014,
-    "longestGapMin": 790,
-    "lastData": "2026-11-15T21:10:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "coverage": 0.013,
+    "longestGapMin": 630,
+    "lastData": "2026-11-16T07:44:00Z",
+    "checkedTo": "2026-11-16T07:44:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1558,18 +1552,18 @@
    "gap": 360,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:36:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:36:00Z",
+    "checkedTo": "2026-11-16T12:36:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1583,10 +1577,10 @@
    "gap": 900,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-07-08T10:17:00Z",
@@ -1606,18 +1600,16 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-15T11:44:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-15T11:44:00Z",
-    "checkedTo": "2026-11-15T11:44:00Z"
+    "state": "no_data",
+    "coverage": 0.0,
+    "lastData": "2026-11-15T11:43:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1631,10 +1623,10 @@
    "gap": 30,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-09-30T10:59:00Z",
@@ -1654,18 +1646,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:43:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:43:00Z",
+    "checkedTo": "2026-11-16T12:43:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1682,7 +1674,7 @@
    "hoursGood": 2,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T13:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -1695,18 +1687,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:44:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:44:00Z",
+    "checkedTo": "2026-11-16T12:44:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1720,18 +1712,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:44:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:44:00Z",
+    "checkedTo": "2026-11-16T12:44:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1745,18 +1737,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:44:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:44:00Z",
+    "checkedTo": "2026-11-16T12:44:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1770,10 +1762,10 @@
    "gap": 30,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2023-07-22T13:42:00Z",
@@ -1793,10 +1785,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2025-07-30T09:16:00Z",
@@ -1816,18 +1808,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:46:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:46:00Z",
+    "checkedTo": "2026-11-16T12:46:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1841,10 +1833,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -1857,18 +1849,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T03:30:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T03:30:00Z",
+    "checkedTo": "2026-11-16T03:30:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1882,18 +1874,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T03:32:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T03:32:00Z",
+    "checkedTo": "2026-11-16T03:32:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1907,10 +1899,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-10-01T03:27:00Z",
@@ -1930,10 +1922,10 @@
    "gap": 120,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -1946,18 +1938,18 @@
    "gap": 240,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T03:05:00Z",
     "state": "ok",
-    "coverage": 0.167,
-    "longestGapMin": 50,
-    "lastData": "2026-11-15T23:10:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "coverage": 0.153,
+    "longestGapMin": 54,
+    "lastData": "2026-11-16T03:05:00Z",
+    "checkedTo": "2026-11-16T03:05:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1971,18 +1963,18 @@
    "gap": 240,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T03:00:00Z",
     "state": "ok",
-    "coverage": 0.167,
-    "longestGapMin": 50,
-    "lastData": "2026-11-15T23:10:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "coverage": 0.141,
+    "longestGapMin": 54,
+    "lastData": "2026-11-16T02:10:00Z",
+    "checkedTo": "2026-11-16T03:00:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1999,7 +1991,7 @@
    "hoursGood": 2,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T13:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -2028,18 +2020,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T03:36:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T03:36:00Z",
+    "checkedTo": "2026-11-16T03:36:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2053,10 +2045,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-01-28T03:30:00Z",
@@ -2076,18 +2068,18 @@
    "gap": 240,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T03:32:00Z",
     "state": "ok",
-    "coverage": 0.667,
+    "coverage": 0.653,
     "longestGapMin": 10,
-    "lastData": "2026-11-15T23:50:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T03:32:00Z",
+    "checkedTo": "2026-11-16T03:32:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2101,21 +2093,19 @@
    "gap": 240,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
-   "state": "gaps",
+   "lastData": "2026-11-16T22:00:00Z",
+   "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T03:05:00Z",
-    "state": "gaps",
-    "coverage": 0.014,
-    "longestGapMin": 1250,
-    "lastData": "2026-11-15T03:10:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "state": "no_data",
+    "coverage": 0.0,
+    "lastData": "2026-11-15T03:05:00Z",
+    "detail": "ERDDAP's rows in the 24 hours hold no measured value"
    },
-   "agree": false,
-   "detail": "Nereus's hours were good, but ERDDAP has a 1250-minute gap",
+   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2127,10 +2117,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -2143,18 +2133,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T03:14:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T03:14:00Z",
+    "checkedTo": "2026-11-16T03:14:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2168,18 +2158,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T03:13:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T03:13:00Z",
+    "checkedTo": "2026-11-16T03:13:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2193,10 +2183,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2024-03-19T03:09:00Z",
@@ -2216,10 +2206,10 @@
    "gap": 120,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -2232,18 +2222,18 @@
    "gap": 240,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T03:05:00Z",
     "state": "ok",
-    "coverage": 0.167,
-    "longestGapMin": 50,
-    "lastData": "2026-11-15T23:10:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "coverage": 0.153,
+    "longestGapMin": 54,
+    "lastData": "2026-11-16T03:05:00Z",
+    "checkedTo": "2026-11-16T03:05:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2257,18 +2247,18 @@
    "gap": 240,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T03:12:00Z",
     "state": "ok",
-    "coverage": 0.667,
+    "coverage": 0.661,
     "longestGapMin": 10,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T03:12:00Z",
+    "checkedTo": "2026-11-16T03:12:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2301,7 +2291,7 @@
    "hoursGood": 2,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T13:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -2314,10 +2304,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -2330,10 +2320,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2025-12-07T11:03:00Z",
@@ -2356,7 +2346,7 @@
    "hoursGood": 2,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T13:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -2369,10 +2359,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2023-07-22T13:42:00Z",
@@ -2392,18 +2382,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
-    "erddapNewest": "2026-11-15T11:17:00Z",
+    "erddapNewest": "2026-11-16T12:15:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-15T11:17:00Z",
-    "checkedTo": "2026-11-15T11:17:00Z"
+    "lastData": "2026-11-16T12:15:00Z",
+    "checkedTo": "2026-11-16T12:15:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2417,18 +2407,18 @@
    "gap": 240,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:00:00Z",
     "state": "ok",
-    "coverage": 0.167,
-    "longestGapMin": 50,
-    "lastData": "2026-11-15T23:10:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "coverage": 0.157,
+    "longestGapMin": 54,
+    "lastData": "2026-11-16T11:10:00Z",
+    "checkedTo": "2026-11-16T12:00:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2442,18 +2432,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:15:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:15:00Z",
+    "checkedTo": "2026-11-16T12:15:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2467,18 +2457,18 @@
    "gap": 240,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:11:00Z",
     "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "coverage": 0.996,
+    "longestGapMin": 4,
+    "lastData": "2026-11-16T12:11:00Z",
+    "checkedTo": "2026-11-16T12:11:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2492,10 +2482,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -2508,10 +2498,10 @@
    "gap": 120,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -2524,18 +2514,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:19:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:19:00Z",
+    "checkedTo": "2026-11-16T12:19:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2549,18 +2539,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:20:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:20:00Z",
+    "checkedTo": "2026-11-16T12:20:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2574,18 +2564,18 @@
    "gap": 30,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:19:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:19:00Z",
+    "checkedTo": "2026-11-16T12:19:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2599,18 +2589,18 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
-    "erddapNewest": "2026-11-15T11:23:00Z",
+    "erddapNewest": "2026-11-16T12:21:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-15T11:23:00Z",
-    "checkedTo": "2026-11-15T11:23:00Z"
+    "lastData": "2026-11-16T12:21:00Z",
+    "checkedTo": "2026-11-16T12:21:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2624,18 +2614,18 @@
    "gap": 30,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-16T12:23:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-16T00:00:00Z",
-    "checkedTo": "2026-11-16T00:00:00Z"
+    "lastData": "2026-11-16T12:23:00Z",
+    "checkedTo": "2026-11-16T12:23:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2649,18 +2639,16 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "erddap": {
     "erddapNewest": "2026-11-15T11:25:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-15T11:25:00Z",
-    "checkedTo": "2026-11-15T11:25:00Z"
+    "state": "no_data",
+    "coverage": 0.0,
+    "lastData": "2026-11-15T11:24:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2677,7 +2665,7 @@
    "hoursGood": 2,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T13:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -2690,10 +2678,10 @@
    "gap": 60,
    "nereusStatus": "OPERATIONAL",
    "source": "Nereus (data check)",
-   "hoursGood": 24,
+   "hoursGood": 25,
    "hoursBad": 0,
    "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "lastData": "2026-11-16T22:00:00Z",
    "state": "ok",
    "since": "2026-11-15"
   },
@@ -2764,24 +2752,24 @@
    "gap": 120,
    "nereusStatus": "OPERATIONAL",
    "state": "ok",
-   "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-16T00:00:00Z",
+   "coverage": 0.969,
+   "longestGapMin": 45,
+   "lastData": "2026-11-16T20:21:00Z",
    "source": "PI data portal",
    "gauges": [
     {
      "gauge": "PARO1",
      "state": "ok",
-     "coverage": 1.0,
-     "longestGapMin": 0,
-     "lastData": "2026-11-16T00:00:00Z"
+     "coverage": 0.969,
+     "longestGapMin": 45,
+     "lastData": "2026-11-16T20:21:00Z"
     },
     {
      "gauge": "PARO2",
      "state": "ok",
-     "coverage": 1.0,
-     "longestGapMin": 0,
-     "lastData": "2026-11-16T00:00:00Z"
+     "coverage": 0.969,
+     "longestGapMin": 45,
+     "lastData": "2026-11-16T20:21:00Z"
     }
    ],
    "since": "2026-11-15"
