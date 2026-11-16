@@ -1,12 +1,12 @@
 {
  "day": "2026-11-15",
- "generatedAt": "2026-11-16T19:41:38Z",
+ "generatedAt": "2026-11-16T20:27:35Z",
  "axial200Hz": "Navy Diversion",
  "counts": {
   "diverted": 24,
-  "unchecked": 7,
+  "unchecked": 6,
   "no_data": 11,
-  "ok": 76,
+  "ok": 77,
   "gaps": 1
  },
  "sensors": [
@@ -1701,12 +1701,12 @@
    "lastData": "2026-11-16T00:00:00Z",
    "state": "ok",
    "erddap": {
-    "erddapNewest": "2026-11-15T11:46:00Z",
+    "erddapNewest": "2026-11-16T12:44:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-15T11:46:00Z",
-    "checkedTo": "2026-11-15T11:46:00Z"
+    "lastData": "2026-11-16T00:00:00Z",
+    "checkedTo": "2026-11-16T00:00:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -1726,12 +1726,12 @@
    "lastData": "2026-11-16T00:00:00Z",
    "state": "ok",
    "erddap": {
-    "erddapNewest": "2026-11-15T11:46:00Z",
+    "erddapNewest": "2026-11-16T12:44:00Z",
     "state": "ok",
     "coverage": 1.0,
     "longestGapMin": 0,
-    "lastData": "2026-11-15T11:46:00Z",
-    "checkedTo": "2026-11-15T11:46:00Z"
+    "lastData": "2026-11-16T00:00:00Z",
+    "checkedTo": "2026-11-16T00:00:00Z"
    },
    "agree": true,
    "since": "2026-11-15"
@@ -2698,18 +2698,6 @@
    "since": "2026-11-15"
   },
   {
-   "id": "SCPRAAA301",
-   "name": "Axial Central Caldera Self-Calibrating Pressure Recorder",
-   "refdes": "RS03CCAL-MJ03F-09-SCPRAA301",
-   "site": "axial-seamount-central-caldera",
-   "method": "none",
-   "gap": 120,
-   "nereusStatus": "OPERATIONAL",
-   "state": "unchecked",
-   "detail": "no public data check (QA/QC plots only)",
-   "since": "2026-11-15"
-  },
-  {
    "id": "RS03INT1-MJ03C-07-PPSDNA301",
    "name": "International District Particle and eDNA Sampler",
    "refdes": "RS03INT1-MJ03C-07-PPSDNA301",
@@ -2765,6 +2753,37 @@
    "gap": 720,
    "state": "unchecked",
    "detail": "no public data check (QA/QC plots only)",
+   "since": "2026-11-15"
+  },
+  {
+   "id": "SCPRAAA301",
+   "name": "Axial Central Caldera Self-Calibrating Pressure Recorder",
+   "refdes": "RS03CCAL-MJ03F-09-SCPRAA301",
+   "site": "axial-seamount-central-caldera",
+   "method": "piweb",
+   "gap": 120,
+   "nereusStatus": "OPERATIONAL",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-16T00:00:00Z",
+   "source": "PI data portal",
+   "gauges": [
+    {
+     "gauge": "PARO1",
+     "state": "ok",
+     "coverage": 1.0,
+     "longestGapMin": 0,
+     "lastData": "2026-11-16T00:00:00Z"
+    },
+    {
+     "gauge": "PARO2",
+     "state": "ok",
+     "coverage": 1.0,
+     "longestGapMin": 0,
+     "lastData": "2026-11-16T00:00:00Z"
+    }
+   ],
    "since": "2026-11-15"
   },
   {
