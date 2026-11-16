@@ -270,11 +270,19 @@ def check_nereus(sensor: dict, day: date, nereus: dict[str, dict]) -> dict:
 
 # The report ----------------------------------------------------------------------------------------------------------
 
+# The Axial catalog page's "Status of 200 Hz waveform data" line, as one of two fixed values: the page answers only over
+# plain HTTP, so its text is not passed on (it reaches the map and Ask Atlas's prompt), only whether it names the Navy's
+# diversion. None when the page or the line is missing.
+AXIAL_200HZ = ("Navy Diversion", "No diversion stated")
+
+
 def axial_200hz() -> str | None:
     try:
         _, body = get(AXIAL, timeout=60)
-        m = re.search(r"Status of 200 Hz waveform data\s*-\s*([^<\n]+)", body.decode("utf-8", "replace"))
-        return m.group(1).strip() if m else None
+        m = re.search(r"Status of 200 Hz waveform data\s*-\s*([^<\n]{0,200})", body.decode("utf-8", "replace"))
+        if not m:
+            return None
+        return AXIAL_200HZ[0] if re.search(r"\bnavy\s+diversion\b", m.group(1), re.I) else AXIAL_200HZ[1]
     except Exception:
         return None
 
