@@ -377,6 +377,32 @@ def nereus_status() -> dict[str, dict]:
 
 
 HISTORY_QUERY = Path(__file__).with_name("nereus_history.graphql")
+REPORTS_QUERY = Path(__file__).with_name("nereus_reports.graphql")
+NOTE_CHARS = 600
+
+
+def nereus_notes(now: float, days: int = 365) -> dict[str, dict]:
+    """Each instrument's newest open operator note in Nereus (a fault or data issue not yet closed): what the
+    operators know, as the Central Caldera BOTPT's "Data output stopped - again ... Instrument set to failed" says why
+    Nereus lists it as failed. Plain text, cut to NOTE_CHARS; it reaches the map and Ask Atlas as a quotation."""
+    payload = {"operationName": "ReportsPageQuery", "variables": {"cutoff": iso(now - days * 86400)}, "query": REPORTS_QUERY.read_text()}
+    _, body = get(NEREUS, data=json.dumps(payload).encode(), headers={"Content-Type": "application/json"})
+    result = json.loads(body)
+    if result.get("errors"):
+        raise RuntimeError(str(result["errors"])[:200])
+    clean = lambda t: re.sub(r"\s+", " ", str(t or "")).strip()
+    out: dict[str, dict] = {}
+    for note in result["data"].get("notes", []):
+        if note.get("endedAt"):
+            continue
+        message = clean(note.get("message"))
+        row = {"title": clean(note.get("title"))[:160], "message": message[:NOTE_CHARS] + ("…" if len(message) > NOTE_CHARS else ""),
+               "category": note.get("categoryCode"), "startedAt": note.get("startedAt")}
+        for c in note.get("instrumentConnections", []):
+            refdes = (c.get("instrument") or {}).get("designator")
+            if refdes and (refdes not in out or str(row["startedAt"]) > str(out[refdes]["startedAt"])):
+                out[refdes] = row
+    return out
 
 
 def nereus_history(instrument_id: int, start: datetime, days: int, kind: str = "data") -> list[dict]:
@@ -414,7 +440,8 @@ def check_nereus(sensor: dict, start: float, end: float, nereus: dict[str, dict]
     for h in hours:
         run = run + 1 if h["code"] == "BAD" else 0
         longest = max(longest, run)
-    out = {**out, "longestGapMin": longest * 60, "lastData": iso(datetime.fromisoformat(good[-1]["date"]).timestamp() + 3600)}
+    # A good hour is dated by its end, but not past the window's (an hour still under way when the check runs).
+    out = {**out, "longestGapMin": longest * 60, "lastData": iso(min(end, datetime.fromisoformat(good[-1]["date"]).timestamp() + 3600))}
     return {**out, "state": "gaps" if longest * 60 > sensor["gap"] else "ok"}
 
 
@@ -437,7 +464,7 @@ def axial_200hz() -> str | None:
         return None
 
 
-def check_one(sensor: dict, start: float, end: float, channels: dict, nereus: dict | None) -> dict:
+def check_one(sensor: dict, start: float, end: float, channels: dict, nereus: dict | None, notes: dict | None = None) -> dict:
     method = sensor["check"]["method"]
     try:
         if method == "erddap":
@@ -460,8 +487,9 @@ def check_one(sensor: dict, start: float, end: float, channels: dict, nereus: di
     except Exception as e:   # noqa: BLE001
         result = {"state": "failed", "detail": f"{type(e).__name__}: {str(e)[:160]}"}
     operational = ((nereus or {}).get(sensor.get("refdes") or "") or {}).get("operationalStatusCode")
+    note = (notes or {}).get(sensor.get("refdes") or "")
     return {"id": sensor["id"], "name": sensor["name"], "refdes": sensor.get("refdes"), "site": sensor["site"], "method": method,
-            "gap": sensor["gap"], **({"nereusStatus": operational} if operational else {}), **result}
+            "gap": sensor["gap"], **({"nereusStatus": operational} if operational else {}), **({"note": note} if note else {}), **result}
 
 
 def main() -> None:
@@ -486,8 +514,12 @@ def main() -> None:
         nereus = nereus_status()
     except Exception:
         nereus = None
+    try:
+        notes = nereus_notes(end)
+    except Exception:
+        notes = {}
     with ThreadPoolExecutor(args.jobs) as pool:
-        rows = list(pool.map(lambda s: check_one(s, start, end, channels, nereus), sensors))
+        rows = list(pool.map(lambda s: check_one(s, start, end, channels, nereus, notes), sensors))
     shared_diversion(rows)
     previous = {}
     if args.previous and Path(args.previous).exists():
