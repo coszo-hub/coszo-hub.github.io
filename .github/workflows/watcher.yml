@@ -1,7 +1,8 @@
 name: Watcher
 
-# The Cascadia Offshore Sensor Atlas's Watcher: once each UTC day, grades how every watched sensor recorded the day
-# before (Nereus's hourly checks, OOI ERDDAP, EarthScope's 8 Hz and 200 Hz seismic data) into
+# The Cascadia Offshore Sensor Atlas's Watcher: once each UTC day, grades how every watched sensor recorded over the 24
+# hours before (red: no sample in them; yellow: samples, but a gap longer than normal) from Nereus's hourly checks, OOI
+# ERDDAP, EarthScope's 8 Hz and 200 Hz seismic data, OOI's raw data server and the PI data portal, into
 # atlas/atlas/watch/latest.json, with a dated copy in atlas/atlas/watch/days/. The map's owl button shows it, its
 # "Operating" count and Ask Atlas read it. bin/watcher/ is copied from RCA-Atlas src/atlas_watch/ (check.py,
 # watchlist.json and the two Nereus query documents); edit them there.
@@ -10,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       day:
-        description: "UTC day to grade (YYYY-MM-DD); empty for yesterday"
+        description: "a past UTC day to grade (YYYY-MM-DD); empty for the 24 hours to now"
         required: false
   schedule:
     - cron: "20 1 * * *"   # 01:20 UTC, once Nereus's hours for the day before are in
@@ -33,17 +34,25 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Grade the day
+      - name: Grade the 24 hours
         env:
           DAY: ${{ github.event.inputs.day }}
         run: |
           python3 bin/watcher/check.py --watchlist bin/watcher/watchlist.json \
             --previous atlas/atlas/watch/latest.json --out /tmp/report.json ${DAY:+--day "$DAY"}
-          day=$(python3 -c "import json; print(json.load(open('/tmp/report.json'))['day'])")
-          cp /tmp/report.json "atlas/atlas/watch/days/$day.json"
-          # latest.json is the newest day graded; a re-run of an earlier day only adds its dated copy.
-          latest=$(python3 -c "import json; print(json.load(open('atlas/atlas/watch/latest.json'))['day'])" 2>/dev/null || echo "")
-          if [ -z "$latest" ] || [ "$day" \> "$latest" ] || [ "$day" = "$latest" ]; then cp /tmp/report.json atlas/atlas/watch/latest.json; fi
+          # The dated copy is named by the last UTC day the report reaches; latest.json is the report reaching furthest
+          # (a re-graded past day only adds its dated copy).
+          python3 - <<'PY'
+          import json, shutil
+          from pathlib import Path
+          new = json.loads(Path("/tmp/report.json").read_text())
+          shutil.copy("/tmp/report.json", f"atlas/atlas/watch/days/{new['day']}.json")
+          latest = Path("atlas/atlas/watch/latest.json")
+          old = json.loads(latest.read_text()) if latest.exists() else {}
+          reach = lambda r: r.get("to") or (r.get("day", "") + "T23:59:59Z")
+          if reach(new) >= reach(old):
+              shutil.copy("/tmp/report.json", latest)
+          PY
 
       - name: Commit the report
         run: |

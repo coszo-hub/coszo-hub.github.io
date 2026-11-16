@@ -1,21 +1,22 @@
-"""The Watcher's daily check: how each watched sensor (watchlist.json) recorded over one UTC day.
+"""The Watcher's daily check: how each watched sensor (watchlist.json) recorded over the 24 hours before it runs
+(or over one UTC day, --day, to grade a past day).
 
 States, one a sensor:
-  ok         recording, no gap longer than its list's normal gap ("gap", minutes)
-  gaps       recording, with a gap longer than that (yellow)
+  ok         samples throughout, no gap longer than its list's normal gap ("gap", minutes)
+  gaps       samples, but with a gap longer than that and so not all of them (yellow)
   diverted   a seismometer or low-frequency hydrophone whose 8 Hz data reached EarthScope while its 200 Hz data did
-             not: the Navy's diversion of the high-rate data (blue); and a broadband hydrophone without its files on a
-             day the seismometers' 200 Hz data are diverted
-  no_data    nothing for the whole day (red)
+             not: the Navy's diversion of the high-rate data (blue); and a broadband hydrophone without its files
+             while the seismometers' 200 Hz data are diverted
+  no_data    no sample at all in the 24 hours (red): it has not recorded for 24 hours or more
   unchecked  nothing public says (QA/QC plots only, a station EarthScope does not list, Nereus not monitoring)
   failed     the check could not be made (a service down); not a statement about the sensor
-How: Nereus's hourly data check (GOOD, BAD) over the day; EarthScope: the day's 8 Hz vertical (MHZ) records read
+How: Nereus's hourly data check (GOOD, BAD) over the window; EarthScope: the window's 8 Hz vertical (MHZ) records read
 from their MiniSEED headers, and the 200 Hz channel (HHZ, EHZ, or the hydrophone's HDH) probed a minute an hour;
 ERDDAP's 10-minute bins in which a measured variable has a value (orderByCount; a row of NaNs or of a predicted tide
 is not data), up to its newest row: alone where Nereus does not monitor the instrument, else as a second check. The Axial Seamount catalog page's line "Status of 200 Hz
 waveform data" is kept with the report. A state carries "since", the first day of the run of days it has held, from
 the previous report.
-Usage: python check.py [--day YYYY-MM-DD (default yesterday UTC)] [--watchlist PATH] [--previous latest.json]
+Usage: python check.py [--day YYYY-MM-DD (a UTC day; default the 24 hours to now)] [--watchlist PATH] [--previous latest.json]
                        [--out report.json] [--jobs 8]"""
 import argparse
 import json
@@ -92,6 +93,18 @@ def iso(t: float | None) -> str | None:
     return datetime.fromtimestamp(t, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ") if t else None
 
 
+def day_window(day: date) -> tuple[float, float]:
+    """A UTC day as a window, [start, end) in epoch seconds."""
+    start = datetime(day.year, day.month, day.day, tzinfo=timezone.utc).timestamp()
+    return start, start + 86400
+
+
+def dates_in(start: float, end: float) -> list[date]:
+    """The UTC days a window touches (a source filed by day is read for each)."""
+    first, last = datetime.fromtimestamp(start, timezone.utc).date(), datetime.fromtimestamp(end - 1, timezone.utc).date()
+    return [first + timedelta(days=i) for i in range((last - first).days + 1)]
+
+
 # ERDDAP --------------------------------------------------------------------------------------------------------------
 
 # Not measurements: QC results, coordinates, and what is computed from the clock alone. A BOTPT's predicted tide
@@ -126,52 +139,50 @@ def erddap_last_measured(dataset: str, variable: str, before: float, days: int =
     return datetime.strptime(lines[-1], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp() if lines else None
 
 
-def check_erddap(sensor: dict, day: date) -> dict:
-    """The day's 10-minute bins in which a measured variable has a value (a row of NaNs is not data), up to the
+def check_erddap(sensor: dict, start: float, end: float) -> dict:
+    """The window's 10-minute bins in which a measured variable has a value (a row of NaNs is not data), up to the
     dataset's newest row: ERDDAP can be a day or more behind the instruments (15 Nov 2026: every RS dataset ended at
-    11:30 UTC while Nereus had them reporting), so the part it has not reached is not a gap. A day without a measured
-    value is dated from the last one."""
+    11:30 UTC while Nereus had them reporting), so the part it has not reached is not a gap. A window without a
+    measured value is dated from the last one."""
     dataset = sensor["check"]["dataset"]
-    start = datetime(day.year, day.month, day.day, tzinfo=timezone.utc).timestamp()
     newest, measured = erddap_info(dataset)
     out = {"source": "OOI ERDDAP", "erddapNewest": iso(newest)}
     if not measured:
         return {**out, "state": "unchecked", "detail": "ERDDAP lists no measured variable for it"}
     bins = []
     if newest is not None and newest > start:
-        status, body = get(f"{ERDDAP}/tabledap/{dataset}.csv?time,{','.join(measured)}&time%3E={iso(start)}&time%3C{iso(start + 86400)}"
+        status, body = get(f"{ERDDAP}/tabledap/{dataset}.csv?time,{','.join(measured)}&time%3E={iso(start)}&time%3C{iso(end)}"
                            f"&orderByCount(%22time/{BIN}minutes%22)")
         for line in body.decode().splitlines()[2:] if status == 200 else []:
             cells = line.split(",")
             if len(cells) > 1 and any(c.strip() not in ("", "0", "NaN") for c in cells[1:]):
                 bins.append(datetime.strptime(cells[0].strip(), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp())
     if not bins:
-        before = min(start + 86400, newest or start + 86400)
+        before = min(end, newest or end)
         last = max((t for t in (erddap_last_measured(dataset, v, before) for v in measured) if t), default=None)
         return {**out, "state": "no_data", "coverage": 0.0, "lastData": iso(last),
-                **({"detail": "ERDDAP's rows that day hold no measured value"} if newest and newest > start else {})}
-    end = min(start + 86400, newest)
-    coverage, longest, last = spans_gaps([(t, t + BIN * 60) for t in bins], start, end)
+                **({"detail": "ERDDAP's rows in the 24 hours hold no measured value"} if newest and newest > start else {})}
+    to = min(end, newest)
+    coverage, longest, last = spans_gaps([(t, t + BIN * 60) for t in bins], start, to)
     return {**out, "state": grade(coverage, longest, max(sensor["gap"], BIN)), "coverage": round(coverage, 3),
-            "longestGapMin": round(longest), "lastData": iso(last), "checkedTo": iso(end)}
+            "longestGapMin": round(longest), "lastData": iso(last), "checkedTo": iso(to)}
 
 
-def combined(primary: dict, second: dict, day: date) -> dict:
-    """Nereus's state checked against ERDDAP's, two independent witnesses; either can be wrong. ERDDAP's data for
-    the day show the instrument recorded whatever Nereus's check said; ERDDAP with a gap, or with nothing for a day
-    it has already passed, makes a good Nereus day yellow; ERDDAP not having reached the day yet says nothing."""
+def combined(primary: dict, second: dict, end: float) -> dict:
+    """Nereus's state checked against ERDDAP's, two independent witnesses; either can be wrong. ERDDAP's data in
+    the window show the instrument recorded whatever Nereus's check said; ERDDAP with a gap, or with nothing for a
+    window it has already passed, makes a good Nereus window yellow; ERDDAP not having reached it yet says nothing."""
     if primary["state"] in ("unchecked", "failed"):
         return {**second, "nereusCheck": {k: v for k, v in primary.items() if k != "source"}}
-    end = iso(datetime(day.year, day.month, day.day, tzinfo=timezone.utc).timestamp() + 86400)
-    passed = bool(second.get("erddapNewest")) and second["erddapNewest"] >= end
+    passed = bool(second.get("erddapNewest")) and second["erddapNewest"] >= iso(end)
     out = {**primary, "erddap": {k: v for k, v in second.items() if k != "source"}, "agree": primary["state"] == second["state"]}
     if primary["state"] == "no_data" and second.get("coverage", 0) > 0:
         return {**out, "state": second["state"], "lastData": second.get("lastData"),
-                "detail": "Nereus's check was bad all day, but ERDDAP has the day's data"}
+                "detail": "Nereus's check was bad throughout, but ERDDAP has data in the 24 hours"}
     if primary["state"] == "ok" and second["state"] == "gaps":
         return {**out, "state": "gaps", "detail": f"Nereus's hours were good, but ERDDAP has a {second['longestGapMin']}-minute gap"}
     if primary["state"] == "ok" and second["state"] == "no_data" and passed:
-        return {**out, "state": "gaps", "detail": "Nereus's hours were good, but ERDDAP, past the day, has nothing for it"}
+        return {**out, "state": "gaps", "detail": "Nereus's hours were good, but ERDDAP, past the 24 hours, has nothing in them"}
     return {**out, **({"agree": True} if second["state"] == "no_data" and not passed else {})}
 
 
@@ -209,8 +220,8 @@ def dataselect(net: str, sta: str, cha: str, a: datetime, b: datetime) -> bytes 
     return body if status == 200 and body else None
 
 
-def station_channels(day: date) -> dict[str, set[str]]:
-    url = f"{FDSN}/station/1/query?net=OO&level=channel&format=text&starttime={day}&endtime={day + timedelta(days=1)}"
+def station_channels(start: float, end: float) -> dict[str, set[str]]:
+    url = f"{FDSN}/station/1/query?net=OO&level=channel&format=text&starttime={iso(start)[:19]}&endtime={iso(end)[:19]}"
     status, body = get(url)
     chans: dict[str, set[str]] = {}
     for line in body.decode().splitlines()[1:] if status == 200 else []:
@@ -220,20 +231,20 @@ def station_channels(day: date) -> dict[str, set[str]]:
     return chans
 
 
-def check_earthscope(sensor: dict, day: date, channels: dict[str, set[str]]) -> dict:
+def check_earthscope(sensor: dict, start: float, end: float, channels: dict[str, set[str]]) -> dict:
     c = sensor["check"]
     have = channels.get(c["station"], set())
     high = c.get("channel") or next((x for x in ("HHZ", "EHZ") if x in have), None)
     if "MHZ" not in have or high not in have:
-        return {"state": "unchecked", "detail": f"EarthScope lists no 8 Hz and 200 Hz channels for OO.{c['station']} on {day}"}
-    start = datetime(day.year, day.month, day.day, tzinfo=timezone.utc)
-    raw = dataselect(c["network"], c["station"], "MHZ", start, start + timedelta(days=1))
+        return {"state": "unchecked", "detail": f"EarthScope lists no 8 Hz and 200 Hz channels for OO.{c['station']}"}
+    t0 = datetime.fromtimestamp(start, timezone.utc)
+    raw = dataselect(c["network"], c["station"], "MHZ", t0, datetime.fromtimestamp(end, timezone.utc))
     spans = mseed_spans(raw or b"")
-    coverage, longest, last = spans_gaps(spans, start.timestamp(), start.timestamp() + 86400)
+    coverage, longest, last = spans_gaps(spans, start, end)
     # The 200 Hz channel, a minute at the half hour of each hour; an hour counts only where the 8 Hz data are there.
     probes = []
-    for h in range(24):
-        t = start + timedelta(hours=h, minutes=30)
+    for h in range(int((end - start) // 3600)):
+        t = t0 + timedelta(hours=h, minutes=30)
         low_there = any(a <= t.timestamp() <= b for a, b in spans)
         if low_there:
             probes.append((h, dataselect(c["network"], c["station"], high, t, t + timedelta(minutes=1)) is not None))
@@ -264,19 +275,19 @@ def raw_files(path: str, day: date) -> list[float] | None:
                    for t in RAW_FILE.findall(body.decode("utf-8", "replace"))})
 
 
-def check_rawdata(sensor: dict, day: date) -> dict:
-    start = datetime(day.year, day.month, day.day, tzinfo=timezone.utc).timestamp()
-    files = raw_files(sensor["check"]["path"], day) or []
+def check_rawdata(sensor: dict, start: float, end: float) -> dict:
+    days = dates_in(start, end)
+    files = [t for d in days for t in (raw_files(sensor["check"]["path"], d) or []) if start - RAW_MINUTES * 60 < t < end]
     out = {"source": "OOI raw data server"}
     if not files:
         last = None
-        for back in range(1, 31):   # the last file in the month before
-            earlier = raw_files(sensor["check"]["path"], day - timedelta(days=back))
+        for back in range(0, 31):   # the last file before the window, in the month before
+            earlier = [t for t in (raw_files(sensor["check"]["path"], days[0] - timedelta(days=back)) or []) if t < start]
             if earlier:
                 last = earlier[-1] + RAW_MINUTES * 60
                 break
         return {**out, "state": "no_data", "coverage": 0.0, "lastData": iso(last)}
-    coverage, longest, last = spans_gaps([(t, t + RAW_MINUTES * 60) for t in files], start, start + 86400)
+    coverage, longest, last = spans_gaps([(t, t + RAW_MINUTES * 60) for t in files], start, end)
     return {**out, "state": grade(coverage, longest, sensor["gap"]), "coverage": round(coverage, 3),
             "longestGapMin": round(longest), "lastData": iso(last)}
 
@@ -309,22 +320,23 @@ def piweb_day(folder: str, day: date) -> tuple[list[float], str | None]:
     return spans, url
 
 
-def check_piweb(sensor: dict, day: date) -> dict:
-    """Each gauge's day, graded; the instrument takes the worse gauge. A day without a file is dated from the last."""
-    start = datetime(day.year, day.month, day.day, tzinfo=timezone.utc).timestamp()
+def check_piweb(sensor: dict, start: float, end: float) -> dict:
+    """Each gauge's window, graded; the instrument takes the worse gauge. A window without a sample is dated from the
+    last."""
     rank = {"ok": 0, "gaps": 1, "no_data": 2}
+    days = dates_in(start, end)
     worst, gauges = None, []
     for folder in sensor["check"]["folders"]:
-        spans, url = piweb_day(folder, day)
+        spans = [sp for d in days for sp in piweb_day(folder, d)[0] if sp[1] > start and sp[0] < end]
         name = folder.rstrip("/").rsplit("_", 1)[-1]
         if spans:
-            coverage, longest, last = spans_gaps(spans, start, start + 86400)
+            coverage, longest, last = spans_gaps(spans, start, end)
             g = {"gauge": name, "state": grade(coverage, longest, sensor["gap"]), "coverage": round(coverage, 3),
                  "longestGapMin": round(longest), "lastData": iso(last)}
         else:
             last = None
-            for back in range(1, 15):
-                earlier, _ = piweb_day(folder, day - timedelta(days=back))
+            for back in range(0, 15):
+                earlier = [sp for sp in piweb_day(folder, days[0] - timedelta(days=back))[0] if sp[1] <= start]
                 if earlier:
                     last = earlier[-1][1]
                     break
@@ -379,20 +391,22 @@ def nereus_history(instrument_id: int, start: datetime, days: int, kind: str = "
     return result["data"]["statistics"][kind] or []
 
 
-def check_nereus(sensor: dict, day: date, nereus: dict[str, dict]) -> dict:
-    """The day's hours by Nereus's data check: no GOOD hour is no data; a run of BAD hours longer than the sensor's
-    normal gap is gaps. A day without data looks back a month for its last GOOD hour."""
+def check_nereus(sensor: dict, start: float, end: float, nereus: dict[str, dict]) -> dict:
+    """The window's hours by Nereus's data check: no GOOD hour is no data; a run of BAD hours longer than the sensor's
+    normal gap is gaps. A window without data looks back a month for its last GOOD hour. An hour counts when it begins
+    in the window."""
     row = nereus.get(sensor["check"]["refdes"])
     if not row:
         return {"state": "unchecked", "detail": "not in Nereus's inventory"}
-    start, kind = datetime(day.year, day.month, day.day, tzinfo=timezone.utc), sensor["check"].get("nereus", "data")
-    hours = [h for h in nereus_history(row["id"], start, 1, kind) if h["date"][:10] == str(day)]
+    kind = sensor["check"].get("nereus", "data")
+    t0 = datetime.fromtimestamp(start - start % 3600, timezone.utc)
+    hours = [h for h in nereus_history(row["id"], t0, 2, kind) if t0.timestamp() <= datetime.fromisoformat(h["date"]).timestamp() < end]
     good = [h for h in hours if h["code"] in ("GOOD", "WARN")]
     out = {"source": f"Nereus ({kind} check)", "hoursGood": len(good), "hoursBad": sum(h["code"] == "BAD" for h in hours)}
     if not good and not out["hoursBad"]:
-        return {**out, "state": "unchecked", "detail": "Nereus did not monitor its data that day"}
+        return {**out, "state": "unchecked", "detail": "Nereus did not monitor its data in the 24 hours"}
     if not good:
-        back = nereus_history(row["id"], start - timedelta(days=30), 30, kind)
+        back = nereus_history(row["id"], t0 - timedelta(days=30), 30, kind)
         last = max((h["date"] for h in back if h["code"] in ("GOOD", "WARN")), default=None)
         return {**out, "state": "no_data", "lastData": last and iso(datetime.fromisoformat(last).timestamp() + 3600),
                 **({} if last else {"detail": "no good hour in the 30 days before"})}
@@ -423,22 +437,22 @@ def axial_200hz() -> str | None:
         return None
 
 
-def check_one(sensor: dict, day: date, channels: dict, nereus: dict | None) -> dict:
+def check_one(sensor: dict, start: float, end: float, channels: dict, nereus: dict | None) -> dict:
     method = sensor["check"]["method"]
     try:
         if method == "erddap":
-            result = check_erddap(sensor, day)
+            result = check_erddap(sensor, start, end)
         elif method == "piweb":
-            result = check_piweb(sensor, day)
+            result = check_piweb(sensor, start, end)
         elif method == "rawdata":
-            result = check_rawdata(sensor, day)
+            result = check_rawdata(sensor, start, end)
         elif method == "earthscope":
-            result = check_earthscope(sensor, day, channels) if channels else {"state": "failed", "detail": "EarthScope station service unreachable"}
+            result = check_earthscope(sensor, start, end, channels) if channels else {"state": "failed", "detail": "EarthScope station service unreachable"}
         elif method == "nereus":
-            result = check_nereus(sensor, day, nereus) if nereus is not None else {"state": "failed", "detail": "Nereus unreachable"}
+            result = check_nereus(sensor, start, end, nereus) if nereus is not None else {"state": "failed", "detail": "Nereus unreachable"}
             if sensor["check"].get("dataset"):
                 try:
-                    result = combined(result, check_erddap(sensor, day), day)
+                    result = combined(result, check_erddap(sensor, start, end), end)
                 except Exception as e:   # noqa: BLE001  the second check failing leaves the first
                     result = {**result, "erddap": {"state": "failed", "detail": f"{type(e).__name__}"}}
         else:
@@ -452,16 +466,20 @@ def check_one(sensor: dict, day: date, channels: dict, nereus: dict | None) -> d
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--day", default=str((datetime.now(timezone.utc) - timedelta(days=1)).date()))
+    ap.add_argument("--day", help="grade one UTC day (YYYY-MM-DD) instead of the 24 hours to now")
     ap.add_argument("--watchlist", default=str(Path(__file__).with_name("watchlist.json")))
     ap.add_argument("--previous", help="the last report, for how long each state has held")
     ap.add_argument("--out", default="report.json")
     ap.add_argument("--jobs", type=int, default=8)
     args = ap.parse_args()
-    day = date.fromisoformat(args.day)
+    if args.day:
+        start, end = day_window(date.fromisoformat(args.day))
+    else:   # the 24 hours to now, on the minute
+        end = float(int(datetime.now(timezone.utc).timestamp()) // 60 * 60)
+        start = end - 86400
     sensors = json.loads(Path(args.watchlist).read_text())["sensors"]
     try:
-        channels = station_channels(day)
+        channels = station_channels(start, end)
     except Exception:
         channels = {}
     try:
@@ -469,7 +487,7 @@ def main() -> None:
     except Exception:
         nereus = None
     with ThreadPoolExecutor(args.jobs) as pool:
-        rows = list(pool.map(lambda s: check_one(s, day, channels, nereus), sensors))
+        rows = list(pool.map(lambda s: check_one(s, start, end, channels, nereus), sensors))
     shared_diversion(rows)
     previous = {}
     if args.previous and Path(args.previous).exists():
@@ -480,14 +498,16 @@ def main() -> None:
         if r["state"] == "no_data" and r.get("lastData"):
             r["since"] = r["lastData"][:10]
         else:
-            r["since"] = before["since"] if before and before.get("state") == r["state"] and before.get("since") else str(day)
+            r["since"] = before["since"] if before and before.get("state") == r["state"] and before.get("since") else iso(start)[:10]
     counts: dict[str, int] = {}
     for r in rows:
         counts[r["state"]] = counts.get(r["state"], 0) + 1
-    report = {"day": str(day), "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    # "day" names the report (its dated copy): the last UTC day the window reaches.
+    report = {"from": iso(start), "to": iso(end), "day": iso(end - 1)[:10],
+              "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
               "axial200Hz": axial_200hz(), "counts": counts, "sensors": rows}
     Path(args.out).write_text(json.dumps(report, indent=1) + "\n")
-    print(json.dumps({k: report[k] for k in ("day", "axial200Hz", "counts")}))
+    print(json.dumps({k: report[k] for k in ("from", "to", "axial200Hz", "counts")}))
 
 
 if __name__ == "__main__":
