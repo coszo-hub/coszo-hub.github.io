@@ -281,6 +281,62 @@ def check_rawdata(sensor: dict, day: date) -> dict:
             "longestGapMin": round(longest), "lastData": iso(last)}
 
 
+# PI data portal ------------------------------------------------------------------------------------------------------
+
+LOG_TS = re.compile(rb"<log-ts:(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d)")
+
+
+def piweb_day(folder: str, day: date) -> tuple[list[float], str | None]:
+    """A gauge's daily file (one line a second, each stamped <log-ts:...>) as one-minute spans, and its URL."""
+    folder = folder.rstrip("/") + "/"
+    status, body = get(f"{folder}{day:%Y/%m}/")
+    name = next((n for n in re.findall(r'href="([^"?/]+)"', body.decode("utf-8", "replace")) if f"_{day:%Y%m%d}T" in n), None) if status == 200 else None
+    if not name:
+        return [], None
+    url = f"{folder}{day:%Y/%m}/{name}"
+    status, raw = get(url, timeout=300)
+    if status != 200:
+        return [], url
+    minutes = sorted({m.decode()[:16] for m in LOG_TS.findall(raw)})
+    spans = [(t, t + 60) for t in (datetime.strptime(m, "%Y-%m-%dT%H:%M").replace(tzinfo=timezone.utc).timestamp() for m in minutes)]
+    # Lines from before the logger stamped them (it began during 13 Nov 2026) are samples too, a second each: they are
+    # placed before the first stamped line, or, in a file with none, from the end of the day back.
+    lines = raw.splitlines()
+    unstamped = sum(1 for line in lines if line.startswith(b"*") and b"<log-ts:" not in line)
+    if unstamped:
+        end = spans[0][0] if spans else datetime(day.year, day.month, day.day, tzinfo=timezone.utc).timestamp() + 86400
+        spans.insert(0, (end - unstamped, end))
+    return spans, url
+
+
+def check_piweb(sensor: dict, day: date) -> dict:
+    """Each gauge's day, graded; the instrument takes the worse gauge. A day without a file is dated from the last."""
+    start = datetime(day.year, day.month, day.day, tzinfo=timezone.utc).timestamp()
+    rank = {"ok": 0, "gaps": 1, "no_data": 2}
+    worst, gauges = None, []
+    for folder in sensor["check"]["folders"]:
+        spans, url = piweb_day(folder, day)
+        name = folder.rstrip("/").rsplit("_", 1)[-1]
+        if spans:
+            coverage, longest, last = spans_gaps(spans, start, start + 86400)
+            g = {"gauge": name, "state": grade(coverage, longest, sensor["gap"]), "coverage": round(coverage, 3),
+                 "longestGapMin": round(longest), "lastData": iso(last)}
+        else:
+            last = None
+            for back in range(1, 15):
+                earlier, _ = piweb_day(folder, day - timedelta(days=back))
+                if earlier:
+                    last = earlier[-1][1]
+                    break
+            g = {"gauge": name, "state": "no_data", "coverage": 0.0, "lastData": iso(last)}
+        gauges.append(g)
+        if worst is None or rank[g["state"]] > rank[worst["state"]]:
+            worst = g
+    out = {k: v for k, v in worst.items() if k != "gauge"}
+    detail = None if all(g["state"] == worst["state"] for g in gauges) else f"{worst['gauge']}: {worst['state'].replace('_', ' ')}"
+    return {**out, "source": "PI data portal", "gauges": gauges, **({"detail": detail} if detail else {})}
+
+
 def shared_diversion(rows: list[dict]) -> None:
     """A broadband hydrophone without its files on a day the seismometers' 200 Hz data are diverted is diverted too:
     the Navy holds the cabled array's high-rate acoustic and seismic data together (14 Nov 2026: every broadband
@@ -372,6 +428,8 @@ def check_one(sensor: dict, day: date, channels: dict, nereus: dict | None) -> d
     try:
         if method == "erddap":
             result = check_erddap(sensor, day)
+        elif method == "piweb":
+            result = check_piweb(sensor, day)
         elif method == "rawdata":
             result = check_rawdata(sensor, day)
         elif method == "earthscope":

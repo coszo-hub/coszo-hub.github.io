@@ -1452,17 +1452,6 @@
    }
   },
   {
-   "id": "SCPRAAA301",
-   "name": "Axial Central Caldera Self-Calibrating Pressure Recorder",
-   "refdes": "RS03CCAL-MJ03F-09-SCPRAA301",
-   "site": "axial-seamount-central-caldera",
-   "type": "self_calibrating_pressure_recorder",
-   "gap": 120,
-   "check": {
-    "method": "none"
-   }
-  },
-  {
    "id": "RS03INT1-MJ03C-07-PPSDNA301",
    "name": "International District Particle and eDNA Sampler",
    "refdes": "RS03INT1-MJ03C-07-PPSDNA301",
@@ -1515,6 +1504,21 @@
    "gap": 720,
    "check": {
     "method": "none"
+   }
+  },
+  {
+   "id": "SCPRAAA301",
+   "name": "Axial Central Caldera Self-Calibrating Pressure Recorder",
+   "refdes": "RS03CCAL-MJ03F-09-SCPRAA301",
+   "site": "axial-seamount-central-caldera",
+   "type": "self_calibrating_pressure_recorder",
+   "gap": 120,
+   "check": {
+    "method": "piweb",
+    "folders": [
+     "http://piweb.ooirsn.uw.edu/scpr/data/SCPRAA301_PARO1/",
+     "http://piweb.ooirsn.uw.edu/scpr/data/SCPRAA301_PARO2/"
+    ]
    }
   },
   {
