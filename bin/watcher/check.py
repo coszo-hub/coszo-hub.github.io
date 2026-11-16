@@ -4,7 +4,8 @@ States, one a sensor:
   ok         recording, no gap longer than its list's normal gap ("gap", minutes)
   gaps       recording, with a gap longer than that (yellow)
   diverted   a seismometer or low-frequency hydrophone whose 8 Hz data reached EarthScope while its 200 Hz data did
-             not: the Navy's diversion of the high-rate data (blue)
+             not: the Navy's diversion of the high-rate data (blue); and a broadband hydrophone without its files on a
+             day the seismometers' 200 Hz data are diverted
   no_data    nothing for the whole day (red)
   unchecked  nothing public says (QA/QC plots only, a station EarthScope does not list, Nereus not monitoring)
   failed     the check could not be made (a service down); not a statement about the sensor
@@ -100,12 +101,19 @@ def iso(t: float | None) -> str | None:
 NOT_MEASURED = re.compile(r"_qc_|^(?:time|latitude|longitude|z|depth|station|deployment|id|predtide|botsflu_predtide)$", re.I)
 
 
+# A sensor's dataset carries its profiler's or package's CTD readings beside its own (an oxygen optode's has the
+# pressure, temperature and salinity; the depth reading stopped on the Oregon Offshore pod in October 2025, its oxygen in
+# August 2026): those say nothing of the sensor, so they count only in a CTD's own dataset, which has nothing else.
+CO_LOCATED = re.compile(r"^(?:depth_reading|sea_water_(?:pressure|temperature|practical_salinity|density|electrical_conductivity))(?:_|$)", re.I)
+
+
 def erddap_info(dataset: str) -> tuple[float | None, list[str]]:
-    """The time of a dataset's newest row (time_coverage_end) and its measured variables."""
+    """The time of a dataset's newest row (time_coverage_end) and the sensor's own measured variables."""
     _, body = get(f"{ERDDAP}/info/{dataset}/index.json")
     rows = json.loads(body)["table"]["rows"]
     end = next((r[4] for r in rows if r[0] == "attribute" and r[2] == "time_coverage_end"), None)
     measured = [r[1] for r in rows if r[0] == "variable" and not NOT_MEASURED.search(r[1])]
+    measured = [v for v in measured if not CO_LOCATED.search(v)] or measured
     newest = datetime.strptime(end, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp() if end else None
     return newest, measured
 
@@ -138,7 +146,8 @@ def check_erddap(sensor: dict, day: date) -> dict:
             if len(cells) > 1 and any(c.strip() not in ("", "0", "NaN") for c in cells[1:]):
                 bins.append(datetime.strptime(cells[0].strip(), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp())
     if not bins:
-        last = erddap_last_measured(dataset, measured[0], min(start + 86400, newest or start + 86400))
+        before = min(start + 86400, newest or start + 86400)
+        last = max((t for t in (erddap_last_measured(dataset, v, before) for v in measured) if t), default=None)
         return {**out, "state": "no_data", "coverage": 0.0, "lastData": iso(last),
                 **({"detail": "ERDDAP's rows that day hold no measured value"} if newest and newest > start else {})}
     end = min(start + 86400, newest)
@@ -239,6 +248,51 @@ def check_earthscope(sensor: dict, day: date, channels: dict[str, set[str]]) -> 
     return {**out, "state": grade(coverage, longest, sensor["gap"])}
 
 
+# OOI raw data server ------------------------------------------------------------------------------------------------
+
+RAWDATA = "https://rawdata.oceanobservatories.org/files"
+RAW_FILE = re.compile(r"(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d)(?:\.\d+)?Z\.mseed")
+RAW_MINUTES = 5   # a broadband hydrophone's file length
+
+
+def raw_files(path: str, day: date) -> list[float] | None:
+    """The start times of a day's files (None: the server has no folder for the day)."""
+    status, body = get(f"{RAWDATA}/{path}/{day:%Y/%m/%d}/")
+    if status != 200:
+        return None
+    return sorted({datetime.strptime(t, "%Y-%m-%dT%H:%M:%S").replace(tzinfo=timezone.utc).timestamp()
+                   for t in RAW_FILE.findall(body.decode("utf-8", "replace"))})
+
+
+def check_rawdata(sensor: dict, day: date) -> dict:
+    start = datetime(day.year, day.month, day.day, tzinfo=timezone.utc).timestamp()
+    files = raw_files(sensor["check"]["path"], day) or []
+    out = {"source": "OOI raw data server"}
+    if not files:
+        last = None
+        for back in range(1, 31):   # the last file in the month before
+            earlier = raw_files(sensor["check"]["path"], day - timedelta(days=back))
+            if earlier:
+                last = earlier[-1] + RAW_MINUTES * 60
+                break
+        return {**out, "state": "no_data", "coverage": 0.0, "lastData": iso(last)}
+    coverage, longest, last = spans_gaps([(t, t + RAW_MINUTES * 60) for t in files], start, start + 86400)
+    return {**out, "state": grade(coverage, longest, sensor["gap"]), "coverage": round(coverage, 3),
+            "longestGapMin": round(longest), "lastData": iso(last)}
+
+
+def shared_diversion(rows: list[dict]) -> None:
+    """A broadband hydrophone without its files on a day the seismometers' 200 Hz data are diverted is diverted too:
+    the Navy holds the cabled array's high-rate acoustic and seismic data together (14 Nov 2026: every broadband
+    hydrophone's files and every station's 200 Hz data stopped between 07:20 and 07:40 UTC)."""
+    if not any(r["method"] == "earthscope" and r["state"] == "diverted" for r in rows):
+        return
+    for r in rows:
+        if r["method"] == "rawdata" and r["state"] in ("no_data", "gaps"):
+            last = f"no files since {r['lastData'][:16].replace('T', ' ')} UTC" if r.get("lastData") else "no files"
+            r.update(state="diverted", detail=f"{last}, as the seismometers' 200 Hz data stopped: the Navy's diversion")
+
+
 # Nereus --------------------------------------------------------------------------------------------------------------
 
 # Nereus answers only the queries its own pages make (another is "query is not allowed"): its Helm page's, kept here.
@@ -318,6 +372,8 @@ def check_one(sensor: dict, day: date, channels: dict, nereus: dict | None) -> d
     try:
         if method == "erddap":
             result = check_erddap(sensor, day)
+        elif method == "rawdata":
+            result = check_rawdata(sensor, day)
         elif method == "earthscope":
             result = check_earthscope(sensor, day, channels) if channels else {"state": "failed", "detail": "EarthScope station service unreachable"}
         elif method == "nereus":
@@ -356,6 +412,7 @@ def main() -> None:
         nereus = None
     with ThreadPoolExecutor(args.jobs) as pool:
         rows = list(pool.map(lambda s: check_one(s, day, channels, nereus), sensors))
+    shared_diversion(rows)
     previous = {}
     if args.previous and Path(args.previous).exists():
         previous = {r["id"]: r for r in json.loads(Path(args.previous).read_text()).get("sensors", [])}

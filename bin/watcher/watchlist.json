@@ -450,19 +450,6 @@
    }
   },
   {
-   "id": "RS03AXBS-LJ03A-09-HYDBBA302",
-   "name": "Axial Seamount Base Seafloor Broadband Hydrophone",
-   "refdes": "RS03AXBS-LJ03A-09-HYDBBA302",
-   "site": "axial-seamount-base",
-   "type": "hydrophone",
-   "gap": 30,
-   "check": {
-    "method": "nereus",
-    "nereus": "data",
-    "refdes": "RS03AXBS-LJ03A-09-HYDBBA302"
-   }
-  },
-  {
    "id": "RS03AXBS-LJ03A-10-ADCPTE303",
    "name": "Axial Seamount Base Seafloor ADCP",
    "refdes": "RS03AXBS-LJ03A-10-ADCPTE303",
@@ -582,19 +569,6 @@
     "method": "nereus",
     "nereus": "file",
     "refdes": "RS03AXPS-PC03A-07-CAMDSC302"
-   }
-  },
-  {
-   "id": "RS03AXPS-PC03A-08-HYDBBA303",
-   "name": "Axial Seamount Shallow Profiler Broadband Hydrophone",
-   "refdes": "RS03AXPS-PC03A-08-HYDBBA303",
-   "site": "axial-seamount-base",
-   "type": "hydrophone",
-   "gap": 30,
-   "check": {
-    "method": "nereus",
-    "nereus": "data",
-    "refdes": "RS03AXPS-PC03A-08-HYDBBA303"
    }
   },
   {
@@ -1028,19 +1002,6 @@
    }
   },
   {
-   "id": "CE04OSBP-LJ01C-11-HYDBBA105",
-   "name": "Oregon Offshore Benthic Package Broadband Hydrophone",
-   "refdes": "CE04OSBP-LJ01C-11-HYDBBA105",
-   "site": "oregon-offshore-cabled-benthic-experiment-package",
-   "type": "hydrophone",
-   "gap": 30,
-   "check": {
-    "method": "nereus",
-    "nereus": "data",
-    "refdes": "CE04OSBP-LJ01C-11-HYDBBA105"
-   }
-  },
-  {
    "id": "CE04OSBP-LV01C-06-CAMDSB106",
    "name": "Oregon Offshore Benthic Package Digital Still Camera",
    "refdes": "CE04OSBP-LV01C-06-CAMDSB106",
@@ -1219,19 +1180,6 @@
    }
   },
   {
-   "id": "CE02SHBP-LJ01D-11-HYDBBA106",
-   "name": "Oregon Shelf Benthic Package Broadband Hydrophone",
-   "refdes": "CE02SHBP-LJ01D-11-HYDBBA106",
-   "site": "oregon-shelf",
-   "type": "hydrophone",
-   "gap": 30,
-   "check": {
-    "method": "nereus",
-    "nereus": "data",
-    "refdes": "CE02SHBP-LJ01D-11-HYDBBA106"
-   }
-  },
-  {
    "id": "CE02SHBP-MJ01C-07-ZPLSCB101",
    "name": "Oregon Shelf Benthic Package Bio-acoustic Sonar",
    "refdes": "CE02SHBP-MJ01C-07-ZPLSCB101",
@@ -1295,19 +1243,6 @@
     "method": "nereus",
     "nereus": "file",
     "refdes": "RS01SBPS-PC01A-07-CAMDSC102"
-   }
-  },
-  {
-   "id": "RS01SBPS-PC01A-08-HYDBBA103",
-   "name": "Oregon Slope Base Shallow Profiler Broadband Hydrophone",
-   "refdes": "RS01SBPS-PC01A-08-HYDBBA103",
-   "site": "oregon-slope-base-seafloor",
-   "type": "hydrophone",
-   "gap": 30,
-   "check": {
-    "method": "nereus",
-    "nereus": "data",
-    "refdes": "RS01SBPS-PC01A-08-HYDBBA103"
    }
   },
   {
@@ -1378,19 +1313,6 @@
     "nereus": "data",
     "refdes": "RS01SLBS-LJ01A-05-HPIESA101",
     "dataset": "ooi-rs01slbs-lj01a-05-hpiesa101"
-   }
-  },
-  {
-   "id": "RS01SLBS-LJ01A-09-HYDBBA102",
-   "name": "Oregon Slope Base Seafloor Broadband Hydrophone",
-   "refdes": "RS01SLBS-LJ01A-09-HYDBBA102",
-   "site": "oregon-slope-base-seafloor",
-   "type": "hydrophone",
-   "gap": 30,
-   "check": {
-    "method": "nereus",
-    "nereus": "data",
-    "refdes": "RS01SLBS-LJ01A-09-HYDBBA102"
    }
   },
   {
@@ -1593,6 +1515,78 @@
    "gap": 720,
    "check": {
     "method": "none"
+   }
+  },
+  {
+   "id": "RS03AXBS-LJ03A-09-HYDBBA302",
+   "name": "Axial Seamount Base Seafloor Broadband Hydrophone",
+   "refdes": "RS03AXBS-LJ03A-09-HYDBBA302",
+   "site": "axial-seamount-base",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "rawdata",
+    "path": "RS03AXBS/LJ03A/HYDBBA302"
+   }
+  },
+  {
+   "id": "RS03AXPS-PC03A-08-HYDBBA303",
+   "name": "Axial Seamount Shallow Profiler Broadband Hydrophone",
+   "refdes": "RS03AXPS-PC03A-08-HYDBBA303",
+   "site": "axial-seamount-base",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "rawdata",
+    "path": "RS03AXPS/PC03A/HYDBBA303"
+   }
+  },
+  {
+   "id": "CE04OSBP-LJ01C-11-HYDBBA105",
+   "name": "Oregon Offshore Benthic Package Broadband Hydrophone",
+   "refdes": "CE04OSBP-LJ01C-11-HYDBBA105",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "rawdata",
+    "path": "CE04OSBP/LJ01C/HYDBBA105"
+   }
+  },
+  {
+   "id": "CE02SHBP-LJ01D-11-HYDBBA106",
+   "name": "Oregon Shelf Benthic Package Broadband Hydrophone",
+   "refdes": "CE02SHBP-LJ01D-11-HYDBBA106",
+   "site": "oregon-shelf",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "rawdata",
+    "path": "CE02SHBP/LJ01D/HYDBBA106"
+   }
+  },
+  {
+   "id": "RS01SBPS-PC01A-08-HYDBBA103",
+   "name": "Oregon Slope Base Shallow Profiler Broadband Hydrophone",
+   "refdes": "RS01SBPS-PC01A-08-HYDBBA103",
+   "site": "oregon-slope-base-seafloor",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "rawdata",
+    "path": "RS01SBPS/PC01A/HYDBBA103"
+   }
+  },
+  {
+   "id": "RS01SLBS-LJ01A-09-HYDBBA102",
+   "name": "Oregon Slope Base Seafloor Broadband Hydrophone",
+   "refdes": "RS01SLBS-LJ01A-09-HYDBBA102",
+   "site": "oregon-slope-base-seafloor",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "rawdata",
+    "path": "RS01SLBS/LJ01A/HYDBBA102"
    }
   }
  ]
