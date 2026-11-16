@@ -10,7 +10,8 @@ States, one a sensor:
   failed     the check could not be made (a service down); not a statement about the sensor
 How: Nereus's hourly data check (GOOD, BAD) over the day; EarthScope: the day's 8 Hz vertical (MHZ) records read
 from their MiniSEED headers, and the 200 Hz channel (HHZ, EHZ, or the hydrophone's HDH) probed a minute an hour;
-ERDDAP's 10-minute bins with data (orderByCount), up to its newest data, for instruments Nereus does not monitor. The Axial Seamount catalog page's line "Status of 200 Hz
+ERDDAP's 10-minute bins in which a measured variable has a value (orderByCount; a row of NaNs or of a predicted tide
+is not data), up to its newest row: alone where Nereus does not monitor the instrument, else as a second check. The Axial Seamount catalog page's line "Status of 200 Hz
 waveform data" is kept with the report. A state carries "since", the first day of the run of days it has held, from
 the previous report.
 Usage: python check.py [--day YYYY-MM-DD (default yesterday UTC)] [--watchlist PATH] [--previous latest.json]
@@ -92,30 +93,55 @@ def iso(t: float | None) -> str | None:
 
 # ERDDAP --------------------------------------------------------------------------------------------------------------
 
-def erddap_end(dataset: str) -> float | None:
-    """The time of a dataset's newest data (its time_coverage_end)."""
+# Not measurements: QC results, coordinates, and what is computed from the clock alone. A BOTPT's predicted tide
+# (predtide, botsflu_predtide) fills a row every minute whether or not the instrument sends anything: the Central
+# Caldera BOTPT's rows on 15 Nov 2026 held only that, every pressure and tilt NaN since 28 Oct, and counting rows called
+# it recording.
+NOT_MEASURED = re.compile(r"_qc_|^(?:time|latitude|longitude|z|depth|station|deployment|id|predtide|botsflu_predtide)$", re.I)
+
+
+def erddap_info(dataset: str) -> tuple[float | None, list[str]]:
+    """The time of a dataset's newest row (time_coverage_end) and its measured variables."""
     _, body = get(f"{ERDDAP}/info/{dataset}/index.json")
-    for row in json.loads(body)["table"]["rows"]:
-        if row[0] == "attribute" and row[2] == "time_coverage_end":
-            return datetime.strptime(row[4], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp()
-    return None
+    rows = json.loads(body)["table"]["rows"]
+    end = next((r[4] for r in rows if r[0] == "attribute" and r[2] == "time_coverage_end"), None)
+    measured = [r[1] for r in rows if r[0] == "variable" and not NOT_MEASURED.search(r[1])]
+    newest = datetime.strptime(end, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp() if end else None
+    return newest, measured
+
+
+def erddap_last_measured(dataset: str, variable: str, before: float, days: int = 400) -> float | None:
+    """The time of the newest value of a measured variable in the days before `before`."""
+    status, body = get(f"{ERDDAP}/tabledap/{dataset}.csv?time&{variable}!=NaN&time%3E={iso(before - days * 86400)}"
+                       f"&time%3C{iso(before)}&orderByMax(%22time%22)")
+    lines = [x.strip() for x in body.decode().splitlines()[2:] if x.strip()] if status == 200 else []
+    return datetime.strptime(lines[-1], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp() if lines else None
 
 
 def check_erddap(sensor: dict, day: date) -> dict:
-    """The day's 10-minute bins with data, up to the dataset's newest data: ERDDAP can be a day or more behind the
-    instruments (15 Nov 2026: every RS dataset ended at 11:30 UTC while Nereus had them reporting), so the part it
-    has not reached is not a gap."""
+    """The day's 10-minute bins in which a measured variable has a value (a row of NaNs is not data), up to the
+    dataset's newest row: ERDDAP can be a day or more behind the instruments (15 Nov 2026: every RS dataset ended at
+    11:30 UTC while Nereus had them reporting), so the part it has not reached is not a gap. A day without a measured
+    value is dated from the last one."""
     dataset = sensor["check"]["dataset"]
     start = datetime(day.year, day.month, day.day, tzinfo=timezone.utc).timestamp()
-    newest = erddap_end(dataset)
+    newest, measured = erddap_info(dataset)
     out = {"source": "OOI ERDDAP", "erddapNewest": iso(newest)}
-    if newest is None or newest <= start:
-        return {**out, "state": "no_data", "coverage": 0.0, "lastData": iso(newest)}
+    if not measured:
+        return {**out, "state": "unchecked", "detail": "ERDDAP lists no measured variable for it"}
+    bins = []
+    if newest is not None and newest > start:
+        status, body = get(f"{ERDDAP}/tabledap/{dataset}.csv?time,{','.join(measured)}&time%3E={iso(start)}&time%3C{iso(start + 86400)}"
+                           f"&orderByCount(%22time/{BIN}minutes%22)")
+        for line in body.decode().splitlines()[2:] if status == 200 else []:
+            cells = line.split(",")
+            if len(cells) > 1 and any(c.strip() not in ("", "0", "NaN") for c in cells[1:]):
+                bins.append(datetime.strptime(cells[0].strip(), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp())
+    if not bins:
+        last = erddap_last_measured(dataset, measured[0], min(start + 86400, newest or start + 86400))
+        return {**out, "state": "no_data", "coverage": 0.0, "lastData": iso(last),
+                **({"detail": "ERDDAP's rows that day hold no measured value"} if newest and newest > start else {})}
     end = min(start + 86400, newest)
-    status, body = get(f"{ERDDAP}/tabledap/{dataset}.csv?time&time%3E={iso(start)}&time%3C{iso(start + 86400)}"
-                       f"&orderByCount(%22time/{BIN}minutes%22)")
-    bins = [] if status == 404 else [datetime.strptime(x.strip(), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp()
-                                     for x in body.decode().splitlines()[2:] if x.strip()]
     coverage, longest, last = spans_gaps([(t, t + BIN * 60) for t in bins], start, end)
     return {**out, "state": grade(coverage, longest, max(sensor["gap"], BIN)), "coverage": round(coverage, 3),
             "longestGapMin": round(longest), "lastData": iso(last), "checkedTo": iso(end)}
