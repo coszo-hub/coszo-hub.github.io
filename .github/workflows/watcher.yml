@@ -1,0 +1,63 @@
+name: Watcher
+
+# The Cascadia Offshore Sensor Atlas's Watcher: once each UTC day, grades how every watched sensor recorded the day
+# before (Nereus's hourly checks, OOI ERDDAP, EarthScope's 8 Hz and 200 Hz seismic data) into
+# atlas/atlas/watch/latest.json, with a dated copy in atlas/atlas/watch/days/. The map's owl button shows it, its
+# "Operating" count and Ask Atlas read it. bin/watcher/ is copied from RCA-Atlas src/atlas_watch/ (check.py,
+# watchlist.json and the two Nereus query documents); edit them there.
+
+on:
+  workflow_dispatch:
+    inputs:
+      day:
+        description: "UTC day to grade (YYYY-MM-DD); empty for yesterday"
+        required: false
+  schedule:
+    - cron: "20 1 * * *"   # 01:20 UTC, once Nereus's hours for the day before are in
+
+permissions:
+  contents: write
+
+concurrency:
+  group: watcher
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Grade the day
+        env:
+          DAY: ${{ github.event.inputs.day }}
+        run: |
+          python3 bin/watcher/check.py --watchlist bin/watcher/watchlist.json \
+            --previous atlas/atlas/watch/latest.json --out /tmp/report.json ${DAY:+--day "$DAY"}
+          day=$(python3 -c "import json; print(json.load(open('/tmp/report.json'))['day'])")
+          cp /tmp/report.json "atlas/atlas/watch/days/$day.json"
+          # latest.json is the newest day graded; a re-run of an earlier day only adds its dated copy.
+          latest=$(python3 -c "import json; print(json.load(open('atlas/atlas/watch/latest.json'))['day'])" 2>/dev/null || echo "")
+          if [ -z "$latest" ] || [ "$day" \> "$latest" ] || [ "$day" = "$latest" ]; then cp /tmp/report.json atlas/atlas/watch/latest.json; fi
+
+      - name: Commit the report
+        run: |
+          if [ -n "$(git status --porcelain atlas/atlas/watch)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add atlas/atlas/watch
+            git commit -m "Watcher: report for $(python3 -c "import json; print(json.load(open('atlas/atlas/watch/latest.json'))['day'])")"
+            for attempt in 1 2 3; do
+              if git push; then exit 0; fi
+              echo "Push rejected (attempt $attempt); rebasing onto latest main..."
+              git pull --rebase origin main
+            done
+            git push
+          else
+            echo "No changes to commit."
+          fi

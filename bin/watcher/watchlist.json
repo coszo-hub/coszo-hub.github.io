@@ -1,0 +1,1599 @@
+{
+ "sensors": [
+  {
+   "id": "EARTHSCOPE-OO-AXAS1",
+   "name": "ASHES Hydrothermal Field, Axial Seamount Seismic Station AXAS1",
+   "refdes": null,
+   "site": "ashes-hydrothermal-field-axial-seamount",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXAS1"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXAS2",
+   "name": "ASHES Hydrothermal Field, Axial Seamount Seismic Station AXAS2",
+   "refdes": null,
+   "site": "ashes-hydrothermal-field-axial-seamount-2",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXAS2"
+   }
+  },
+  {
+   "id": "RS03AXBS-MJ03A-05-HYDLFA301",
+   "name": "Axial Seamount Base Seafloor Low-Frequency Hydrophone",
+   "refdes": "RS03AXBS-MJ03A-05-HYDLFA301",
+   "site": "axial-seamount-base",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXBA1",
+    "channel": "HDH",
+    "nereus": "data",
+    "refdes": "RS03AXBS-MJ03A-05-HYDLFA301"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXBA1",
+   "name": "Axial Seamount Base Seismic Station AXBA1",
+   "refdes": null,
+   "site": "axial-seamount-base-2",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXBA1"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXCC1",
+   "name": "Axial Seamount Central Caldera Seismic Station AXCC1",
+   "refdes": null,
+   "site": "axial-seamount-central-caldera",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXCC1"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXCC2",
+   "name": "Axial Seamount Central Caldera Tiltmeter/Accelerometer Station AXCC2",
+   "refdes": null,
+   "site": "axial-seamount-central-caldera",
+   "type": "tiltmeter",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXCC2"
+   }
+  },
+  {
+   "id": "RS03CCAL-MJ03F-06-HYDLFA305",
+   "name": "Axial Seamount Central Caldera Low-Frequency Hydrophone",
+   "refdes": "RS03CCAL-MJ03F-06-HYDLFA305",
+   "site": "axial-seamount-central-caldera",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXCC1",
+    "channel": "HDH",
+    "nereus": "data",
+    "refdes": "RS03CCAL-MJ03F-06-HYDLFA305"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXEC3",
+   "name": "Axial Seamount Eastern Caldera Seismic Station AXEC3",
+   "refdes": null,
+   "site": "axial-seamount-eastern-caldera",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXEC3"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXEC2",
+   "name": "Axial Seamount Eastern Caldera Seismic Station AXEC2",
+   "refdes": null,
+   "site": "axial-seamount-eastern-caldera-2",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXEC2"
+   }
+  },
+  {
+   "id": "RS03ECAL-MJ03E-09-HYDLFA304",
+   "name": "Axial Seamount Eastern Caldera Low-Frequency Hydrophone",
+   "refdes": "RS03ECAL-MJ03E-09-HYDLFA304",
+   "site": "axial-seamount-eastern-caldera-2",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXEC2",
+    "channel": "HDH",
+    "nereus": "data",
+    "refdes": "RS03ECAL-MJ03E-09-HYDLFA304"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXEC1",
+   "name": "Axial Seamount Eastern Caldera Seismic Station AXEC1",
+   "refdes": null,
+   "site": "axial-seamount-eastern-caldera-3",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXEC1"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXID1",
+   "name": "Axial Seamount International District Seismic Station AXID1",
+   "refdes": null,
+   "site": "axial-seamount-international-district",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "AXID1"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-HYSB1",
+   "name": "Oregon Slope Base Seismic Station HYSB1",
+   "refdes": null,
+   "site": "oregon-slope-base",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "HYSB1"
+   }
+  },
+  {
+   "id": "RS01SLBS-MJ01A-05-HYDLFA101",
+   "name": "Oregon Slope Base Seafloor Low-Frequency Hydrophone",
+   "refdes": "RS01SLBS-MJ01A-05-HYDLFA101",
+   "site": "oregon-slope-base-seafloor",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "HYSB1",
+    "channel": "HDH",
+    "nereus": "data",
+    "refdes": "RS01SLBS-MJ01A-05-HYDLFA101"
+   }
+  },
+  {
+   "id": "RS01SUM1-LJ01B-05-HYDLFA104",
+   "name": "Southern Hydrate Ridge Flank Low-Frequency Hydrophone",
+   "refdes": "RS01SUM1-LJ01B-05-HYDLFA104",
+   "site": "southern-hydrate-ridge",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "HYS14",
+    "channel": "HDH",
+    "nereus": "data",
+    "refdes": "RS01SUM1-LJ01B-05-HYDLFA104"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-HYS13",
+   "name": "Southern Hydrate Ridge Summit Seismic Station HYS13",
+   "refdes": null,
+   "site": "southern-hydrate-ridge-summit",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "HYS13"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-HYS14",
+   "name": "Southern Hydrate Ridge Summit Seismic Station HYS14",
+   "refdes": null,
+   "site": "southern-hydrate-ridge-summit-2",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "HYS14"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-HYS11",
+   "name": "Southern Hydrate Ridge Summit Seismic Station HYS11",
+   "refdes": null,
+   "site": "southern-hydrate-ridge-summit-3",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "HYS11"
+   }
+  },
+  {
+   "id": "EARTHSCOPE-OO-HYS12",
+   "name": "Southern Hydrate Ridge Summit Seismic Station HYS12",
+   "refdes": null,
+   "site": "southern-hydrate-ridge-summit-4",
+   "type": "seismometer",
+   "gap": 10,
+   "check": {
+    "method": "earthscope",
+    "network": "OO",
+    "station": "HYS12"
+   }
+  },
+  {
+   "id": "RS03CCAL-MJ03F-05-BOTPTA301",
+   "name": "Axial Seamount Central Caldera Seafloor Pressure",
+   "refdes": "RS03CCAL-MJ03F-05-BOTPTA301",
+   "site": "axial-seamount-central-caldera",
+   "type": "pressure",
+   "gap": 30,
+   "check": {
+    "method": "erddap",
+    "dataset": "ooi-rs03ccal-mj03f-05-botpta301"
+   }
+  },
+  {
+   "id": "CE04OSPS-PC01B-4B-PHSENA106",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring pH Sensor (SAMI-pH)",
+   "refdes": "CE04OSPS-PC01B-4B-PHSENA106",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "ph",
+   "gap": 240,
+   "check": {
+    "method": "erddap",
+    "dataset": "ooi-ce04osps-pc01b-4b-phsena106"
+   }
+  },
+  {
+   "id": "CE04OSPS-SF01B-2A-CTDPFA107",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring CTD",
+   "refdes": "CE04OSPS-SF01B-2A-CTDPFA107",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "ctd",
+   "gap": 360,
+   "check": {
+    "method": "erddap",
+    "dataset": "ooi-ce04osps-sf01b-2a-ctdpfa107"
+   }
+  },
+  {
+   "id": "CE04OSPS-SF01B-2A-DOFSTA107",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Dissolved Oxygen",
+   "refdes": "CE04OSPS-SF01B-2A-DOFSTA107",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "dissolved_oxygen",
+   "gap": 360,
+   "check": {
+    "method": "erddap",
+    "dataset": "ooi-ce04osps-sf01b-2a-dofsta107"
+   }
+  },
+  {
+   "id": "CE04OSPS-SF01B-2B-PHSENA108",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring pH Sensor",
+   "refdes": "CE04OSPS-SF01B-2B-PHSENA108",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "ph",
+   "gap": 900,
+   "check": {
+    "method": "erddap",
+    "dataset": "ooi-ce04osps-sf01b-2b-phsena108"
+   }
+  },
+  {
+   "id": "CE04OSPS-SF01B-3A-FLORTD104",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring 3-Wavelength Fluorometer",
+   "refdes": "CE04OSPS-SF01B-3A-FLORTD104",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "fluorometer",
+   "gap": 360,
+   "check": {
+    "method": "erddap",
+    "dataset": "ooi-ce04osps-sf01b-3a-flortd104"
+   }
+  },
+  {
+   "id": "CE04OSPS-SF01B-3C-PARADA102",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring PAR Sensor",
+   "refdes": "CE04OSPS-SF01B-3C-PARADA102",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "par",
+   "gap": 360,
+   "check": {
+    "method": "erddap",
+    "dataset": "ooi-ce04osps-sf01b-3c-parada102"
+   }
+  },
+  {
+   "id": "CE04OSPS-SF01B-3D-SPKIRA102",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Spectral Irradiance",
+   "refdes": "CE04OSPS-SF01B-3D-SPKIRA102",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "irradiance",
+   "gap": 360,
+   "check": {
+    "method": "erddap",
+    "dataset": "ooi-ce04osps-sf01b-3d-spkira102"
+   }
+  },
+  {
+   "id": "CE04OSPS-SF01B-4A-NUTNRA102",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Nitrate Sensor",
+   "refdes": "CE04OSPS-SF01B-4A-NUTNRA102",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "nitrate",
+   "gap": 900,
+   "check": {
+    "method": "erddap",
+    "dataset": "ooi-ce04osps-sf01b-4a-nutnra102"
+   }
+  },
+  {
+   "id": "CE04OSPS-SF01B-4B-VELPTD106",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Current Meter",
+   "refdes": "CE04OSPS-SF01B-4B-VELPTD106",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "velocimeter",
+   "gap": 360,
+   "check": {
+    "method": "erddap",
+    "dataset": "ooi-ce04osps-sf01b-4b-velptd106"
+   }
+  },
+  {
+   "id": "CE04OSPS-SF01B-4F-PCO2WA102",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring pCO2 Sensor",
+   "refdes": "CE04OSPS-SF01B-4F-PCO2WA102",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "pco2",
+   "gap": 900,
+   "check": {
+    "method": "erddap",
+    "dataset": "ooi-ce04osps-sf01b-4f-pco2wa102"
+   }
+  },
+  {
+   "id": "RS03ASHS-MJ03B-07-TMPSFA301",
+   "name": "ASHES Hydrothermal Field Thermistor Array",
+   "refdes": "RS03ASHS-MJ03B-07-TMPSFA301",
+   "site": "ashes-hydrothermal-field-axial-seamount-2",
+   "type": "thermistor_array",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03ASHS-MJ03B-07-TMPSFA301",
+    "dataset": "ooi-rs03ashs-mj03b-07-tmpsfa301"
+   }
+  },
+  {
+   "id": "RS03ASHS-MJ03B-09-BOTPTA304",
+   "name": "ASHES Hydrothermal Field Seafloor Pressure",
+   "refdes": "RS03ASHS-MJ03B-09-BOTPTA304",
+   "site": "ashes-hydrothermal-field-axial-seamount-2",
+   "type": "pressure",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03ASHS-MJ03B-09-BOTPTA304",
+    "dataset": "ooi-rs03ashs-mj03b-09-botpta304"
+   }
+  },
+  {
+   "id": "RS03ASHS-MJ03B-10-CTDPFB304",
+   "name": "ASHES Hydrothermal Field CTD",
+   "refdes": "RS03ASHS-MJ03B-10-CTDPFB304",
+   "site": "ashes-hydrothermal-field-axial-seamount-2",
+   "type": "ctd",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03ASHS-MJ03B-10-CTDPFB304",
+    "dataset": "ooi-rs03ashs-mj03b-10-ctdpfb304"
+   }
+  },
+  {
+   "id": "RS03ASHS-PN03B-06-CAMHDA301",
+   "name": "ASHES Vent Field HD Video Camera",
+   "refdes": "RS03ASHS-PN03B-06-CAMHDA301",
+   "site": "ashes-hydrothermal-field-axial-seamount-2",
+   "type": "camera",
+   "gap": 180,
+   "check": {
+    "method": "nereus",
+    "nereus": "file",
+    "refdes": "RS03ASHS-PN03B-06-CAMHDA301"
+   }
+  },
+  {
+   "id": "RS03AXBS-LJ03A-09-HYDBBA302",
+   "name": "Axial Seamount Base Seafloor Broadband Hydrophone",
+   "refdes": "RS03AXBS-LJ03A-09-HYDBBA302",
+   "site": "axial-seamount-base",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXBS-LJ03A-09-HYDBBA302"
+   }
+  },
+  {
+   "id": "RS03AXBS-LJ03A-10-ADCPTE303",
+   "name": "Axial Seamount Base Seafloor ADCP",
+   "refdes": "RS03AXBS-LJ03A-10-ADCPTE303",
+   "site": "axial-seamount-base",
+   "type": "adcp",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXBS-LJ03A-10-ADCPTE303"
+   }
+  },
+  {
+   "id": "RS03AXBS-LJ03A-11-OPTAAC303",
+   "name": "Axial Seamount Base Spectrophotometer (AC-S)",
+   "refdes": "RS03AXBS-LJ03A-11-OPTAAC303",
+   "site": "axial-seamount-base",
+   "type": "spectrophotometer",
+   "gap": 120,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXBS-LJ03A-11-OPTAAC303"
+   }
+  },
+  {
+   "id": "RS03AXBS-LJ03A-12-CTDPFB301",
+   "name": "Axial Seamount Base Seafloor CTD",
+   "refdes": "RS03AXBS-LJ03A-12-CTDPFB301",
+   "site": "axial-seamount-base",
+   "type": "ctd",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXBS-LJ03A-12-CTDPFB301",
+    "dataset": "ooi-rs03axbs-lj03a-12-ctdpfb301"
+   }
+  },
+  {
+   "id": "RS03AXBS-LJ03A-12-DOSTAD301",
+   "name": "Axial Seamount Base Seafloor Dissolved Oxygen",
+   "refdes": "RS03AXBS-LJ03A-12-DOSTAD301",
+   "site": "axial-seamount-base",
+   "type": "dissolved_oxygen",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXBS-LJ03A-12-DOSTAD301",
+    "dataset": "ooi-rs03axbs-lj03a-12-dostad301"
+   }
+  },
+  {
+   "id": "RS03AXBS-MJ03A-06-PRESTA301",
+   "name": "Axial Seamount Base Seafloor Pressure Sensor (Tidal Pressure Gauge)",
+   "refdes": "RS03AXBS-MJ03A-06-PRESTA301",
+   "site": "axial-seamount-base",
+   "type": "absolute_pressure_gauge",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXBS-MJ03A-06-PRESTA301",
+    "dataset": "ooi-rs03axbs-mj03a-06-presta301"
+   }
+  },
+  {
+   "id": "RS03AXBS-MJ03A-12-VEL3DB301",
+   "name": "Axial Seamount Base Seafloor 3D Current Meter",
+   "refdes": "RS03AXBS-MJ03A-12-VEL3DB301",
+   "site": "axial-seamount-base",
+   "type": "velocimeter",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXBS-MJ03A-12-VEL3DB301",
+    "dataset": "ooi-rs03axbs-mj03a-12-vel3db301"
+   }
+  },
+  {
+   "id": "RS03AXPS-PC03A-05-ADCPTD302",
+   "name": "Axial Seamount Shallow Profiler ADCP",
+   "refdes": "RS03AXPS-PC03A-05-ADCPTD302",
+   "site": "axial-seamount-base",
+   "type": "adcp",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-PC03A-05-ADCPTD302"
+   }
+  },
+  {
+   "id": "RS03AXPS-PC03A-06-VADCPB301",
+   "name": "Axial Seamount Shallow Profiler Vertical ADCP",
+   "refdes": "RS03AXPS-PC03A-06-VADCPB301",
+   "site": "axial-seamount-base",
+   "type": "adcp",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-PC03A-06-VADCPB301",
+    "dataset": "ooi-rs03axps-pc03a-06-vadcpb301"
+   }
+  },
+  {
+   "id": "RS03AXPS-PC03A-07-CAMDSC302",
+   "name": "Axial Seamount Shallow Profiler Digital Still Camera",
+   "refdes": "RS03AXPS-PC03A-07-CAMDSC302",
+   "site": "axial-seamount-base",
+   "type": "camera",
+   "gap": 180,
+   "check": {
+    "method": "nereus",
+    "nereus": "file",
+    "refdes": "RS03AXPS-PC03A-07-CAMDSC302"
+   }
+  },
+  {
+   "id": "RS03AXPS-PC03A-08-HYDBBA303",
+   "name": "Axial Seamount Shallow Profiler Broadband Hydrophone",
+   "refdes": "RS03AXPS-PC03A-08-HYDBBA303",
+   "site": "axial-seamount-base",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-PC03A-08-HYDBBA303"
+   }
+  },
+  {
+   "id": "RS03AXPS-PC03A-4A-CTDPFA303",
+   "name": "Axial Seamount Shallow Profiler CTD Profiler",
+   "refdes": "RS03AXPS-PC03A-4A-CTDPFA303",
+   "site": "axial-seamount-base",
+   "type": "ctd",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-PC03A-4A-CTDPFA303",
+    "dataset": "ooi-rs03axps-pc03a-4a-ctdpfa303"
+   }
+  },
+  {
+   "id": "RS03AXPS-PC03A-4A-DOSTAD303",
+   "name": "Axial Seamount Shallow Profiler Dissolved Oxygen",
+   "refdes": "RS03AXPS-PC03A-4A-DOSTAD303",
+   "site": "axial-seamount-base",
+   "type": "dissolved_oxygen",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-PC03A-4A-DOSTAD303",
+    "dataset": "ooi-rs03axps-pc03a-4a-dostad303"
+   }
+  },
+  {
+   "id": "RS03AXPS-PC03A-4B-PHSENA302",
+   "name": "Axial Seamount Shallow Profiler pH Sensor",
+   "refdes": "RS03AXPS-PC03A-4B-PHSENA302",
+   "site": "axial-seamount-base",
+   "type": "ph",
+   "gap": 240,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-PC03A-4B-PHSENA302",
+    "dataset": "ooi-rs03axps-pc03a-4b-phsena302"
+   }
+  },
+  {
+   "id": "RS03AXPS-PC03A-4C-FLORDD303",
+   "name": "Axial Seamount Shallow Profiler Fluorometer/Backscatter",
+   "refdes": "RS03AXPS-PC03A-4C-FLORDD303",
+   "site": "axial-seamount-base",
+   "type": "fluorometer",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-PC03A-4C-FLORDD303",
+    "dataset": "ooi-rs03axps-pc03a-4c-flordd303"
+   }
+  },
+  {
+   "id": "RS03AXPS-SF03A-2A-CTDPFA302",
+   "name": "Axial Seamount Shallow Profiler CTD Profiler",
+   "refdes": "RS03AXPS-SF03A-2A-CTDPFA302",
+   "site": "axial-seamount-base",
+   "type": "ctd",
+   "gap": 360,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-SF03A-2A-CTDPFA302",
+    "dataset": "ooi-rs03axps-sf03a-2a-ctdpfa302"
+   }
+  },
+  {
+   "id": "RS03AXPS-SF03A-2A-DOFSTA302",
+   "name": "Axial Seamount Shallow Profiler Dissolved Oxygen",
+   "refdes": "RS03AXPS-SF03A-2A-DOFSTA302",
+   "site": "axial-seamount-base",
+   "type": "dissolved_oxygen",
+   "gap": 360,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-SF03A-2A-DOFSTA302",
+    "dataset": "ooi-rs03axps-sf03a-2a-dofsta302"
+   }
+  },
+  {
+   "id": "RS03AXPS-SF03A-2D-PHSENA301",
+   "name": "Axial Seamount Shallow Profiler pH Sensor",
+   "refdes": "RS03AXPS-SF03A-2D-PHSENA301",
+   "site": "axial-seamount-base",
+   "type": "ph",
+   "gap": 900,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-SF03A-2D-PHSENA301",
+    "dataset": "ooi-rs03axps-sf03a-2d-phsena301"
+   }
+  },
+  {
+   "id": "RS03AXPS-SF03A-3A-FLORTD301",
+   "name": "Axial Seamount Shallow Profiler Fluorometer",
+   "refdes": "RS03AXPS-SF03A-3A-FLORTD301",
+   "site": "axial-seamount-base",
+   "type": "fluorometer",
+   "gap": 360,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-SF03A-3A-FLORTD301",
+    "dataset": "ooi-rs03axps-sf03a-3a-flortd301"
+   }
+  },
+  {
+   "id": "RS03AXPS-SF03A-3B-OPTAAD301",
+   "name": "Axial Seamount Shallow Profiler Spectrophotometer (AC-S)",
+   "refdes": "RS03AXPS-SF03A-3B-OPTAAD301",
+   "site": "axial-seamount-base",
+   "type": "spectrophotometer",
+   "gap": 360,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-SF03A-3B-OPTAAD301"
+   }
+  },
+  {
+   "id": "RS03AXPS-SF03A-3C-PARADA301",
+   "name": "Axial Seamount Shallow Profiler PAR Sensor",
+   "refdes": "RS03AXPS-SF03A-3C-PARADA301",
+   "site": "axial-seamount-base",
+   "type": "par",
+   "gap": 360,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-SF03A-3C-PARADA301",
+    "dataset": "ooi-rs03axps-sf03a-3c-parada301"
+   }
+  },
+  {
+   "id": "RS03AXPS-SF03A-3D-SPKIRA301",
+   "name": "Axial Seamount Shallow Profiler Spectral Irradiance",
+   "refdes": "RS03AXPS-SF03A-3D-SPKIRA301",
+   "site": "axial-seamount-base",
+   "type": "irradiance",
+   "gap": 360,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-SF03A-3D-SPKIRA301",
+    "dataset": "ooi-rs03axps-sf03a-3d-spkira301"
+   }
+  },
+  {
+   "id": "RS03AXPS-SF03A-4A-NUTNRA301",
+   "name": "Axial Seamount Shallow Profiler Nitrate Sensor",
+   "refdes": "RS03AXPS-SF03A-4A-NUTNRA301",
+   "site": "axial-seamount-base",
+   "type": "nitrate",
+   "gap": 900,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-SF03A-4A-NUTNRA301",
+    "dataset": "ooi-rs03axps-sf03a-4a-nutnra301"
+   }
+  },
+  {
+   "id": "RS03AXPS-SF03A-4B-VELPTD302",
+   "name": "Axial Seamount Shallow Profiler Current Meter",
+   "refdes": "RS03AXPS-SF03A-4B-VELPTD302",
+   "site": "axial-seamount-base",
+   "type": "velocimeter",
+   "gap": 360,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-SF03A-4B-VELPTD302",
+    "dataset": "ooi-rs03axps-sf03a-4b-velptd302"
+   }
+  },
+  {
+   "id": "RS03AXPS-SF03A-4F-PCO2WA301",
+   "name": "Axial Seamount Shallow Profiler pCO2 Sensor",
+   "refdes": "RS03AXPS-SF03A-4F-PCO2WA301",
+   "site": "axial-seamount-base",
+   "type": "pco2",
+   "gap": 900,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03AXPS-SF03A-4F-PCO2WA301",
+    "dataset": "ooi-rs03axps-sf03a-4f-pco2wa301"
+   }
+  },
+  {
+   "id": "RS03CCAL-MJ03F-12-CTDPFB305",
+   "name": "Axial Seamount Central Caldera CTD",
+   "refdes": "RS03CCAL-MJ03F-12-CTDPFB305",
+   "site": "axial-seamount-central-caldera",
+   "type": "ctd",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03CCAL-MJ03F-12-CTDPFB305",
+    "dataset": "ooi-rs03ccal-mj03f-12-ctdpfb305"
+   }
+  },
+  {
+   "id": "RS03ECAL-MJ03E-06-BOTPTA302",
+   "name": "Axial Seamount Eastern Caldera Seafloor Pressure",
+   "refdes": "RS03ECAL-MJ03E-06-BOTPTA302",
+   "site": "axial-seamount-eastern-caldera-2",
+   "type": "pressure",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03ECAL-MJ03E-06-BOTPTA302",
+    "dataset": "ooi-rs03ecal-mj03e-06-botpta302"
+   }
+  },
+  {
+   "id": "RS03ECAL-MJ03E-12-CTDPFB306",
+   "name": "Axial Seamount Eastern Caldera CTD",
+   "refdes": "RS03ECAL-MJ03E-12-CTDPFB306",
+   "site": "axial-seamount-eastern-caldera-2",
+   "type": "ctd",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03ECAL-MJ03E-12-CTDPFB306",
+    "dataset": "ooi-rs03ecal-mj03e-12-ctdpfb306"
+   }
+  },
+  {
+   "id": "RS03INT1-MJ03C-05-CAMDSB303",
+   "name": "International District Benthic Digital Still Camera",
+   "refdes": "RS03INT1-MJ03C-05-CAMDSB303",
+   "site": "axial-seamount-international-district",
+   "type": "camera",
+   "gap": 180,
+   "check": {
+    "method": "nereus",
+    "nereus": "file",
+    "refdes": "RS03INT1-MJ03C-05-CAMDSB303"
+   }
+  },
+  {
+   "id": "RS03INT1-MJ03C-07-D1000A301",
+   "name": "International District Fluid Sampler Temperature Probe",
+   "refdes": "RS03INT1-MJ03C-07-D1000A301",
+   "site": "axial-seamount-international-district",
+   "type": "thermistor",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03INT1-MJ03C-07-D1000A301",
+    "dataset": "ooi-rs03int1-mj03c-07-d1000a301"
+   }
+  },
+  {
+   "id": "RS03INT1-MJ03C-09-TRHPHA302",
+   "name": "International District Hydrothermal Field 1 Vent Fluid Thermistor/pH",
+   "refdes": "RS03INT1-MJ03C-09-TRHPHA302",
+   "site": "axial-seamount-international-district",
+   "type": "thermistor",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03INT1-MJ03C-09-TRHPHA302",
+    "dataset": "ooi-rs03int1-mj03c-09-trhpha302"
+   }
+  },
+  {
+   "id": "RS03INT1-MJ03C-10-TRHPHA301",
+   "name": "International District Hydrothermal Field 1 Vent Fluid Thermistor/pH",
+   "refdes": "RS03INT1-MJ03C-10-TRHPHA301",
+   "site": "axial-seamount-international-district",
+   "type": "thermistor",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03INT1-MJ03C-10-TRHPHA301",
+    "dataset": "ooi-rs03int1-mj03c-10-trhpha301"
+   }
+  },
+  {
+   "id": "RS03INT2-MJ03D-06-BOTPTA303",
+   "name": "International District Hydrothermal Field 2 Seafloor Pressure",
+   "refdes": "RS03INT2-MJ03D-06-BOTPTA303",
+   "site": "axial-seamount-international-district-2",
+   "type": "pressure",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03INT2-MJ03D-06-BOTPTA303",
+    "dataset": "ooi-rs03int2-mj03d-06-botpta303"
+   }
+  },
+  {
+   "id": "RS03INT2-MJ03D-11-CTDPFB307",
+   "name": "International District Hydrothermal Field 2 CTD",
+   "refdes": "RS03INT2-MJ03D-11-CTDPFB307",
+   "site": "axial-seamount-international-district-2",
+   "type": "ctd",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03INT2-MJ03D-11-CTDPFB307",
+    "dataset": "ooi-rs03int2-mj03d-11-ctdpfb307"
+   }
+  },
+  {
+   "id": "RS03INT2-MJ03D-12-VEL3DB304",
+   "name": "International District Hydrothermal Field 2 3D Current Meter",
+   "refdes": "RS03INT2-MJ03D-12-VEL3DB304",
+   "site": "axial-seamount-international-district-2",
+   "type": "velocimeter",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS03INT2-MJ03D-12-VEL3DB304",
+    "dataset": "ooi-rs03int2-mj03d-12-vel3db304"
+   }
+  },
+  {
+   "id": "CE04OSBP-LJ01C-05-ADCPSI103",
+   "name": "Oregon Offshore Benthic Package ADCP (75 kHz)",
+   "refdes": "CE04OSBP-LJ01C-05-ADCPSI103",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "type": "adcp",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSBP-LJ01C-05-ADCPSI103"
+   }
+  },
+  {
+   "id": "CE04OSBP-LJ01C-06-CTDBPO108",
+   "name": "Oregon Offshore Benthic Package CTD",
+   "refdes": "CE04OSBP-LJ01C-06-CTDBPO108",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "type": "ctd",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSBP-LJ01C-06-CTDBPO108",
+    "dataset": "ooi-ce04osbp-lj01c-06-ctdbpo108"
+   }
+  },
+  {
+   "id": "CE04OSBP-LJ01C-06-DOSTAD108",
+   "name": "Oregon Offshore Benthic Package Dissolved Oxygen",
+   "refdes": "CE04OSBP-LJ01C-06-DOSTAD108",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "type": "dissolved_oxygen",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSBP-LJ01C-06-DOSTAD108",
+    "dataset": "ooi-ce04osbp-lj01c-06-dostad108"
+   }
+  },
+  {
+   "id": "CE04OSBP-LJ01C-07-VEL3DC107",
+   "name": "Oregon Offshore Benthic Package 3D Current Meter",
+   "refdes": "CE04OSBP-LJ01C-07-VEL3DC107",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "type": "three_dimensional_current_meter",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSBP-LJ01C-07-VEL3DC107",
+    "dataset": "ooi-ce04osbp-lj01c-07-vel3dc107"
+   }
+  },
+  {
+   "id": "CE04OSBP-LJ01C-08-OPTAAC104",
+   "name": "Oregon Offshore Benthic Package Spectrophotometer",
+   "refdes": "CE04OSBP-LJ01C-08-OPTAAC104",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "type": "spectrophotometer",
+   "gap": 120,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSBP-LJ01C-08-OPTAAC104"
+   }
+  },
+  {
+   "id": "CE04OSBP-LJ01C-09-PCO2WB104",
+   "name": "Oregon Offshore Benthic Package pCO2 Sensor",
+   "refdes": "CE04OSBP-LJ01C-09-PCO2WB104",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "type": "pco2",
+   "gap": 240,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSBP-LJ01C-09-PCO2WB104",
+    "dataset": "ooi-ce04osbp-lj01c-09-pco2wb104"
+   }
+  },
+  {
+   "id": "CE04OSBP-LJ01C-10-PHSEND107",
+   "name": "Oregon Offshore Benthic Package pH Sensor",
+   "refdes": "CE04OSBP-LJ01C-10-PHSEND107",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "type": "ph",
+   "gap": 240,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSBP-LJ01C-10-PHSEND107",
+    "dataset": "ooi-ce04osbp-lj01c-10-phsend107"
+   }
+  },
+  {
+   "id": "CE04OSBP-LJ01C-11-HYDBBA105",
+   "name": "Oregon Offshore Benthic Package Broadband Hydrophone",
+   "refdes": "CE04OSBP-LJ01C-11-HYDBBA105",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSBP-LJ01C-11-HYDBBA105"
+   }
+  },
+  {
+   "id": "CE04OSBP-LV01C-06-CAMDSB106",
+   "name": "Oregon Offshore Benthic Package Digital Still Camera",
+   "refdes": "CE04OSBP-LV01C-06-CAMDSB106",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "type": "camera",
+   "gap": 180,
+   "check": {
+    "method": "nereus",
+    "nereus": "file",
+    "refdes": "CE04OSBP-LV01C-06-CAMDSB106"
+   }
+  },
+  {
+   "id": "CE04OSPS-PC01B-05-ZPLSCB102",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Bio-acoustic Sonar",
+   "refdes": "CE04OSPS-PC01B-05-ZPLSCB102",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "sonar",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "file",
+    "refdes": "CE04OSPS-PC01B-05-ZPLSCB102"
+   }
+  },
+  {
+   "id": "CE04OSPS-PC01B-4A-CTDPFA109",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring CTD",
+   "refdes": "CE04OSPS-PC01B-4A-CTDPFA109",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "ctd",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSPS-PC01B-4A-CTDPFA109",
+    "dataset": "ooi-ce04osps-pc01b-4a-ctdpfa109"
+   }
+  },
+  {
+   "id": "CE04OSPS-PC01B-4A-DOSTAD109",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Dissolved Oxygen",
+   "refdes": "CE04OSPS-PC01B-4A-DOSTAD109",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "dissolved_oxygen",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSPS-PC01B-4A-DOSTAD109",
+    "dataset": "ooi-ce04osps-pc01b-4a-dostad109"
+   }
+  },
+  {
+   "id": "CE04OSPS-PC01B-4C-PHSENH109",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring pH Sensor (Deep SeapHOx (2000 m))",
+   "refdes": "CE04OSPS-PC01B-4C-PHSENH109",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "ph",
+   "gap": 240,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSPS-PC01B-4C-PHSENH109",
+    "dataset": "ooi-ce04osps-pc01b-4c-phsenh109"
+   }
+  },
+  {
+   "id": "CE04OSPS-PC01B-4D-PCO2WA105",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring pCO2 Sensor",
+   "refdes": "CE04OSPS-PC01B-4D-PCO2WA105",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "pco2",
+   "gap": 240,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE04OSPS-PC01B-4D-PCO2WA105",
+    "dataset": "ooi-ce04osps-pc01b-4d-pco2wa105"
+   }
+  },
+  {
+   "id": "CE02SHBP-LJ01D-05-ADCPTB104",
+   "name": "Oregon Shelf Benthic Package ADCP (300 kHz)",
+   "refdes": "CE02SHBP-LJ01D-05-ADCPTB104",
+   "site": "oregon-shelf",
+   "type": "adcp",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE02SHBP-LJ01D-05-ADCPTB104"
+   }
+  },
+  {
+   "id": "CE02SHBP-LJ01D-06-CTDBPN106",
+   "name": "Oregon Shelf Benthic Package CTD",
+   "refdes": "CE02SHBP-LJ01D-06-CTDBPN106",
+   "site": "oregon-shelf",
+   "type": "ctd",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE02SHBP-LJ01D-06-CTDBPN106",
+    "dataset": "ooi-ce02shbp-lj01d-06-ctdbpn106"
+   }
+  },
+  {
+   "id": "CE02SHBP-LJ01D-06-DOSTAD106",
+   "name": "Oregon Shelf Benthic Package Dissolved Oxygen",
+   "refdes": "CE02SHBP-LJ01D-06-DOSTAD106",
+   "site": "oregon-shelf",
+   "type": "dissolved_oxygen",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE02SHBP-LJ01D-06-DOSTAD106",
+    "dataset": "ooi-ce02shbp-lj01d-06-dostad106"
+   }
+  },
+  {
+   "id": "CE02SHBP-LJ01D-07-VEL3DC108",
+   "name": "Oregon Shelf Benthic Package 3D Current Meter",
+   "refdes": "CE02SHBP-LJ01D-07-VEL3DC108",
+   "site": "oregon-shelf",
+   "type": "three_dimensional_current_meter",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE02SHBP-LJ01D-07-VEL3DC108",
+    "dataset": "ooi-ce02shbp-lj01d-07-vel3dc108"
+   }
+  },
+  {
+   "id": "CE02SHBP-LJ01D-08-OPTAAD106",
+   "name": "Oregon Shelf Benthic Package Spectrophotometer",
+   "refdes": "CE02SHBP-LJ01D-08-OPTAAD106",
+   "site": "oregon-shelf",
+   "type": "spectrophotometer",
+   "gap": 120,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE02SHBP-LJ01D-08-OPTAAD106"
+   }
+  },
+  {
+   "id": "CE02SHBP-LJ01D-09-PCO2WB103",
+   "name": "Oregon Shelf Benthic Package pCO2 Sensor",
+   "refdes": "CE02SHBP-LJ01D-09-PCO2WB103",
+   "site": "oregon-shelf",
+   "type": "pco2",
+   "gap": 240,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE02SHBP-LJ01D-09-PCO2WB103",
+    "dataset": "ooi-ce02shbp-lj01d-09-pco2wb103"
+   }
+  },
+  {
+   "id": "CE02SHBP-LJ01D-10-PHSENH110",
+   "name": "Oregon Shelf Benthic Package pH Sensor (Deep SeapHOx (2000 m))",
+   "refdes": "CE02SHBP-LJ01D-10-PHSENH110",
+   "site": "oregon-shelf",
+   "type": "ph",
+   "gap": 240,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE02SHBP-LJ01D-10-PHSENH110",
+    "dataset": "ooi-ce02shbp-lj01d-10-phsenh110"
+   }
+  },
+  {
+   "id": "CE02SHBP-LJ01D-11-HYDBBA106",
+   "name": "Oregon Shelf Benthic Package Broadband Hydrophone",
+   "refdes": "CE02SHBP-LJ01D-11-HYDBBA106",
+   "site": "oregon-shelf",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "CE02SHBP-LJ01D-11-HYDBBA106"
+   }
+  },
+  {
+   "id": "CE02SHBP-MJ01C-07-ZPLSCB101",
+   "name": "Oregon Shelf Benthic Package Bio-acoustic Sonar",
+   "refdes": "CE02SHBP-MJ01C-07-ZPLSCB101",
+   "site": "oregon-shelf",
+   "type": "sonar",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "file",
+    "refdes": "CE02SHBP-MJ01C-07-ZPLSCB101"
+   }
+  },
+  {
+   "id": "CE02SHBP-MJ01C-08-CAMDSB107",
+   "name": "Oregon Shelf Benthic Package Digital Still Camera",
+   "refdes": "CE02SHBP-MJ01C-08-CAMDSB107",
+   "site": "oregon-shelf",
+   "type": "camera",
+   "gap": 180,
+   "check": {
+    "method": "nereus",
+    "nereus": "file",
+    "refdes": "CE02SHBP-MJ01C-08-CAMDSB107"
+   }
+  },
+  {
+   "id": "RS01SBPS-PC01A-05-ADCPTD102",
+   "name": "Oregon Slope Base Shallow Profiler ADCP",
+   "refdes": "RS01SBPS-PC01A-05-ADCPTD102",
+   "site": "oregon-slope-base-seafloor",
+   "type": "adcp",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SBPS-PC01A-05-ADCPTD102"
+   }
+  },
+  {
+   "id": "RS01SBPS-PC01A-06-VADCPB101",
+   "name": "Oregon Slope Base Shallow Profiler Vertical ADCP",
+   "refdes": "RS01SBPS-PC01A-06-VADCPB101",
+   "site": "oregon-slope-base-seafloor",
+   "type": "adcp",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SBPS-PC01A-06-VADCPB101",
+    "dataset": "ooi-rs01sbps-pc01a-06-vadcpb101"
+   }
+  },
+  {
+   "id": "RS01SBPS-PC01A-07-CAMDSC102",
+   "name": "Oregon Slope Base Shallow Profiler Digital Still Camera",
+   "refdes": "RS01SBPS-PC01A-07-CAMDSC102",
+   "site": "oregon-slope-base-seafloor",
+   "type": "camera",
+   "gap": 180,
+   "check": {
+    "method": "nereus",
+    "nereus": "file",
+    "refdes": "RS01SBPS-PC01A-07-CAMDSC102"
+   }
+  },
+  {
+   "id": "RS01SBPS-PC01A-08-HYDBBA103",
+   "name": "Oregon Slope Base Shallow Profiler Broadband Hydrophone",
+   "refdes": "RS01SBPS-PC01A-08-HYDBBA103",
+   "site": "oregon-slope-base-seafloor",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SBPS-PC01A-08-HYDBBA103"
+   }
+  },
+  {
+   "id": "RS01SBPS-PC01A-4A-CTDPFA103",
+   "name": "Oregon Slope Base Shallow Profiler CTD Profiler",
+   "refdes": "RS01SBPS-PC01A-4A-CTDPFA103",
+   "site": "oregon-slope-base-seafloor",
+   "type": "ctd",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SBPS-PC01A-4A-CTDPFA103",
+    "dataset": "ooi-rs01sbps-pc01a-4a-ctdpfa103"
+   }
+  },
+  {
+   "id": "RS01SBPS-PC01A-4A-DOSTAD103",
+   "name": "Oregon Slope Base Shallow Profiler Dissolved Oxygen",
+   "refdes": "RS01SBPS-PC01A-4A-DOSTAD103",
+   "site": "oregon-slope-base-seafloor",
+   "type": "dissolved_oxygen",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SBPS-PC01A-4A-DOSTAD103",
+    "dataset": "ooi-rs01sbps-pc01a-4a-dostad103"
+   }
+  },
+  {
+   "id": "RS01SBPS-PC01A-4B-PHSENA102",
+   "name": "Oregon Slope Base Shallow Profiler pH Sensor",
+   "refdes": "RS01SBPS-PC01A-4B-PHSENA102",
+   "site": "oregon-slope-base-seafloor",
+   "type": "ph",
+   "gap": 240,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SBPS-PC01A-4B-PHSENA102",
+    "dataset": "ooi-rs01sbps-pc01a-4b-phsena102"
+   }
+  },
+  {
+   "id": "RS01SBPS-PC01A-4C-FLORDD103",
+   "name": "Oregon Slope Base Shallow Profiler Fluorometer/Backscatter",
+   "refdes": "RS01SBPS-PC01A-4C-FLORDD103",
+   "site": "oregon-slope-base-seafloor",
+   "type": "fluorometer",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SBPS-PC01A-4C-FLORDD103",
+    "dataset": "ooi-rs01sbps-pc01a-4c-flordd103"
+   }
+  },
+  {
+   "id": "RS01SLBS-LJ01A-05-HPIESA101",
+   "name": "Oregon Slope Base Seafloor HPIES",
+   "refdes": "RS01SLBS-LJ01A-05-HPIESA101",
+   "site": "oregon-slope-base-seafloor",
+   "type": "hpies",
+   "gap": 240,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SLBS-LJ01A-05-HPIESA101",
+    "dataset": "ooi-rs01slbs-lj01a-05-hpiesa101"
+   }
+  },
+  {
+   "id": "RS01SLBS-LJ01A-09-HYDBBA102",
+   "name": "Oregon Slope Base Seafloor Broadband Hydrophone",
+   "refdes": "RS01SLBS-LJ01A-09-HYDBBA102",
+   "site": "oregon-slope-base-seafloor",
+   "type": "hydrophone",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SLBS-LJ01A-09-HYDBBA102"
+   }
+  },
+  {
+   "id": "RS01SLBS-LJ01A-10-ADCPTE101",
+   "name": "Oregon Slope Base Seafloor ADCP",
+   "refdes": "RS01SLBS-LJ01A-10-ADCPTE101",
+   "site": "oregon-slope-base-seafloor",
+   "type": "adcp",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SLBS-LJ01A-10-ADCPTE101"
+   }
+  },
+  {
+   "id": "RS01SLBS-LJ01A-11-OPTAAC103",
+   "name": "Oregon Slope Base Seafloor Spectrophotometer (AC-S)",
+   "refdes": "RS01SLBS-LJ01A-11-OPTAAC103",
+   "site": "oregon-slope-base-seafloor",
+   "type": "spectrophotometer",
+   "gap": 120,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SLBS-LJ01A-11-OPTAAC103"
+   }
+  },
+  {
+   "id": "RS01SLBS-LJ01A-12-CTDPFB101",
+   "name": "Oregon Slope Base Seafloor CTD",
+   "refdes": "RS01SLBS-LJ01A-12-CTDPFB101",
+   "site": "oregon-slope-base-seafloor",
+   "type": "ctd",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SLBS-LJ01A-12-CTDPFB101",
+    "dataset": "ooi-rs01slbs-lj01a-12-ctdpfb101"
+   }
+  },
+  {
+   "id": "RS01SLBS-LJ01A-12-DOSTAD101",
+   "name": "Oregon Slope Base Seafloor Dissolved Oxygen",
+   "refdes": "RS01SLBS-LJ01A-12-DOSTAD101",
+   "site": "oregon-slope-base-seafloor",
+   "type": "dissolved_oxygen",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SLBS-LJ01A-12-DOSTAD101",
+    "dataset": "ooi-rs01slbs-lj01a-12-dostad101"
+   }
+  },
+  {
+   "id": "RS01SLBS-MJ01A-06-PRESTA101",
+   "name": "Oregon Slope Base Seafloor Pressure Sensor (Tidal Pressure Gauge)",
+   "refdes": "RS01SLBS-MJ01A-06-PRESTA101",
+   "site": "oregon-slope-base-seafloor",
+   "type": "absolute_pressure_gauge",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SLBS-MJ01A-06-PRESTA101",
+    "dataset": "ooi-rs01slbs-mj01a-06-presta101"
+   }
+  },
+  {
+   "id": "RS01SLBS-MJ01A-12-VEL3DB101",
+   "name": "Oregon Slope Base Seafloor 3D Current Meter",
+   "refdes": "RS01SLBS-MJ01A-12-VEL3DB101",
+   "site": "oregon-slope-base-seafloor",
+   "type": "velocimeter",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SLBS-MJ01A-12-VEL3DB101",
+    "dataset": "ooi-rs01slbs-mj01a-12-vel3db101"
+   }
+  },
+  {
+   "id": "RS01SUM1-LJ01B-09-PRESTB102",
+   "name": "Southern Hydrate Ridge Flank Seafloor Pressure (Tidal Pressure Gauge)",
+   "refdes": "RS01SUM1-LJ01B-09-PRESTB102",
+   "site": "southern-hydrate-ridge",
+   "type": "absolute_pressure_gauge",
+   "gap": 30,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SUM1-LJ01B-09-PRESTB102",
+    "dataset": "ooi-rs01sum1-lj01b-09-prestb102"
+   }
+  },
+  {
+   "id": "RS01SUM1-LJ01B-12-VEL3DB104",
+   "name": "Southern Hydrate Ridge Flank 3D Current Meter",
+   "refdes": "RS01SUM1-LJ01B-12-VEL3DB104",
+   "site": "southern-hydrate-ridge",
+   "type": "velocimeter",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SUM1-LJ01B-12-VEL3DB104",
+    "dataset": "ooi-rs01sum1-lj01b-12-vel3db104"
+   }
+  },
+  {
+   "id": "RS01SUM2-MJ01B-05-CAMDSB103",
+   "name": "Southern Hydrate Ridge Benthic Digital Still Camera",
+   "refdes": "RS01SUM2-MJ01B-05-CAMDSB103",
+   "site": "southern-hydrate-ridge-summit-2",
+   "type": "camera",
+   "gap": 180,
+   "check": {
+    "method": "nereus",
+    "nereus": "file",
+    "refdes": "RS01SUM2-MJ01B-05-CAMDSB103"
+   }
+  },
+  {
+   "id": "RS01SUM2-MJ01B-12-ADCPSK101",
+   "name": "Southern Hydrate Ridge Summit ADCP",
+   "refdes": "RS01SUM2-MJ01B-12-ADCPSK101",
+   "site": "southern-hydrate-ridge-summit-2",
+   "type": "adcp",
+   "gap": 60,
+   "check": {
+    "method": "nereus",
+    "nereus": "data",
+    "refdes": "RS01SUM2-MJ01B-12-ADCPSK101"
+   }
+  },
+  {
+   "id": "SCPRAAA301",
+   "name": "Axial Central Caldera Self-Calibrating Pressure Recorder",
+   "refdes": "RS03CCAL-MJ03F-09-SCPRAA301",
+   "site": "axial-seamount-central-caldera",
+   "type": "self_calibrating_pressure_recorder",
+   "gap": 120,
+   "check": {
+    "method": "none"
+   }
+  },
+  {
+   "id": "RS03INT1-MJ03C-07-PPSDNA301",
+   "name": "International District Particle and eDNA Sampler",
+   "refdes": "RS03INT1-MJ03C-07-PPSDNA301",
+   "site": "axial-seamount-international-district",
+   "type": "dna_sampler",
+   "gap": 120,
+   "check": {
+    "method": "none"
+   }
+  },
+  {
+   "id": "RS03INT1-MJ03C-07-RASFLA301",
+   "name": "International District Remote Access Fluid Sampler",
+   "refdes": "RS03INT1-MJ03C-07-RASFLA301",
+   "site": "axial-seamount-international-district",
+   "type": "fluid_sampler",
+   "gap": 120,
+   "check": {
+    "method": "none"
+   }
+  },
+  {
+   "id": "CE04OSPS-SF01B-3B-OPTAAD105",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Spectrophotometer",
+   "refdes": "CE04OSPS-SF01B-3B-OPTAAD105",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "type": "spectrophotometer",
+   "gap": 360,
+   "check": {
+    "method": "none"
+   }
+  },
+  {
+   "id": "RS01SBPD-DP01A-03-FLCDRA104",
+   "name": "Oregon Slope Base Deep Profiler CDOM Fluorometer (2nd deployment)",
+   "refdes": "RS01SBPD-DP01A-03-FLCDRA104",
+   "site": "oregon-slope-base-seafloor",
+   "type": "fluorometer",
+   "gap": 720,
+   "check": {
+    "method": "none"
+   }
+  },
+  {
+   "id": "RS01SBPD-DP01A-04-FLNTUA104",
+   "name": "Oregon Slope Base Deep Profiler Fluorometer/Turbidity (2nd deployment)",
+   "refdes": "RS01SBPD-DP01A-04-FLNTUA104",
+   "site": "oregon-slope-base-seafloor",
+   "type": "fluorometer",
+   "gap": 720,
+   "check": {
+    "method": "none"
+   }
+  }
+ ]
+}
