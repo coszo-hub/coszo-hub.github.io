@@ -1801,6 +1801,7 @@ DATA_PAGE_META = {
         "lede": "Drift-corrected absolute seafloor pressure from a cabled self-calibrating pressure recorder.",
         "overview": "The Cabled Self-Calibrating Pressure Recorder (CSCPR) provides drift-corrected absolute seafloor pressure from dual calibrated gauges, supporting long-term seafloor geodesy.",
         "additional": "All 23 channels from the self-calibrating pressure recorder at the Axial Seamount central caldera \u2014 both gauges plus the dead-weight tester and housekeeping channels. Locations 40 and 41 are the two gauges; channels listed against 40 / 41 exist once per gauge.",
+        "access": '<p>COSZO data is available through EarthScope.</p>\n        <p>The <a href="https://github.com/coszo-hub/SCPR-calibration" target="_blank" rel="noopener">GitHub repo</a> provides Python scripts to apply the calibration to MiniSEED files from EarthScope.</p>',
     },
     "current-meter": {
         "lede": "Three-component sea-water velocity with acoustic amplitude and correlation, pressure, and temperature.",
