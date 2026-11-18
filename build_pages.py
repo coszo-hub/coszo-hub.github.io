@@ -1788,6 +1788,10 @@ DATA_PAGE_META = {
         "overview": '<p>Pressure incorporates tidal pressure gauges sampling at rates varying from 0.0667 Hz to 1.0 Hz. Each instrument also carries a housing temperature channel.</p>\n        <p>The product spans two generations of instruments: existing gauges on the Regional Cabled Array at <a href="slope-base.html">Slope Base</a>, <a href="hydrate-ridge.html">Southern Hydrate Ridge</a>, and Axial Base, and new COSZO <a href="coszo-instruments.html">Paroscientific Series 8000 gauges</a> at <a href="oregon-outer-shelf.html">Outer Shelf</a>, <a href="oregon-offshore.html">Oregon Offshore</a>, and <a href="oregon-mid-slope.html">Mid Slope</a>.</p>',
         "caption": 'Entries without a link under Channel are data that will be available once COSZO comes online.',
         "additional": 'Absolute pressure data from Axial Base, served through the same OOI infrastructure.',
+        # Data quality notes: one square bullet per entry, shown at the bottom of the page.
+        "quality": [
+            'The sample rate changed from 15 s (0.0667 Hz) to 1 s (1 Hz) at <a href="hydrate-ridge.html">Southern Hydrate Ridge</a> (<code>OO.HYS14</code>) on 11 August 2017 and at <a href="slope-base.html">Slope Base</a> (<code>OO.HYSB1</code>) on 26 June 2018. With the change, the channel codes switched from <code>UDO</code>/<code>UK1</code> to <code>LDO</code>/<code>LK1</code> (location <code>10</code>). Axial Base (<code>OO.AXBA1</code>) still records at 15 s. See the <a href="https://github.com/coszo-hub/absolute-seafloor-pressure#deployments" target="_blank" rel="noopener">deployment history</a>.',
+        ],
         "access": '<p>More station information, data quality status, and deployments are available through the GitHub webpage: <a href="https://github.com/coszo-hub/absolute-seafloor-pressure" target="_blank" rel="noopener">github.com/coszo-hub/absolute-seafloor-pressure</a>.</p>\n        <p>Scripts for detiding and drift-correcting the data are available through the COSZO GitHub.</p>\n\n        <blockquote>Raw pressure data are released within 24 hours of acquisition.</blockquote>',
     },
     "cscpr": {
@@ -1909,6 +1913,7 @@ def data_page_body(slug, info):
         additional_nav = '          <li><a href="#additional">Additional Data</a></li>\n'
     quality_block = ""
     quality_nav = ""
+    quality_pointer = ""
     if meta.get("quality"):
         items = "".join(f"\n          <li>{n}</li>" for n in meta["quality"])
         quality_block = f"""
@@ -1917,6 +1922,7 @@ def data_page_body(slug, info):
         </ul>
 """
         quality_nav = '          <li><a href="#quality">Data Quality Notes</a></li>\n'
+        quality_pointer = '\n        <p>Please read the <a href="#quality">notes at the bottom</a> of this page for data quality information.</p>'
 
     return page_hero(
         "Data", title, meta.get("lede", ""),
@@ -1935,7 +1941,7 @@ def data_page_body(slug, info):
       </aside>
       <article class="article-content">
         <h2 id="overview">Overview</h2>
-        {overview_html}
+        {overview_html}{quality_pointer}
 
         <h2 id="stations">Stations</h2>
         <p>The table below lists the station, location code, and channels for the data.</p>
