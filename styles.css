@@ -932,6 +932,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .article-content ul, .article-content ol { margin: 0 0 20px 20px; font-size: 17px; line-height: 1.75; }
 .article-content li { margin-bottom: 8px; }
+.article-content ul.quality-notes { list-style: square; }
 .article-content a {
   color: var(--ocean-500);
   border-bottom: 1px solid var(--ocean-500);

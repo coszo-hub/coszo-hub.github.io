@@ -1766,6 +1766,10 @@ DATA_PAGE_META = {
     "broadband-seismometer": {
         "lede": "Three-component broadband ground velocity together with high-dynamic-range strong-motion acceleration.",
         "overview": "The cabled ocean-bottom seismometer (COBSO) records three-component broadband ground velocity together with co-located strong-motion acceleration at each COSZO seafloor site. Each measurement is streamed at several sample rates, supporting both high-frequency earthquake detection and long-period analysis.",
+        # Data quality notes: one square bullet per entry, shown at the bottom of the page.
+        "quality": [
+            'There is a timing error in the <a href="hydrate-ridge.html">Southern Hydrate Ridge</a> seismometer (<code>OO.HYS14</code>) from 10 August 2022 to 8 May 2025. It can be corrected using <a href="https://github.com/coszo-hub/chronfix" target="_blank" rel="noopener">chronfix</a>.',
+        ],
     },
     "differential-pressure-gauge": {
         "lede": "Short-period seafloor pressure variations capturing tsunami signals and hydroacoustic waves.",
@@ -1903,6 +1907,16 @@ def data_page_body(slug, info):
         {additional_table}
 """
         additional_nav = '          <li><a href="#additional">Additional Data</a></li>\n'
+    quality_block = ""
+    quality_nav = ""
+    if meta.get("quality"):
+        items = "".join(f"\n          <li>{n}</li>" for n in meta["quality"])
+        quality_block = f"""
+        <h2 id="quality">Data Quality Notes</h2>
+        <ul class="quality-notes">{items}
+        </ul>
+"""
+        quality_nav = '          <li><a href="#quality">Data Quality Notes</a></li>\n'
 
     return page_hero(
         "Data", title, meta.get("lede", ""),
@@ -1917,7 +1931,7 @@ def data_page_body(slug, info):
           <li><a href="#overview" class="active">Overview</a></li>
           <li><a href="#stations">Stations</a></li>
 {additional_nav}          <li><a href="#access">Data Access</a></li>
-        </ul>
+{quality_nav}        </ul>
       </aside>
       <article class="article-content">
         <h2 id="overview">Overview</h2>
@@ -1931,7 +1945,7 @@ def data_page_body(slug, info):
 
 {additional_block}        <h2 id="access">Data Access</h2>
         {access_html}
-      </article>
+{quality_block}      </article>
     </div>
   </div>
 </section>
