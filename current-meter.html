@@ -134,7 +134,7 @@
         <details class="station-group"><summary>
           <span class="sg-site">Oregon Offshore</span>
           <span class="sg-code">(OO.CZOFF)</span>
-          <span class="sg-count">11 channels</span>
+          <span class="sg-count">15 channels</span>
         </summary>
         <table class="specs-table">
           <thead>
@@ -146,6 +146,8 @@
             <tr><td><code>20</code></td><td>Acoustic amplitude (beams 1-3)</td><td>MY1, MY2, MY3 (8 Hz)</td></tr>
             <tr><td><code>20</code></td><td>Acoustic correlation (beams 1-3)</td><td>ME1, ME2, ME3 (8 Hz)</td></tr>
             <tr><td><code>20</code></td><td>Pressure</td><td>MDO (8 Hz)</td></tr>
+            <tr><td><code>21</code></td><td>Water temperature</td><td><a href="https://ds.iris.edu/mda/OO/CZOFF/21/LKO/" target="_blank" rel="noopener">LKO</a> (1 Hz)</td></tr>
+            <tr><td><code>21</code></td><td>Current velocity (east, north, up)</td><td><a href="https://ds.iris.edu/mda/OO/CZOFF/21/MOU/" target="_blank" rel="noopener">MOU</a>, <a href="https://ds.iris.edu/mda/OO/CZOFF/21/MOV/" target="_blank" rel="noopener">MOV</a>, <a href="https://ds.iris.edu/mda/OO/CZOFF/21/MOW/" target="_blank" rel="noopener">MOW</a> (8 Hz)</td></tr>
           </tbody>
         </table>
         </details>
@@ -164,6 +166,21 @@
             <tr><td><code>20</code></td><td>Acoustic amplitude (beams 1-3)</td><td>MY1, MY2, MY3 (8 Hz)</td></tr>
             <tr><td><code>20</code></td><td>Acoustic correlation (beams 1-3)</td><td>ME1, ME2, ME3 (8 Hz)</td></tr>
             <tr><td><code>20</code></td><td>Pressure</td><td>MDO (8 Hz)</td></tr>
+          </tbody>
+        </table>
+        </details>
+        <details class="station-group"><summary>
+          <span class="sg-site">Oregon Shelf</span>
+          <span class="sg-code">(OO.CZSHF)</span>
+          <span class="sg-count">4 channels</span>
+        </summary>
+        <table class="specs-table">
+          <thead>
+            <tr><th>Location</th><th>Data type</th><th>Channel</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>20</code></td><td>Water temperature</td><td><a href="https://ds.iris.edu/mda/OO/CZSHF/20/LKO/" target="_blank" rel="noopener">LKO</a> (1 Hz)</td></tr>
+            <tr><td><code>20</code></td><td>Current velocity (east, north, up)</td><td><a href="https://ds.iris.edu/mda/OO/CZSHF/20/MOU/" target="_blank" rel="noopener">MOU</a>, <a href="https://ds.iris.edu/mda/OO/CZSHF/20/MOV/" target="_blank" rel="noopener">MOV</a>, <a href="https://ds.iris.edu/mda/OO/CZSHF/20/MOW/" target="_blank" rel="noopener">MOW</a> (8 Hz)</td></tr>
           </tbody>
         </table>
         </details>
@@ -212,7 +229,7 @@
           </tbody>
         </table>
         </details>
-        
+        <p class="instr-site">Entries without a link under Channel are data that will be available once COSZO comes online. At Oregon Shelf (location 20) and Oregon Offshore (location 21) the linked channels are from the existing Regional Cabled Array current meters; location 20 at Oregon Offshore is the new COSZO current meter.</p>
         <div class="page-notice" role="status"><span class="page-notice-label">Status</span><p>The website will be updated to include all data streams once all systems are operational.</p></div>
 
         <h2 id="access">Data Access</h2>

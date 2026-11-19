@@ -1806,6 +1806,7 @@ DATA_PAGE_META = {
     "current-meter": {
         "lede": "Three-component sea-water velocity with acoustic amplitude and correlation, pressure, and temperature.",
         "overview": "The cabled current meter (Nortek Vector) measures three-component sea-water velocity along with per-beam acoustic amplitude and correlation, seafloor pressure, and water temperature at each COSZO site.",
+        "caption": "Entries without a link under Channel are data that will be available once COSZO comes online. At Oregon Shelf (location 20) and Oregon Offshore (location 21) the linked channels are from the existing Regional Cabled Array current meters; location 20 at Oregon Offshore is the new COSZO current meter.",
     },
 }
 
@@ -1819,10 +1820,21 @@ CHANNEL_RE = re.compile(r"\b([A-Z]{2}[A-Z0-9])\b")
 # deployed, AXCC1 because its SCPR gauges (locations 40/41) are served from
 # piweb and are not archived - MDA returns a 200 with an empty page for them,
 # so an unchecked link would look fine and lead nowhere.
-ARCHIVED_STATIONS = {"HYS14", "HYSB1", "AXBA1"}
+# Station -> locations already archived at EarthScope (their channels link to the MDA);
+# None means every location at that station. CZSHF loc 20 and CZOFF loc 21 are the existing
+# RCA Nortek VEL3D current meters. CZOFF loc 20 is the planned COSZO current meter, not yet
+# deployed, so it stays unlinked.
+ARCHIVED_LOCATIONS = {"HYS14": None, "HYSB1": None, "AXBA1": None, "CZSHF": {"20"}, "CZOFF": {"21"}}
+# Existing RCA instruments that sit at COSZO stations: listed on the data pages, but not
+# COSZO-installed, so they don't count toward the COSZO Instruments "Sites:" lines.
+EXISTING_AT_COSZO_STATIONS = {("CZSHF", "20"), ("CZOFF", "21")}
 
 def link_channels(station, location, channels):
-    if not station or station.upper() not in ARCHIVED_STATIONS:
+    stn = (station or "").upper()
+    if stn not in ARCHIVED_LOCATIONS:
+        return channels
+    locs = ARCHIVED_LOCATIONS[stn]
+    if locs is not None and location not in locs:
         return channels
     loc = location if location not in ("", "--") else "--"
     def sub(m):
@@ -2822,7 +2834,7 @@ def instrument_sites_links(slug):
     info = load_data_channels(os.path.join(OUT_DIR, "data", "data_channels.csv")).get(slug)
     seen = []
     for sect, site, stn, loc, dt, ch in (info["rows"] if info else []):
-        if sect == "additional":
+        if sect == "additional" or (stn, loc) in EXISTING_AT_COSZO_STATIONS:
             continue
         link = DATA_SITE_LINKS.get(site)
         if link and link not in seen:
