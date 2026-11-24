@@ -349,16 +349,25 @@ def check_piweb(sensor: dict, start: float, end: float) -> dict:
     return {**out, "source": "PI data portal", "gauges": gauges, **({"detail": detail} if detail else {})}
 
 
-def shared_diversion(rows: list[dict]) -> None:
+def shared_diversion(rows: list[dict], end: float | None = None) -> None:
     """A broadband hydrophone without its files on a day the seismometers' 200 Hz data are diverted is diverted too:
     the Navy holds the cabled array's high-rate acoustic and seismic data together (14 Nov 2026: every broadband
-    hydrophone's files and every station's 200 Hz data stopped between 07:20 and 07:40 UTC)."""
+    hydrophone's files and every station's 200 Hz data stopped between 07:20 and 07:40 UTC). The diversion comes and
+    goes (22-23 Nov 2026: off for about 7 hours, on for 7 to 10), so a hydrophone whose files are back by the window's
+    end says so, with the hours missing, not "no files since" its last."""
     if not any(r["method"] == "earthscope" and r["state"] == "diverted" for r in rows):
         return
     for r in rows:
         if r["method"] == "rawdata" and r["state"] in ("no_data", "gaps"):
-            last = f"no files since {r['lastData'][:16].replace('T', ' ')} UTC" if r.get("lastData") else "no files"
-            r.update(state="diverted", detail=f"{last}, as the seismometers' 200 Hz data stopped: the Navy's diversion")
+            last = r.get("lastData")
+            back = end is not None and last and datetime.fromisoformat(last.replace("Z", "+00:00")).timestamp() >= end - 2 * RAW_MINUTES * 60
+            if back:
+                text = (f"files missing for about {round((1 - r.get('coverage', 0)) * 24)} of the 24 hours, as the "
+                        f"seismometers' 200 Hz data were held back (the Navy's diversion); files again by the check's end")
+            else:
+                since = f"no files since {last[:16].replace('T', ' ')} UTC" if last else "no files"
+                text = f"{since}, as the seismometers' 200 Hz data stopped: the Navy's diversion"
+            r.update(state="diverted", detail=text)
 
 
 # Nereus --------------------------------------------------------------------------------------------------------------
@@ -520,7 +529,7 @@ def main() -> None:
         notes = {}
     with ThreadPoolExecutor(args.jobs) as pool:
         rows = list(pool.map(lambda s: check_one(s, start, end, channels, nereus, notes), sensors))
-    shared_diversion(rows)
+    shared_diversion(rows, end)
     previous = {}
     if args.previous and Path(args.previous).exists():
         previous = {r["id"]: r for r in json.loads(Path(args.previous).read_text()).get("sensors", [])}
