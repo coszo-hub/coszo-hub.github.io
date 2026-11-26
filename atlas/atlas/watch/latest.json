@@ -1,14 +1,15 @@
 {
- "from": "2026-11-24T09:55:00Z",
- "to": "2026-11-25T09:55:00Z",
- "day": "2026-11-25",
- "generatedAt": "2026-11-25T09:56:53Z",
+ "from": "2026-11-25T09:39:00Z",
+ "to": "2026-11-26T09:39:00Z",
+ "day": "2026-11-26",
+ "generatedAt": "2026-11-26T09:40:20Z",
  "axial200Hz": "Navy Diversion",
  "counts": {
   "diverted": 24,
   "unchecked": 6,
-  "no_data": 11,
-  "ok": 78
+  "no_data": 31,
+  "ok": 37,
+  "failed": 21
  },
  "sensors": [
   {
@@ -18,13 +19,17 @@
    "site": "ashes-hydrothermal-field-axial-seamount",
    "method": "earthscope",
    "gap": 10,
-   "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:30Z",
+   "coverage": 0.999,
+   "longestGapMin": 1,
+   "lastData": "2026-11-26T09:38:02Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -34,6 +39,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -53,12 +64,16 @@
    "method": "earthscope",
    "gap": 10,
    "coverage": 1.0,
-   "longestGapMin": 1,
-   "lastData": "2026-11-25T09:54:29Z",
+   "longestGapMin": 0,
+   "lastData": "2026-11-26T09:38:31Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -68,6 +83,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -86,14 +107,17 @@
    "site": "axial-seamount-base",
    "method": "earthscope",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
-   "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:43Z",
+   "coverage": 0.999,
+   "longestGapMin": 1,
+   "lastData": "2026-11-26T09:37:41Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -103,6 +127,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -121,13 +151,17 @@
    "site": "axial-seamount-base-2",
    "method": "earthscope",
    "gap": 10,
-   "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:43Z",
+   "coverage": 0.999,
+   "longestGapMin": 1,
+   "lastData": "2026-11-26T09:37:41Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -137,6 +171,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -157,11 +197,15 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:30Z",
+   "lastData": "2026-11-26T09:38:43Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -171,6 +215,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -200,14 +250,17 @@
    "site": "axial-seamount-central-caldera",
    "method": "earthscope",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:30Z",
+   "lastData": "2026-11-26T09:38:43Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -217,6 +270,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -235,13 +294,17 @@
    "site": "axial-seamount-eastern-caldera",
    "method": "earthscope",
    "gap": 10,
-   "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:55Z",
+   "coverage": 0.999,
+   "longestGapMin": 1,
+   "lastData": "2026-11-26T09:38:06Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -251,6 +314,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -271,11 +340,15 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:45Z",
+   "lastData": "2026-11-26T09:38:45Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -285,6 +358,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -303,14 +382,17 @@
    "site": "axial-seamount-eastern-caldera-2",
    "method": "earthscope",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:45Z",
+   "lastData": "2026-11-26T09:38:45Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -320,6 +402,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -340,11 +428,15 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:30Z",
+   "lastData": "2026-11-26T09:38:35Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -354,6 +446,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -373,12 +471,16 @@
    "method": "earthscope",
    "gap": 10,
    "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:46Z",
+   "longestGapMin": 1,
+   "lastData": "2026-11-26T09:38:29Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -388,6 +490,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -408,11 +516,15 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:37Z",
+   "lastData": "2026-11-26T09:38:39Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -422,6 +534,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -440,14 +558,17 @@
    "site": "oregon-slope-base-seafloor",
    "method": "earthscope",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:37Z",
+   "lastData": "2026-11-26T09:38:39Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -457,6 +578,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -475,14 +602,17 @@
    "site": "southern-hydrate-ridge",
    "method": "earthscope",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
-   "coverage": 1.0,
+   "coverage": 0.999,
    "longestGapMin": 1,
-   "lastData": "2026-11-25T09:54:22Z",
+   "lastData": "2026-11-26T09:38:11Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -492,6 +622,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -511,12 +647,16 @@
    "method": "earthscope",
    "gap": 10,
    "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:50Z",
+   "longestGapMin": 1,
+   "lastData": "2026-11-26T09:38:25Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -526,6 +666,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -544,13 +690,17 @@
    "site": "southern-hydrate-ridge-summit-2",
    "method": "earthscope",
    "gap": 10,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "longestGapMin": 1,
-   "lastData": "2026-11-25T09:54:22Z",
+   "lastData": "2026-11-26T09:38:11Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -560,6 +710,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -578,13 +734,17 @@
    "site": "southern-hydrate-ridge-summit-3",
    "method": "earthscope",
    "gap": 10,
-   "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:30Z",
+   "coverage": 0.999,
+   "longestGapMin": 1,
+   "lastData": "2026-11-26T09:38:07Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -594,6 +754,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -614,11 +780,15 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T09:54:35Z",
+   "lastData": "2026-11-26T09:38:33Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
     "hoursMissing": [
+     0,
+     1,
+     2,
+     3,
      4,
      5,
      6,
@@ -628,6 +798,12 @@
      10,
      11,
      12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
      19,
      20,
      21,
@@ -646,7 +822,6 @@
    "site": "axial-seamount-central-caldera",
    "method": "erddap",
    "gap": 30,
-   "nereusStatus": "FAILED",
    "note": {
     "title": "Data output stopped - again",
     "message": "No data output or ping response. Power cycle did not fix the issue, and large ground fault persists (730,-28). Instrument powered down for now. 11/8/26 - unable to regain comms with instrument after multiple power cycle. Instrument set to failed.",
@@ -654,7 +829,7 @@
     "startedAt": "2026-10-28T22:39:00+00:00"
    },
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-24T11:37:00Z",
+   "erddapNewest": "2026-11-25T11:43:00Z",
    "state": "no_data",
    "coverage": 0.0,
    "lastData": "2026-10-28T22:38:00Z",
@@ -668,7 +843,6 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "erddap",
    "gap": 240,
-   "nereusStatus": "FAILED",
    "source": "OOI ERDDAP",
    "erddapNewest": "2025-10-19T12:00:00Z",
    "state": "no_data",
@@ -683,7 +857,6 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "erddap",
    "gap": 360,
-   "nereusStatus": "OFFLINE",
    "note": {
     "title": "SF01B and instruments set to offline",
     "message": "setting instruments to offline to reflect accurate state of the system.",
@@ -704,7 +877,6 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "erddap",
    "gap": 360,
-   "nereusStatus": "OFFLINE",
    "note": {
     "title": "SF01B and instruments set to offline",
     "message": "setting instruments to offline to reflect accurate state of the system.",
@@ -725,7 +897,6 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "erddap",
    "gap": 900,
-   "nereusStatus": "OFFLINE",
    "note": {
     "title": "SF01B and instruments set to offline",
     "message": "setting instruments to offline to reflect accurate state of the system.",
@@ -746,7 +917,6 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "erddap",
    "gap": 360,
-   "nereusStatus": "OFFLINE",
    "note": {
     "title": "SF01B and instruments set to offline",
     "message": "setting instruments to offline to reflect accurate state of the system.",
@@ -767,7 +937,6 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "erddap",
    "gap": 360,
-   "nereusStatus": "OFFLINE",
    "note": {
     "title": "SF01B and instruments set to offline",
     "message": "setting instruments to offline to reflect accurate state of the system.",
@@ -788,7 +957,6 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "erddap",
    "gap": 360,
-   "nereusStatus": "OFFLINE",
    "note": {
     "title": "SF01B and instruments set to offline",
     "message": "setting instruments to offline to reflect accurate state of the system.",
@@ -809,7 +977,6 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "erddap",
    "gap": 900,
-   "nereusStatus": "OFFLINE",
    "note": {
     "title": "SF01B and instruments set to offline",
     "message": "setting instruments to offline to reflect accurate state of the system.",
@@ -830,7 +997,6 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "erddap",
    "gap": 360,
-   "nereusStatus": "OFFLINE",
    "note": {
     "title": "SF01B and instruments set to offline",
     "message": "setting instruments to offline to reflect accurate state of the system.",
@@ -851,7 +1017,6 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "erddap",
    "gap": 900,
-   "nereusStatus": "OFFLINE",
    "note": {
     "title": "SF01B and instruments set to offline",
     "message": "setting instruments to offline to reflect accurate state of the system.",
@@ -872,22 +1037,17 @@
    "site": "ashes-hydrothermal-field-axial-seamount-2",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:28:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:23:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:23:00Z",
-    "checkedTo": "2026-11-24T11:23:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:28:00Z",
+   "checkedTo": "2026-11-25T11:28:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -897,22 +1057,17 @@
    "site": "ashes-hydrothermal-field-axial-seamount-2",
    "method": "nereus",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:29:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:23:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:23:00Z",
-    "checkedTo": "2026-11-24T11:23:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:29:00Z",
+   "checkedTo": "2026-11-25T11:29:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -922,22 +1077,17 @@
    "site": "ashes-hydrothermal-field-axial-seamount-2",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:29:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:24:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:24:00Z",
-    "checkedTo": "2026-11-24T11:24:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:29:00Z",
+   "checkedTo": "2026-11-25T11:29:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -947,14 +1097,9 @@
    "site": "ashes-hydrothermal-field-axial-seamount-2",
    "method": "nereus",
    "gap": 180,
-   "nereusStatus": "PARTIALLY_FUNCTIONAL",
-   "source": "Nereus (file check)",
-   "hoursGood": 2,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T00:00:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS03AXBS-LJ03A-10-ADCPTE303",
@@ -963,14 +1108,9 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS03AXBS-LJ03A-11-OPTAAC303",
@@ -979,14 +1119,9 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 120,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS03AXBS-LJ03A-12-CTDPFB301",
@@ -995,22 +1130,17 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:33:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:27:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:27:00Z",
-    "checkedTo": "2026-11-24T11:27:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:33:00Z",
+   "checkedTo": "2026-11-25T11:33:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1020,22 +1150,17 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:31:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:25:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:25:00Z",
-    "checkedTo": "2026-11-24T11:25:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:31:00Z",
+   "checkedTo": "2026-11-25T11:31:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1045,22 +1170,17 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:32:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:26:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:26:00Z",
-    "checkedTo": "2026-11-24T11:26:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:32:00Z",
+   "checkedTo": "2026-11-25T11:32:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1070,22 +1190,17 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:30:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:24:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:24:00Z",
-    "checkedTo": "2026-11-24T11:24:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:30:00Z",
+   "checkedTo": "2026-11-25T11:30:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1095,14 +1210,9 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS03AXPS-PC03A-06-VADCPB301",
@@ -1111,21 +1221,16 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2025-12-09T00:59:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2025-12-09T00:58:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2025-12-09T00:59:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2025-12-09T00:58:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2025-12-09"
   },
   {
    "id": "RS03AXPS-PC03A-07-CAMDSC302",
@@ -1134,14 +1239,9 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 180,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (file check)",
-   "hoursGood": 2,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T00:00:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS03AXPS-PC03A-4A-CTDPFA303",
@@ -1150,22 +1250,17 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:41:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:35:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:35:00Z",
-    "checkedTo": "2026-11-24T11:35:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:41:00Z",
+   "checkedTo": "2026-11-25T11:41:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1175,21 +1270,16 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2024-02-10T08:59:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2024-02-10T08:58:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2024-02-10T08:59:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2024-02-10T08:58:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2024-02-10"
   },
   {
    "id": "RS03AXPS-PC03A-4B-PHSENA302",
@@ -1198,22 +1288,17 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 240,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:00:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:00:00Z",
-    "state": "ok",
-    "coverage": 0.154,
-    "longestGapMin": 50,
-    "lastData": "2026-11-24T10:10:00Z",
-    "checkedTo": "2026-11-24T11:00:00Z"
+   "coverage": 0.123,
+   "longestGapMin": 50,
+   "lastData": "2026-11-25T10:10:00Z",
+   "checkedTo": "2026-11-25T11:00:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1223,22 +1308,17 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:42:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:36:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:36:00Z",
-    "checkedTo": "2026-11-24T11:36:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:42:00Z",
+   "checkedTo": "2026-11-25T11:42:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1248,28 +1328,23 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 360,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "03A Shallow Profiler daily profiles reduced",
     "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
     "category": "NOTE",
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:38:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:32:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:32:00Z",
-    "checkedTo": "2026-11-24T11:32:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:38:00Z",
+   "checkedTo": "2026-11-25T11:38:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1279,28 +1354,23 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 360,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "03A Shallow Profiler daily profiles reduced",
     "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
     "category": "NOTE",
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:40:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:34:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:34:00Z",
-    "checkedTo": "2026-11-24T11:34:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:40:00Z",
+   "checkedTo": "2026-11-25T11:40:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1310,28 +1380,23 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 900,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "03A Shallow Profiler daily profiles reduced",
     "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
     "category": "NOTE",
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T09:51:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T10:09:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T10:09:00Z",
-    "checkedTo": "2026-11-24T10:09:00Z"
+   "coverage": 0.167,
+   "longestGapMin": 10,
+   "lastData": "2026-11-25T09:51:00Z",
+   "checkedTo": "2026-11-25T09:51:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1341,28 +1406,23 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 360,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "03A Shallow Profiler daily profiles reduced",
     "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
     "category": "NOTE",
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:40:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:34:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:34:00Z",
-    "checkedTo": "2026-11-24T11:34:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:40:00Z",
+   "checkedTo": "2026-11-25T11:40:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1372,20 +1432,15 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 360,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "03A Shallow Profiler daily profiles reduced",
     "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
     "category": "NOTE",
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS03AXPS-SF03A-3C-PARADA301",
@@ -1394,27 +1449,22 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 360,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "03A Shallow Profiler daily profiles reduced",
     "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
     "category": "NOTE",
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-23T12:03:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-11-23T12:02:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-24T11:32:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-24T11:31:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-11-24"
   },
   {
    "id": "RS03AXPS-SF03A-3D-SPKIRA301",
@@ -1423,27 +1473,22 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 360,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "03A Shallow Profiler daily profiles reduced",
     "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
     "category": "NOTE",
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-09-30T10:52:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-09-30T10:51:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-09-30T10:52:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-09-30T10:51:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-09-30"
   },
   {
    "id": "RS03AXPS-SF03A-4A-NUTNRA301",
@@ -1452,27 +1497,22 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 900,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "03A Shallow Profiler daily profiles reduced",
     "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
     "category": "NOTE",
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T07:45:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-11-24T07:44:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T07:45:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-25T07:44:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-11-25"
   },
   {
    "id": "RS03AXPS-SF03A-4B-VELPTD302",
@@ -1481,28 +1521,23 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 360,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "03A Shallow Profiler daily profiles reduced",
     "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
     "category": "NOTE",
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:39:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:33:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:33:00Z",
-    "checkedTo": "2026-11-24T11:33:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:39:00Z",
+   "checkedTo": "2026-11-25T11:39:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1512,27 +1547,22 @@
    "site": "axial-seamount-base",
    "method": "nereus",
    "gap": 900,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "03A Shallow Profiler daily profiles reduced",
     "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
     "category": "NOTE",
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-07-08T10:17:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-06-21T10:17:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-07-08T10:17:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-06-21T10:17:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-06-21"
   },
   {
    "id": "RS03CCAL-MJ03F-12-CTDPFB305",
@@ -1541,22 +1571,17 @@
    "site": "axial-seamount-central-caldera",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:44:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:38:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:38:00Z",
-    "checkedTo": "2026-11-24T11:38:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:44:00Z",
+   "checkedTo": "2026-11-25T11:44:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1566,21 +1591,16 @@
    "site": "axial-seamount-eastern-caldera-2",
    "method": "nereus",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-09-30T10:59:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-09-30T10:58:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-09-30T10:59:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-09-30T10:58:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-09-30"
   },
   {
    "id": "RS03ECAL-MJ03E-12-CTDPFB306",
@@ -1589,22 +1609,17 @@
    "site": "axial-seamount-eastern-caldera-2",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:46:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:40:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:40:00Z",
-    "checkedTo": "2026-11-24T11:40:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:46:00Z",
+   "checkedTo": "2026-11-25T11:46:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1614,20 +1629,15 @@
    "site": "axial-seamount-international-district",
    "method": "nereus",
    "gap": 180,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "Update Rayfin ROM",
     "message": "Update Rayfin ROM version from v.4.4.0.2 to v.4.8.2.1 in order to improve focus. Power cycle after update to make firmware version detectable. Update scripts with new focus value.",
     "category": "NOTE",
     "startedAt": "2026-09-08T18:19:00+00:00"
    },
-   "source": "Nereus (file check)",
-   "hoursGood": 2,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T00:00:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS03INT1-MJ03C-07-D1000A301",
@@ -1636,22 +1646,17 @@
    "site": "axial-seamount-international-district",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:47:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:40:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:40:00Z",
-    "checkedTo": "2026-11-24T11:40:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:47:00Z",
+   "checkedTo": "2026-11-25T11:47:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1661,22 +1666,17 @@
    "site": "axial-seamount-international-district",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:47:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:41:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:41:00Z",
-    "checkedTo": "2026-11-24T11:41:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:47:00Z",
+   "checkedTo": "2026-11-25T11:47:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1686,22 +1686,17 @@
    "site": "axial-seamount-international-district",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:47:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:41:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:41:00Z",
-    "checkedTo": "2026-11-24T11:41:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:47:00Z",
+   "checkedTo": "2026-11-25T11:47:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1711,21 +1706,16 @@
    "site": "axial-seamount-international-district-2",
    "method": "nereus",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2023-07-22T13:42:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2023-07-22T13:41:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2023-07-22T13:42:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2023-07-22T13:41:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2023-07-22"
   },
   {
    "id": "RS03INT2-MJ03D-11-CTDPFB307",
@@ -1734,21 +1724,16 @@
    "site": "axial-seamount-international-district-2",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2025-07-30T09:16:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2025-07-30T09:15:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2025-07-30T09:16:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2025-07-30T09:15:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2025-07-30"
   },
   {
    "id": "RS03INT2-MJ03D-12-VEL3DB304",
@@ -1757,22 +1742,17 @@
    "site": "axial-seamount-international-district-2",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:49:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:43:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:43:00Z",
-    "checkedTo": "2026-11-24T11:43:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:49:00Z",
+   "checkedTo": "2026-11-25T11:49:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1782,14 +1762,9 @@
    "site": "oregon-offshore-cabled-benthic-experiment-package",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "CE04OSBP-LJ01C-06-CTDBPO108",
@@ -1798,21 +1773,16 @@
    "site": "oregon-offshore-cabled-benthic-experiment-package",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-23T03:27:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-11-23T03:26:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T03:25:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-25T03:24:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-11-25"
   },
   {
    "id": "CE04OSBP-LJ01C-06-DOSTAD108",
@@ -1821,20 +1791,17 @@
    "site": "oregon-offshore-cabled-benthic-experiment-package",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-26T03:29:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T03:28:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-11-24T03:27:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-26T03:29:00Z",
+   "checkedTo": "2026-11-26T03:29:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1844,21 +1811,16 @@
    "site": "oregon-offshore-cabled-benthic-experiment-package",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-10-01T03:27:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-10-01T03:26:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-10-01T03:27:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-10-01T03:26:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-10-01"
   },
   {
    "id": "CE04OSBP-LJ01C-08-OPTAAC104",
@@ -1867,14 +1829,9 @@
    "site": "oregon-offshore-cabled-benthic-experiment-package",
    "method": "nereus",
    "gap": 120,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "CE04OSBP-LJ01C-09-PCO2WB104",
@@ -1883,20 +1840,17 @@
    "site": "oregon-offshore-cabled-benthic-experiment-package",
    "method": "nereus",
    "gap": 240,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-26T03:05:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T03:05:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-11-24T02:05:00Z"
+   "coverage": 0.167,
+   "longestGapMin": 50,
+   "lastData": "2026-11-26T03:05:00Z",
+   "checkedTo": "2026-11-26T03:05:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1906,21 +1860,16 @@
    "site": "oregon-offshore-cabled-benthic-experiment-package",
    "method": "nereus",
    "gap": 240,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-23T03:00:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-11-23T02:00:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T03:00:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-25T02:00:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-11-25"
   },
   {
    "id": "CE04OSBP-LV01C-06-CAMDSB106",
@@ -1929,14 +1878,9 @@
    "site": "oregon-offshore-cabled-benthic-experiment-package",
    "method": "nereus",
    "gap": 180,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (file check)",
-   "hoursGood": 2,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T00:00:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "CE04OSPS-PC01B-05-ZPLSCB102",
@@ -1945,14 +1889,9 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (file check)",
-   "hoursGood": 1,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T00:00:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "CE04OSPS-PC01B-4A-CTDPFA109",
@@ -1961,22 +1900,17 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-26T03:32:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-25T03:31:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-25T03:31:00Z",
-    "checkedTo": "2026-11-25T03:31:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-26T03:32:00Z",
+   "checkedTo": "2026-11-26T03:32:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -1986,21 +1920,16 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-01-28T03:30:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-01-28T03:29:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-01-28T03:30:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-01-28T03:29:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-01-28"
   },
   {
    "id": "CE04OSPS-PC01B-4C-PHSENH109",
@@ -2009,20 +1938,17 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "nereus",
    "gap": 240,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-26T03:17:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T03:17:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-11-24T03:02:00Z"
+   "coverage": 0.668,
+   "longestGapMin": 10,
+   "lastData": "2026-11-26T03:17:00Z",
+   "checkedTo": "2026-11-26T03:17:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2032,21 +1958,16 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "nereus",
    "gap": 240,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T03:05:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-11-23T03:05:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T03:05:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-23T03:05:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-11-23"
   },
   {
    "id": "CE02SHBP-LJ01D-05-ADCPTB104",
@@ -2055,14 +1976,9 @@
    "site": "oregon-shelf",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "CE02SHBP-LJ01D-06-CTDBPN106",
@@ -2071,23 +1987,16 @@
    "site": "oregon-shelf",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-25T03:12:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-25T03:12:00Z",
-    "checkedTo": "2026-11-25T03:12:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T03:12:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-25T03:11:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-11-25"
   },
   {
    "id": "CE02SHBP-LJ01D-06-DOSTAD106",
@@ -2096,20 +2005,17 @@
    "site": "oregon-shelf",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-26T03:12:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T03:11:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-11-24T03:10:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-26T03:12:00Z",
+   "checkedTo": "2026-11-26T03:12:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2119,21 +2025,16 @@
    "site": "oregon-shelf",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2024-03-19T03:09:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2024-03-19T03:08:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2024-03-19T03:09:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2024-03-19T03:08:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2024-03-19"
   },
   {
    "id": "CE02SHBP-LJ01D-08-OPTAAD106",
@@ -2142,14 +2043,9 @@
    "site": "oregon-shelf",
    "method": "nereus",
    "gap": 120,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "CE02SHBP-LJ01D-09-PCO2WB103",
@@ -2158,21 +2054,16 @@
    "site": "oregon-shelf",
    "method": "nereus",
    "gap": 240,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T03:05:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2026-11-24T02:05:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T03:05:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-25T02:05:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-11-25"
   },
   {
    "id": "CE02SHBP-LJ01D-10-PHSENH110",
@@ -2181,23 +2072,16 @@
    "site": "oregon-shelf",
    "method": "nereus",
    "gap": 240,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-25T02:57:00Z",
-    "state": "ok",
-    "coverage": 0.667,
-    "longestGapMin": 10,
-    "lastData": "2026-11-25T02:57:00Z",
-    "checkedTo": "2026-11-25T02:57:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T02:57:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-25T02:42:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2026-11-25"
   },
   {
    "id": "CE02SHBP-MJ01C-07-ZPLSCB101",
@@ -2206,14 +2090,9 @@
    "site": "oregon-shelf",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (file check)",
-   "hoursGood": 1,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T00:00:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "CE02SHBP-MJ01C-08-CAMDSB107",
@@ -2222,14 +2101,9 @@
    "site": "oregon-shelf",
    "method": "nereus",
    "gap": 180,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (file check)",
-   "hoursGood": 2,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T00:00:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS01SBPS-PC01A-05-ADCPTD102",
@@ -2238,14 +2112,9 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS01SBPS-PC01A-06-VADCPB101",
@@ -2254,21 +2123,16 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2025-12-07T11:03:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2025-12-07T11:02:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2025-12-07T11:03:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2025-12-07T11:02:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2025-12-07"
   },
   {
    "id": "RS01SBPS-PC01A-07-CAMDSC102",
@@ -2277,14 +2141,9 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 180,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (file check)",
-   "hoursGood": 2,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T00:00:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS01SBPS-PC01A-4A-CTDPFA103",
@@ -2293,21 +2152,16 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "erddap": {
-    "erddapNewest": "2023-07-22T13:42:00Z",
-    "state": "no_data",
-    "coverage": 0.0,
-    "lastData": "2023-07-22T13:41:00Z"
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2023-07-22T13:42:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2023-07-22T13:41:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
-   "since": "2026-11-15"
+   "since": "2023-07-22"
   },
   {
    "id": "RS01SBPS-PC01A-4A-DOSTAD103",
@@ -2316,22 +2170,17 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:17:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:12:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:12:00Z",
-    "checkedTo": "2026-11-24T11:12:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:17:00Z",
+   "checkedTo": "2026-11-25T11:17:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2341,22 +2190,17 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 240,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:00:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:00:00Z",
-    "state": "ok",
-    "coverage": 0.154,
-    "longestGapMin": 50,
-    "lastData": "2026-11-24T10:10:00Z",
-    "checkedTo": "2026-11-24T11:00:00Z"
+   "coverage": 0.123,
+   "longestGapMin": 50,
+   "lastData": "2026-11-25T10:10:00Z",
+   "checkedTo": "2026-11-25T11:00:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2366,22 +2210,17 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:17:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:12:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:12:00Z",
-    "checkedTo": "2026-11-24T11:12:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:17:00Z",
+   "checkedTo": "2026-11-25T11:17:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2391,22 +2230,17 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 240,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:21:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:11:00Z",
-    "state": "ok",
-    "coverage": 0.934,
-    "longestGapMin": 5,
-    "lastData": "2026-11-24T11:11:00Z",
-    "checkedTo": "2026-11-24T11:11:00Z"
+   "coverage": 0.99,
+   "longestGapMin": 1,
+   "lastData": "2026-11-25T11:21:00Z",
+   "checkedTo": "2026-11-25T11:21:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2416,14 +2250,9 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS01SLBS-LJ01A-11-OPTAAC103",
@@ -2432,20 +2261,15 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 120,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "Slope Base OPTAA offline again",
     "message": "Looks like the port fault may be back on OPTAAC103 at Slope Base. Needs a reset.",
     "category": "PORT_FAULT",
     "startedAt": "2026-10-04T12:03:00+00:00"
    },
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS01SLBS-LJ01A-12-CTDPFB101",
@@ -2454,22 +2278,17 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:21:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:16:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:16:00Z",
-    "checkedTo": "2026-11-24T11:16:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:21:00Z",
+   "checkedTo": "2026-11-25T11:21:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2479,22 +2298,17 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:22:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:17:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:17:00Z",
-    "checkedTo": "2026-11-24T11:17:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:22:00Z",
+   "checkedTo": "2026-11-25T11:22:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2504,22 +2318,17 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:22:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:16:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:16:00Z",
-    "checkedTo": "2026-11-24T11:16:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:22:00Z",
+   "checkedTo": "2026-11-25T11:22:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2529,22 +2338,17 @@
    "site": "oregon-slope-base-seafloor",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:23:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:18:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:18:00Z",
-    "checkedTo": "2026-11-24T11:18:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:23:00Z",
+   "checkedTo": "2026-11-25T11:23:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2554,22 +2358,17 @@
    "site": "southern-hydrate-ridge",
    "method": "nereus",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:25:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:20:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:20:00Z",
-    "checkedTo": "2026-11-24T11:20:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:25:00Z",
+   "checkedTo": "2026-11-25T11:25:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2579,22 +2378,17 @@
    "site": "southern-hydrate-ridge",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-25T11:25:00Z",
    "state": "ok",
-   "erddap": {
-    "erddapNewest": "2026-11-24T11:20:00Z",
-    "state": "ok",
-    "coverage": 1.0,
-    "longestGapMin": 0,
-    "lastData": "2026-11-24T11:20:00Z",
-    "checkedTo": "2026-11-24T11:20:00Z"
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-25T11:25:00Z",
+   "checkedTo": "2026-11-25T11:25:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
    },
-   "agree": true,
    "since": "2026-11-15"
   },
   {
@@ -2604,20 +2398,15 @@
    "site": "southern-hydrate-ridge-summit-2",
    "method": "nereus",
    "gap": 180,
-   "nereusStatus": "OPERATIONAL",
    "note": {
     "title": "Hydrate Ridge Camera - Fallen Down?",
     "message": "Camera no longer taking images of seafloor scene. Suspect it fell down. It now seems to be pointed upward in the water column (can see fish bellies swimming by) and is unable to pan/tilt.",
     "category": "NOTE",
     "startedAt": "2026-10-29T12:30:00+00:00"
    },
-   "source": "Nereus (file check)",
-   "hoursGood": 2,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T00:00:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS01SUM2-MJ01B-12-ADCPSK101",
@@ -2626,14 +2415,9 @@
    "site": "southern-hydrate-ridge-summit-2",
    "method": "nereus",
    "gap": 60,
-   "nereusStatus": "OPERATIONAL",
-   "source": "Nereus (data check)",
-   "hoursGood": 25,
-   "hoursBad": 0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-25T09:55:00Z",
-   "state": "ok",
-   "since": "2026-11-15"
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
   },
   {
    "id": "RS03INT1-MJ03C-07-PPSDNA301",
@@ -2642,7 +2426,6 @@
    "site": "axial-seamount-international-district",
    "method": "none",
    "gap": 120,
-   "nereusStatus": "OPERATIONAL",
    "state": "unchecked",
    "detail": "no public data check (QA/QC plots only)",
    "since": "2026-11-15"
@@ -2654,7 +2437,6 @@
    "site": "axial-seamount-international-district",
    "method": "none",
    "gap": 120,
-   "nereusStatus": "OPERATIONAL",
    "state": "unchecked",
    "detail": "no public data check (QA/QC plots only)",
    "since": "2026-11-15"
@@ -2666,7 +2448,6 @@
    "site": "oregon-offshore-cabled-shallow-profiler-mooring",
    "method": "none",
    "gap": 360,
-   "nereusStatus": "OFFLINE",
    "note": {
     "title": "SF01B and instruments set to offline",
     "message": "setting instruments to offline to reflect accurate state of the system.",
@@ -2706,26 +2487,25 @@
    "site": "axial-seamount-central-caldera",
    "method": "piweb",
    "gap": 120,
-   "nereusStatus": "OPERATIONAL",
    "state": "ok",
-   "coverage": 0.974,
-   "longestGapMin": 34,
-   "lastData": "2026-11-25T09:21:00Z",
+   "coverage": 0.985,
+   "longestGapMin": 18,
+   "lastData": "2026-11-26T09:21:00Z",
    "source": "PI data portal",
    "gauges": [
     {
      "gauge": "PARO1",
      "state": "ok",
-     "coverage": 0.974,
-     "longestGapMin": 34,
-     "lastData": "2026-11-25T09:21:00Z"
+     "coverage": 0.985,
+     "longestGapMin": 18,
+     "lastData": "2026-11-26T09:21:00Z"
     },
     {
      "gauge": "PARO2",
      "state": "ok",
-     "coverage": 0.974,
-     "longestGapMin": 34,
-     "lastData": "2026-11-25T09:21:00Z"
+     "coverage": 0.985,
+     "longestGapMin": 18,
+     "lastData": "2026-11-26T09:21:00Z"
     }
    ],
    "since": "2026-11-15"
@@ -2737,11 +2517,9 @@
    "site": "axial-seamount-base",
    "method": "rawdata",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.396,
-   "longestGapMin": 565,
+   "coverage": 0.0,
    "lastData": "2026-11-25T04:50:00Z",
    "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
    "since": "2026-11-15"
@@ -2753,11 +2531,9 @@
    "site": "axial-seamount-base",
    "method": "rawdata",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.396,
-   "longestGapMin": 565,
+   "coverage": 0.0,
    "lastData": "2026-11-25T04:50:00Z",
    "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
    "since": "2026-11-15"
@@ -2769,11 +2545,9 @@
    "site": "oregon-offshore-cabled-benthic-experiment-package",
    "method": "rawdata",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.396,
-   "longestGapMin": 565,
+   "coverage": 0.0,
    "lastData": "2026-11-25T04:50:00Z",
    "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
    "since": "2026-11-15"
@@ -2785,11 +2559,9 @@
    "site": "oregon-shelf",
    "method": "rawdata",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.396,
-   "longestGapMin": 565,
+   "coverage": 0.0,
    "lastData": "2026-11-25T04:50:00Z",
    "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
    "since": "2026-11-15"
@@ -2801,11 +2573,9 @@
    "site": "oregon-slope-base-seafloor",
    "method": "rawdata",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.396,
-   "longestGapMin": 565,
+   "coverage": 0.0,
    "lastData": "2026-11-25T04:50:00Z",
    "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
    "since": "2026-11-15"
@@ -2817,11 +2587,9 @@
    "site": "oregon-slope-base-seafloor",
    "method": "rawdata",
    "gap": 30,
-   "nereusStatus": "OPERATIONAL",
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.396,
-   "longestGapMin": 565,
+   "coverage": 0.0,
    "lastData": "2026-11-25T04:50:00Z",
    "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
    "since": "2026-11-15"
