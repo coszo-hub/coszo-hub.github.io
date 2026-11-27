@@ -1,8 +1,8 @@
 {
- "from": "2026-11-25T09:39:00Z",
- "to": "2026-11-26T09:39:00Z",
- "day": "2026-11-26",
- "generatedAt": "2026-11-26T09:40:20Z",
+ "from": "2026-11-26T09:44:00Z",
+ "to": "2026-11-27T09:44:00Z",
+ "day": "2026-11-27",
+ "generatedAt": "2026-11-27T09:45:50Z",
  "axial200Hz": "Navy Diversion",
  "counts": {
   "diverted": 24,
@@ -19,9 +19,9 @@
    "site": "ashes-hydrothermal-field-axial-seamount",
    "method": "earthscope",
    "gap": 10,
-   "coverage": 0.999,
-   "longestGapMin": 1,
-   "lastData": "2026-11-26T09:38:02Z",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T09:43:35Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -48,8 +48,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -65,7 +64,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-26T09:38:31Z",
+   "lastData": "2026-11-27T09:43:47Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -92,8 +91,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -107,9 +105,9 @@
    "site": "axial-seamount-base",
    "method": "earthscope",
    "gap": 30,
-   "coverage": 0.999,
-   "longestGapMin": 1,
-   "lastData": "2026-11-26T09:37:41Z",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T09:43:56Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
@@ -136,8 +134,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -151,9 +148,9 @@
    "site": "axial-seamount-base-2",
    "method": "earthscope",
    "gap": 10,
-   "coverage": 0.999,
-   "longestGapMin": 1,
-   "lastData": "2026-11-26T09:37:41Z",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T09:43:56Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
@@ -180,8 +177,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -196,8 +192,8 @@
    "method": "earthscope",
    "gap": 10,
    "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-26T09:38:43Z",
+   "longestGapMin": 1,
+   "lastData": "2026-11-27T09:43:28Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
@@ -224,8 +220,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -251,8 +246,8 @@
    "method": "earthscope",
    "gap": 30,
    "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-26T09:38:43Z",
+   "longestGapMin": 1,
+   "lastData": "2026-11-27T09:43:28Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
@@ -279,8 +274,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -294,9 +288,9 @@
    "site": "axial-seamount-eastern-caldera",
    "method": "earthscope",
    "gap": 10,
-   "coverage": 0.999,
+   "coverage": 1.0,
    "longestGapMin": 1,
-   "lastData": "2026-11-26T09:38:06Z",
+   "lastData": "2026-11-27T09:43:18Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -323,8 +317,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -340,7 +333,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-26T09:38:45Z",
+   "lastData": "2026-11-27T09:43:39Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
@@ -367,8 +360,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -384,7 +376,7 @@
    "gap": 30,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-26T09:38:45Z",
+   "lastData": "2026-11-27T09:43:39Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
@@ -411,8 +403,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -428,7 +419,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-26T09:38:35Z",
+   "lastData": "2026-11-27T09:43:45Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -455,8 +446,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -471,8 +461,8 @@
    "method": "earthscope",
    "gap": 10,
    "coverage": 1.0,
-   "longestGapMin": 1,
-   "lastData": "2026-11-26T09:38:29Z",
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T09:44:00Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -499,8 +489,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -516,7 +505,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-26T09:38:39Z",
+   "lastData": "2026-11-27T09:43:46Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
@@ -543,8 +532,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -560,7 +548,7 @@
    "gap": 30,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-26T09:38:39Z",
+   "lastData": "2026-11-27T09:43:46Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
@@ -587,8 +575,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -602,9 +589,9 @@
    "site": "southern-hydrate-ridge",
    "method": "earthscope",
    "gap": 30,
-   "coverage": 0.999,
+   "coverage": 1.0,
    "longestGapMin": 1,
-   "lastData": "2026-11-26T09:38:11Z",
+   "lastData": "2026-11-27T09:43:20Z",
    "highRate": {
     "channel": "HDH",
     "hoursProbed": 24,
@@ -631,8 +618,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -648,7 +634,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 1,
-   "lastData": "2026-11-26T09:38:25Z",
+   "lastData": "2026-11-27T09:43:26Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -675,8 +661,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -690,9 +675,9 @@
    "site": "southern-hydrate-ridge-summit-2",
    "method": "earthscope",
    "gap": 10,
-   "coverage": 0.999,
+   "coverage": 1.0,
    "longestGapMin": 1,
-   "lastData": "2026-11-26T09:38:11Z",
+   "lastData": "2026-11-27T09:43:20Z",
    "highRate": {
     "channel": "HHZ",
     "hoursProbed": 24,
@@ -719,8 +704,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -734,9 +718,9 @@
    "site": "southern-hydrate-ridge-summit-3",
    "method": "earthscope",
    "gap": 10,
-   "coverage": 0.999,
-   "longestGapMin": 1,
-   "lastData": "2026-11-26T09:38:07Z",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T09:43:59Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -763,8 +747,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -780,7 +763,7 @@
    "gap": 10,
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-26T09:38:33Z",
+   "lastData": "2026-11-27T09:43:53Z",
    "highRate": {
     "channel": "EHZ",
     "hoursProbed": 24,
@@ -807,8 +790,7 @@
      19,
      20,
      21,
-     22,
-     23
+     22
     ]
    },
    "source": "EarthScope",
@@ -829,7 +811,7 @@
     "startedAt": "2026-10-28T22:39:00+00:00"
    },
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:43:00Z",
+   "erddapNewest": "2026-11-26T11:44:00Z",
    "state": "no_data",
    "coverage": 0.0,
    "lastData": "2026-10-28T22:38:00Z",
@@ -1038,12 +1020,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:28:00Z",
+   "erddapNewest": "2026-11-26T11:29:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:28:00Z",
-   "checkedTo": "2026-11-25T11:28:00Z",
+   "lastData": "2026-11-26T11:29:00Z",
+   "checkedTo": "2026-11-26T11:29:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1058,12 +1040,12 @@
    "method": "nereus",
    "gap": 30,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:29:00Z",
+   "erddapNewest": "2026-11-26T11:30:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:29:00Z",
-   "checkedTo": "2026-11-25T11:29:00Z",
+   "lastData": "2026-11-26T11:30:00Z",
+   "checkedTo": "2026-11-26T11:30:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1078,12 +1060,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:29:00Z",
+   "erddapNewest": "2026-11-26T11:30:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:29:00Z",
-   "checkedTo": "2026-11-25T11:29:00Z",
+   "lastData": "2026-11-26T11:30:00Z",
+   "checkedTo": "2026-11-26T11:30:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1131,12 +1113,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:33:00Z",
+   "erddapNewest": "2026-11-26T11:34:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:33:00Z",
-   "checkedTo": "2026-11-25T11:33:00Z",
+   "lastData": "2026-11-26T11:34:00Z",
+   "checkedTo": "2026-11-26T11:34:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1151,12 +1133,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:31:00Z",
+   "erddapNewest": "2026-11-26T11:31:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:31:00Z",
-   "checkedTo": "2026-11-25T11:31:00Z",
+   "lastData": "2026-11-26T11:31:00Z",
+   "checkedTo": "2026-11-26T11:31:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1171,12 +1153,12 @@
    "method": "nereus",
    "gap": 30,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:32:00Z",
+   "erddapNewest": "2026-11-26T11:32:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:32:00Z",
-   "checkedTo": "2026-11-25T11:32:00Z",
+   "lastData": "2026-11-26T11:32:00Z",
+   "checkedTo": "2026-11-26T11:32:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1191,12 +1173,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:30:00Z",
+   "erddapNewest": "2026-11-26T11:31:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:30:00Z",
-   "checkedTo": "2026-11-25T11:30:00Z",
+   "lastData": "2026-11-26T11:31:00Z",
+   "checkedTo": "2026-11-26T11:31:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1251,12 +1233,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:41:00Z",
+   "erddapNewest": "2026-11-26T11:42:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:41:00Z",
-   "checkedTo": "2026-11-25T11:41:00Z",
+   "lastData": "2026-11-26T11:42:00Z",
+   "checkedTo": "2026-11-26T11:42:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1289,12 +1271,12 @@
    "method": "nereus",
    "gap": 240,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:00:00Z",
+   "erddapNewest": "2026-11-26T11:00:00Z",
    "state": "ok",
-   "coverage": 0.123,
+   "coverage": 0.132,
    "longestGapMin": 50,
-   "lastData": "2026-11-25T10:10:00Z",
-   "checkedTo": "2026-11-25T11:00:00Z",
+   "lastData": "2026-11-26T10:10:00Z",
+   "checkedTo": "2026-11-26T11:00:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1309,12 +1291,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:42:00Z",
+   "erddapNewest": "2026-11-26T11:42:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:42:00Z",
-   "checkedTo": "2026-11-25T11:42:00Z",
+   "lastData": "2026-11-26T11:42:00Z",
+   "checkedTo": "2026-11-26T11:42:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1335,12 +1317,12 @@
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:38:00Z",
+   "erddapNewest": "2026-11-26T11:39:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:38:00Z",
-   "checkedTo": "2026-11-25T11:38:00Z",
+   "lastData": "2026-11-26T11:39:00Z",
+   "checkedTo": "2026-11-26T11:39:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1361,12 +1343,12 @@
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:40:00Z",
+   "erddapNewest": "2026-11-26T11:40:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:40:00Z",
-   "checkedTo": "2026-11-25T11:40:00Z",
+   "lastData": "2026-11-26T11:40:00Z",
+   "checkedTo": "2026-11-26T11:40:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1387,12 +1369,12 @@
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T09:51:00Z",
+   "erddapNewest": "2026-11-26T10:08:00Z",
    "state": "ok",
-   "coverage": 0.167,
-   "longestGapMin": 10,
-   "lastData": "2026-11-25T09:51:00Z",
-   "checkedTo": "2026-11-25T09:51:00Z",
+   "coverage": 0.75,
+   "longestGapMin": 6,
+   "lastData": "2026-11-26T10:08:00Z",
+   "checkedTo": "2026-11-26T10:08:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1413,12 +1395,12 @@
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:40:00Z",
+   "erddapNewest": "2026-11-26T11:41:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:40:00Z",
-   "checkedTo": "2026-11-25T11:40:00Z",
+   "lastData": "2026-11-26T11:41:00Z",
+   "checkedTo": "2026-11-26T11:41:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1456,15 +1438,15 @@
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-24T11:32:00Z",
+   "erddapNewest": "2026-11-25T11:38:00Z",
    "state": "no_data",
    "coverage": 0.0,
-   "lastData": "2026-11-24T11:31:00Z",
+   "lastData": "2026-11-25T11:37:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
    },
-   "since": "2026-11-24"
+   "since": "2026-11-25"
   },
   {
    "id": "RS03AXPS-SF03A-3D-SPKIRA301",
@@ -1504,15 +1486,15 @@
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T07:45:00Z",
+   "erddapNewest": "2026-11-26T07:45:00Z",
    "state": "no_data",
    "coverage": 0.0,
-   "lastData": "2026-11-25T07:44:00Z",
+   "lastData": "2026-11-26T07:44:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
    },
-   "since": "2026-11-25"
+   "since": "2026-11-26"
   },
   {
    "id": "RS03AXPS-SF03A-4B-VELPTD302",
@@ -1528,12 +1510,12 @@
     "startedAt": "2026-08-31T20:13:16+00:00"
    },
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:39:00Z",
+   "erddapNewest": "2026-11-26T11:40:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:39:00Z",
-   "checkedTo": "2026-11-25T11:39:00Z",
+   "lastData": "2026-11-26T11:40:00Z",
+   "checkedTo": "2026-11-26T11:40:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1572,12 +1554,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:44:00Z",
+   "erddapNewest": "2026-11-26T11:45:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:44:00Z",
-   "checkedTo": "2026-11-25T11:44:00Z",
+   "lastData": "2026-11-26T11:45:00Z",
+   "checkedTo": "2026-11-26T11:45:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1610,12 +1592,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:46:00Z",
+   "erddapNewest": "2026-11-26T11:47:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:46:00Z",
-   "checkedTo": "2026-11-25T11:46:00Z",
+   "lastData": "2026-11-26T11:47:00Z",
+   "checkedTo": "2026-11-26T11:47:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1647,12 +1629,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:47:00Z",
+   "erddapNewest": "2026-11-26T11:47:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:47:00Z",
-   "checkedTo": "2026-11-25T11:47:00Z",
+   "lastData": "2026-11-26T11:47:00Z",
+   "checkedTo": "2026-11-26T11:47:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1667,12 +1649,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:47:00Z",
+   "erddapNewest": "2026-11-26T11:47:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:47:00Z",
-   "checkedTo": "2026-11-25T11:47:00Z",
+   "lastData": "2026-11-26T11:47:00Z",
+   "checkedTo": "2026-11-26T11:47:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1687,12 +1669,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:47:00Z",
+   "erddapNewest": "2026-11-26T11:48:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:47:00Z",
-   "checkedTo": "2026-11-25T11:47:00Z",
+   "lastData": "2026-11-26T11:48:00Z",
+   "checkedTo": "2026-11-26T11:48:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1743,12 +1725,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:49:00Z",
+   "erddapNewest": "2026-11-26T11:50:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:49:00Z",
-   "checkedTo": "2026-11-25T11:49:00Z",
+   "lastData": "2026-11-26T11:50:00Z",
+   "checkedTo": "2026-11-26T11:50:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1774,15 +1756,15 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T03:25:00Z",
+   "erddapNewest": "2026-11-26T03:27:00Z",
    "state": "no_data",
    "coverage": 0.0,
-   "lastData": "2026-11-25T03:24:00Z",
+   "lastData": "2026-11-26T03:26:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
    },
-   "since": "2026-11-25"
+   "since": "2026-11-26"
   },
   {
    "id": "CE04OSBP-LJ01C-06-DOSTAD108",
@@ -1792,12 +1774,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-26T03:29:00Z",
+   "erddapNewest": "2026-11-27T03:27:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-26T03:29:00Z",
-   "checkedTo": "2026-11-26T03:29:00Z",
+   "lastData": "2026-11-27T03:27:00Z",
+   "checkedTo": "2026-11-27T03:27:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1842,16 +1824,14 @@
    "gap": 240,
    "source": "OOI ERDDAP",
    "erddapNewest": "2026-11-26T03:05:00Z",
-   "state": "ok",
-   "coverage": 0.167,
-   "longestGapMin": 50,
-   "lastData": "2026-11-26T03:05:00Z",
-   "checkedTo": "2026-11-26T03:05:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-26T02:05:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
    },
-   "since": "2026-11-15"
+   "since": "2026-11-26"
   },
   {
    "id": "CE04OSBP-LJ01C-10-PHSEND107",
@@ -1861,15 +1841,17 @@
    "method": "nereus",
    "gap": 240,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T03:00:00Z",
-   "state": "no_data",
-   "coverage": 0.0,
-   "lastData": "2026-11-25T02:00:00Z",
+   "erddapNewest": "2026-11-27T03:00:00Z",
+   "state": "ok",
+   "coverage": 0.164,
+   "longestGapMin": 50,
+   "lastData": "2026-11-27T02:10:00Z",
+   "checkedTo": "2026-11-27T03:00:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
    },
-   "since": "2026-11-25"
+   "since": "2026-11-26"
   },
   {
    "id": "CE04OSBP-LV01C-06-CAMDSB106",
@@ -1902,16 +1884,14 @@
    "gap": 60,
    "source": "OOI ERDDAP",
    "erddapNewest": "2026-11-26T03:32:00Z",
-   "state": "ok",
-   "coverage": 1.0,
-   "longestGapMin": 0,
-   "lastData": "2026-11-26T03:32:00Z",
-   "checkedTo": "2026-11-26T03:32:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-26T03:31:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
    },
-   "since": "2026-11-15"
+   "since": "2026-11-26"
   },
   {
    "id": "CE04OSPS-PC01B-4A-DOSTAD109",
@@ -1939,12 +1919,12 @@
    "method": "nereus",
    "gap": 240,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-26T03:17:00Z",
+   "erddapNewest": "2026-11-27T03:17:00Z",
    "state": "ok",
    "coverage": 0.668,
    "longestGapMin": 10,
-   "lastData": "2026-11-26T03:17:00Z",
-   "checkedTo": "2026-11-26T03:17:00Z",
+   "lastData": "2026-11-27T03:17:00Z",
+   "checkedTo": "2026-11-27T03:17:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -1959,7 +1939,7 @@
    "method": "nereus",
    "gap": 240,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T03:05:00Z",
+   "erddapNewest": "2026-11-26T03:05:00Z",
    "state": "no_data",
    "coverage": 0.0,
    "lastData": "2026-11-23T03:05:00Z",
@@ -1988,15 +1968,15 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T03:12:00Z",
+   "erddapNewest": "2026-11-26T03:13:00Z",
    "state": "no_data",
    "coverage": 0.0,
-   "lastData": "2026-11-25T03:11:00Z",
+   "lastData": "2026-11-26T03:12:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
    },
-   "since": "2026-11-25"
+   "since": "2026-11-26"
   },
   {
    "id": "CE02SHBP-LJ01D-06-DOSTAD106",
@@ -2006,12 +1986,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-26T03:12:00Z",
+   "erddapNewest": "2026-11-27T03:11:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-26T03:12:00Z",
-   "checkedTo": "2026-11-26T03:12:00Z",
+   "lastData": "2026-11-27T03:11:00Z",
+   "checkedTo": "2026-11-27T03:11:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -2055,15 +2035,15 @@
    "method": "nereus",
    "gap": 240,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T03:05:00Z",
+   "erddapNewest": "2026-11-26T03:05:00Z",
    "state": "no_data",
    "coverage": 0.0,
-   "lastData": "2026-11-25T02:05:00Z",
+   "lastData": "2026-11-26T02:05:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
    },
-   "since": "2026-11-25"
+   "since": "2026-11-26"
   },
   {
    "id": "CE02SHBP-LJ01D-10-PHSENH110",
@@ -2073,15 +2053,17 @@
    "method": "nereus",
    "gap": 240,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T02:57:00Z",
-   "state": "no_data",
-   "coverage": 0.0,
-   "lastData": "2026-11-25T02:42:00Z",
+   "erddapNewest": "2026-11-27T02:57:00Z",
+   "state": "ok",
+   "coverage": 0.665,
+   "longestGapMin": 10,
+   "lastData": "2026-11-27T02:57:00Z",
+   "checkedTo": "2026-11-27T02:57:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
    },
-   "since": "2026-11-25"
+   "since": "2026-11-26"
   },
   {
    "id": "CE02SHBP-MJ01C-07-ZPLSCB101",
@@ -2171,12 +2153,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:17:00Z",
+   "erddapNewest": "2026-11-26T11:18:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:17:00Z",
-   "checkedTo": "2026-11-25T11:17:00Z",
+   "lastData": "2026-11-26T11:18:00Z",
+   "checkedTo": "2026-11-26T11:18:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -2191,12 +2173,12 @@
    "method": "nereus",
    "gap": 240,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:00:00Z",
+   "erddapNewest": "2026-11-26T11:00:00Z",
    "state": "ok",
-   "coverage": 0.123,
+   "coverage": 0.132,
    "longestGapMin": 50,
-   "lastData": "2026-11-25T10:10:00Z",
-   "checkedTo": "2026-11-25T11:00:00Z",
+   "lastData": "2026-11-26T10:10:00Z",
+   "checkedTo": "2026-11-26T11:00:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -2211,12 +2193,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:17:00Z",
+   "erddapNewest": "2026-11-26T11:18:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:17:00Z",
-   "checkedTo": "2026-11-25T11:17:00Z",
+   "lastData": "2026-11-26T11:18:00Z",
+   "checkedTo": "2026-11-26T11:18:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -2231,12 +2213,12 @@
    "method": "nereus",
    "gap": 240,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:21:00Z",
+   "erddapNewest": "2026-11-26T11:21:00Z",
    "state": "ok",
-   "coverage": 0.99,
-   "longestGapMin": 1,
-   "lastData": "2026-11-25T11:21:00Z",
-   "checkedTo": "2026-11-25T11:21:00Z",
+   "coverage": 0.938,
+   "longestGapMin": 6,
+   "lastData": "2026-11-26T11:21:00Z",
+   "checkedTo": "2026-11-26T11:21:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -2279,12 +2261,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:21:00Z",
+   "erddapNewest": "2026-11-26T11:22:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:21:00Z",
-   "checkedTo": "2026-11-25T11:21:00Z",
+   "lastData": "2026-11-26T11:22:00Z",
+   "checkedTo": "2026-11-26T11:22:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -2299,12 +2281,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:22:00Z",
+   "erddapNewest": "2026-11-26T11:23:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:22:00Z",
-   "checkedTo": "2026-11-25T11:22:00Z",
+   "lastData": "2026-11-26T11:23:00Z",
+   "checkedTo": "2026-11-26T11:23:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -2319,12 +2301,12 @@
    "method": "nereus",
    "gap": 30,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:22:00Z",
+   "erddapNewest": "2026-11-26T11:22:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:22:00Z",
-   "checkedTo": "2026-11-25T11:22:00Z",
+   "lastData": "2026-11-26T11:22:00Z",
+   "checkedTo": "2026-11-26T11:22:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -2339,12 +2321,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:23:00Z",
+   "erddapNewest": "2026-11-26T11:24:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:23:00Z",
-   "checkedTo": "2026-11-25T11:23:00Z",
+   "lastData": "2026-11-26T11:24:00Z",
+   "checkedTo": "2026-11-26T11:24:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -2359,12 +2341,12 @@
    "method": "nereus",
    "gap": 30,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:25:00Z",
+   "erddapNewest": "2026-11-26T11:26:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:25:00Z",
-   "checkedTo": "2026-11-25T11:25:00Z",
+   "lastData": "2026-11-26T11:26:00Z",
+   "checkedTo": "2026-11-26T11:26:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -2379,12 +2361,12 @@
    "method": "nereus",
    "gap": 60,
    "source": "OOI ERDDAP",
-   "erddapNewest": "2026-11-25T11:25:00Z",
+   "erddapNewest": "2026-11-26T11:26:00Z",
    "state": "ok",
    "coverage": 1.0,
    "longestGapMin": 0,
-   "lastData": "2026-11-25T11:25:00Z",
-   "checkedTo": "2026-11-25T11:25:00Z",
+   "lastData": "2026-11-26T11:26:00Z",
+   "checkedTo": "2026-11-26T11:26:00Z",
    "nereusCheck": {
     "state": "failed",
     "detail": "Nereus unreachable"
@@ -2488,24 +2470,24 @@
    "method": "piweb",
    "gap": 120,
    "state": "ok",
-   "coverage": 0.985,
-   "longestGapMin": 18,
-   "lastData": "2026-11-26T09:21:00Z",
+   "coverage": 0.984,
+   "longestGapMin": 23,
+   "lastData": "2026-11-27T09:21:00Z",
    "source": "PI data portal",
    "gauges": [
     {
      "gauge": "PARO1",
      "state": "ok",
-     "coverage": 0.985,
-     "longestGapMin": 18,
-     "lastData": "2026-11-26T09:21:00Z"
+     "coverage": 0.984,
+     "longestGapMin": 23,
+     "lastData": "2026-11-27T09:21:00Z"
     },
     {
      "gauge": "PARO2",
      "state": "ok",
-     "coverage": 0.985,
-     "longestGapMin": 18,
-     "lastData": "2026-11-26T09:21:00Z"
+     "coverage": 0.984,
+     "longestGapMin": 23,
+     "lastData": "2026-11-27T09:21:00Z"
     }
    ],
    "since": "2026-11-15"
@@ -2519,9 +2501,10 @@
    "gap": 30,
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.0,
-   "lastData": "2026-11-25T04:50:00Z",
-   "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
+   "coverage": 0.055,
+   "longestGapMin": 1361,
+   "lastData": "2026-11-27T09:44:00Z",
+   "detail": "files missing for about 23 of the 24 hours, as the seismometers' 200 Hz data were held back (the Navy's diversion); files again by the check's end",
    "since": "2026-11-15"
   },
   {
@@ -2533,9 +2516,10 @@
    "gap": 30,
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.0,
-   "lastData": "2026-11-25T04:50:00Z",
-   "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
+   "coverage": 0.055,
+   "longestGapMin": 1361,
+   "lastData": "2026-11-27T09:44:00Z",
+   "detail": "files missing for about 23 of the 24 hours, as the seismometers' 200 Hz data were held back (the Navy's diversion); files again by the check's end",
    "since": "2026-11-15"
   },
   {
@@ -2547,9 +2531,10 @@
    "gap": 30,
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.0,
-   "lastData": "2026-11-25T04:50:00Z",
-   "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
+   "coverage": 0.055,
+   "longestGapMin": 1361,
+   "lastData": "2026-11-27T09:44:00Z",
+   "detail": "files missing for about 23 of the 24 hours, as the seismometers' 200 Hz data were held back (the Navy's diversion); files again by the check's end",
    "since": "2026-11-15"
   },
   {
@@ -2561,9 +2546,10 @@
    "gap": 30,
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.0,
-   "lastData": "2026-11-25T04:50:00Z",
-   "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
+   "coverage": 0.055,
+   "longestGapMin": 1361,
+   "lastData": "2026-11-27T09:44:00Z",
+   "detail": "files missing for about 23 of the 24 hours, as the seismometers' 200 Hz data were held back (the Navy's diversion); files again by the check's end",
    "since": "2026-11-15"
   },
   {
@@ -2575,9 +2561,10 @@
    "gap": 30,
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.0,
-   "lastData": "2026-11-25T04:50:00Z",
-   "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
+   "coverage": 0.055,
+   "longestGapMin": 1361,
+   "lastData": "2026-11-27T09:44:00Z",
+   "detail": "files missing for about 23 of the 24 hours, as the seismometers' 200 Hz data were held back (the Navy's diversion); files again by the check's end",
    "since": "2026-11-15"
   },
   {
@@ -2589,9 +2576,10 @@
    "gap": 30,
    "source": "OOI raw data server",
    "state": "diverted",
-   "coverage": 0.0,
-   "lastData": "2026-11-25T04:50:00Z",
-   "detail": "no files since 2026-11-25 04:50 UTC, as the seismometers' 200 Hz data stopped: the Navy's diversion",
+   "coverage": 0.055,
+   "longestGapMin": 1361,
+   "lastData": "2026-11-27T09:44:00Z",
+   "detail": "files missing for about 23 of the 24 hours, as the seismometers' 200 Hz data were held back (the Navy's diversion); files again by the check's end",
    "since": "2026-11-15"
   }
  ]
