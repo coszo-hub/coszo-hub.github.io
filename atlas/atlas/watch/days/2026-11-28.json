@@ -1,0 +1,2150 @@
+{
+ "from": "2026-11-27T08:57:00Z",
+ "to": "2026-11-28T08:57:00Z",
+ "day": "2026-11-28",
+ "generatedAt": "2026-11-28T08:58:47Z",
+ "axial200Hz": "Navy Diversion",
+ "counts": {
+  "ok": 62,
+  "unchecked": 6,
+  "no_data": 30,
+  "failed": 21
+ },
+ "sensors": [
+  {
+   "id": "EARTHSCOPE-OO-AXAS1",
+   "name": "ASHES Hydrothermal Field, Axial Seamount Seismic Station AXAS1",
+   "refdes": null,
+   "site": "ashes-hydrothermal-field-axial-seamount",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:56:44Z",
+   "highRate": {
+    "channel": "EHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXAS2",
+   "name": "ASHES Hydrothermal Field, Axial Seamount Seismic Station AXAS2",
+   "refdes": null,
+   "site": "ashes-hydrothermal-field-axial-seamount-2",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:56:47Z",
+   "highRate": {
+    "channel": "EHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "RS03AXBS-MJ03A-05-HYDLFA301",
+   "name": "Axial Seamount Base Seafloor Low-Frequency Hydrophone",
+   "refdes": "RS03AXBS-MJ03A-05-HYDLFA301",
+   "site": "axial-seamount-base",
+   "method": "earthscope",
+   "gap": 30,
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:56:53Z",
+   "highRate": {
+    "channel": "HDH",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXBA1",
+   "name": "Axial Seamount Base Seismic Station AXBA1",
+   "refdes": null,
+   "site": "axial-seamount-base-2",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:56:53Z",
+   "highRate": {
+    "channel": "HHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXCC1",
+   "name": "Axial Seamount Central Caldera Seismic Station AXCC1",
+   "refdes": null,
+   "site": "axial-seamount-central-caldera",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 1,
+   "lastData": "2026-11-28T08:56:29Z",
+   "highRate": {
+    "channel": "HHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXCC2",
+   "name": "Axial Seamount Central Caldera Tiltmeter/Accelerometer Station AXCC2",
+   "refdes": null,
+   "site": "axial-seamount-central-caldera",
+   "method": "earthscope",
+   "gap": 10,
+   "state": "unchecked",
+   "detail": "EarthScope lists no 8 Hz and 200 Hz channels for OO.AXCC2",
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03CCAL-MJ03F-06-HYDLFA305",
+   "name": "Axial Seamount Central Caldera Low-Frequency Hydrophone",
+   "refdes": "RS03CCAL-MJ03F-06-HYDLFA305",
+   "site": "axial-seamount-central-caldera",
+   "method": "earthscope",
+   "gap": 30,
+   "coverage": 1.0,
+   "longestGapMin": 1,
+   "lastData": "2026-11-28T08:56:29Z",
+   "highRate": {
+    "channel": "HDH",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXEC3",
+   "name": "Axial Seamount Eastern Caldera Seismic Station AXEC3",
+   "refdes": null,
+   "site": "axial-seamount-eastern-caldera",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 1,
+   "lastData": "2026-11-28T08:56:25Z",
+   "highRate": {
+    "channel": "EHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXEC2",
+   "name": "Axial Seamount Eastern Caldera Seismic Station AXEC2",
+   "refdes": null,
+   "site": "axial-seamount-eastern-caldera-2",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 1,
+   "lastData": "2026-11-28T08:56:25Z",
+   "highRate": {
+    "channel": "HHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "RS03ECAL-MJ03E-09-HYDLFA304",
+   "name": "Axial Seamount Eastern Caldera Low-Frequency Hydrophone",
+   "refdes": "RS03ECAL-MJ03E-09-HYDLFA304",
+   "site": "axial-seamount-eastern-caldera-2",
+   "method": "earthscope",
+   "gap": 30,
+   "coverage": 1.0,
+   "longestGapMin": 1,
+   "lastData": "2026-11-28T08:56:25Z",
+   "highRate": {
+    "channel": "HDH",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXEC1",
+   "name": "Axial Seamount Eastern Caldera Seismic Station AXEC1",
+   "refdes": null,
+   "site": "axial-seamount-eastern-caldera-3",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:56:49Z",
+   "highRate": {
+    "channel": "EHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-AXID1",
+   "name": "Axial Seamount International District Seismic Station AXID1",
+   "refdes": null,
+   "site": "axial-seamount-international-district",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:56:32Z",
+   "highRate": {
+    "channel": "EHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-HYSB1",
+   "name": "Oregon Slope Base Seismic Station HYSB1",
+   "refdes": null,
+   "site": "oregon-slope-base",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:56:36Z",
+   "highRate": {
+    "channel": "HHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "RS01SLBS-MJ01A-05-HYDLFA101",
+   "name": "Oregon Slope Base Seafloor Low-Frequency Hydrophone",
+   "refdes": "RS01SLBS-MJ01A-05-HYDLFA101",
+   "site": "oregon-slope-base-seafloor",
+   "method": "earthscope",
+   "gap": 30,
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:56:36Z",
+   "highRate": {
+    "channel": "HDH",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "RS01SUM1-LJ01B-05-HYDLFA104",
+   "name": "Southern Hydrate Ridge Flank Low-Frequency Hydrophone",
+   "refdes": "RS01SUM1-LJ01B-05-HYDLFA104",
+   "site": "southern-hydrate-ridge",
+   "method": "earthscope",
+   "gap": 30,
+   "coverage": 0.999,
+   "longestGapMin": 1,
+   "lastData": "2026-11-28T08:56:13Z",
+   "highRate": {
+    "channel": "HDH",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-HYS13",
+   "name": "Southern Hydrate Ridge Summit Seismic Station HYS13",
+   "refdes": null,
+   "site": "southern-hydrate-ridge-summit",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:56:58Z",
+   "highRate": {
+    "channel": "EHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-HYS14",
+   "name": "Southern Hydrate Ridge Summit Seismic Station HYS14",
+   "refdes": null,
+   "site": "southern-hydrate-ridge-summit-2",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 0.999,
+   "longestGapMin": 1,
+   "lastData": "2026-11-28T08:56:13Z",
+   "highRate": {
+    "channel": "HHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-HYS11",
+   "name": "Southern Hydrate Ridge Summit Seismic Station HYS11",
+   "refdes": null,
+   "site": "southern-hydrate-ridge-summit-3",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:56:46Z",
+   "highRate": {
+    "channel": "EHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "EARTHSCOPE-OO-HYS12",
+   "name": "Southern Hydrate Ridge Summit Seismic Station HYS12",
+   "refdes": null,
+   "site": "southern-hydrate-ridge-summit-4",
+   "method": "earthscope",
+   "gap": 10,
+   "coverage": 1.0,
+   "longestGapMin": 1,
+   "lastData": "2026-11-28T08:56:28Z",
+   "highRate": {
+    "channel": "EHZ",
+    "hoursProbed": 24,
+    "hoursMissing": []
+   },
+   "source": "EarthScope",
+   "state": "ok",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "RS03CCAL-MJ03F-05-BOTPTA301",
+   "name": "Axial Seamount Central Caldera Seafloor Pressure",
+   "refdes": "RS03CCAL-MJ03F-05-BOTPTA301",
+   "site": "axial-seamount-central-caldera",
+   "method": "erddap",
+   "gap": 30,
+   "note": {
+    "title": "Data output stopped - again",
+    "message": "No data output or ping response. Power cycle did not fix the issue, and large ground fault persists (730,-28). Instrument powered down for now. 11/8/26 - unable to regain comms with instrument after multiple power cycle. Instrument set to failed.",
+    "category": "INSTRUMENT_FAULT",
+    "startedAt": "2026-10-28T22:39:00+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:46:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-10-28T22:38:00Z",
+   "detail": "ERDDAP's rows in the 24 hours hold no measured value",
+   "since": "2026-10-28"
+  },
+  {
+   "id": "CE04OSPS-PC01B-4B-PHSENA106",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring pH Sensor (SAMI-pH)",
+   "refdes": "CE04OSPS-PC01B-4B-PHSENA106",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "erddap",
+   "gap": 240,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2025-10-19T12:00:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2025-10-19T11:00:00Z",
+   "since": "2025-10-19"
+  },
+  {
+   "id": "CE04OSPS-SF01B-2A-CTDPFA107",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring CTD",
+   "refdes": "CE04OSPS-SF01B-2A-CTDPFA107",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "erddap",
+   "gap": 360,
+   "note": {
+    "title": "SF01B and instruments set to offline",
+    "message": "setting instruments to offline to reflect accurate state of the system.",
+    "category": "NOTE",
+    "startedAt": "2026-08-04T22:52:15+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-08-03T17:22:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-08-03T17:21:00Z",
+   "since": "2026-08-03"
+  },
+  {
+   "id": "CE04OSPS-SF01B-2A-DOFSTA107",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Dissolved Oxygen",
+   "refdes": "CE04OSPS-SF01B-2A-DOFSTA107",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "erddap",
+   "gap": 360,
+   "note": {
+    "title": "SF01B and instruments set to offline",
+    "message": "setting instruments to offline to reflect accurate state of the system.",
+    "category": "NOTE",
+    "startedAt": "2026-08-04T22:52:15+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-08-03T17:22:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-08-03T17:21:00Z",
+   "since": "2026-08-03"
+  },
+  {
+   "id": "CE04OSPS-SF01B-2B-PHSENA108",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring pH Sensor",
+   "refdes": "CE04OSPS-SF01B-2B-PHSENA108",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "erddap",
+   "gap": 900,
+   "note": {
+    "title": "SF01B and instruments set to offline",
+    "message": "setting instruments to offline to reflect accurate state of the system.",
+    "category": "NOTE",
+    "startedAt": "2026-08-04T22:52:15+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-08-03T15:14:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-08-03T12:54:00Z",
+   "since": "2026-08-03"
+  },
+  {
+   "id": "CE04OSPS-SF01B-3A-FLORTD104",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring 3-Wavelength Fluorometer",
+   "refdes": "CE04OSPS-SF01B-3A-FLORTD104",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "erddap",
+   "gap": 360,
+   "note": {
+    "title": "SF01B and instruments set to offline",
+    "message": "setting instruments to offline to reflect accurate state of the system.",
+    "category": "NOTE",
+    "startedAt": "2026-08-04T22:52:15+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-08-03T17:22:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-08-03T17:21:00Z",
+   "since": "2026-08-03"
+  },
+  {
+   "id": "CE04OSPS-SF01B-3C-PARADA102",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring PAR Sensor",
+   "refdes": "CE04OSPS-SF01B-3C-PARADA102",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "erddap",
+   "gap": 360,
+   "note": {
+    "title": "SF01B and instruments set to offline",
+    "message": "setting instruments to offline to reflect accurate state of the system.",
+    "category": "NOTE",
+    "startedAt": "2026-08-04T22:52:15+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-08-03T17:22:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-08-03T17:21:00Z",
+   "since": "2026-08-03"
+  },
+  {
+   "id": "CE04OSPS-SF01B-3D-SPKIRA102",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Spectral Irradiance",
+   "refdes": "CE04OSPS-SF01B-3D-SPKIRA102",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "erddap",
+   "gap": 360,
+   "note": {
+    "title": "SF01B and instruments set to offline",
+    "message": "setting instruments to offline to reflect accurate state of the system.",
+    "category": "NOTE",
+    "startedAt": "2026-08-04T22:52:15+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-08-03T17:22:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-08-03T17:21:00Z",
+   "since": "2026-08-03"
+  },
+  {
+   "id": "CE04OSPS-SF01B-4A-NUTNRA102",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Nitrate Sensor",
+   "refdes": "CE04OSPS-SF01B-4A-NUTNRA102",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "erddap",
+   "gap": 900,
+   "note": {
+    "title": "SF01B and instruments set to offline",
+    "message": "setting instruments to offline to reflect accurate state of the system.",
+    "category": "NOTE",
+    "startedAt": "2026-08-04T22:52:15+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-08-03T08:29:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-08-03T08:28:00Z",
+   "since": "2026-08-03"
+  },
+  {
+   "id": "CE04OSPS-SF01B-4B-VELPTD106",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Current Meter",
+   "refdes": "CE04OSPS-SF01B-4B-VELPTD106",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "erddap",
+   "gap": 360,
+   "note": {
+    "title": "SF01B and instruments set to offline",
+    "message": "setting instruments to offline to reflect accurate state of the system.",
+    "category": "NOTE",
+    "startedAt": "2026-08-04T22:52:15+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-08-03T17:22:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-08-03T17:21:00Z",
+   "since": "2026-08-03"
+  },
+  {
+   "id": "CE04OSPS-SF01B-4F-PCO2WA102",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring pCO2 Sensor",
+   "refdes": "CE04OSPS-SF01B-4F-PCO2WA102",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "erddap",
+   "gap": 900,
+   "note": {
+    "title": "SF01B and instruments set to offline",
+    "message": "setting instruments to offline to reflect accurate state of the system.",
+    "category": "NOTE",
+    "startedAt": "2026-08-04T22:52:15+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-07-09T02:16:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-07-02T02:12:00Z",
+   "since": "2026-07-02"
+  },
+  {
+   "id": "RS03ASHS-MJ03B-07-TMPSFA301",
+   "name": "ASHES Hydrothermal Field Thermistor Array",
+   "refdes": "RS03ASHS-MJ03B-07-TMPSFA301",
+   "site": "ashes-hydrothermal-field-axial-seamount-2",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:30:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:30:00Z",
+   "checkedTo": "2026-11-27T11:30:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03ASHS-MJ03B-09-BOTPTA304",
+   "name": "ASHES Hydrothermal Field Seafloor Pressure",
+   "refdes": "RS03ASHS-MJ03B-09-BOTPTA304",
+   "site": "ashes-hydrothermal-field-axial-seamount-2",
+   "method": "nereus",
+   "gap": 30,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:31:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:31:00Z",
+   "checkedTo": "2026-11-27T11:31:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03ASHS-MJ03B-10-CTDPFB304",
+   "name": "ASHES Hydrothermal Field CTD",
+   "refdes": "RS03ASHS-MJ03B-10-CTDPFB304",
+   "site": "ashes-hydrothermal-field-axial-seamount-2",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:32:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:32:00Z",
+   "checkedTo": "2026-11-27T11:32:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03ASHS-PN03B-06-CAMHDA301",
+   "name": "ASHES Vent Field HD Video Camera",
+   "refdes": "RS03ASHS-PN03B-06-CAMHDA301",
+   "site": "ashes-hydrothermal-field-axial-seamount-2",
+   "method": "nereus",
+   "gap": 180,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS03AXBS-LJ03A-10-ADCPTE303",
+   "name": "Axial Seamount Base Seafloor ADCP",
+   "refdes": "RS03AXBS-LJ03A-10-ADCPTE303",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 60,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS03AXBS-LJ03A-11-OPTAAC303",
+   "name": "Axial Seamount Base Spectrophotometer (AC-S)",
+   "refdes": "RS03AXBS-LJ03A-11-OPTAAC303",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 120,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS03AXBS-LJ03A-12-CTDPFB301",
+   "name": "Axial Seamount Base Seafloor CTD",
+   "refdes": "RS03AXBS-LJ03A-12-CTDPFB301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:35:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:35:00Z",
+   "checkedTo": "2026-11-27T11:35:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXBS-LJ03A-12-DOSTAD301",
+   "name": "Axial Seamount Base Seafloor Dissolved Oxygen",
+   "refdes": "RS03AXBS-LJ03A-12-DOSTAD301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:33:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:33:00Z",
+   "checkedTo": "2026-11-27T11:33:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXBS-MJ03A-06-PRESTA301",
+   "name": "Axial Seamount Base Seafloor Pressure Sensor (Tidal Pressure Gauge)",
+   "refdes": "RS03AXBS-MJ03A-06-PRESTA301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 30,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:34:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:34:00Z",
+   "checkedTo": "2026-11-27T11:34:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXBS-MJ03A-12-VEL3DB301",
+   "name": "Axial Seamount Base Seafloor 3D Current Meter",
+   "refdes": "RS03AXBS-MJ03A-12-VEL3DB301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:32:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:32:00Z",
+   "checkedTo": "2026-11-27T11:32:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXPS-PC03A-05-ADCPTD302",
+   "name": "Axial Seamount Shallow Profiler ADCP",
+   "refdes": "RS03AXPS-PC03A-05-ADCPTD302",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 60,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS03AXPS-PC03A-06-VADCPB301",
+   "name": "Axial Seamount Shallow Profiler Vertical ADCP",
+   "refdes": "RS03AXPS-PC03A-06-VADCPB301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2025-12-09T00:59:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2025-12-09T00:58:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2025-12-09"
+  },
+  {
+   "id": "RS03AXPS-PC03A-07-CAMDSC302",
+   "name": "Axial Seamount Shallow Profiler Digital Still Camera",
+   "refdes": "RS03AXPS-PC03A-07-CAMDSC302",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 180,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS03AXPS-PC03A-4A-CTDPFA303",
+   "name": "Axial Seamount Shallow Profiler CTD Profiler",
+   "refdes": "RS03AXPS-PC03A-4A-CTDPFA303",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:43:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:43:00Z",
+   "checkedTo": "2026-11-27T11:43:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXPS-PC03A-4A-DOSTAD303",
+   "name": "Axial Seamount Shallow Profiler Dissolved Oxygen",
+   "refdes": "RS03AXPS-PC03A-4A-DOSTAD303",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2024-02-10T08:59:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2024-02-10T08:58:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2024-02-10"
+  },
+  {
+   "id": "RS03AXPS-PC03A-4B-PHSENA302",
+   "name": "Axial Seamount Shallow Profiler pH Sensor",
+   "refdes": "RS03AXPS-PC03A-4B-PHSENA302",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 240,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:00:00Z",
+   "state": "ok",
+   "coverage": 0.163,
+   "longestGapMin": 50,
+   "lastData": "2026-11-27T10:10:00Z",
+   "checkedTo": "2026-11-27T11:00:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXPS-PC03A-4C-FLORDD303",
+   "name": "Axial Seamount Shallow Profiler Fluorometer/Backscatter",
+   "refdes": "RS03AXPS-PC03A-4C-FLORDD303",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:44:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:44:00Z",
+   "checkedTo": "2026-11-27T11:44:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXPS-SF03A-2A-CTDPFA302",
+   "name": "Axial Seamount Shallow Profiler CTD Profiler",
+   "refdes": "RS03AXPS-SF03A-2A-CTDPFA302",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 360,
+   "note": {
+    "title": "03A Shallow Profiler daily profiles reduced",
+    "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
+    "category": "NOTE",
+    "startedAt": "2026-08-31T20:13:16+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:40:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:40:00Z",
+   "checkedTo": "2026-11-27T11:40:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXPS-SF03A-2A-DOFSTA302",
+   "name": "Axial Seamount Shallow Profiler Dissolved Oxygen",
+   "refdes": "RS03AXPS-SF03A-2A-DOFSTA302",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 360,
+   "note": {
+    "title": "03A Shallow Profiler daily profiles reduced",
+    "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
+    "category": "NOTE",
+    "startedAt": "2026-08-31T20:13:16+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:42:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:42:00Z",
+   "checkedTo": "2026-11-27T11:42:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXPS-SF03A-2D-PHSENA301",
+   "name": "Axial Seamount Shallow Profiler pH Sensor",
+   "refdes": "RS03AXPS-SF03A-2D-PHSENA301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 900,
+   "note": {
+    "title": "03A Shallow Profiler daily profiles reduced",
+    "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
+    "category": "NOTE",
+    "startedAt": "2026-08-31T20:13:16+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T09:50:00Z",
+   "state": "ok",
+   "coverage": 0.755,
+   "longestGapMin": 10,
+   "lastData": "2026-11-27T09:40:00Z",
+   "checkedTo": "2026-11-27T09:50:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXPS-SF03A-3A-FLORTD301",
+   "name": "Axial Seamount Shallow Profiler Fluorometer",
+   "refdes": "RS03AXPS-SF03A-3A-FLORTD301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 360,
+   "note": {
+    "title": "03A Shallow Profiler daily profiles reduced",
+    "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
+    "category": "NOTE",
+    "startedAt": "2026-08-31T20:13:16+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:42:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:42:00Z",
+   "checkedTo": "2026-11-27T11:42:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXPS-SF03A-3B-OPTAAD301",
+   "name": "Axial Seamount Shallow Profiler Spectrophotometer (AC-S)",
+   "refdes": "RS03AXPS-SF03A-3B-OPTAAD301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 360,
+   "note": {
+    "title": "03A Shallow Profiler daily profiles reduced",
+    "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
+    "category": "NOTE",
+    "startedAt": "2026-08-31T20:13:16+00:00"
+   },
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS03AXPS-SF03A-3C-PARADA301",
+   "name": "Axial Seamount Shallow Profiler PAR Sensor",
+   "refdes": "RS03AXPS-SF03A-3C-PARADA301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 360,
+   "note": {
+    "title": "03A Shallow Profiler daily profiles reduced",
+    "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
+    "category": "NOTE",
+    "startedAt": "2026-08-31T20:13:16+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-26T11:38:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-26T11:37:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-26"
+  },
+  {
+   "id": "RS03AXPS-SF03A-3D-SPKIRA301",
+   "name": "Axial Seamount Shallow Profiler Spectral Irradiance",
+   "refdes": "RS03AXPS-SF03A-3D-SPKIRA301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 360,
+   "note": {
+    "title": "03A Shallow Profiler daily profiles reduced",
+    "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
+    "category": "NOTE",
+    "startedAt": "2026-08-31T20:13:16+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-09-30T10:52:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-09-30T10:51:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-09-30"
+  },
+  {
+   "id": "RS03AXPS-SF03A-4A-NUTNRA301",
+   "name": "Axial Seamount Shallow Profiler Nitrate Sensor",
+   "refdes": "RS03AXPS-SF03A-4A-NUTNRA301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 900,
+   "note": {
+    "title": "03A Shallow Profiler daily profiles reduced",
+    "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
+    "category": "NOTE",
+    "startedAt": "2026-08-31T20:13:16+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T07:46:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-27T07:45:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-27"
+  },
+  {
+   "id": "RS03AXPS-SF03A-4B-VELPTD302",
+   "name": "Axial Seamount Shallow Profiler Current Meter",
+   "refdes": "RS03AXPS-SF03A-4B-VELPTD302",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 360,
+   "note": {
+    "title": "03A Shallow Profiler daily profiles reduced",
+    "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
+    "category": "NOTE",
+    "startedAt": "2026-08-31T20:13:16+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:41:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:41:00Z",
+   "checkedTo": "2026-11-27T11:41:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXPS-SF03A-4F-PCO2WA301",
+   "name": "Axial Seamount Shallow Profiler pCO2 Sensor",
+   "refdes": "RS03AXPS-SF03A-4F-PCO2WA301",
+   "site": "axial-seamount-base",
+   "method": "nereus",
+   "gap": 900,
+   "note": {
+    "title": "03A Shallow Profiler daily profiles reduced",
+    "message": "The 03A shallow profiler system's number of daily scheduled profiles has been reduced from 9 to 4 to extend the operational life of the system in its second year of deployment. The profiles that will still be executed begin at the following UTC times: 0301 (normal), 0726(stepped), 1606(normal), and 2046(stepped).",
+    "category": "NOTE",
+    "startedAt": "2026-08-31T20:13:16+00:00"
+   },
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-07-08T10:17:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-06-21T10:17:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-06-21"
+  },
+  {
+   "id": "RS03CCAL-MJ03F-12-CTDPFB305",
+   "name": "Axial Seamount Central Caldera CTD",
+   "refdes": "RS03CCAL-MJ03F-12-CTDPFB305",
+   "site": "axial-seamount-central-caldera",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:46:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:46:00Z",
+   "checkedTo": "2026-11-27T11:46:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03ECAL-MJ03E-06-BOTPTA302",
+   "name": "Axial Seamount Eastern Caldera Seafloor Pressure",
+   "refdes": "RS03ECAL-MJ03E-06-BOTPTA302",
+   "site": "axial-seamount-eastern-caldera-2",
+   "method": "nereus",
+   "gap": 30,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-09-30T10:59:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-09-30T10:58:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-09-30"
+  },
+  {
+   "id": "RS03ECAL-MJ03E-12-CTDPFB306",
+   "name": "Axial Seamount Eastern Caldera CTD",
+   "refdes": "RS03ECAL-MJ03E-12-CTDPFB306",
+   "site": "axial-seamount-eastern-caldera-2",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:48:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:48:00Z",
+   "checkedTo": "2026-11-27T11:48:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03INT1-MJ03C-05-CAMDSB303",
+   "name": "International District Benthic Digital Still Camera",
+   "refdes": "RS03INT1-MJ03C-05-CAMDSB303",
+   "site": "axial-seamount-international-district",
+   "method": "nereus",
+   "gap": 180,
+   "note": {
+    "title": "Update Rayfin ROM",
+    "message": "Update Rayfin ROM version from v.4.4.0.2 to v.4.8.2.1 in order to improve focus. Power cycle after update to make firmware version detectable. Update scripts with new focus value.",
+    "category": "NOTE",
+    "startedAt": "2026-09-08T18:19:00+00:00"
+   },
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS03INT1-MJ03C-07-D1000A301",
+   "name": "International District Fluid Sampler Temperature Probe",
+   "refdes": "RS03INT1-MJ03C-07-D1000A301",
+   "site": "axial-seamount-international-district",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:49:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:49:00Z",
+   "checkedTo": "2026-11-27T11:49:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03INT1-MJ03C-09-TRHPHA302",
+   "name": "International District Hydrothermal Field 1 Vent Fluid Thermistor/pH",
+   "refdes": "RS03INT1-MJ03C-09-TRHPHA302",
+   "site": "axial-seamount-international-district",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:49:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:49:00Z",
+   "checkedTo": "2026-11-27T11:49:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03INT1-MJ03C-10-TRHPHA301",
+   "name": "International District Hydrothermal Field 1 Vent Fluid Thermistor/pH",
+   "refdes": "RS03INT1-MJ03C-10-TRHPHA301",
+   "site": "axial-seamount-international-district",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:49:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:49:00Z",
+   "checkedTo": "2026-11-27T11:49:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03INT2-MJ03D-06-BOTPTA303",
+   "name": "International District Hydrothermal Field 2 Seafloor Pressure",
+   "refdes": "RS03INT2-MJ03D-06-BOTPTA303",
+   "site": "axial-seamount-international-district-2",
+   "method": "nereus",
+   "gap": 30,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2023-07-22T13:42:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2023-07-22T13:41:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2023-07-22"
+  },
+  {
+   "id": "RS03INT2-MJ03D-11-CTDPFB307",
+   "name": "International District Hydrothermal Field 2 CTD",
+   "refdes": "RS03INT2-MJ03D-11-CTDPFB307",
+   "site": "axial-seamount-international-district-2",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2025-07-30T09:16:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2025-07-30T09:15:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2025-07-30"
+  },
+  {
+   "id": "RS03INT2-MJ03D-12-VEL3DB304",
+   "name": "International District Hydrothermal Field 2 3D Current Meter",
+   "refdes": "RS03INT2-MJ03D-12-VEL3DB304",
+   "site": "axial-seamount-international-district-2",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:51:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:51:00Z",
+   "checkedTo": "2026-11-27T11:51:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "CE04OSBP-LJ01C-05-ADCPSI103",
+   "name": "Oregon Offshore Benthic Package ADCP (75 kHz)",
+   "refdes": "CE04OSBP-LJ01C-05-ADCPSI103",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "method": "nereus",
+   "gap": 60,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "CE04OSBP-LJ01C-06-CTDBPO108",
+   "name": "Oregon Offshore Benthic Package CTD",
+   "refdes": "CE04OSBP-LJ01C-06-CTDBPO108",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-28T03:26:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T03:26:00Z",
+   "checkedTo": "2026-11-28T03:26:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-27"
+  },
+  {
+   "id": "CE04OSBP-LJ01C-06-DOSTAD108",
+   "name": "Oregon Offshore Benthic Package Dissolved Oxygen",
+   "refdes": "CE04OSBP-LJ01C-06-DOSTAD108",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T03:27:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-27T03:26:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-27"
+  },
+  {
+   "id": "CE04OSBP-LJ01C-07-VEL3DC107",
+   "name": "Oregon Offshore Benthic Package 3D Current Meter",
+   "refdes": "CE04OSBP-LJ01C-07-VEL3DC107",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-10-01T03:27:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-10-01T03:26:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-10-01"
+  },
+  {
+   "id": "CE04OSBP-LJ01C-08-OPTAAC104",
+   "name": "Oregon Offshore Benthic Package Spectrophotometer",
+   "refdes": "CE04OSBP-LJ01C-08-OPTAAC104",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "method": "nereus",
+   "gap": 120,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "CE04OSBP-LJ01C-09-PCO2WB104",
+   "name": "Oregon Offshore Benthic Package pCO2 Sensor",
+   "refdes": "CE04OSBP-LJ01C-09-PCO2WB104",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "method": "nereus",
+   "gap": 240,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-26T03:05:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-26T02:05:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-26"
+  },
+  {
+   "id": "CE04OSBP-LJ01C-10-PHSEND107",
+   "name": "Oregon Offshore Benthic Package pH Sensor",
+   "refdes": "CE04OSBP-LJ01C-10-PHSEND107",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "method": "nereus",
+   "gap": 240,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-28T03:00:00Z",
+   "state": "ok",
+   "coverage": 0.166,
+   "longestGapMin": 50,
+   "lastData": "2026-11-28T02:10:00Z",
+   "checkedTo": "2026-11-28T03:00:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-26"
+  },
+  {
+   "id": "CE04OSBP-LV01C-06-CAMDSB106",
+   "name": "Oregon Offshore Benthic Package Digital Still Camera",
+   "refdes": "CE04OSBP-LV01C-06-CAMDSB106",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "method": "nereus",
+   "gap": 180,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "CE04OSPS-PC01B-05-ZPLSCB102",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Bio-acoustic Sonar",
+   "refdes": "CE04OSPS-PC01B-05-ZPLSCB102",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "nereus",
+   "gap": 60,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "CE04OSPS-PC01B-4A-CTDPFA109",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring CTD",
+   "refdes": "CE04OSPS-PC01B-4A-CTDPFA109",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-28T03:31:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T03:31:00Z",
+   "checkedTo": "2026-11-28T03:31:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-27"
+  },
+  {
+   "id": "CE04OSPS-PC01B-4A-DOSTAD109",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Dissolved Oxygen",
+   "refdes": "CE04OSPS-PC01B-4A-DOSTAD109",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-01-28T03:30:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-01-28T03:29:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-01-28"
+  },
+  {
+   "id": "CE04OSPS-PC01B-4C-PHSENH109",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring pH Sensor (Deep SeapHOx (2000 m))",
+   "refdes": "CE04OSPS-PC01B-4C-PHSENH109",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "nereus",
+   "gap": 240,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T03:17:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-27T03:02:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-27"
+  },
+  {
+   "id": "CE04OSPS-PC01B-4D-PCO2WA105",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring pCO2 Sensor",
+   "refdes": "CE04OSPS-PC01B-4D-PCO2WA105",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "nereus",
+   "gap": 240,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-28T03:05:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-23T03:05:00Z",
+   "detail": "ERDDAP's rows in the 24 hours hold no measured value",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-23"
+  },
+  {
+   "id": "CE02SHBP-LJ01D-05-ADCPTB104",
+   "name": "Oregon Shelf Benthic Package ADCP (300 kHz)",
+   "refdes": "CE02SHBP-LJ01D-05-ADCPTB104",
+   "site": "oregon-shelf",
+   "method": "nereus",
+   "gap": 60,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "CE02SHBP-LJ01D-06-CTDBPN106",
+   "name": "Oregon Shelf Benthic Package CTD",
+   "refdes": "CE02SHBP-LJ01D-06-CTDBPN106",
+   "site": "oregon-shelf",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-28T03:12:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T03:12:00Z",
+   "checkedTo": "2026-11-28T03:12:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-27"
+  },
+  {
+   "id": "CE02SHBP-LJ01D-06-DOSTAD106",
+   "name": "Oregon Shelf Benthic Package Dissolved Oxygen",
+   "refdes": "CE02SHBP-LJ01D-06-DOSTAD106",
+   "site": "oregon-shelf",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-28T03:11:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T03:11:00Z",
+   "checkedTo": "2026-11-28T03:11:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "CE02SHBP-LJ01D-07-VEL3DC108",
+   "name": "Oregon Shelf Benthic Package 3D Current Meter",
+   "refdes": "CE02SHBP-LJ01D-07-VEL3DC108",
+   "site": "oregon-shelf",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2024-03-19T03:09:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2024-03-19T03:08:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2024-03-19"
+  },
+  {
+   "id": "CE02SHBP-LJ01D-08-OPTAAD106",
+   "name": "Oregon Shelf Benthic Package Spectrophotometer",
+   "refdes": "CE02SHBP-LJ01D-08-OPTAAD106",
+   "site": "oregon-shelf",
+   "method": "nereus",
+   "gap": 120,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "CE02SHBP-LJ01D-09-PCO2WB103",
+   "name": "Oregon Shelf Benthic Package pCO2 Sensor",
+   "refdes": "CE02SHBP-LJ01D-09-PCO2WB103",
+   "site": "oregon-shelf",
+   "method": "nereus",
+   "gap": 240,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-28T03:05:00Z",
+   "state": "ok",
+   "coverage": 0.17,
+   "longestGapMin": 50,
+   "lastData": "2026-11-28T03:05:00Z",
+   "checkedTo": "2026-11-28T03:05:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-27"
+  },
+  {
+   "id": "CE02SHBP-LJ01D-10-PHSENH110",
+   "name": "Oregon Shelf Benthic Package pH Sensor (Deep SeapHOx (2000 m))",
+   "refdes": "CE02SHBP-LJ01D-10-PHSENH110",
+   "site": "oregon-shelf",
+   "method": "nereus",
+   "gap": 240,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T02:57:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2026-11-27T02:42:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-27"
+  },
+  {
+   "id": "CE02SHBP-MJ01C-07-ZPLSCB101",
+   "name": "Oregon Shelf Benthic Package Bio-acoustic Sonar",
+   "refdes": "CE02SHBP-MJ01C-07-ZPLSCB101",
+   "site": "oregon-shelf",
+   "method": "nereus",
+   "gap": 60,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "CE02SHBP-MJ01C-08-CAMDSB107",
+   "name": "Oregon Shelf Benthic Package Digital Still Camera",
+   "refdes": "CE02SHBP-MJ01C-08-CAMDSB107",
+   "site": "oregon-shelf",
+   "method": "nereus",
+   "gap": 180,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS01SBPS-PC01A-05-ADCPTD102",
+   "name": "Oregon Slope Base Shallow Profiler ADCP",
+   "refdes": "RS01SBPS-PC01A-05-ADCPTD102",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 60,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS01SBPS-PC01A-06-VADCPB101",
+   "name": "Oregon Slope Base Shallow Profiler Vertical ADCP",
+   "refdes": "RS01SBPS-PC01A-06-VADCPB101",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2025-12-07T11:03:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2025-12-07T11:02:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2025-12-07"
+  },
+  {
+   "id": "RS01SBPS-PC01A-07-CAMDSC102",
+   "name": "Oregon Slope Base Shallow Profiler Digital Still Camera",
+   "refdes": "RS01SBPS-PC01A-07-CAMDSC102",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 180,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS01SBPS-PC01A-4A-CTDPFA103",
+   "name": "Oregon Slope Base Shallow Profiler CTD Profiler",
+   "refdes": "RS01SBPS-PC01A-4A-CTDPFA103",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2023-07-22T13:42:00Z",
+   "state": "no_data",
+   "coverage": 0.0,
+   "lastData": "2023-07-22T13:41:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2023-07-22"
+  },
+  {
+   "id": "RS01SBPS-PC01A-4A-DOSTAD103",
+   "name": "Oregon Slope Base Shallow Profiler Dissolved Oxygen",
+   "refdes": "RS01SBPS-PC01A-4A-DOSTAD103",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:19:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:19:00Z",
+   "checkedTo": "2026-11-27T11:19:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SBPS-PC01A-4B-PHSENA102",
+   "name": "Oregon Slope Base Shallow Profiler pH Sensor",
+   "refdes": "RS01SBPS-PC01A-4B-PHSENA102",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 240,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:00:00Z",
+   "state": "ok",
+   "coverage": 0.163,
+   "longestGapMin": 50,
+   "lastData": "2026-11-27T10:10:00Z",
+   "checkedTo": "2026-11-27T11:00:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SBPS-PC01A-4C-FLORDD103",
+   "name": "Oregon Slope Base Shallow Profiler Fluorometer/Backscatter",
+   "refdes": "RS01SBPS-PC01A-4C-FLORDD103",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:19:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:19:00Z",
+   "checkedTo": "2026-11-27T11:19:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SLBS-LJ01A-05-HPIESA101",
+   "name": "Oregon Slope Base Seafloor HPIES",
+   "refdes": "RS01SLBS-LJ01A-05-HPIESA101",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 240,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:21:00Z",
+   "state": "ok",
+   "coverage": 0.979,
+   "longestGapMin": 3,
+   "lastData": "2026-11-27T11:21:00Z",
+   "checkedTo": "2026-11-27T11:21:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SLBS-LJ01A-10-ADCPTE101",
+   "name": "Oregon Slope Base Seafloor ADCP",
+   "refdes": "RS01SLBS-LJ01A-10-ADCPTE101",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 60,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS01SLBS-LJ01A-11-OPTAAC103",
+   "name": "Oregon Slope Base Seafloor Spectrophotometer (AC-S)",
+   "refdes": "RS01SLBS-LJ01A-11-OPTAAC103",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 120,
+   "note": {
+    "title": "Slope Base OPTAA offline again",
+    "message": "Looks like the port fault may be back on OPTAAC103 at Slope Base. Needs a reset.",
+    "category": "PORT_FAULT",
+    "startedAt": "2026-10-04T12:03:00+00:00"
+   },
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS01SLBS-LJ01A-12-CTDPFB101",
+   "name": "Oregon Slope Base Seafloor CTD",
+   "refdes": "RS01SLBS-LJ01A-12-CTDPFB101",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:23:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:23:00Z",
+   "checkedTo": "2026-11-27T11:23:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SLBS-LJ01A-12-DOSTAD101",
+   "name": "Oregon Slope Base Seafloor Dissolved Oxygen",
+   "refdes": "RS01SLBS-LJ01A-12-DOSTAD101",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:24:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:24:00Z",
+   "checkedTo": "2026-11-27T11:24:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SLBS-MJ01A-06-PRESTA101",
+   "name": "Oregon Slope Base Seafloor Pressure Sensor (Tidal Pressure Gauge)",
+   "refdes": "RS01SLBS-MJ01A-06-PRESTA101",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 30,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:24:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:24:00Z",
+   "checkedTo": "2026-11-27T11:24:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SLBS-MJ01A-12-VEL3DB101",
+   "name": "Oregon Slope Base Seafloor 3D Current Meter",
+   "refdes": "RS01SLBS-MJ01A-12-VEL3DB101",
+   "site": "oregon-slope-base-seafloor",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:26:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:26:00Z",
+   "checkedTo": "2026-11-27T11:26:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SUM1-LJ01B-09-PRESTB102",
+   "name": "Southern Hydrate Ridge Flank Seafloor Pressure (Tidal Pressure Gauge)",
+   "refdes": "RS01SUM1-LJ01B-09-PRESTB102",
+   "site": "southern-hydrate-ridge",
+   "method": "nereus",
+   "gap": 30,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:27:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:27:00Z",
+   "checkedTo": "2026-11-27T11:27:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SUM1-LJ01B-12-VEL3DB104",
+   "name": "Southern Hydrate Ridge Flank 3D Current Meter",
+   "refdes": "RS01SUM1-LJ01B-12-VEL3DB104",
+   "site": "southern-hydrate-ridge",
+   "method": "nereus",
+   "gap": 60,
+   "source": "OOI ERDDAP",
+   "erddapNewest": "2026-11-27T11:28:00Z",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-27T11:28:00Z",
+   "checkedTo": "2026-11-27T11:28:00Z",
+   "nereusCheck": {
+    "state": "failed",
+    "detail": "Nereus unreachable"
+   },
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SUM2-MJ01B-05-CAMDSB103",
+   "name": "Southern Hydrate Ridge Benthic Digital Still Camera",
+   "refdes": "RS01SUM2-MJ01B-05-CAMDSB103",
+   "site": "southern-hydrate-ridge-summit-2",
+   "method": "nereus",
+   "gap": 180,
+   "note": {
+    "title": "Hydrate Ridge Camera - Fallen Down?",
+    "message": "Camera no longer taking images of seafloor scene. Suspect it fell down. It now seems to be pointed upward in the water column (can see fish bellies swimming by) and is unable to pan/tilt.",
+    "category": "NOTE",
+    "startedAt": "2026-10-29T12:30:00+00:00"
+   },
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS01SUM2-MJ01B-12-ADCPSK101",
+   "name": "Southern Hydrate Ridge Summit ADCP",
+   "refdes": "RS01SUM2-MJ01B-12-ADCPSK101",
+   "site": "southern-hydrate-ridge-summit-2",
+   "method": "nereus",
+   "gap": 60,
+   "state": "failed",
+   "detail": "Nereus unreachable",
+   "since": "2026-11-25"
+  },
+  {
+   "id": "RS03INT1-MJ03C-07-PPSDNA301",
+   "name": "International District Particle and eDNA Sampler",
+   "refdes": "RS03INT1-MJ03C-07-PPSDNA301",
+   "site": "axial-seamount-international-district",
+   "method": "none",
+   "gap": 120,
+   "state": "unchecked",
+   "detail": "no public data check (QA/QC plots only)",
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03INT1-MJ03C-07-RASFLA301",
+   "name": "International District Remote Access Fluid Sampler",
+   "refdes": "RS03INT1-MJ03C-07-RASFLA301",
+   "site": "axial-seamount-international-district",
+   "method": "none",
+   "gap": 120,
+   "state": "unchecked",
+   "detail": "no public data check (QA/QC plots only)",
+   "since": "2026-11-15"
+  },
+  {
+   "id": "CE04OSPS-SF01B-3B-OPTAAD105",
+   "name": "Oregon Offshore Cabled Shallow Profiler Mooring Spectrophotometer",
+   "refdes": "CE04OSPS-SF01B-3B-OPTAAD105",
+   "site": "oregon-offshore-cabled-shallow-profiler-mooring",
+   "method": "none",
+   "gap": 360,
+   "note": {
+    "title": "SF01B and instruments set to offline",
+    "message": "setting instruments to offline to reflect accurate state of the system.",
+    "category": "NOTE",
+    "startedAt": "2026-08-04T22:52:15+00:00"
+   },
+   "state": "unchecked",
+   "detail": "no public data check (QA/QC plots only)",
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SBPD-DP01A-03-FLCDRA104",
+   "name": "Oregon Slope Base Deep Profiler CDOM Fluorometer (2nd deployment)",
+   "refdes": "RS01SBPD-DP01A-03-FLCDRA104",
+   "site": "oregon-slope-base-seafloor",
+   "method": "none",
+   "gap": 720,
+   "state": "unchecked",
+   "detail": "no public data check (QA/QC plots only)",
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS01SBPD-DP01A-04-FLNTUA104",
+   "name": "Oregon Slope Base Deep Profiler Fluorometer/Turbidity (2nd deployment)",
+   "refdes": "RS01SBPD-DP01A-04-FLNTUA104",
+   "site": "oregon-slope-base-seafloor",
+   "method": "none",
+   "gap": 720,
+   "state": "unchecked",
+   "detail": "no public data check (QA/QC plots only)",
+   "since": "2026-11-15"
+  },
+  {
+   "id": "SCPRAAA301",
+   "name": "Axial Central Caldera Self-Calibrating Pressure Recorder",
+   "refdes": "RS03CCAL-MJ03F-09-SCPRAA301",
+   "site": "axial-seamount-central-caldera",
+   "method": "piweb",
+   "gap": 120,
+   "state": "ok",
+   "coverage": 0.975,
+   "longestGapMin": 36,
+   "lastData": "2026-11-28T08:21:00Z",
+   "source": "PI data portal",
+   "gauges": [
+    {
+     "gauge": "PARO1",
+     "state": "ok",
+     "coverage": 0.975,
+     "longestGapMin": 36,
+     "lastData": "2026-11-28T08:21:00Z"
+    },
+    {
+     "gauge": "PARO2",
+     "state": "ok",
+     "coverage": 0.975,
+     "longestGapMin": 36,
+     "lastData": "2026-11-28T08:21:00Z"
+    }
+   ],
+   "since": "2026-11-15"
+  },
+  {
+   "id": "RS03AXBS-LJ03A-09-HYDBBA302",
+   "name": "Axial Seamount Base Seafloor Broadband Hydrophone",
+   "refdes": "RS03AXBS-LJ03A-09-HYDBBA302",
+   "site": "axial-seamount-base",
+   "method": "rawdata",
+   "gap": 30,
+   "source": "OOI raw data server",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:57:00Z",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "RS03AXPS-PC03A-08-HYDBBA303",
+   "name": "Axial Seamount Shallow Profiler Broadband Hydrophone",
+   "refdes": "RS03AXPS-PC03A-08-HYDBBA303",
+   "site": "axial-seamount-base",
+   "method": "rawdata",
+   "gap": 30,
+   "source": "OOI raw data server",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:57:00Z",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "CE04OSBP-LJ01C-11-HYDBBA105",
+   "name": "Oregon Offshore Benthic Package Broadband Hydrophone",
+   "refdes": "CE04OSBP-LJ01C-11-HYDBBA105",
+   "site": "oregon-offshore-cabled-benthic-experiment-package",
+   "method": "rawdata",
+   "gap": 30,
+   "source": "OOI raw data server",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:57:00Z",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "CE02SHBP-LJ01D-11-HYDBBA106",
+   "name": "Oregon Shelf Benthic Package Broadband Hydrophone",
+   "refdes": "CE02SHBP-LJ01D-11-HYDBBA106",
+   "site": "oregon-shelf",
+   "method": "rawdata",
+   "gap": 30,
+   "source": "OOI raw data server",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:57:00Z",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "RS01SBPS-PC01A-08-HYDBBA103",
+   "name": "Oregon Slope Base Shallow Profiler Broadband Hydrophone",
+   "refdes": "RS01SBPS-PC01A-08-HYDBBA103",
+   "site": "oregon-slope-base-seafloor",
+   "method": "rawdata",
+   "gap": 30,
+   "source": "OOI raw data server",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:57:00Z",
+   "since": "2026-11-27"
+  },
+  {
+   "id": "RS01SLBS-LJ01A-09-HYDBBA102",
+   "name": "Oregon Slope Base Seafloor Broadband Hydrophone",
+   "refdes": "RS01SLBS-LJ01A-09-HYDBBA102",
+   "site": "oregon-slope-base-seafloor",
+   "method": "rawdata",
+   "gap": 30,
+   "source": "OOI raw data server",
+   "state": "ok",
+   "coverage": 1.0,
+   "longestGapMin": 0,
+   "lastData": "2026-11-28T08:57:00Z",
+   "since": "2026-11-27"
+  }
+ ]
+}
